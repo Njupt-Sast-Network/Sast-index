@@ -1,0 +1,141 @@
+[ 2016-06-04T01:12:04+08:00 ] 192.168.1.118 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000460s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001882s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001069s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001241s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/IndexController.class.php on line 11 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT `title`,`text` FROM `sast_news`  [ RunTime:0.0081s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000141s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000290s ]
+NOTIC: [8] Undefined index: userinfo /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 24 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 80 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 80 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 110 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 110 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030237s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030362s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000689s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001008s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001132s ]
+
+[ 2016-06-04T01:12:05+08:00 ] 192.168.1.118 /Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000181s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000847s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001048s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000833s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000994s ]
+
+[ 2016-06-04T01:12:37+08:00 ] 192.168.1.118 /Index/Search/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000182s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000518s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000629s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000237s ]
+NOTIC: [8] Undefined index: userinfo /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/a4bbf827e05883590a75f7eeaad104ff.php 第 22 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/a4bbf827e05883590a75f7eeaad104ff.php 第 78 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/a4bbf827e05883590a75f7eeaad104ff.php 第 78 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/a4bbf827e05883590a75f7eeaad104ff.php 第 108 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/a4bbf827e05883590a75f7eeaad104ff.php 第 108 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015853s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016010s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000166s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000522s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000628s ]
+
+[ 2016-06-04T01:12:37+08:00 ] 192.168.1.118 /Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000125s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000550s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000636s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000778s ]
+
+[ 2016-06-04T01:12:38+08:00 ] 192.168.1.118 /Index/Search/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000187s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000488s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000585s ]
+NOTIC: [8] Undefined index: page /Applications/MAMP/htdocs/sast/Application/Index/Controller/SearchController.class.php 第 10 行.
+NOTIC: [8] Undefined index: field /Applications/MAMP/htdocs/sast/Application/Index/Controller/SearchController.class.php 第 11 行.
+NOTIC: [8] Undefined variable: map /Applications/MAMP/htdocs/sast/Application/Index/Controller/SearchController.class.php 第 20 行.
+SQL: SELECT * FROM `sast_work` ORDER BY work_id desc LIMIT 0,7   [ RunTime:0.0024s ]
+NOTIC: [8] Undefined variable: map /Applications/MAMP/htdocs/sast/Application/Index/Controller/SearchController.class.php 第 21 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `sast_work` LIMIT 1   [ RunTime:0.0017s ]
+
+[ 2016-06-04T01:12:54+08:00 ] 192.168.1.118 /Index/Search/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000149s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000529s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000633s ]
+NOTIC: [8] Undefined index: page /Applications/MAMP/htdocs/sast/Application/Index/Controller/SearchController.class.php 第 10 行.
+NOTIC: [8] Undefined index: field /Applications/MAMP/htdocs/sast/Application/Index/Controller/SearchController.class.php 第 11 行.
+SQL: SELECT * FROM `sast_work` WHERE `title` LIKE '%豆腐%' ORDER BY work_id desc LIMIT 0,7   [ RunTime:0.0093s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sast_work` WHERE `title` LIKE '%豆腐%' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-06-04T01:13:19+08:00 ] 192.168.1.118 /Index/Search/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000578s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000693s ]
+ERR: 1146:Table 'sast.sast_wiki' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `sast_wiki`
+ERR: 1146:Table 'sast.sast_wiki' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `sast_wiki`
+
+[ 2016-06-04T01:13:21+08:00 ] 192.168.1.118 /Index/Search/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000146s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000623s ]
+NOTIC: [8] Undefined index: page /Applications/MAMP/htdocs/sast/Application/Index/Controller/SearchController.class.php 第 10 行.
+NOTIC: [8] Undefined index: field /Applications/MAMP/htdocs/sast/Application/Index/Controller/SearchController.class.php 第 11 行.
+SQL: SELECT * FROM `sast_work` WHERE `title` LIKE '%你%' ORDER BY work_id desc LIMIT 0,7   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sast_work` WHERE `title` LIKE '%你%' LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2016-06-04T01:13:29+08:00 ] 192.168.1.118 /Index/Search/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000481s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000576s ]
+NOTIC: [8] Undefined index: page /Applications/MAMP/htdocs/sast/Application/Index/Controller/SearchController.class.php 第 10 行.
+NOTIC: [8] Undefined index: field /Applications/MAMP/htdocs/sast/Application/Index/Controller/SearchController.class.php 第 11 行.
+SQL: SELECT * FROM `sast_work` WHERE `title` LIKE '%你%' ORDER BY work_id desc LIMIT 0,7   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sast_work` WHERE `title` LIKE '%你%' LIMIT 1   [ RunTime:0.0002s ]
+

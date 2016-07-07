@@ -1,0 +1,253 @@
+body {
+	background-color: #F1EFEF;
+	font-family: "微软雅黑";
+}
+section.sectionOne {
+	position: absolute;
+	width: 100%;
+	top: 640px;
+}
+.container .title {
+	margin-left: 20px;
+	width: 260px;	
+	padding-top: 6px;
+	padding-bottom: 6px;
+	line-height: 30px;
+	color: #337C67;
+	font-size: 26px;
+	font-weight: bold;
+	box-shadow: 0 0 8px #458E41
+}
+.container .title .ii  {
+	margin-right: 10px
+}
+.container .more {	
+	float: right;
+}
+.container .more a {
+	font-size: 12px;
+	color: #337C67;
+}
+section.sectionOne .row2 {
+	margin-top: 40px;
+}
+section.sectionOne .row2 .col-md-3 {
+	margin-left: 6.25%;
+	overflow: hidden;
+	box-shadow: 0px 0px 5px #929292;
+	transition:all 0.3s;
+}
+section.sectionOne .row2 .col-md-3:hover {
+	box-shadow: 0px 0px 10px #222;
+	transition:all 0.3s;
+}
+section.sectionOne .row2 .col-md-3 h4 {
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	padding-right: 10px;
+	color: #fff;
+	font-size: 16px;
+	padding-left: 10px;
+	overflow: hidden;
+	background-color: rgba(043,121,096,0.8);
+}
+section.sectionOne .row2 .col-md-3 .image {
+	width: 100%;
+	height: 100px;
+	overflow: hidden;
+}
+section.sectionOne .row2 .col-md-3 .image img {
+	width: 100%;
+	height: auto;
+	transition:all .3s;
+}
+section.sectionOne .row2 .col-md-3 .image img:hover {
+	transform:scale(1.2);
+	transition:all .3s;
+}
+section.sectionOne .row2 .col-md-3 .introduce {
+	font-size: 13px;
+	margin-top:10px;
+	height: 126px;
+	text-indent: 26px;
+	text-align: justify;
+	overflow: hidden;
+	white-space:wrap;
+ 	text-overflow:ellipsis; 
+}
+section.sectionOne .row2 .col-md-3 a {
+	padding-left: 10px;
+	border-left:6px solid #2B7960;
+	font-weight: bold;
+	color: #000;
+}
+section.sectionOne .row2 .col-md-3 a:hover {
+	color: #2B7960;
+	text-decoration: none;
+	transition:all .3s;
+}
+section.sectionOne .row3 .col-md-3 {
+	margin-left: 6.25%;
+	overflow: hidden;
+}
+section.sectionOne .row3 .col-md-3 span {
+	font-size: 180px;
+	color: #2B7960;
+	opacity: 0;
+}
+section.sectionOne .row3 .col-md-3 p {
+	font-size: 40px;
+	color: #2B7960;
+	margin-top: 20px;
+	letter-spacing: 5px;
+	font-family: "微软雅黑";
+	opacity: 0;
+}
+#hui {
+	position: fixed;
+	top: 80%;
+	right: 20px;
+	width: 50px;
+	height: 50px;
+	font-size: 40px;
+	line-height: 55px;
+	text-align: center;
+	background-color: rgba(051,124,103,0.5);
+	color: #fff;
+	cursor: pointer;
+	transition:all .5s;
+	display: none;
+}
+#hui:hover {
+	transition:all .5s;
+	text-shadow:0 2px 10px #222;
+	box-shadow: 0 0 6px #ACACAC;
+	background-color: rgba(051,124,103,1);
+}
+/*照片墙*/
+section.sectionOne .row4 {
+	position: relative;
+}
+section.sectionOne .row4 img {
+	opacity: 0.5;
+	float: left;
+	width: 100%;
+	height: 100%;
+}
+section.sectionOne .row4 img:hover {
+	opacity: 1;
+}
+section.sectionOne .row4 .name {
+	font-size: 18px;
+	font-weight: bold;
+}
+section.sectionOne .row4 .job {
+	line-height: 0;
+}
+section.sectionOne .row4 .contant {
+	text-align: justify;
+	margin-top: 30px; 
+}
+section.sectionOne .row4 .contantBig {
+	font-size: 16px;
+	margin-top: 50px;
+}
+section.sectionOne .row4 .Box {
+	width: 50%;
+	height: 100%;
+	float: left;
+	position: relative;
+}
+section.sectionOne .row4 .Box .smallBox {
+	width: 50%;
+	height: 50%;
+	float: left;
+	position: relative;
+}
+section.sectionOne .row4 .Box .smallBox .min {
+	width: 50%;
+	height: 50%;
+	float: left;
+}
+section.sectionOne .row4 .introduce {
+	position: absolute;
+	background-color: #52907C;
+	color: #fff;
+	padding:6px;
+	display: none;
+	z-index: 12;
+}
+section.sectionOne .row4 .introduce1 {
+	left: 50%;
+	height: 50%;
+	width: 100%;
+}
+section.sectionOne .row4 .introduce2 {
+	left: 100%;
+	height: 100%;
+	width: 150%;
+}
+section.sectionOne .row4 .Box .smallBox .min2 {
+	width: 100%;
+	height: 100%;
+	float: left;
+}
+section.sectionOne .row4 .introduce4 {
+	right: 100%;
+	height: 100%;
+	width: 150%;
+}
+section.sectionOne .row4 .introduce3 {
+	right: 50%;
+	height: 50%;
+	width: 100%;
+}
+section.sectionOne .row4 .pos {
+	top: 0;
+}
+section.sectionOne .row4 .pos2 {
+	top: 50%;
+}
+section.sectionOne .row4 .pos3 {
+	left: 100%;
+}
+section.sectionOne .row4 .pos4 {
+	right: 100%;
+}
+section.sectionOne .row4 .zhe {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(244,244,244,0.5);
+	z-index: 15;
+	color: #52907C;
+	font-weight: bold;
+	font-size: 60px;
+}
+section.sectionOne .row4 .zhe span {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top:-34px;
+	margin-left: -214px; 
+}
+section.sectionOne .row4 .chuxian {
+	display: inline-block;
+}
+section.sectionOne .container-fluid {
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+}
+section.sectionOne .container-fluid h1 {
+	text-shadow: 3px -3px 3px #222;
+}
+section.sectionOne .container-fluid p {
+	float:left;
+	margin-left:50px;
+	font-size:18px;
+}
+section.sectionOne .container-fluid .erwei {
+	margin-left: 20px;
+}

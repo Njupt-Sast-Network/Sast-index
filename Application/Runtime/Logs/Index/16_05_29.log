@@ -1,0 +1,1236 @@
+[ 2016-05-29T01:00:34+08:00 ] 127.0.0.1 /sast/Index/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000633s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000777s ]
+ERR: 无法加载控制器:Sast
+
+[ 2016-05-29T01:00:35+08:00 ] 127.0.0.1 /sast/Index/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000801s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000972s ]
+ERR: 无法加载控制器:Sast
+
+[ 2016-05-29T01:00:35+08:00 ] 127.0.0.1 /sast/Index/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000848s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001036s ]
+ERR: 无法加载控制器:Sast
+
+[ 2016-05-29T01:00:35+08:00 ] 127.0.0.1 /sast/Index/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000135s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000522s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000639s ]
+ERR: 无法加载控制器:Sast
+
+[ 2016-05-29T01:00:36+08:00 ] 127.0.0.1 /sast/Index/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000147s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000751s ]
+ERR: 无法加载控制器:Sast
+
+[ 2016-05-29T01:01:04+08:00 ] 127.0.0.1 /sast/Indexindex.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000215s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000930s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001089s ]
+ERR: 无法加载控制器:Sast
+
+[ 2016-05-29T01:01:15+08:00 ] 127.0.0.1 /sast/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000334s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000739s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000895s ]
+ERR: 无法加载控制器:Sast
+
+[ 2016-05-29T01:01:34+08:00 ] 127.0.0.1 /sast/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000212s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000862s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001030s ]
+ERR: 无法加载控制器:Sast
+
+[ 2016-05-29T01:01:36+08:00 ] 127.0.0.1 /sast/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000133s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000454s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000558s ]
+ERR: 无法加载控制器:Sast
+
+[ 2016-05-29T01:01:54+08:00 ] 127.0.0.1 /sast/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000182s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000513s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000624s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/IndexController.class.php on line 11 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-05-29T01:02:19+08:00 ] 127.0.0.1 /sast/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000186s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000504s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000614s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/IndexController.class.php on line 11 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT `title`,`text` FROM `sast_news`  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000293s ]
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018737s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018853s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000927s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001064s ]
+
+[ 2016-05-29T01:02:19+08:00 ] 127.0.0.1 /sast/Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000652s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001152s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000772s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000959s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000958s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001190s ]
+
+[ 2016-05-29T01:02:56+08:00 ] 127.0.0.1 /sast/Public/css/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000198s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000716s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-05-29T01:08:26+08:00 ] 127.0.0.1 /sast/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001033s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001183s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/IndexController.class.php on line 11 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT `title`,`text` FROM `sast_news`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000128s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000242s ]
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021506s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021628s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000615s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001101s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001260s ]
+
+[ 2016-05-29T01:08:26+08:00 ] 127.0.0.1 /sast/Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003260s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001066s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001257s ]
+
+[ 2016-05-29T01:08:26+08:00 ] 127.0.0.1 /sast/Public/css/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000188s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000710s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000878s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-05-29T01:10:43+08:00 ] 127.0.0.1 /sast/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000335s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000655s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000798s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/IndexController.class.php on line 11 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT `title`,`text` FROM `sast_news`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000250s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000539s ]
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021086s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021210s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000210s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000325s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000888s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001030s ]
+
+[ 2016-05-29T01:10:43+08:00 ] 127.0.0.1 /sast/Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000502s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000525s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000642s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001345s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002292s ]
+
+[ 2016-05-29T01:10:43+08:00 ] 127.0.0.1 /sast/Public/css/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000138s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000773s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000902s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-05-29T01:10:54+08:00 ] 127.0.0.1 /sast/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000563s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000685s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/IndexController.class.php on line 11 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT `title`,`text` FROM `sast_news`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000146s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000276s ]
+NOTIC: [8] Undefined index: userinfo /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 23 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018630s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018748s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000181s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000277s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000731s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000945s ]
+
+[ 2016-05-29T01:10:54+08:00 ] 127.0.0.1 /sast/Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006193s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006543s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001051s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001290s ]
+
+[ 2016-05-29T01:11:53+08:00 ] 127.0.0.1 /sast/Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000249s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001112s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001269s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001162s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001329s ]
+
+[ 2016-05-29T01:11:57+08:00 ] 127.0.0.1 /sast/Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000205s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001956s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002522s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000802s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000941s ]
+
+[ 2016-05-29T01:12:01+08:00 ] 127.0.0.1 /sast/Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000867s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001048s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000623s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000762s ]
+
+[ 2016-05-29T01:12:14+08:00 ] 127.0.0.1 /sast/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000142s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000595s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000730s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/IndexController.class.php on line 11 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT `title`,`text` FROM `sast_news`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000470s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000793s ]
+NOTIC: [8] Undefined index: userinfo /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 23 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027465s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000814s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000998s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001527s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001959s ]
+
+[ 2016-05-29T01:12:14+08:00 ] 127.0.0.1 /sast/Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000138s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001307s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000618s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000757s ]
+
+[ 2016-05-29T01:15:29+08:00 ] 127.0.0.1 /sast/Public/css/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000278s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000978s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001122s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-05-29T01:17:00+08:00 ] 127.0.0.1 /sast/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000236s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001149s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001308s ]
+ERR: 无法加载控制器:Sast
+
+[ 2016-05-29T01:17:26+08:00 ] 127.0.0.1 /sast/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000186s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000689s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/IndexController.class.php on line 11 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT `title`,`text` FROM `sast_news`  [ RunTime:0.0018s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000145s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000264s ]
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023357s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023537s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000595s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000736s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001118s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001281s ]
+
+[ 2016-05-29T01:17:26+08:00 ] 127.0.0.1 /sast/Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000133s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000562s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000515s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000634s ]
+
+[ 2016-05-29T01:17:26+08:00 ] 127.0.0.1 /sast/Public/css/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000195s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000541s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000664s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-05-29T01:26:15+08:00 ] 127.0.0.1 /sast/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000241s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001130s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001288s ]
+ERR: 无法加载控制器:Sast
+
+[ 2016-05-29T01:26:52+08:00 ] 127.0.0.1 /sast/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000226s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000598s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000733s ]
+ERR: 无法加载控制器:Sast
+
+[ 2016-05-29T01:26:53+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000129s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000704s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/IndexController.class.php on line 11 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT `title`,`text` FROM `sast_news`  [ RunTime:0.0018s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000127s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000247s ]
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021749s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021869s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000497s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000613s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000915s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001054s ]
+
+[ 2016-05-29T01:26:54+08:00 ] 127.0.0.1 /Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000281s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000894s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001212s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.020401s ]
+INFO: [ app_end ] --END-- [ RunTime:0.021322s ]
+
+[ 2016-05-29T01:26:54+08:00 ] 127.0.0.1 /Public/css/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000160s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001765s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-05-29T01:30:53+08:00 ] 127.0.0.1 /Index/Login/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000244s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000927s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001054s ]
+
+[ 2016-05-29T01:30:53+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000143s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000557s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/IndexController.class.php on line 11 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT `title`,`text` FROM `sast_news`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000121s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000238s ]
+NOTIC: [8] Undefined index: userinfo /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 23 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022433s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022560s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000542s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000664s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001004s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001135s ]
+
+[ 2016-05-29T01:30:53+08:00 ] 127.0.0.1 /Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000161s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002296s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002504s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000795s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000970s ]
+
+[ 2016-05-29T01:30:53+08:00 ] 127.0.0.1 /Public/css/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000189s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000818s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-05-29T01:44:44+08:00 ] 127.0.0.1 /sast/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000244s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001118s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001281s ]
+ERR: 无法加载控制器:Sast
+
+[ 2016-05-29T01:44:49+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000267s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000897s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001136s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/IndexController.class.php on line 11 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT `title`,`text` FROM `sast_news`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000420s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000663s ]
+NOTIC: [8] Undefined index: userinfo /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 23 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023074s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023203s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000563s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000691s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001148s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001337s ]
+
+[ 2016-05-29T01:44:49+08:00 ] 127.0.0.1 /Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000253s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000516s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000668s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000699s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000889s ]
+
+[ 2016-05-29T01:45:01+08:00 ] 127.0.0.1 /Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000191s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000507s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000616s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000920s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001108s ]
+
+[ 2016-05-29T01:45:05+08:00 ] 127.0.0.1 /Index/Login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000131s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000448s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000536s ]
+SQL: SELECT * FROM `sast_user` WHERE `username` = 'root' AND `password` = '123456' LIMIT 1   [ RunTime:0.0026s ]
+NOTIC: [8] Undefined variable: message /Applications/MAMP/htdocs/sast/Application/Index/Controller/LoginController.class.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000990s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001166s ]
+
+[ 2016-05-29T02:03:36+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000222s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001009s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001153s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/IndexController.class.php on line 11 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT `title`,`text` FROM `sast_news`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000133s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000256s ]
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024171s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024317s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000678s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000819s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001467s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001687s ]
+
+[ 2016-05-29T02:03:36+08:00 ] 127.0.0.1 /Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000222s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000638s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000782s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000840s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001036s ]
+
+[ 2016-05-29T02:03:39+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000130s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000560s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/IndexController.class.php on line 11 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT `title`,`text` FROM `sast_news`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000214s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000468s ]
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021533s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021647s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000175s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000269s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000681s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000814s ]
+
+[ 2016-05-29T02:03:39+08:00 ] 127.0.0.1 /Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000139s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000723s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000945s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000592s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000732s ]
+
+[ 2016-05-29T02:03:47+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000192s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000507s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000615s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/IndexController.class.php on line 11 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT `title`,`text` FROM `sast_news`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000133s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000247s ]
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017520s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017634s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000168s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000263s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000818s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000965s ]
+
+[ 2016-05-29T02:03:47+08:00 ] 127.0.0.1 /Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000247s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000512s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000622s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000628s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000932s ]
+
+[ 2016-05-29T02:03:56+08:00 ] 127.0.0.1 /Public/css/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001759s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002153s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-05-29T02:04:16+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000190s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000650s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/IndexController.class.php on line 11 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT `title`,`text` FROM `sast_news`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000152s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000280s ]
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020480s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020603s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000306s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000757s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000887s ]
+
+[ 2016-05-29T02:04:16+08:00 ] 127.0.0.1 /Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000768s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000954s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000771s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000971s ]
+
+[ 2016-05-29T02:08:31+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000197s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000608s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/IndexController.class.php on line 11 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT `title`,`text` FROM `sast_news`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000137s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000253s ]
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020334s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020478s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000174s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000266s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000754s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000873s ]
+
+[ 2016-05-29T02:08:31+08:00 ] 127.0.0.1 /Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000229s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001078s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001297s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000772s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000958s ]
+
+[ 2016-05-29T02:08:51+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000770s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000958s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/IndexController.class.php on line 11 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT `title`,`text` FROM `sast_news`  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000266s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000464s ]
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020061s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020209s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000197s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000849s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001018s ]
+
+[ 2016-05-29T02:08:51+08:00 ] 127.0.0.1 /Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000264s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000796s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000976s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001127s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001353s ]
+
+[ 2016-05-29T02:14:14+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000284s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001327s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001554s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/IndexController.class.php on line 11 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT `title`,`text` FROM `sast_news`  [ RunTime:0.0023s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000158s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000375s ]
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035374s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035569s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000880s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001165s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002827s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003115s ]
+
+[ 2016-05-29T02:14:14+08:00 ] 127.0.0.1 /Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000216s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000764s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000960s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001244s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001531s ]
+
+[ 2016-05-29T02:15:36+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000326s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000609s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000774s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/IndexController.class.php on line 11 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT `title`,`text` FROM `sast_news`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000135s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000249s ]
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017480s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017630s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000168s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000262s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000683s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000801s ]
+
+[ 2016-05-29T02:15:36+08:00 ] 127.0.0.1 /Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000328s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000950s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001221s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000853s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001054s ]
+
+[ 2016-05-29T02:21:58+08:00 ] 192.168.1.118 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000225s ]
+
+[ 2016-05-29T02:21:59+08:00 ] 192.168.1.118 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000130s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008266s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008401s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/IndexController.class.php on line 11 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT `title`,`text` FROM `sast_news`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000212s ]
+NOTIC: [8] Undefined index: userinfo /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 23 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023575s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023737s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000600s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000756s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000995s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001138s ]
+
+[ 2016-05-29T02:22:01+08:00 ] 192.168.1.118 /Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000132s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000654s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000701s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000834s ]
+
+[ 2016-05-29T02:22:03+08:00 ] 192.168.1.118 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000294s ]
+
+[ 2016-05-29T02:26:19+08:00 ] 127.0.0.1 /Index/Login/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000130s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000686s ]
+
+[ 2016-05-29T02:26:19+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000560s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000683s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/IndexController.class.php on line 11 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT `title`,`text` FROM `sast_news`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000115s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000249s ]
+NOTIC: [8] Undefined index: userinfo /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 23 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 79 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/5f343310d4a83e1c2f6d4e5a6181e90a.php 第 109 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019339s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019466s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000188s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000294s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000738s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000894s ]
+
+[ 2016-05-29T02:26:19+08:00 ] 127.0.0.1 /Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000135s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000675s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000821s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000759s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000965s ]
+
+[ 2016-05-29T14:09:44+08:00 ] 127.0.0.1 /Index/Search/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002196s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001201s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001454s ]
+NOTIC: [8] Undefined index: p /Applications/MAMP/htdocs/sast/Application/Index/Controller/SearchController.class.php 第 16 行.
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/SearchController.class.php on line 17 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `sast_work` ORDER BY work_id desc LIMIT 0,7   [ RunTime:0.0265s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/SearchController.class.php on line 22 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `sast_work` LIMIT 1   [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000600s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000754s ]
+NOTIC: [8] Undefined index: userinfo /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/a4bbf827e05883590a75f7eeaad104ff.php 第 22 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/a4bbf827e05883590a75f7eeaad104ff.php 第 78 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/a4bbf827e05883590a75f7eeaad104ff.php 第 78 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/a4bbf827e05883590a75f7eeaad104ff.php 第 108 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/a4bbf827e05883590a75f7eeaad104ff.php 第 108 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032478s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032628s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000667s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000801s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001126s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001312s ]
+
+[ 2016-05-29T14:09:44+08:00 ] 127.0.0.1 /Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000283s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000750s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000946s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000858s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001063s ]
+
+[ 2016-05-29T15:12:48+08:00 ] 127.0.0.1 /Index/Search/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000232s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000647s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000775s ]
+NOTIC: [8] Undefined index: p /Applications/MAMP/htdocs/sast/Application/Index/Controller/SearchController.class.php 第 16 行.
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/SearchController.class.php on line 17 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `sast_work` ORDER BY work_id desc LIMIT 0,7   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/SearchController.class.php on line 22 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `sast_work` LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000151s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000309s ]
+NOTIC: [8] Undefined index: userinfo /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/a4bbf827e05883590a75f7eeaad104ff.php 第 22 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/a4bbf827e05883590a75f7eeaad104ff.php 第 78 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/a4bbf827e05883590a75f7eeaad104ff.php 第 78 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/a4bbf827e05883590a75f7eeaad104ff.php 第 108 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/a4bbf827e05883590a75f7eeaad104ff.php 第 108 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015075s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015266s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000803s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000999s ]
+
+[ 2016-05-29T15:12:48+08:00 ] 127.0.0.1 /Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000137s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000805s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001091s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000816s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000999s ]
+
+[ 2016-05-29T15:12:51+08:00 ] 127.0.0.1 /Public/css/bootstrap.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000313s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000798s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-05-29T15:40:08+08:00 ] 127.0.0.1 /Index/Search/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000238s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001176s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001348s ]
+NOTIC: [8] Undefined index: p /Applications/MAMP/htdocs/sast/Application/Index/Controller/SearchController.class.php 第 16 行.
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/SearchController.class.php on line 17 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT * FROM `sast_work` ORDER BY work_id desc LIMIT 0,7   [ RunTime:0.0016s ]
+NOTIC: [2] Missing argument 1 for Think\Model::where(), called in /Applications/MAMP/htdocs/sast/Application/Index/Controller/SearchController.class.php on line 22 and defined /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1797 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1805 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1808 行.
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/sast/ThinkPHP/Library/Think/Model.class.php 第 1816 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `sast_work` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000140s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000278s ]
+NOTIC: [8] Undefined index: userinfo /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/a4bbf827e05883590a75f7eeaad104ff.php 第 22 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/a4bbf827e05883590a75f7eeaad104ff.php 第 78 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/a4bbf827e05883590a75f7eeaad104ff.php 第 78 行.
+NOTIC: [8] Use of undefined constant Math - assumed 'Math' /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/a4bbf827e05883590a75f7eeaad104ff.php 第 108 行.
+NOTIC: [8] Array to string conversion /Applications/MAMP/htdocs/sast/Application/Runtime/Cache/Index/a4bbf827e05883590a75f7eeaad104ff.php 第 108 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018938s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019091s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000589s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000719s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001420s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001669s ]
+
+[ 2016-05-29T15:40:08+08:00 ] 127.0.0.1 /Index/Login/getverify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000270s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001172s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001901s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' /Applications/MAMP/htdocs/sast/Application/Common/Common/function.php 第 28 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000975s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001183s ]
+
+[ 2016-05-29T15:40:08+08:00 ] 127.0.0.1 /Index/Search/%E8%AF%B7%E6%B1%82%E5%9C%B0%E5%9D%80
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000216s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000958s ]
+ERR: 非法操作:请求地址
+
