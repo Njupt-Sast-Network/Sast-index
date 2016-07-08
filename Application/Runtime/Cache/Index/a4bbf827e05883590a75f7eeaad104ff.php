@@ -3,18 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<title>科协陈列馆</title>
-	<script type="text/javascript" src="/Public/js/vue.js"></script>	
-	<link rel="stylesheet" type="text/css" href="/Public/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="/Public/css/indexTop.css">
-	<link rel="stylesheet" type="text/css" href="/Public/css/login.css">
-	<link rel="stylesheet" type="text/css" href="/Public/css/register.css">
-	<link rel="stylesheet" type="text/css" href="/Public/css/search.css">
+	<script type="text/javascript" src="/Sast-index/Public/js/vue.js"></script>	
+	<link rel="stylesheet" type="text/css" href="/Sast-index/Public/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/Sast-index/Public/css/indexTop.css">
+	<link rel="stylesheet" type="text/css" href="/Sast-index/Public/css/login.css">
+	<link rel="stylesheet" type="text/css" href="/Sast-index/Public/css/register.css">
+	<link rel="stylesheet" type="text/css" href="/Sast-index/Public/css/search.css">
 </head>
 <body>
 		<!--有点坑的导航-->
 	<nav class="nav">
 		<div class="container-fluid">
-		<img src="/Public/images/blogo.png" alt="logo">
+		<img src="/Sast-index/Public/images/blogo.png" alt="logo">
 		<div class="navLi">
 			<ul class="contentLi">
 				<li><a href="<?php echo U('Index/Index/index');?>">首页</a></li>
@@ -172,7 +172,7 @@
 									</template>
 									-->
 									<li>
-										<img src="/Public/images/img3.jpg" alt="用户头像" class="taolunImg"><span class="from">来自</span><a class="username">小泉花阳</a>
+										<img src="/Sast-index/Public/images/img3.jpg" alt="用户头像" class="taolunImg"><span class="from">来自</span><a class="username">小泉花阳</a>
 										<p class="problem">请问thinkphp中M函数的作用是什么？</p>
 										<div class="caozuo">
 											<a href="javascript:;" class="ping">评论</a>&nbsp;&nbsp;
@@ -187,7 +187,7 @@
 										</div>
 									</li>
 									<li>
-										<img src="/Public/images/img3.jpg" alt="用户头像" class="taolunImg"><span class="from">来自</span><a class="username">小泉花阳</a>
+										<img src="/Sast-index/Public/images/img3.jpg" alt="用户头像" class="taolunImg"><span class="from">来自</span><a class="username">小泉花阳</a>
 										<p class="problem">请问thinkphp中M函数的作用是什么？</p>
 										<div class="caozuo">
 											<a href="javascript:;" class="ping">评论</a>&nbsp;&nbsp;
@@ -202,7 +202,7 @@
 										</div>
 									</li>
 									<li>
-										<img src="/Public/images/img3.jpg" alt="用户头像" class="taolunImg"><span class="from">来自</span><a class="username">小泉花阳</a>
+										<img src="/Sast-index/Public/images/img3.jpg" alt="用户头像" class="taolunImg"><span class="from">来自</span><a class="username">小泉花阳</a>
 										<p class="problem">请问thinkphp中M函数的作用是什么？</p>
 										<div class="caozuo">
 											<a href="javascript:;" class="ping">评论</a>&nbsp;&nbsp;
@@ -217,7 +217,7 @@
 										</div>
 									</li>
 									<li>
-										<img src="/Public/images/img3.jpg" alt="用户头像" class="taolunImg"><span class="from">来自</span><a class="username">小泉花阳</a>
+										<img src="/Sast-index/Public/images/img3.jpg" alt="用户头像" class="taolunImg"><span class="from">来自</span><a class="username">小泉花阳</a>
 										<p class="problem">请问thinkphp中M函数的作用是什么？</p>
 										<div class="caozuo">
 											<a href="javascript:;" class="ping">评论</a>&nbsp;&nbsp;
@@ -244,25 +244,25 @@
 									</template>
 								-->
 								<li>
-										<img class="newsImg" src="/Public/images/a1.png">
+										<img class="newsImg" src="/Sast-index/Public/images/a1.png">
 										<div class="newsList"><a class="newTitle"href="item.newsHref">据说校科协网络部招新啦</a>
 										<p class="news">据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦</p>
 										<p style="float:right;">2016年5月10日</p></div>
 									</li>
 									<li>
-										<img class="newsImg" src="/Public/images/a1.png">
+										<img class="newsImg" src="/Sast-index/Public/images/a1.png">
 										<div class="newsList"><a class="newTitle"href="item.newsHref">据说校科协网络部招新啦</a>
 										<p class="news">据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦</p>
 										<p style="float:right;">2016年5月10日</p></div>
 									</li>
 									<li>
-										<img class="newsImg" src="/Public/images/a1.png">
+										<img class="newsImg" src="/Sast-index/Public/images/a1.png">
 										<div class="newsList"><a class="newTitle"href="item.newsHref">据说校科协网络部招新啦</a>
 										<p class="news">据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦</p>
 										<p style="float:right;">2016年5月10日</p></div>
 									</li>
 									<li>
-										<img class="newsImg" src="/Public/images/a1.png">
+										<img class="newsImg" src="/Sast-index/Public/images/a1.png">
 										<div class="newsList"><a class="newTitle"href="item.newsHref">据说校科协网络部招新啦</a>
 										<p class="news">据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦</p>
 										<p style="float:right;">2016年5月10日</p></div>
@@ -300,7 +300,7 @@
 										<div class="more"><span class="author">作者：sadpig</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="time">2016年5月4日</span></div>
 									</li>
 								</ul>
-							<img src="/Public/images/loading.gif" height="40" width="40" alt="loading..." class="loading" style="display:none;">
+							<img src="/Sast-index/Public/images/loading.gif" height="40" width="40" alt="loading..." class="loading" style="display:none;">
 							<div class="searchTip"><span class="notFind">没有关于“<span class="content"></span>”的搜索结果</span></div>
 						</div>
 						<!--分页-->
@@ -337,11 +337,11 @@
 		</div>
 	</div>
 	
-	<script type="text/javascript" src="/Public/js/jquery.js"></script>
-	<script type="text/javascript" src="/Public/js/bootstrap.js"></script>
-	<script type="text/javascript" src="/Public/js/Login.js"></script>
-	<script type="text/javascript" src="/Public/js/register.js"></script>
-	<script type="text/javascript" src="/Public/js/index.js"></script>
-	<script type="text/javascript" src="/Public/js/search.js"></script>
+	<script type="text/javascript" src="/Sast-index/Public/js/jquery.js"></script>
+	<script type="text/javascript" src="/Sast-index/Public/js/bootstrap.js"></script>
+	<script type="text/javascript" src="/Sast-index/Public/js/Login.js"></script>
+	<script type="text/javascript" src="/Sast-index/Public/js/register.js"></script>
+	<script type="text/javascript" src="/Sast-index/Public/js/index.js"></script>
+	<script type="text/javascript" src="/Sast-index/Public/js/search.js"></script>
 </body>
 </html>
