@@ -150,7 +150,7 @@ nav.nav .hideBar ul li .searchBar {
 nav.nav .hideBar ul li .searchBar:focus {
 	outline: none;
 }
-@media screen and (max-width:971px) {
+@media screen and (max-width:994px) {
 	nav.nav .menu {
 		display: inline-block;
 	}
@@ -162,7 +162,7 @@ nav.nav .hideBar ul li .searchBar:focus {
 		height: 0;
 	}
 }
-@media screen and (min-width:971px) {
+@media screen and (min-width:994px) {
 	nav.nav .hideBar {
 		overflow: hidden;
 		height: 0;
@@ -174,7 +174,7 @@ nav.nav .hideBar ul li .searchBar:focus {
 	}
 }
 /*最小宽度*/
-@media screen and (max-width: 971px) {
+@media screen and (max-width: 994px) {
 	body {
 		min-width: 1300px;
 	}
@@ -187,15 +187,20 @@ nav.nav .hideBar ul li .searchBar:focus {
 	.sectionOne {
 		width: 1300px;
 	}
-	.sectionOne .container {
+	.sectionOne .moreContainer {
 		width: 1170px;
 		display: inline-block;
 	}
-	.sectionOne .container .col-md-3 {
+	.sectionOne .moreContainer .col-md-3 {
 		width: 26%;
 		display: inline-block;
 	}
-	.sectionOne .container-fluid {
-		width: 1300px;
+	.sectionOne .lessContainer {
+		min-width: 1300px;
 	}
+	.sectionOne .lessContainer .col-md-3 {
+		width: 26%;
+		display: inline-block;
+	}
+	
 }

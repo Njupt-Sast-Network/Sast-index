@@ -59,9 +59,7 @@ var pageTemplate = new Vue({
 	},
 	methods: {
 		changeBtn: function(item) {
-			if(this.current != item) {
-				$(event.currentTarget).siblings().removeClass("choosen")
-				event.currentTarget.classList.add("choosen");			
+			if(this.current != item) {		
 				this.current = item;	
 				loadContent(this.type);							
 			}		

@@ -7,7 +7,7 @@ section.sectionOne {
 	width: 100%;
 	top: 640px;
 }
-.container .title {
+.moreContainer .title {
 	margin-left: 20px;
 	width: 260px;	
 	padding-top: 6px;
@@ -18,13 +18,13 @@ section.sectionOne {
 	font-weight: bold;
 	box-shadow: 0 0 8px #458E41
 }
-.container .title .ii  {
+.moreContainer .title .ii  {
 	margin-right: 10px
 }
-.container .more {	
+.moreContainer .more {	
 	float: right;
 }
-.container .more a {
+.moreContainer .more a {
 	font-size: 12px;
 	color: #337C67;
 }
@@ -235,19 +235,15 @@ section.sectionOne .row4 .zhe span {
 section.sectionOne .row4 .chuxian {
 	display: inline-block;
 }
-section.sectionOne .container-fluid {
+section.sectionOne .lessContainer {
 	color: #fff;
 	font-size: 16px;
 	text-align: center;
+	width:100%;
 }
-section.sectionOne .container-fluid h1 {
+section.sectionOne .lessContainer h1 {
 	text-shadow: 3px -3px 3px #222;
 }
-section.sectionOne .container-fluid p {
-	float:left;
-	margin-left:50px;
+section.sectionOne .lessContainer p {
 	font-size:18px;
-}
-section.sectionOne .container-fluid .erwei {
-	margin-left: 20px;
 }

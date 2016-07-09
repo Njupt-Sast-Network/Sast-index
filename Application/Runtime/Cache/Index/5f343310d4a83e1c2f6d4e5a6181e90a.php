@@ -4,18 +4,18 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>南京邮电大学科学技术协会</title>
-	<link rel="stylesheet" type="text/css" href="/Sast-index/Public/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="/Sast-index/Public/css/indexTop.css">
-	<link rel="stylesheet" type="text/css" href="/Sast-index/Public/css/index.css">
-	<link rel="stylesheet" type="text/css" href="/Sast-index/Public/css/login.css">
-	<link rel="stylesheet" type="text/css" href="/Sast-index/Public/css/register.css">
-	<link rel="stylesheet" type="text/css" href="/Sast-index/Public/css/indexMain.css">
+	<link rel="stylesheet" type="text/css" href="/Public/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/Public/css/indexTop.css">
+	<link rel="stylesheet" type="text/css" href="/Public/css/index.css">
+	<link rel="stylesheet" type="text/css" href="/Public/css/login.css">
+	<link rel="stylesheet" type="text/css" href="/Public/css/register.css">
+	<link rel="stylesheet" type="text/css" href="/Public/css/indexMain.css">
 </head>
 <body>
 		<!--有点坑的导航-->
 	<nav class="nav">
 		<div class="container-fluid">
-		<img src="/Sast-index/Public/images/blogo.png" alt="logo">
+		<img src="/Public/images/blogo.png" alt="logo">
 		<div class="navLi">
 			<ul class="contentLi">
 				<li><a href="<?php echo U('Index/Index/index');?>">首页</a></li>
@@ -130,7 +130,7 @@
 		   <!-- 轮播（Carousel）项目 -->
 		   <div class="carousel-inner">
 		      <div class="item active">
-		         <img src="/Sast-index/Public/images/home.jpg" alt="First slide">
+		         <img src="/Public/images/home.jpg" alt="First slide">
 		         <div class="introduce">
 		         	<div class="frosted-glass"></div>
 		         	<span class="introTitle">计算机部</span>
@@ -141,7 +141,7 @@
 		         </div>
 		      </div>
 		        <div class="item">
-		         <img src="/Sast-index/Public/images/dianzi.jpg"alt="Third slide">
+		         <img src="/Public/images/dianzi.jpg"alt="Third slide">
 		         <div class="introduce">
 		         	<div class="frosted-glass"></div>
 		         	<span class="introTitle">电子部</span>
@@ -152,7 +152,7 @@
 		         </div>
 		      </div>
 		      <div class="item">
-		         <img src="/Sast-index/Public/images/inter.jpg"alt="Second slide">
+		         <img src="/Public/images/inter.jpg"alt="Second slide">
 		         <div class="introduce">
 		         	<span class="introTitle">网络部</span>
 		         	<div class="introContent">网络部是一个热衷于web前后端开发、网络安全和多媒体制作的技术部门。我们不仅喜欢热门的web前端技术，我们还研究数据库 服务器 http协议 web脚本语言(python php ruby and Node.js)等方面的知识使用。我们喜欢渗透、逆向的快感，我们还做的了视频拍的了绚丽的mv。</div>
@@ -162,7 +162,7 @@
 		         </div>
 		      </div>
 		      <div class="item">
-		         <img src="/Sast-index/Public/images/bangongshi.jpg"alt="fourth slide">
+		         <img src="/Public/images/bangongshi.jpg"alt="fourth slide">
 		         <div class="introduce">
 		         	<div class="frosted-glass"></div>
 		         	<span class="introTitle">办公室</span>
@@ -173,7 +173,7 @@
 		         </div>
 		      </div>
 		      <div class="item">
-		         <img src="/Sast-index/Public/images/web.png" alt="Fifth slide">
+		         <img src="/Public/images/web.png" alt="Fifth slide">
 		         <div class="introduce">
 		         	<div class="frosted-glass"></div>
 		         	<span class="introTitle">科宣部</span>
@@ -184,7 +184,7 @@
 		         </div>
 		      </div>
 		      <div class="item">
-		         <img src="/Sast-index/Public/images/wailian.jpg"alt="sixth slide">
+		         <img src="/Public/images/wailian.jpg"alt="sixth slide">
 		         <div class="introduce">
 		         	<div class="frosted-glass"></div>
 		         	<span class="introTitle">外联部</span>
@@ -195,7 +195,7 @@
 		         </div>
 		      </div>
 		      <div class="item">
-		         <img src="/Sast-index/Public/images/shefa.jpg"alt="seventh slide">
+		         <img src="/Public/images/shefa.jpg"alt="seventh slide">
 		         <div class="introduce">
 		         	<div class="frosted-glass"></div>
 		         	<span class="introTitle">社会发展部</span>
@@ -206,7 +206,7 @@
 		         </div>
 		      </div>
 		      <div class="item">
-		         <img src="/Sast-index/Public/images/organize.jpg"alt="seventh slide">
+		         <img src="/Public/images/organize.jpg"alt="seventh slide">
 		         <div class="introduce">
 		         	<div class="frosted-glass"></div>
 		         	<span class="introTitle">赛事部</span>
@@ -219,7 +219,7 @@
    			</div>
 		</div> 
 		<section class="sectionOne">
-			<div class="container">
+			<div class="container moreContainer">
 				<br><br>
 				<div class="row">
 					<div class="col-md-1 title">
@@ -231,7 +231,7 @@
 					  <div class="col-md-3">
 					  	<h4><?php echo ($news[0]["title"]); ?></h4>
 						<div class="image">
-							<img src="/Sast-index/Public/images/a1.png">
+							<img src="/Public/images/a1.png">
 						</div>
 						<p class="introduce">
 						<?php echo ($news[0]["text"]); ?></p>
@@ -240,7 +240,7 @@
 					  <div class="col-md-3">
 					  	<h4><?php echo ($news[1]["title"]); ?></h4>
 						<div class="image">
-							<img src="/Sast-index/Public/images/a1.png">
+							<img src="/Public/images/a1.png">
 						</div>
 						<p class="introduce">
 						<?php echo ($news[1]["text"]); ?></p>
@@ -249,7 +249,7 @@
 					  <div class="col-md-3">
 					  	<h4><?php echo ($news[2]["title"]); ?></h4>
 						<div class="image">
-							<img src="/Sast-index/Public/images/a1.png">
+							<img src="/Public/images/a1.png">
 						</div>
 						<p class="introduce">
 						<?php echo ($news[2]["text"]); ?></p>
@@ -267,7 +267,7 @@
 					<div class="Box">
 						<div class="smallBox">
 							<div class="min allmin">
-								<img src="/Sast-index/Public/images/lazy.jpg" alt="">
+								<img src="/Public/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce1 pos">
 								<p class="name">崔天昊</p>
@@ -275,7 +275,7 @@
 								<p class="contant">研究方向web前端，并有一定经验。</p>
 							</div>
 							<div class="min allmin">
-								<img src="/Sast-index/Public/images/lazy.jpg" alt="">
+								<img src="/Public/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce1 pos pos3">
 								<p class="name">董家睿</p>
@@ -283,7 +283,7 @@
 								<p class="contant">研究方向web后端，尤其对thinkphp的使用较为熟悉</p>
 							</div>
 							<div class="min allmin">
-								<img src="/Sast-index/Public/images/lazy.jpg" alt="">
+								<img src="/Public/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce1 pos2">
 								<p class="name">倪丁凡</p>
@@ -291,7 +291,7 @@
 								<p class="contant">之前研究硬件方向，现在主要研究ios开发</p>
 							</div>
 							<div class="min allmin">
-								<img src="/Sast-index/Public/images/lazy.jpg" alt="">
+								<img src="/Public/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce1 pos2 pos3">
 								<p class="name">顾怡</p>
@@ -301,7 +301,7 @@
 						</div>
 						<div class="smallBox">
 							<div class="min2 allmin">
-								<img src="/Sast-index/Public/images/lazy.jpg" alt="">
+								<img src="/Public/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce2 pos">
 								<p class="name">奚佳伟</p>
@@ -311,7 +311,7 @@
 						</div>
 						<div class="smallBox">
 							<div class="min2 allmin">
-								<img src="/Sast-index/Public/images/lazy.jpg" alt="">
+								<img src="/Public/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce2 pos">
 								<p class="name">孙放</p>
@@ -321,7 +321,7 @@
 						</div>
 						<div class="smallBox">
 							<div class="min allmin">
-								<img src="/Sast-index/Public/images/lazy.jpg" alt="">
+								<img src="/Public/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce1 pos">
 								<p class="name">刘强胜</p>
@@ -329,7 +329,7 @@
 								<p class="contant">主要研究方向是python，经验较为丰富。</p>
 							</div>
 							<div class="min allmin">
-								<img src="/Sast-index/Public/images/lazy.jpg" alt="">
+								<img src="/Public/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce1 pos pos3">
 								<p class="name">郑致远</p>
@@ -337,7 +337,7 @@
 								<p class="contant">主要研究java，其他各类语言都比较熟悉，擅长于acm比赛。</p>
 							</div>
 							<div class="min allmin">
-								<img src="/Sast-index/Public/images/lazy.jpg" alt="">
+								<img src="/Public/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce1 pos2">
 								<p class="name">周捷</p>
@@ -345,7 +345,7 @@
 								<p class="contant">擅长于渗透等信安技术，多次提交网站漏洞，ctf比赛成绩优异。</p>
 							</div>
 							<div class="min allmin">
-								<img src="/Sast-index/Public/images/lazy.jpg" alt="">
+								<img src="/Public/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce1 pos2 pos3">
 								<p class="name">褚鑫强</p>
@@ -357,7 +357,7 @@
 					<div class="Box">
 						<div class="smallBox">
 							<div class="min allmin">
-								<img src="/Sast-index/Public/images/lazy.jpg" alt="">
+								<img src="/Public/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce3 pos pos4">
 								<p class="name">张丹阳</p>
@@ -365,7 +365,7 @@
 								<p class="contant">主持过科协大大小小活动，功不可没。</p>
 							</div>
 							<div class="min allmin">
-								<img src="/Sast-index/Public/images/lazy.jpg" alt="">
+								<img src="/Public/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce3 pos">
 								<p class="name">叶子新</p>
@@ -373,7 +373,7 @@
 								<p class="contant">将科协内部交流梳理的有条不紊，做事非常周全细致。</p>
 							</div>
 							<div class="min allmin">
-								<img src="/Sast-index/Public/images/lazy.jpg" alt="">
+								<img src="/Public/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce3 pos2  pos4">
 								<p class="name">徐铄芮</p>
@@ -381,7 +381,7 @@
 								<p class="contant">外表甜美，擅长ps等多媒体技术，在科协宣传工作中起到很大作用。</p>
 							</div>
 							<div class="min allmin">
-								<img src="/Sast-index/Public/images/lazy.jpg" alt="">
+								<img src="/Public/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce3 pos2">
 								<p class="name">李赫</p>
@@ -391,7 +391,7 @@
 						</div>
 						<div class="smallBox">
 							<div class="min2 allmin">
-								<img src="/Sast-index/Public/images/lazy.jpg" alt="">
+								<img src="/Public/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce4 pos">
 								<p class="name">黄诚博</p>
@@ -401,7 +401,7 @@
 						</div>
 						<div class="smallBox">
 							<div class="min2 allmin">
-								<img src="/Sast-index/Public/images/lazy.jpg" alt="">
+								<img src="/Public/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce4 pos">
 								<p class="name">樊超</p>
@@ -411,7 +411,7 @@
 						</div>
 						<div class="smallBox">
 							<div class="min allmin">
-								<img src="/Sast-index/Public/images/lazy.jpg" alt="">
+								<img src="/Public/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce3 pos pos4">
 								<p class="name">曹文</p>
@@ -419,7 +419,7 @@
 								<p class="contant">组织过各种科协与外界的交流活动。</p>
 							</div>
 							<div class="min allmin">
-								<img src="/Sast-index/Public/images/lazy.jpg" alt="">
+								<img src="/Public/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce3 pos">
 								<p class="name">朱立宇</p>
@@ -427,7 +427,7 @@
 								<p class="contant">研究方向在硬件开发，兴趣驱使，经验丰富。</p>
 							</div>
 							<div class="min allmin">
-								<img src="/Sast-index/Public/images/lazy.jpg" alt="">
+								<img src="/Public/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce3 pos2  pos4">
 								<p class="name">王悉宇</p>
@@ -435,7 +435,7 @@
 								<p class="contant">对各种计算机技术非常感兴趣，也乐于与其他部员交流自己的学习成果。</p>
 							</div>
 							<div class="min allmin">
-								<img src="/Sast-index/Public/images/lazy.jpg" alt="">
+								<img src="/Public/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce3 pos2">
 								<p class="name">陶黎成</p>
@@ -452,7 +452,7 @@
 			<br>
 			<br>
 			<br>
-			<div class="container-fluid" style="background-color:#337D69">
+			<div class="container lessContainer" style="background-color:#337D69">
 				<div class="row"><h1>联系我们</h1></div>
 				<div class="col-md-6">
 					<br>
@@ -463,13 +463,13 @@
 					<p>Copy right &copy;校科协网络部  <a style="color:#fff" href="https://github.com/teisan">https://github.com/teisan</a></p>
 					<p>&copy;狒狒神 &copy;Shiratsuyu <a style="color:#fff" href="https://github.com/teisan">https://github.com/teisan</a></p>
 				</div>
-				<div class="col-md-1"></div>
-				<div class="col-md-3">
+				<div class="col-md-1" style="margin-bottom: 100px"></div>
+				<div class="col-md-3 special">
 				<br>
 				<br>
-					<p class="erwei">扫二维码关注南邮校科协微信号</p>
-					<p >（录取查询方式之一）</p>
-					<img src="/Sast-index/Public/images/getqrcode.jpeg" height="200" width="200">
+					<p class="erwei">扫二维码关注南邮校科协微信号<br>（录取查询方式之一）<br><img src="/Public/images/getqrcode.jpeg" height="200" width="200"></p>				
+					
+					
 					<br>
 				<br>
 				</div>
@@ -477,14 +477,14 @@
 			</div>
 		</section>
 		<span id="hui" class="glyphicon glyphicon-menu-up"></span>
-	<script type="text/javascript" src="/Sast-index/Public/js/jquery.js"></script>
-	<script type="text/javascript" src="/Sast-index/Public/js/bootstrap.js"></script>
-	<script type="text/javascript" src="/Sast-index/Public/js/index.js"></script>
-	<script type="text/javascript" src="/Sast-index/Public/js/top.js"></script>
-	<script type="text/javascript" src="/Sast-index/Public/js/Login.js"></script>
-	<script type="text/javascript" src="/Sast-index/Public/js/register.js"></script>
-	<script type="text/javascript" src="/Sast-index/Public/js/main.js"></script>
-	<script type="text/javascript" src="/Sast-index/Public/js/tab.js"></script>
-	<script type="text/javascript" src="/Sast-index/Public/js/lazyload.js"></script>
+	<script type="text/javascript" src="/Public/js/jquery.js"></script>
+	<script type="text/javascript" src="/Public/js/bootstrap.js"></script>
+	<script type="text/javascript" src="/Public/js/index.js"></script>
+	<script type="text/javascript" src="/Public/js/top.js"></script>
+	<script type="text/javascript" src="/Public/js/Login.js"></script>
+	<script type="text/javascript" src="/Public/js/register.js"></script>
+	<script type="text/javascript" src="/Public/js/main.js"></script>
+	<script type="text/javascript" src="/Public/js/tab.js"></script>
+	<script type="text/javascript" src="/Public/js/lazyload.js"></script>
 </body>
 </html>

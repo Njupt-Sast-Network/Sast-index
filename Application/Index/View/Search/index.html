@@ -209,7 +209,7 @@
 							<ul class="pageAll" style="width: 100%;text-align: center;">
 								<li class="page" @click="toFirst();">第一页</li>
 								<li class="page" @click="less();">上一页</li>
-								<li class="page" v-for="index in indexs" @click="changeBtn(index)">{{index}}</li>
+								<li class="page" v-for="index in indexs" @click="changeBtn(index)" :class="'choosen': current == item">{{index}}</li>
 								<li class="page" @click="add()">下一页</li>
 								<li class="amount">{{current}}/<span class="pages"></span></li>
 							</ul>
