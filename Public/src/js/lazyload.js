@@ -5,7 +5,7 @@
 		photoObj = $(".Box img");
 		if($("html body").scrollTop() > photo.offset().top-400) {
 			for(var i = 0;i < 20;i++) {
-				photoObj.eq(i).attr("src","/Public/images/img"+i+".jpg");
+				photoObj.eq(i).attr("src","__PUBLIC__/src/images/img"+i+".jpg");
 			}
 		}
 	})
