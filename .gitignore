@@ -219,3 +219,4 @@ pip-log.txt
 Application/Runtime
 Application/Admin/Conf/config.php
 Application/Index/Conf/config.php
+.idea/
