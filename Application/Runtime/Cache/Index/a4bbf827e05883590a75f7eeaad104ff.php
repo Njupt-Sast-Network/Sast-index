@@ -17,8 +17,8 @@
 		<img src="/Sast-index/Public/images/blogo.png" alt="logo">
 		<div class="navLi">
 			<ul class="contentLi">
-				<li><a href="<?php echo U('Index/Index/index');?>">首页</a></li>
-				<li><a href="<?php echo U('Index/Search/index');?>">科协陈列馆</a></li>
+				<li><a href="/Sast-index/index.php/Index/">首页</a></li>
+				<li><a href="/Sast-index/index.php/Search/">科协陈列馆</a></li>	
 				<?php if (!$_SESSION['userinfo']) { ?>				
 				<li class="login" id="user"><a href="javascript:;">登录|注册</a></li>
 				<li><a href="#">关于</a></li>
@@ -37,8 +37,8 @@
 		</div>
 		<div class="hideBar">
 			<ul class="contentLi">
-				<li><a href="<?php echo U('Index/Index/index');?>">首页</a></li>
-				<li><a href="<?php echo U('Index/Search/index');?>">科协陈列馆</a></li>				
+				<li><a href="/Sast-index/index.php/Index/">首页</a></li>
+				<li><a href="/Sast-index/index.php/Search/">科协陈列馆</a></li>				
 				<li id="user" class="willLogin">登录|注册</li>
 				<li><a href="#">关于</a></li>
 				<li>
@@ -308,7 +308,7 @@
 							<ul class="pageAll" style="width: 100%;text-align: center;">
 								<li class="page" @click="toFirst();">第一页</li>
 								<li class="page" @click="less();">上一页</li>
-								<li class="page" v-for="index in indexs" @click="changeBtn(index)">{{index}}</li>
+								<li class="page" v-for="index in indexs" @click="changeBtn(index)" :class="'choosen': current == item">{{index}}</li>
 								<li class="page" @click="add()">下一页</li>
 								<li class="amount">{{current}}/<span class="pages"></span></li>
 							</ul>

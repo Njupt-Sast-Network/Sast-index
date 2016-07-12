@@ -169,7 +169,7 @@ function loadContent(index) {
 		});
 	$.ajax({
 		type: "post",
-		url : "/Index/Search/search",
+		url : "/index.php/Index/Search/search",
 		dataType:"json",
 		data: {
 			content: content,
