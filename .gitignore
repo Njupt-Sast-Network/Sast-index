@@ -222,3 +222,4 @@ production/Application/Index/Conf/config.php
 .idea/
 node_modules/
 production/Public/
+/production/Application/Index/View/
