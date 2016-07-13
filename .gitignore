@@ -221,3 +221,4 @@ production/Application/Admin/Conf/config.php
 production/Application/Index/Conf/config.php
 .idea/
 node_modules/
+production/Public/
