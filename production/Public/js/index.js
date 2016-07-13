@@ -1,0 +1,1 @@
+var menu=function(){var n=$(".nav .menu"),a=$(".nav .hideBar"),c=$("nav.nav .navLi ul li .searchBtn"),e=$("nav.nav .secondSearch");n.click(function(){a.slideToggle()}),c.click(function(){e.slideToggle()})}();

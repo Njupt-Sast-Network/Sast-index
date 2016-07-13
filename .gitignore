@@ -216,7 +216,8 @@ pip-log.txt
 .mr.developer.cfg
 
 
-Application/Runtime
-Application/Admin/Conf/config.php
-Application/Index/Conf/config.php
+production/Application/Runtime
+production/Application/Admin/Conf/config.php
+production/Application/Index/Conf/config.php
 .idea/
+node_modules/

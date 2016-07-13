@@ -1,0 +1,104 @@
+	<!--有点坑的导航-->
+	<nav class="nav">
+		<div class="container-fluid">
+		<img src="__PUBLIC__/images/blogo.png" alt="logo">
+		<div class="navLi">
+			<ul class="contentLi">
+				<li><a href="__ROOT__/index.php/Index/">首页</a></li>
+				<li><a href="__ROOT__/index.php/Search/">科协陈列馆</a></li>	
+				<?php if (!$_SESSION['userinfo']) { ?>				
+				<li class="login" id="user"><a href="javascript:;">登录|注册</a></li>
+				<li><a href="javascript:;"><span class="glyphicon glyphicon-search searchBtn" aria-hidden="true"></span></a></li>
+				<?php }else{ ?>
+								<li><a href='ddd'>{$Think.session.userinfo.username}</a></li>
+				<li><a href="__ROOT__/index.php/Index/Login/logout">退出</a></li>
+				<li><a href="javascript:;"><span class="glyphicon glyphicon-search searchBtn" aria-hidden="true"></span></a></li>
+
+				<?php } ?>
+
+			</ul>
+		</div>
+		<div class="menu">
+			<span class="glyphicon glyphicon-th-large"></span>
+		</div>
+		<div class="hideBar">
+			<ul class="contentLi">
+				<li><a href="__ROOT__/index.php/Index/">首页</a></li>
+				<li><a href="__ROOT__/index.php/Search/">科协陈列馆</a></li>
+				<?php if (!$_SESSION['userinfo']) { ?>	
+				<li id="user" class="willLogin">登录|注册</li>
+				<?php }else{ ?>
+
+								<li><a href='ddd'>{$Think.session.userinfo.username}</a></li>
+				<li><a href="__ROOT__/index.php/Index/Login/logout">退出</a></li>
+				<li>
+					<!--<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+					<input type="text" class="searchBar" placeholder="按下Enter...Search..."></input>-->
+				</li>
+				<?php } ?>
+			</ul>
+		</div>
+		<!--<div class="secondSearch">
+			<form action="" method="post">
+				<input type="text" class="searchBar" placeholder="Search..."></input>
+				<input type="submit" class="sub" value="Submit"></input>
+			</form>
+		</div>-->
+		</div>
+	</nav>
+	<!--登录-->
+		<div id="shelter">
+			<div class="conshelter">
+				<div class="closed">×</div>
+				<div class="tool login">
+					<span class="login choosed">登录</span>
+					<span class="register">注册</span>
+				</div>
+				<div class="loginContent">
+					<ul>
+						<li>
+							<input type="text" placeholder="请输入3~16位用户名" class="putin username">
+						<li>
+							<input type="password" placeholder="请输入6~16位密码" class="putin password">
+						</li>
+						<li>
+							<input type="text" placeholder="验证码" class="ver">
+							<img src="{:U('index.php/Index/Login/getverify',Math.array())}" alt="验证码" id="Verifyimg" onClick="fleshVerify(this)">
+							<a href="javascript:;" id="change" onClick="fleshVerify(document.getElementById('Verifyimg'))">(点击刷新)</a>
+						</li>
+						<span class="tip"></span>
+						<button class="sub">登录</button>
+					</ul>
+				</div>
+				<div class="resContent">
+					<ul>
+						<li>
+							<input type="text" placeholder="请输入学号" class="putin idname">
+						<li>
+							<input type="password" placeholder="请输入正方密码" class="putin idpw">
+						</li>
+						<li>
+							<input type="text" placeholder="请输入3~16位用户名" class="putin username">
+						</li>
+						<li>
+							<input type="text" placeholder="请输入6~16位密码" class="putin password">
+						</li>
+						<li>
+							<input type="text" placeholder="请输入邮箱" class="putin mail">
+						</li>
+						<li>
+							<input type="text" placeholder="验证码" class="ver">
+							<span class="tip2">验证码格式不对！</span>
+							<img src="{:U('index.php/Index/Login/getverify',Math.array())}" alt="验证码" id="VerifyImg" onClick="fleshVerify(this)"><a href="javascript:;" id="change" onClick="fleshVerify(document.getElementById('VerifyImg'))">(点击刷新)</a>
+						</li>
+						<button class="sub">登录</button>
+					</ul>
+				</div>
+			</div>
+		</div>
+	<script>
+	function fleshVerify(img){ //重载验证码
+		var time = new Date().getTime();
+		img.src='{:U("index.php/Index/Login/getverify",array())}'
+	}
+	</script>
