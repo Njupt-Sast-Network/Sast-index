@@ -6,7 +6,7 @@
 				$(this).next().animate({opacity:"1"},300)
 			});
 		}
-		if($("html body").scrollTop() > 1200){
+		if($("html body").scrollTop() > 1300){
 			$("section.sectionOne .row5").animate({opacity:"1"},300);
 		}
 		if($("html body").scrollTop() > 10) {

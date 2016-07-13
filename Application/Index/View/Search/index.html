@@ -215,7 +215,15 @@
 	<script type="text/javascript" src="__PUBLIC__/js/bootstrap.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/js/Login.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/js/register.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/js/search.js"></script>
+	<script type="text/javascript">
+	(function() {
+			var menuBtn = $(".nav .menu"),
+			hideBar = $(".nav .hideBar");
+			menuBtn.click(function() {
+			hideBar.slideToggle();
+		});
+	})()
+	</script>
 </body>
 </html>

@@ -78,7 +78,7 @@
 		         <div class="introduce">
 		         	<div class="frosted-glass"></div>
 		         	<span class="introTitle">科宣部</span>
-		         	<div class="introContent">科宣部全称科普宣传部，活跃在校科协各种宣传活动的第一线。用PS展示科技风采，用网络传播科技文化，用视频呈现科技魅力，将科技与文艺紧密结合，把创新思想融入科技推广。</div>
+		         	<div class="introContent">科宣部，全称科普宣传部。正如其名，我们负责管理校科协的各网络平台，致力于宣传校科协的各项活动。运用Photoshop设计宣传册、海报等展示科技魅力，用网络科普科技知识，将科技与艺术紧密结合，把创新的思想融入到科普宣传中。科宣部的工作需要使用Photoshop等图像制作软件的应用能力以及新闻稿的写作能力（其中PS我们会联合网络部进行授课教学）。</div>
 		         </div>
 		         <div class="continue">
 		         	<a href="javascript:;" class="down">继续向下</a><a href="dddd">报名入口</a>
@@ -89,7 +89,7 @@
 		         <div class="introduce">
 		         	<div class="frosted-glass"></div>
 		         	<span class="introTitle">外联部</span>
-		         	<div class="introContent">外联部，主要负责科协和外界的联系与日常活动的组织开展。其中包括校科协与企业之间的联系，科协与兄弟院校之间的联系，并经常举办讲座会谈等活动来增进相互之间的了解。</div>
+		         	<div class="introContent">外联部，是校科协对外交流的桥梁，主要负责校科协和外界的联系、日常活动的组织与开展以及提供社团经费保障。其中包括校科协与我校九大社团的工作交流，与兄弟院校之间的联系交流，以及与企业之间的沟通。这是一个极具挑战性的部门，同时也是开拓大学生视野的窗口，在这里你可以认识更多本校以及兄弟院校科协的牛人，还可以结识许多企业人士。</div>
 		         </div>
 		         <div class="continue">
 		         	<a href="javascript:;" class="down">继续向下</a><a href="dddd">报名入口</a>
@@ -100,7 +100,7 @@
 		         <div class="introduce">
 		         	<div class="frosted-glass"></div>
 		         	<span class="introTitle">社会发展部</span>
-		         	<div class="introContent">社团发展部主要负责科协与各直属社团之间的日常联系与发展，使直属社团与科协联系紧密，更好的发展。同时也负责科协中的创新创业版块，负责学校的创新创业工作及创新项目与产业孵化，积极动员同学们和各参赛队的创新创业工作。同时处理创新创业中心的日常工作。</div>
+		         	<div class="introContent">社团发展部主要负责校科协与各科技类直属社团的联系和交流，建立起两者间的桥梁。发挥科协与直属社团间的不同优势，调度信息资源，促进双方的共同发展。作为创新中心下属部门，社发部还担负着组织参赛的职能，在利用各方资源的同时积极动员同学们参加创新创业方面赛事，同时处理和参与创新中心和科协内的日常工作和活动。</div>
 		         </div>
 		         <div class="continue">
 		         	<a href="javascript:;" class="down">继续向下</a><a href="dddd">报名入口</a>
@@ -361,7 +361,7 @@
 					<img src="__PUBLIC__/images/tencent.jpg" alt="腾讯"class="intro4">
 					<img src="__PUBLIC__/images/xiaomi.jpg" alt="小米"class="intro5">
 					<img src="__PUBLIC__/images/zte.jpg" alt="中兴"class="intro6">
-					<img src="__PUBLIC__/images/huawei.jpg" alt="华为"class="intro7">
+					<img src="__PUBLIC__/images/huawei.png" alt="华为"class="intro7">
 					<img src="__PUBLIC__/images/microsoft.jpg" alt="微软"class="intro8">
 					<img src="__PUBLIC__/images/Motorola.jpg" alt="摩托罗拉"class="intro9">
 				</div>	
@@ -397,12 +397,20 @@
 		<span id="hui" class="glyphicon glyphicon-menu-up"></span>
 	<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/js/bootstrap.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/js/top.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/js/Login.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/js/register.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/js/main.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/js/tab.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/js/lazyload.js"></script>
+	<script type="text/javascript">
+		(function() {
+			var menuBtn = $(".nav .menu"),
+			hideBar = $(".nav .hideBar");
+			menuBtn.click(function() {
+			hideBar.slideToggle();
+		});
+	})()
+	</script>
 </body>
 </html>

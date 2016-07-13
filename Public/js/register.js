@@ -1,7 +1,5 @@
 $(function() {
 	var registerAll = function() {
-		var idname = $("#shelter .resContent ul li .idname");
-		var idpw = $("#shelter .resContent ul li .idpw");
 		var user = $("#shelter .resContent ul li .username");
 		var pw = $("#shelter .resContent ul li .password");
 		var sub = $("#shelter .resContent .sub");
@@ -27,8 +25,6 @@ $(function() {
 				type: "POST",
 				url:"/index/Index/login/index",
 				data: {
-					idname : idname.val(),
-					idpassword : idpw.val(),
 					username : user.val(),
 					password : pw.val(),
 					email : mail.val(),
@@ -39,10 +35,11 @@ $(function() {
 					if(data.valid==1) {
 						$("#shelter").css("display","none");
 						che();
-						var userLi = $(".login");
-						userLi.html("<button class='btn btn-default dropdown-toggle' type='button' id='dropdownMenu1' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>Dropdown<span class='caret'></span></button>  <ul class='dropdown-menu' aria-labelledby='dropdownMenu1'><li><a href='#'>Action</a></li><li><a href='#'>Another action</a></li><li><a href='#'>Something else here</a></li><li><a href='#'>Separated link</a></li></ul>");
-					}else {
-						
+						$(".contentLi").find("#user").remove();
+						$(".contentLi").append("<li><a href='ddd'>"+data.username+"</a></li>");
+						$(".contentLi").append("<li><a href='/index.php/Index/Login/logout'>退出</a></li>");
+						$(".hideBar").css("height","200px");
+					}else {		
 						tip.addClass("wrong").text(data.message);
 						// console.log("1234567890");
 					}	
@@ -52,23 +49,9 @@ $(function() {
 		}
 		//验证
 		function endCheck() {
-			//验证学号
-			a = check(idname,function(val) {
-				if(val.match(/^\S+$/)&&val.length==9&&val.charAt(0) == 'B'){
-					return true;
-				}
-				else return false;
-			});
 			//验证邮箱
 			b =check(mail,function(val){
 				if(val.match(/\w+@\w+.\w/)&&val.length>8&&val.length<25){
-					return true;
-				}
-				else return false;
-			});
-			//正方密码
-			c = check(idpw,function(val){
-				if(val.length != 0){
 					return true;
 				}
 				else return false;
@@ -94,17 +77,7 @@ $(function() {
 				}
 				else return false;
 			});
-			if(!a) {
-				che();
-				idname.addClass("wrongput");
-				wrongChange();
-				tip.text("学号格式不对！")
-			}else if(!c) {
-				che();
-				idpw.addClass("wrongput");
-				wrongChange();
-				tip.text("正方密码不能为空！")
-			}else if(!x){
+			if(!x){
 				che();
 				user.addClass("wrongput");
 				wrongChange();
@@ -152,12 +125,6 @@ $(function() {
 			jianpan(e);
 		});
 		ver.keyup(function(e) {
-			jianpan(e);
-		});
-		idname.keyup(function(e) {
-			jianpan(e);
-		});
-		idpw.keyup(function(e) {
 			jianpan(e);
 		});
 		mail.keyup(function(e) {

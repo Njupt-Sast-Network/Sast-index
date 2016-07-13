@@ -33,14 +33,11 @@ $(function() {
 				success:function(data) {
 					if(data.valid==1) {
 						$("#shelter").css("display","none");
-						content.css("height","300px");
-						sub.css("top","160px");
 						che();
 						$(".contentLi").find("#user").remove();
 						$(".contentLi").append("<li><a href='ddd'>"+data.username+"</a></li>");
-						$(".contentLi").append("<li><a href='/Index/Login/logout'>退出</a></li>");
-						$(".hideBar").css("height","360px");
-						$("nav.nav .hideBar ul li .searchBar").css("width","500px");	
+						$(".contentLi").append("<li><a href='/index.php/Index/Login/logout'>退出</a></li>");
+						$(".hideBar").css("height","200px");	
 					}else {
 						wrongChange();
 						//刷新验证码
@@ -98,8 +95,6 @@ $(function() {
 		}
 		//错误变化
 		function wrongChange() {
-			content.css("height","320px");
-			sub.css("top","180px");	
 			tip.addClass("wrong");
 		}
 		//点击
@@ -128,8 +123,6 @@ $(function() {
 		//关闭登录窗口
 		$("#shelter .conshelter .closed").click(function() {
 			$("#shelter").css("display","none");
-			content.css("height","300px");
-			sub.css("top","160px");
 			che();
 			user.val("");
 			pw.val("");
@@ -146,8 +139,6 @@ $(function() {
 			var res = $("#shelter .resContent");
 			var loginBtn = $("#shelter .tool .login");
 			var resBtn = $("#shelter .tool .register");
-			var idname = $("#shelter .resContent ul li .idname");
-			var idpw = $("#shelter .resContent ul li .idpw");
 			var reuser = $("#shelter .resContent ul li .username");
 			var repw = $("#shelter .resContent ul li .password");
 			var mail = $("#shelter .resContent .mail");
@@ -158,9 +149,8 @@ $(function() {
 				$(this).addClass("choosed");
 				resBtn.removeClass("choosed");
 				res.css("display","none");
+				$("#shelter .resContent ul li input").removeClass("wrongput");
 				loginc.css("display","inline-block");
-				content.css("height","300px");
-				sub.css("top","160px");
 				che();
 				user.val("");
 				pw.val("");
@@ -171,11 +161,9 @@ $(function() {
 				$(this).addClass("choosed");
 				loginBtn.removeClass("choosed");
 				loginc.css("display","none");
+				$("#shelter .loginContent ul li input").removeClass("wrongput");;
 				res.css("display","inline-block");
-				content.css("height","350px");
 				che();
-				idname.val("");
-				idpw.val("");
 				reuser.val("");
 				repw.val("");
 				mail.val("");
