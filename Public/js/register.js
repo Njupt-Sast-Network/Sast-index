@@ -7,7 +7,7 @@ $(function() {
 		var ver = $("#shelter .resContent ul li .ver");
 		var tip = $("#shelter .resContent .tip2");//错误提示
 		var content = $("#shelter .conshelter");
-		var x,y,z,a,b,c;//通过条件		
+		var x,y,z,b;//通过条件		
 		//数据验证
 		function check(obj,fun) {
 			if(!fun(obj.val())) {
@@ -18,12 +18,13 @@ $(function() {
 		}
 		function che() {
 			$("#shelter .resContent ul li input").removeClass('wrongput');
+			tip.text("");
 		}
 		//ajax提交
 		function subm() {
 			$.ajax({
 				type: "POST",
-				url:"/index/Index/login/index",
+				url:"/index.php/Index/Login/login",
 				data: {
 					username : user.val(),
 					password : pw.val(),
@@ -40,6 +41,9 @@ $(function() {
 						$(".contentLi").append("<li><a href='/index.php/Index/Login/logout'>退出</a></li>");
 						$(".hideBar").css("height","200px");
 					}else {		
+						wrongChange();
+						//刷新验证码
+						fleshVerify(document.getElementById('VerifyImg'));
 						tip.addClass("wrong").text(data.message);
 						// console.log("1234567890");
 					}	
@@ -51,7 +55,7 @@ $(function() {
 		function endCheck() {
 			//验证邮箱
 			b =check(mail,function(val){
-				if(val.match(/\w+@\w+.\w/)&&val.length>8&&val.length<25){
+				if(val.match(/\w+@\w+.\w/)){
 					return true;
 				}
 				else return false;
@@ -87,9 +91,9 @@ $(function() {
 				pw.addClass("wrongput");
 				wrongChange();
 				tip.text("密码格式错误！")
-			}else if (!c) {
+			}else if (!b) {
 				che();
-				ver.addClass("wrongput");
+				mail.addClass("wrongput");
 				wrongChange();
 				tip.text("邮箱格式错误！");
 			}else if (!z) {
@@ -98,7 +102,7 @@ $(function() {
 				wrongChange();
 				tip.text("验证码格式错误！");
 			}
-			if (x&&y&&z&&a&&b&&c) {
+			if (x&&y&&z&&b) {
 				che();
 				subm();
 			}
@@ -119,15 +123,71 @@ $(function() {
 			}
 		}
 		user.keyup(function(e) {
+			x = check(user,function(val) {
+				if(val.match(/^\S+$/)&&val.length>=3&&val.length<=16){
+					return true;
+				}
+				else return false;
+			});
+			if(!x) {
+				che();
+				user.addClass("wrongput");
+				wrongChange();
+				tip.text("用户名格式错误！")
+			}else {
+				che();
+			}
 			jianpan(e);
 		})
 		pw.keyup(function(e) {
+			y = check(pw,function(val){
+				if(val.match(/^\S+$/)&&val.length>=6&&val.length<=16){
+					return true;
+				}
+				else return false;
+			});
+			if(!y){
+				che();
+				pw.addClass("wrongput");
+				wrongChange();
+				tip.text("密码格式错误！")
+			}else {
+				che();
+			}
 			jianpan(e);
 		});
 		ver.keyup(function(e) {
+			z = check(ver,function(val){
+				if(val.length == 4){
+					return true;
+				}
+				else return false;
+			});
+			if (!z) {
+				che();
+				ver.addClass("wrongput");
+				wrongChange();
+				tip.text("验证码格式错误！");
+			}else {
+				che();
+			}
 			jianpan(e);
 		});
 		mail.keyup(function(e) {
+			b =check(mail,function(val){
+				if(val.match(/\w+@\w+.\w/)){
+					return true;
+				}
+				else return false;
+			});
+			if (!b) {
+				che();
+				mail.addClass("wrongput");
+				wrongChange();
+				tip.text("邮箱格式错误！");
+			}else {
+				che();
+			}
 			jianpan(e);
 		});
 	}
