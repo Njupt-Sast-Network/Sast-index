@@ -174,21 +174,21 @@ nav.nav .hideBar ul li .searchBar:focus {
 	}
 }
 /*最小宽度*/
-@media screen and (max-width: 994px) {
+@media screen and (max-width: 1200px) {
 	body {
-		min-width: 1300px;
+		min-width: 1240px;
 	}
 	#myCarousel {
-		min-width: 1300px;
+		min-width: 1240px;
 	}
 	.nav {
-		min-width: 1300px;
+		min-width: 1240px;
 	}
 	.sectionOne {
-		width: 1300px;
+		width: 1240px;
 	}
 	.sectionOne .moreContainer {
-		width: 1170px;
+		width: 1240px;
 		display: inline-block;
 	}
 	.sectionOne .moreContainer .col-md-3 {
@@ -196,7 +196,7 @@ nav.nav .hideBar ul li .searchBar:focus {
 		display: inline-block;
 	}
 	.sectionOne .lessContainer {
-		min-width: 1300px;
+		min-width: 1240px;
 	}
 	.sectionOne .lessContainer .col-md-3 {
 		width: 26%;

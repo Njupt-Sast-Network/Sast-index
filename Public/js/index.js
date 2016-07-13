@@ -1,5 +1,5 @@
 //提交响应式的搜索框
-var sousuo = (function() {
+/*var sousuo = (function() {
 	var sou = $("nav.nav .hideBar ul li .searchBar");
 	var suo = $("nav.nav .hideBar ul li .glyphicon-search"),
 	data = null;
@@ -9,7 +9,7 @@ var sousuo = (function() {
 		data = sou.val();
 			if(data != "") {
 				data.replace(reg,"");
-				$.get("此处是提交地址",data);
+				$.post("此处是提交地址",data);
 			}else {
 				alert("搜索信息不能为空");
 			}
@@ -21,13 +21,13 @@ var sousuo = (function() {
 			data = sou.val();
 			if(data != "") {
 				data.replace(reg,"");
-				$.get("此处是提交地址",data);
+				$.post("此处是提交地址",data);
 			}else {
 				alert("搜索信息不能为空");
 			}
 		}
 	})
-})();
+})();*/
 //菜单
 var menu = (function() {
 	var menuBtn = $(".nav .menu"),

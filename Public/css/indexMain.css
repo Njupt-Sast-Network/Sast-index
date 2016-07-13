@@ -10,13 +10,13 @@ section.sectionOne {
 .moreContainer .title {
 	margin-left: 20px;
 	width: 260px;	
-	padding-top: 6px;
-	padding-bottom: 6px;
+	padding-top: 8px;
+	padding-bottom: 4px;
 	line-height: 30px;
-	color: #337C67;
+	color: #235ea7;
 	font-size: 26px;
 	font-weight: bold;
-	box-shadow: 0 0 8px #458E41
+	box-shadow: 0 0 8px #235ea7
 }
 .moreContainer .title .ii  {
 	margin-right: 10px
@@ -26,16 +26,17 @@ section.sectionOne {
 }
 .moreContainer .more a {
 	font-size: 12px;
-	color: #337C67;
+	color: #235ea7;
 }
 section.sectionOne .row2 {
-	margin-top: 40px;
+	margin-top: 60px;
 }
 section.sectionOne .row2 .col-md-3 {
 	margin-left: 6.25%;
 	overflow: hidden;
 	box-shadow: 0px 0px 5px #929292;
 	transition:all 0.3s;
+	border-radius: 20px;
 }
 section.sectionOne .row2 .col-md-3:hover {
 	box-shadow: 0px 0px 10px #222;
@@ -43,14 +44,16 @@ section.sectionOne .row2 .col-md-3:hover {
 }
 section.sectionOne .row2 .col-md-3 h4 {
 	width: 100%;
-	height: 30px;
-	line-height: 30px;
+	height: 40px;
+	line-height: 40px;
 	padding-right: 10px;
 	color: #fff;
 	font-size: 16px;
 	padding-left: 10px;
 	overflow: hidden;
-	background-color: rgba(043,121,096,0.8);
+	margin-top: 20px;
+	margin-bottom: 20px; 
+	background-color: #235ea7;
 }
 section.sectionOne .row2 .col-md-3 .image {
 	width: 100%;
@@ -59,7 +62,7 @@ section.sectionOne .row2 .col-md-3 .image {
 }
 section.sectionOne .row2 .col-md-3 .image img {
 	width: 100%;
-	height: auto;
+	height: 140px;
 	transition:all .3s;
 }
 section.sectionOne .row2 .col-md-3 .image img:hover {
@@ -67,23 +70,31 @@ section.sectionOne .row2 .col-md-3 .image img:hover {
 	transition:all .3s;
 }
 section.sectionOne .row2 .col-md-3 .introduce {
-	font-size: 13px;
-	margin-top:10px;
-	height: 126px;
-	text-indent: 26px;
+	font-size: 14px;
+	margin-top:20px;
+	margin-bottom: 20px;
+	margin-left: 10px;
+	text-indent: 28px;
+	height: 157px;
 	text-align: justify;
 	overflow: hidden;
-	white-space:wrap;
- 	text-overflow:ellipsis; 
+ 	text-overflow:ellipsis;
+ 	display: -webkit-box;
+ 	-webkit-line-clamp:8;
+ 	-webkit-box-orient:vertical; 
 }
 section.sectionOne .row2 .col-md-3 a {
 	padding-left: 10px;
-	border-left:6px solid #2B7960;
+	border-left:6px solid #fab005;
 	font-weight: bold;
 	color: #000;
+	display: block;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	cursor: pointer;
 }
 section.sectionOne .row2 .col-md-3 a:hover {
-	color: #2B7960;
+	color: #235ea7;
 	text-decoration: none;
 	transition:all .3s;
 }
@@ -93,16 +104,17 @@ section.sectionOne .row3 .col-md-3 {
 }
 section.sectionOne .row3 .col-md-3 span {
 	font-size: 180px;
-	color: #2B7960;
+	color: #235ea7;
 	opacity: 0;
 }
 section.sectionOne .row3 .col-md-3 p {
 	font-size: 40px;
-	color: #2B7960;
-	margin-top: 20px;
+	color: #fab005;
 	letter-spacing: 5px;
 	font-family: "微软雅黑";
 	opacity: 0;
+	margin-top: 50px;
+	font-weight: bold;
 }
 #hui {
 	position: fixed;
@@ -113,17 +125,17 @@ section.sectionOne .row3 .col-md-3 p {
 	font-size: 40px;
 	line-height: 55px;
 	text-align: center;
-	background-color: rgba(051,124,103,0.5);
+	background-color: #235ea7;
 	color: #fff;
 	cursor: pointer;
 	transition:all .5s;
 	display: none;
+	z-index: 500;
 }
 #hui:hover {
 	transition:all .5s;
 	text-shadow:0 2px 10px #222;
 	box-shadow: 0 0 6px #ACACAC;
-	background-color: rgba(051,124,103,1);
 }
 /*照片墙*/
 section.sectionOne .row4 {
@@ -172,7 +184,7 @@ section.sectionOne .row4 .Box .smallBox .min {
 }
 section.sectionOne .row4 .introduce {
 	position: absolute;
-	background-color: #52907C;
+	background-color: #235ea7;
 	color: #fff;
 	padding:6px;
 	display: none;
@@ -221,7 +233,7 @@ section.sectionOne .row4 .zhe {
 	height: 100%;
 	background-color: rgba(244,244,244,0.5);
 	z-index: 15;
-	color: #52907C;
+	color: #235ea7;
 	font-weight: bold;
 	font-size: 60px;
 }
@@ -235,6 +247,91 @@ section.sectionOne .row4 .zhe span {
 section.sectionOne .row4 .chuxian {
 	display: inline-block;
 }
+/*sast介绍*/
+section.sectionOne .row5 {
+	margin-top: 80px;
+	opacity: 0;
+}
+section.sectionOne .row6 {
+	margin-top: 120px;
+	position: relative;
+}
+section.sectionOne .row6 img{
+	margin-top: 90px;
+	margin-right: 2%;
+	width: 17%;
+	height: auto;
+	border-radius: 50%;
+}
+section.sectionOne .row6 .ani0 {
+	animation: myani 1s;
+	-webkit-animation: myani 1s;
+}
+section.sectionOne .row6 .ani1 {
+	animation: myani 1s;
+	-webkit-animation: myani 1s;
+	animation-delay:.5s;
+	-webkit-animation-delay:.5s; /* Safari 和 Chrome */
+}
+section.sectionOne .row6 .ani2 {
+	animation: myani 1s;
+	-webkit-animation: myani 1s;
+	animation-delay:1s;
+	-webkit-animation-delay:1s; /* Safari 和 Chrome */
+}
+section.sectionOne .row6 .ani3 {
+	animation: myani 1s;
+	-webkit-animation: myani 1s;
+	animation-delay:1.5s;
+	-webkit-animation-delay:1.5s; /* Safari 和 Chrome */
+}
+section.sectionOne .row6 .ani4 {
+	animation: myani 1s;
+	-webkit-animation: myani 1s;
+	animation-delay:2s;
+	-webkit-animation-delay:2s; /* Safari 和 Chrome */
+}
+section.sectionOne .row6 .ani5 {
+	animation: myani 1s;
+	-webkit-animation: myani 1s;
+	animation-delay:2.5s;
+	-webkit-animation-delay:2.5s; /* Safari 和 Chrome */
+}
+section.sectionOne .row6 .ani6 {
+	animation: myani 1s;
+	-webkit-animation: myani 1s;
+	animation-delay:3s;
+	-webkit-animation-delay:3s; /* Safari 和 Chrome */
+}
+section.sectionOne .row6 .ani7 {
+	animation: myani 1s;
+	-webkit-animation: myani 1s;
+	animation-delay:3.5s;
+	-webkit-animation-delay:3.5s; /* Safari 和 Chrome */
+}
+section.sectionOne .row6 .ani8 {
+	animation: myani 1s;
+	-webkit-animation: myani 1s;
+	animation-delay:4s;
+	-webkit-animation-delay:4s; /* Safari 和 Chrome */
+}
+section.sectionOne .row6 .ani9 {
+	animation: myani 1s;
+	-webkit-animation: myani 1s;
+	animation-delay:4.5s;
+	-webkit-animation-delay:4.5s; /* Safari 和 Chrome */
+}
+@keyframes myani {
+	0% {transform: scale(1)}
+	50% {transform: scale(0.5)}
+	100%{transform: scale(1)}
+}
+@-webkit-keyframes myani {
+	0% {-webkit-transform: scale(1)}
+	50% {-webkit-transform: scale(0.5)}
+	100%{-webkit-transform: scale(1)}
+}
+/*页脚*/
 section.sectionOne .lessContainer {
 	color: #fff;
 	font-size: 16px;

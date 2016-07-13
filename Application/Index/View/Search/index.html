@@ -135,40 +135,13 @@
 
 								</ul>
 								<ul class="xinwen allUl" style="display: none">
-								<!--
 									<template v-for="item in items">
 									<li>
-										<img class="newsImg" :src="item.imgSrc">
+										<img class="newsImg" src="__PUBLIC__/images/a1.png">
 										<div class="newsList"><a class="newTitle" :href="item.newsHref">{{item.title}}</a>
 										<p class="news">{{item.text}}</p></div>
 									</li>
 									</template>
-								-->
-								<li>
-										<img class="newsImg" src="__PUBLIC__/images/a1.png">
-										<div class="newsList"><a class="newTitle"href="item.newsHref">据说校科协网络部招新啦</a>
-										<p class="news">据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦</p>
-										<p style="float:right;">2016年5月10日</p></div>
-									</li>
-									<li>
-										<img class="newsImg" src="__PUBLIC__/images/a1.png">
-										<div class="newsList"><a class="newTitle"href="item.newsHref">据说校科协网络部招新啦</a>
-										<p class="news">据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦</p>
-										<p style="float:right;">2016年5月10日</p></div>
-									</li>
-									<li>
-										<img class="newsImg" src="__PUBLIC__/images/a1.png">
-										<div class="newsList"><a class="newTitle"href="item.newsHref">据说校科协网络部招新啦</a>
-										<p class="news">据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦</p>
-										<p style="float:right;">2016年5月10日</p></div>
-									</li>
-									<li>
-										<img class="newsImg" src="__PUBLIC__/images/a1.png">
-										<div class="newsList"><a class="newTitle"href="item.newsHref">据说校科协网络部招新啦</a>
-										<p class="news">据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦</p>
-										<p style="float:right;">2016年5月10日</p></div>
-									</li>
-
 								</ul>
 								<ul class="wiki allUl" style="display: none">
 								<!--
@@ -209,7 +182,7 @@
 							<ul class="pageAll" style="width: 100%;text-align: center;">
 								<li class="page" @click="toFirst();">第一页</li>
 								<li class="page" @click="less();">上一页</li>
-								<li class="page" v-for="index in indexs" @click="changeBtn(index)" :class="'choosen': current == item">{{index}}</li>
+								<li class="page" v-for="index in indexs" @click="changeBtn(index)" :class="{'choosen': current == index}">{{index}}</li>
 								<li class="page" @click="add()">下一页</li>
 								<li class="amount">{{current}}/<span class="pages"></span></li>
 							</ul>

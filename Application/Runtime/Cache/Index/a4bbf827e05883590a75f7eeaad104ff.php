@@ -3,31 +3,30 @@
 <head>
 	<meta charset="UTF-8">
 	<title>科协陈列馆</title>
-	<script type="text/javascript" src="/Sast-index/Public/js/vue.js"></script>	
-	<link rel="stylesheet" type="text/css" href="/Sast-index/Public/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="/Sast-index/Public/css/indexTop.css">
-	<link rel="stylesheet" type="text/css" href="/Sast-index/Public/css/login.css">
-	<link rel="stylesheet" type="text/css" href="/Sast-index/Public/css/register.css">
-	<link rel="stylesheet" type="text/css" href="/Sast-index/Public/css/search.css">
+	<script type="text/javascript" src="/Public/js/vue.js"></script>	
+	<link rel="stylesheet" type="text/css" href="/Public/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/Public/css/indexTop.css">
+	<link rel="stylesheet" type="text/css" href="/Public/css/login.css">
+	<link rel="stylesheet" type="text/css" href="/Public/css/register.css">
+	<link rel="stylesheet" type="text/css" href="/Public/css/search.css">
 </head>
 <body>
 		<!--有点坑的导航-->
 	<nav class="nav">
 		<div class="container-fluid">
-		<img src="/Sast-index/Public/images/blogo.png" alt="logo">
+		<img src="/Public/images/blogo.png" alt="logo">
 		<div class="navLi">
 			<ul class="contentLi">
-				<li><a href="/Sast-index/index.php/Index/">首页</a></li>
-				<li><a href="/Sast-index/index.php/Search/">科协陈列馆</a></li>	
+				<li><a href="/index.php/Index/">首页</a></li>
+				<li><a href="/index.php/Search/">科协陈列馆</a></li>	
 				<?php if (!$_SESSION['userinfo']) { ?>				
 				<li class="login" id="user"><a href="javascript:;">登录|注册</a></li>
-				<li><a href="#">关于</a></li>
 				<li><a href="javascript:;"><span class="glyphicon glyphicon-search searchBtn" aria-hidden="true"></span></a></li>
 				<?php }else{ ?>
-				<li><a href="#">关于</a></li>
+								<li><a href='ddd'><?php echo ($_SESSION['userinfo']['username']); ?></a></li>
+				<li><a href="/index.php/Index/Login/logout">退出</a></li>
 				<li><a href="javascript:;"><span class="glyphicon glyphicon-search searchBtn" aria-hidden="true"></span></a></li>
-				<li><a href='ddd'><?php echo ($_SESSION['userinfo']['username']); ?></a></li>
-				<li><a href="/Index/Login/logout">退出</a></li>
+
 				<?php } ?>
 
 			</ul>
@@ -37,22 +36,27 @@
 		</div>
 		<div class="hideBar">
 			<ul class="contentLi">
-				<li><a href="/Sast-index/index.php/Index/">首页</a></li>
-				<li><a href="/Sast-index/index.php/Search/">科协陈列馆</a></li>				
+				<li><a href="/index.php/Index/">首页</a></li>
+				<li><a href="/index.php/Search/">科协陈列馆</a></li>
+				<?php if (!$_SESSION['userinfo']) { ?>	
 				<li id="user" class="willLogin">登录|注册</li>
-				<li><a href="#">关于</a></li>
+				<?php }else{ ?>
+
+								<li><a href='ddd'><?php echo ($_SESSION['userinfo']['username']); ?></a></li>
+				<li><a href="/index.php/Index/Login/logout">退出</a></li>
 				<li>
-					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-					<input type="text" class="searchBar" placeholder="按下Enter...Search..."></input>
+					<!--<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+					<input type="text" class="searchBar" placeholder="按下Enter...Search..."></input>-->
 				</li>
+				<?php } ?>
 			</ul>
 		</div>
-		<div class="secondSearch" method="get">
-			<form action="">
+		<!--<div class="secondSearch">
+			<form action="" method="post">
 				<input type="text" class="searchBar" placeholder="Search..."></input>
 				<input type="submit" class="sub" value="Submit"></input>
 			</form>
-		</div>
+		</div>-->
 		</div>
 	</nav>
 	<!--登录-->
@@ -72,7 +76,7 @@
 						</li>
 						<li>
 							<input type="text" placeholder="验证码" class="ver">
-							<img src="<?php echo U('Index/Login/getverify',Math.array());?>" alt="验证码" id="Verifyimg" onClick="fleshVerify(this)">
+							<img src="<?php echo U('index.php/Index/Login/getverify',Math.array());?>" alt="验证码" id="Verifyimg" onClick="fleshVerify(this)">
 							<a href="javascript:;" id="change" onClick="fleshVerify(document.getElementById('Verifyimg'))">(点击刷新)</a>
 						</li>
 						<span class="tip"></span>
@@ -98,7 +102,7 @@
 						<li>
 							<input type="text" placeholder="验证码" class="ver">
 							<span class="tip2">验证码格式不对！</span>
-							<img src="<?php echo U('Index/Login/getverify',Math.array());?>" alt="验证码" id="VerifyImg" onClick="fleshVerify(this)"><a href="javascript:;" id="change" onClick="fleshVerify(document.getElementById('VerifyImg'))">(点击刷新)</a>
+							<img src="<?php echo U('index.php/Index/Login/getverify',Math.array());?>" alt="验证码" id="VerifyImg" onClick="fleshVerify(this)"><a href="javascript:;" id="change" onClick="fleshVerify(document.getElementById('VerifyImg'))">(点击刷新)</a>
 						</li>
 						<button class="sub">登录</button>
 					</ul>
@@ -108,7 +112,7 @@
 	<script>
 	function fleshVerify(img){ //重载验证码
 		var time = new Date().getTime();
-		img.src='<?php echo U("Index/Login/getverify",array());?>'
+		img.src='<?php echo U("index.php/Index/Login/getverify",array());?>'
 	}
 	</script>
 	<div class="findS">
@@ -172,7 +176,7 @@
 									</template>
 									-->
 									<li>
-										<img src="/Sast-index/Public/images/img3.jpg" alt="用户头像" class="taolunImg"><span class="from">来自</span><a class="username">小泉花阳</a>
+										<img src="/Public/images/img3.jpg" alt="用户头像" class="taolunImg"><span class="from">来自</span><a class="username">小泉花阳</a>
 										<p class="problem">请问thinkphp中M函数的作用是什么？</p>
 										<div class="caozuo">
 											<a href="javascript:;" class="ping">评论</a>&nbsp;&nbsp;
@@ -187,7 +191,7 @@
 										</div>
 									</li>
 									<li>
-										<img src="/Sast-index/Public/images/img3.jpg" alt="用户头像" class="taolunImg"><span class="from">来自</span><a class="username">小泉花阳</a>
+										<img src="/Public/images/img3.jpg" alt="用户头像" class="taolunImg"><span class="from">来自</span><a class="username">小泉花阳</a>
 										<p class="problem">请问thinkphp中M函数的作用是什么？</p>
 										<div class="caozuo">
 											<a href="javascript:;" class="ping">评论</a>&nbsp;&nbsp;
@@ -202,7 +206,7 @@
 										</div>
 									</li>
 									<li>
-										<img src="/Sast-index/Public/images/img3.jpg" alt="用户头像" class="taolunImg"><span class="from">来自</span><a class="username">小泉花阳</a>
+										<img src="/Public/images/img3.jpg" alt="用户头像" class="taolunImg"><span class="from">来自</span><a class="username">小泉花阳</a>
 										<p class="problem">请问thinkphp中M函数的作用是什么？</p>
 										<div class="caozuo">
 											<a href="javascript:;" class="ping">评论</a>&nbsp;&nbsp;
@@ -217,7 +221,7 @@
 										</div>
 									</li>
 									<li>
-										<img src="/Sast-index/Public/images/img3.jpg" alt="用户头像" class="taolunImg"><span class="from">来自</span><a class="username">小泉花阳</a>
+										<img src="/Public/images/img3.jpg" alt="用户头像" class="taolunImg"><span class="from">来自</span><a class="username">小泉花阳</a>
 										<p class="problem">请问thinkphp中M函数的作用是什么？</p>
 										<div class="caozuo">
 											<a href="javascript:;" class="ping">评论</a>&nbsp;&nbsp;
@@ -234,40 +238,13 @@
 
 								</ul>
 								<ul class="xinwen allUl" style="display: none">
-								<!--
 									<template v-for="item in items">
 									<li>
-										<img class="newsImg" :src="item.imgSrc">
+										<img class="newsImg" src="/Public/images/a1.png">
 										<div class="newsList"><a class="newTitle" :href="item.newsHref">{{item.title}}</a>
 										<p class="news">{{item.text}}</p></div>
 									</li>
 									</template>
-								-->
-								<li>
-										<img class="newsImg" src="/Sast-index/Public/images/a1.png">
-										<div class="newsList"><a class="newTitle"href="item.newsHref">据说校科协网络部招新啦</a>
-										<p class="news">据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦</p>
-										<p style="float:right;">2016年5月10日</p></div>
-									</li>
-									<li>
-										<img class="newsImg" src="/Sast-index/Public/images/a1.png">
-										<div class="newsList"><a class="newTitle"href="item.newsHref">据说校科协网络部招新啦</a>
-										<p class="news">据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦</p>
-										<p style="float:right;">2016年5月10日</p></div>
-									</li>
-									<li>
-										<img class="newsImg" src="/Sast-index/Public/images/a1.png">
-										<div class="newsList"><a class="newTitle"href="item.newsHref">据说校科协网络部招新啦</a>
-										<p class="news">据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦</p>
-										<p style="float:right;">2016年5月10日</p></div>
-									</li>
-									<li>
-										<img class="newsImg" src="/Sast-index/Public/images/a1.png">
-										<div class="newsList"><a class="newTitle"href="item.newsHref">据说校科协网络部招新啦</a>
-										<p class="news">据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦据说校科协网络部招新啦</p>
-										<p style="float:right;">2016年5月10日</p></div>
-									</li>
-
 								</ul>
 								<ul class="wiki allUl" style="display: none">
 								<!--
@@ -300,7 +277,7 @@
 										<div class="more"><span class="author">作者：sadpig</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="time">2016年5月4日</span></div>
 									</li>
 								</ul>
-							<img src="/Sast-index/Public/images/loading.gif" height="40" width="40" alt="loading..." class="loading" style="display:none;">
+							<img src="/Public/images/loading.gif" height="40" width="40" alt="loading..." class="loading" style="display:none;">
 							<div class="searchTip"><span class="notFind">没有关于“<span class="content"></span>”的搜索结果</span></div>
 						</div>
 						<!--分页-->
@@ -308,7 +285,7 @@
 							<ul class="pageAll" style="width: 100%;text-align: center;">
 								<li class="page" @click="toFirst();">第一页</li>
 								<li class="page" @click="less();">上一页</li>
-								<li class="page" v-for="index in indexs" @click="changeBtn(index)" :class="'choosen': current == item">{{index}}</li>
+								<li class="page" v-for="index in indexs" @click="changeBtn(index)" :class="{'choosen': current == index}">{{index}}</li>
 								<li class="page" @click="add()">下一页</li>
 								<li class="amount">{{current}}/<span class="pages"></span></li>
 							</ul>
@@ -337,11 +314,11 @@
 		</div>
 	</div>
 	
-	<script type="text/javascript" src="/Sast-index/Public/js/jquery.js"></script>
-	<script type="text/javascript" src="/Sast-index/Public/js/bootstrap.js"></script>
-	<script type="text/javascript" src="/Sast-index/Public/js/Login.js"></script>
-	<script type="text/javascript" src="/Sast-index/Public/js/register.js"></script>
-	<script type="text/javascript" src="/Sast-index/Public/js/index.js"></script>
-	<script type="text/javascript" src="/Sast-index/Public/js/search.js"></script>
+	<script type="text/javascript" src="/Public/js/jquery.js"></script>
+	<script type="text/javascript" src="/Public/js/bootstrap.js"></script>
+	<script type="text/javascript" src="/Public/js/Login.js"></script>
+	<script type="text/javascript" src="/Public/js/register.js"></script>
+	<script type="text/javascript" src="/Public/js/index.js"></script>
+	<script type="text/javascript" src="/Public/js/search.js"></script>
 </body>
 </html>

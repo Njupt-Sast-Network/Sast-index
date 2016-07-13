@@ -23,7 +23,7 @@ $(function() {
 		function subm() {
 			$.ajax({
 				type: "POST",
-				url: "/Index/Login/login",
+				url: "/index.php/Index/Login/login",
 				data: {
 					username : user.val(),
 					password : pw.val(),
@@ -51,9 +51,6 @@ $(function() {
 					// console.log(data.valid,data.message);
 					// console.log(data)
 				},
-				error:function(x) {
-					console.log(x);
-				}
 			})
 		}
 		//验证

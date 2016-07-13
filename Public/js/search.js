@@ -143,7 +143,7 @@ function ajaxGet () {
 											 break;
 									case 2 : $(".rowContant ul").hide();
 											 $(".xinwen").show();
-											 //loadContent(index);
+											 loadContent(index);
 											 break;
 									case 3 : $(".rowContant ul").hide();
 											 $(".wiki").show();

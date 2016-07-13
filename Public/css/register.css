@@ -18,7 +18,7 @@
 	padding-bottom: 6px;
 	font-size: 18px;
 	top: 310px;
-	background-color: #3FB192;
+	background-color: #549ce4;
 	outline: none;
 	border: none;
 	color: #fff;
@@ -26,5 +26,5 @@
 }
 #shelter .resContent button:hover {
 	transition:all .2s;
-	background-color: #2A735F;
+	background-color: #1f60a9;
 }

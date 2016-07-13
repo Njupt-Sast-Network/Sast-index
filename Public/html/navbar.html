@@ -8,13 +8,12 @@
 				<li><a href="__ROOT__/index.php/Search/">科协陈列馆</a></li>	
 				<?php if (!$_SESSION['userinfo']) { ?>				
 				<li class="login" id="user"><a href="javascript:;">登录|注册</a></li>
-				<li><a href="#">关于</a></li>
 				<li><a href="javascript:;"><span class="glyphicon glyphicon-search searchBtn" aria-hidden="true"></span></a></li>
 				<?php }else{ ?>
-				<li><a href="#">关于</a></li>
+								<li><a href='ddd'>{$Think.session.userinfo.username}</a></li>
+				<li><a href="__ROOT__/index.php/Index/Login/logout">退出</a></li>
 				<li><a href="javascript:;"><span class="glyphicon glyphicon-search searchBtn" aria-hidden="true"></span></a></li>
-				<li><a href='ddd'>{$Think.session.userinfo.username}</a></li>
-				<li><a href="/Index/Login/logout">退出</a></li>
+
 				<?php } ?>
 
 			</ul>
@@ -25,21 +24,26 @@
 		<div class="hideBar">
 			<ul class="contentLi">
 				<li><a href="__ROOT__/index.php/Index/">首页</a></li>
-				<li><a href="__ROOT__/index.php/Search/">科协陈列馆</a></li>				
+				<li><a href="__ROOT__/index.php/Search/">科协陈列馆</a></li>
+				<?php if (!$_SESSION['userinfo']) { ?>	
 				<li id="user" class="willLogin">登录|注册</li>
-				<li><a href="#">关于</a></li>
+				<?php }else{ ?>
+
+								<li><a href='ddd'>{$Think.session.userinfo.username}</a></li>
+				<li><a href="__ROOT__/index.php/Index/Login/logout">退出</a></li>
 				<li>
-					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-					<input type="text" class="searchBar" placeholder="按下Enter...Search..."></input>
+					<!--<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+					<input type="text" class="searchBar" placeholder="按下Enter...Search..."></input>-->
 				</li>
+				<?php } ?>
 			</ul>
 		</div>
-		<div class="secondSearch" method="get">
-			<form action="">
+		<!--<div class="secondSearch">
+			<form action="" method="post">
 				<input type="text" class="searchBar" placeholder="Search..."></input>
 				<input type="submit" class="sub" value="Submit"></input>
 			</form>
-		</div>
+		</div>-->
 		</div>
 	</nav>
 	<!--登录-->
@@ -95,6 +99,6 @@
 	<script>
 	function fleshVerify(img){ //重载验证码
 		var time = new Date().getTime();
-		img.src='{:U("Index/Login/getverify",array())}'
+		img.src='{:U("index.php/Index/Login/getverify",array())}'
 	}
 	</script>
