@@ -24,7 +24,7 @@ $(function() {
 		function subm() {
 			$.ajax({
 				type: "POST",
-				url:"/index.php/Index/Login/login",
+				url:"/index.php/Index/Login/reg",
 				data: {
 					username : user.val(),
 					password : pw.val(),
