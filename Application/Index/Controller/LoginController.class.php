@@ -39,7 +39,7 @@ class LoginController extends Controller {
 				}else{
 					$loginfo['username'] = $_POST['username'];
 					$loginfo['password'] = md5($_POST['password']);
-					$loginfo['email'] = $_POST['email'];
+					$loginfo['mail'] = $_POST['email'];
 					$test['username'] =  $_POST['username'];
 					if (!($info = M('user') -> where($test) -> find())){  // check if user is exist
 					$info = D("user");
