@@ -1,9 +1,3 @@
-var searchList = new Vue({
-	el:'.filter',
-	data:{
-		selected:'1'
-	}
-});
 //作品组件
 var zuoTemplate = new Vue({
 	el:".zuopin",
@@ -92,24 +86,16 @@ loadContent(0);
 //传输结果
 ajaxGet();
 function ajaxGet () {
-	var val = null,
-	str = searchList.selected.toString(),
-	putIn = $("div.findS .put"),
+	var putIn = $("div.findS .put"),
 	sub = $("div.findS .btn");
-	if ( str === "关键字") {
-		val = 1;
-	}else {
-		val = 2;
-	}
 	putIn.keyup(function(event) {
 		var keycode = event.which;
 		if (keycode == 13) {
-			loadContent(0);
+			loadContent(pageTemplate.type);
 		}
 	});	
 	sub.click(function() {
-		loadContent(0);
-		
+		loadContent(pageTemplate.type);
 	});
 }
 //动态请求
@@ -130,8 +116,9 @@ function ajaxGet () {
 							if(!e.classList.contains("choose")) {
 								$(".contant .rowBiggest .col-md-8 .rowNav ul .choose").removeClass("choose");
 								e.classList.add("choose");
+								pageTemplate.current = 1;
 								var index = $(".contant .rowBiggest .col-md-8 .rowNav ul li").index(e);	
-								switch (index) {
+								switch(index) {
 									//此处只是为了测试前端，，，，真正使用之后会用ajax请求完成数据的切换
 									case 0 : $(".rowContant ul").hide();
 											 $(".zuopin").show();
@@ -206,32 +193,23 @@ function loadContent(index) {
 }
 //分页函数
 function paging(count,index) {
+	
 	//获取总条数的dom
 	var total = $(".rowTip .number");
 	//获取分页dom的父元素
 	var pageParent = $(".pageAll");
 	total.text(count);
-	if(count == 0) {
-		pageTemplate.current = 0;
-	}
 	var pages = Math.ceil(count/7);
+	if(count == 0) {
+		pageTemplate.current = 1;
+		pages = 1;
+	}	
 	//此处可优化
 	$(".pageAll .pages").text(pages);
 	pageTemplate.all = count;
 	pageTemplate.pages = pages;
 	pageTemplate.type = index;
 }
-//关于分页的选中
-(function() {
-	var a = $(".pageAll");
-	$(".pageAll .current").parent().addClass("choose");
-	$(document).on("click",a,function() {
-		if(!$(this).hasClass(".choose")) {
-			$(".pageAll .choose").removeClass("choose");
-			$(this).removeClass("page").addClass("choose");
-		}
-	})
-})();
 //右边热搜的滚动
 (function() {
 	var rightRow = $(".contant .rowBiggest .col-md-3 .rightRow");
@@ -243,6 +221,7 @@ function paging(count,index) {
 			rightRow.removeClass("fix");		}
 	})
 })();
+//评论收起展开
 (function() {
 	var openComment = $(".contant .rowBiggest .col-md-8 .rowContant .taolun .open"),
 	count = true;

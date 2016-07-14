@@ -17,19 +17,12 @@ div.findS .filter {
 	position: absolute;
 	left: 50%;
 	top: 140px;
-	margin-left: -360px;
+	margin-left: -450px;
 }
 div.findS .same {
 	height: 40px;
 	position: absolute;
 	top: 0;	
-}
-div.findS .choice {
-	width: 100px;
-	font-size: 16px;
-	box-shadow: 0 0 8px #000;
-	padding-left:16px;
-	padding-bottom: 3px;
 }
 div.findS .put {
 	width: 500px;
@@ -41,14 +34,14 @@ div.findS .put {
 div.findS .btn {
 	width: 100px;
 	left: 620px;
-	background-color: #337D69;
+	background-color: #1f60a9;
 	color: #fff;
 	font-size: 18px;
 	border-radius: 0;
 	transition:all .5s;
 }
 div.findS .btn:hover {
-	background-color:#43A58A ;
+	background-color:#549ce4;
 	transition:all .5s;
 }
 div.findS .same:focus {
@@ -74,7 +67,7 @@ div.findS .same:focus {
 	border-bottom: 2px solid #D0D6D9;
 }
 .contant .rowBiggest .col-md-8 .rowNav ul .choose{
-	border-bottom: 3px solid #337D69; 
+	border-bottom: 3px solid #fb9d01; 
 }
 .contant .rowBiggest .col-md-3  {
 	margin-left: 8.33%;
@@ -113,7 +106,7 @@ div.findS .same:focus {
 	overflow: hidden;
 }
 .contant .rowBiggest .col-md-8 .rowContant ul li .title:hover {
-	color: #337D69;
+	color:  #1f60a9;
 	text-decoration: none;
 }
 .contant .rowBiggest .col-md-8 .rowContant .loading {
@@ -189,9 +182,9 @@ div.findS .same:focus {
 	display: inline;
 	padding: 8px;
 	font-size: 16px;
-	color: #317865;
+	color:  #1f60a9;
 	margin-left: 8px;
-	border: 1px solid #317865;
+	border: 1px solid  #1f60a9;
 	transition:all .1s;
 	cursor: pointer;
 } 
@@ -200,19 +193,19 @@ div.findS .same:focus {
 	display: inline;
 	padding: 8px;
 	font-size: 16px;
-	color: #317865;
+	color:  #1f60a9;
 	margin-left: 8px;
-	border: 1px solid #317865;
+	border: 1px solid  #1f60a9;
 	transition:all .1s;
 }
 .choosen {
 	text-decoration: none;
-	background-color: #317865;
+	background-color: #1f60a9;
 	color: #fff!important;
 }
 .pageAll .page:hover {
 	text-decoration: none;
-	background-color: #317865;
+	background-color: #1f60a9;
 	color: #fff;
 	transition:all .1s;
 }
@@ -280,17 +273,29 @@ div.findS .same:focus {
 .contant .rowBiggest .col-md-8 .rowContant .xinwen .newTitle {
 	font-size: 20px;
 	color: #000;
+	overflow: hidden;
+ 	text-overflow:ellipsis;
+ 	display: -webkit-box;
+ 	-webkit-line-clamp:1;
+ 	-webkit-box-orient:vertical; 
 	font-weight: bold;
 }
 .contant .rowBiggest .col-md-8 .rowContant .xinwen .newTitle:hover {
-	color: #337D69;
+	color: #1f60a9;
 	text-decoration: none;
+	cursor: pointer;
 }
 .contant .rowBiggest .col-md-8 .rowContant .xinwen .news {
-	font-size: 16px;
+	font-size: 14px;
 	margin-top: 30px;
-	height: 94px;
+	text-align: justify;
+	height: 122px;
 	overflow: hidden;
+}
+.contant .rowBiggest .col-md-8 .rowContant .xinwen .newTime {
+	position: absolute;
+	top: 280px;
+	left: 120px;
 }
 /*wiki*/
 .contant .rowBiggest .col-md-8 .rowContant .wiki .wikiTitle {
@@ -327,6 +332,9 @@ div.findS .same:focus {
 	display: none;
 }
 @media screen and (max-width : 1200px) {
+	nav.nav {
+		min-width: 100%!important;
+	}
 	.contant .rowBiggest .col-md-3 .rightRow {
 		display: none;
 	}
@@ -336,18 +344,18 @@ div.findS .same:focus {
 }
 @media screen and (max-width : 800px) {
 	nav.nav {
-		width: 820px;
+		min-width: 820px!important;
 	}
 	.findS {
-		width: 820px;
+		min-width: 820px;
 	}
 	.contant .rowBiggest {
-		width: 800px;
+		min-width: 820px;
 	}
 	.contant .rowBiggest .col-md-8 {
-		width: 100%;
+		min-width: 820px;
 	}
 	.foot {
-		width: 820px;
+		min-width: 820px;
 	}
 }
