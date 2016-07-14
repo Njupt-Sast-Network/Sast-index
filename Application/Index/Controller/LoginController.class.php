@@ -11,7 +11,7 @@ class LoginController extends Controller {
 					$message = '验证码错误';
 				}else{
 					$loginfo['username'] = $_POST['username'];
-					$loginfo['password'] = $_POST['password'];
+					$loginfo['password'] = md5($_POST['password']);
 					if ($info = M('user') -> where($loginfo) -> find()) {
 						$valid = true;
 						unset($info['password']);
@@ -24,6 +24,47 @@ class LoginController extends Controller {
 			}
 		}
 	$data = session('userinfo');
+	$data['valid'] = $valid;
+	$data['message'] = $message;
+	$this->ajaxReturn($data);
+	}
+
+		public function reg(){
+					if (!session('userinfo')) {
+			if (IS_POST) {
+				$loginfo['verify']=$_POST['verify'];
+				if (!check_verify($loginfo["verify"])) {
+					$valid = false;
+					$message = '验证码错误';
+				}else{
+					$loginfo['username'] = $_POST['username'];
+					$loginfo['password'] = md5($_POST['password']);
+					$loginfo['email'] = $_POST['email'];
+					$test['username'] =  $_POST['username'];
+					if (!($info = M('user') -> where($test) -> find())){  // check if user is exist
+					$info = D("user");
+					if(!$info->create($loginfo)){
+						exit($User->getError());
+					}
+					if($info -> add())
+					 {       //Insert into Datebase Begin
+						if ($info = M('user') -> where($loginfo) -> find()) {
+						$valid = true;
+						unset($info['password']);
+						session('userinfo',$info);
+					}
+				}else{
+						
+						$message = '系统错误';
+						} //End
+					}else{
+						$valid = false;
+						$message = "该用户已存在";
+					}
+				}
+			}
+		}
+			$data = session('userinfo');
 	$data['valid'] = $valid;
 	$data['message'] = $message;
 	$this->ajaxReturn($data);

@@ -17,7 +17,7 @@ class SearchController extends Controller {
 			}
 			$map['_logic'] = 'and';
 		}
-		$Listcard['card'] = $Database -> where($map) ->order('work_id desc') -> page($_POST['page'].',7') -> select();
+		$Listcard['card'] = $Database -> where($map) ->order($or) -> page($_POST['page'].',7') -> select();
 		$Listcard['count'] = $Database -> where($map) -> count();
 		$this -> ajaxReturn($Listcard);	
 	}
@@ -26,18 +26,23 @@ class SearchController extends Controller {
 		switch ($data) {
 		case 0:
 			$table = M('work');
+			$or = "work_id desc";
 			break;
 		case 1:
 			$table = M('talk');
+			$or = "talk_id desc";
 			break;
 		case 2:
 			$table = M('news');
+			$or = "news_id desc";
 			break;
 		case 3:
 			$table = M('wiki');
+			$or = "wiki_id desc";
 			break;
 		default:
 			$table = M('work');
+			$or = "work_id desc";
 			break;
 		}
 		return $table;
