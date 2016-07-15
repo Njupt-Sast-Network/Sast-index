@@ -34,14 +34,14 @@ div.findS .put {
 div.findS .btn {
 	width: 100px;
 	left: 620px;
-	background-color: #1f60a9;
+	background-color: #578db0;
 	color: #fff;
 	font-size: 18px;
 	border-radius: 0;
 	transition:all .5s;
 }
 div.findS .btn:hover {
-	background-color:#549ce4;
+	background-color:#084469;
 	transition:all .5s;
 }
 div.findS .same:focus {
@@ -182,9 +182,9 @@ div.findS .same:focus {
 	display: inline;
 	padding: 8px;
 	font-size: 16px;
-	color:  #1f60a9;
+	color:  #356686;
 	margin-left: 8px;
-	border: 1px solid  #1f60a9;
+	border: 1px solid  #356686;
 	transition:all .1s;
 	cursor: pointer;
 } 
@@ -193,19 +193,19 @@ div.findS .same:focus {
 	display: inline;
 	padding: 8px;
 	font-size: 16px;
-	color:  #1f60a9;
+	color:  #356686;
 	margin-left: 8px;
-	border: 1px solid  #1f60a9;
+	border: 1px solid  #356686;
 	transition:all .1s;
 }
 .choosen {
 	text-decoration: none;
-	background-color: #1f60a9;
+	background-color: #356686;
 	color: #fff!important;
 }
 .pageAll .page:hover {
 	text-decoration: none;
-	background-color: #1f60a9;
+	background-color: #356686;
 	color: #fff;
 	transition:all .1s;
 }

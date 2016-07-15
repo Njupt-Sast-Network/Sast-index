@@ -13,10 +13,10 @@ section.sectionOne {
 	padding-top: 8px;
 	padding-bottom: 4px;
 	line-height: 30px;
-	color: #235ea7;
+	color: #578db0;
 	font-size: 26px;
 	font-weight: bold;
-	box-shadow: 0 0 8px #235ea7
+	box-shadow: 0 0 8px #578db0
 }
 .moreContainer .title .ii  {
 	margin-right: 10px
@@ -26,7 +26,7 @@ section.sectionOne {
 }
 .moreContainer .more a {
 	font-size: 12px;
-	color: #235ea7;
+	color:#356686;
 }
 section.sectionOne .row2 {
 	margin-top: 60px;
@@ -34,7 +34,7 @@ section.sectionOne .row2 {
 section.sectionOne .row2 .col-md-3 {
 	margin-left: 6.25%;
 	overflow: hidden;
-	box-shadow: 0px 0px 5px #929292;
+	box-shadow: 0px 0px 5px #578db0;
 	transition:all 0.3s;
 	border-radius: 20px;
 }
@@ -53,7 +53,7 @@ section.sectionOne .row2 .col-md-3 h4 {
 	overflow: hidden;
 	margin-top: 20px;
 	margin-bottom: 20px; 
-	background-color: #235ea7;
+	background-color: #356686;
 }
 section.sectionOne .row2 .col-md-3 .image {
 	width: 100%;
@@ -85,7 +85,7 @@ section.sectionOne .row2 .col-md-3 .introduce {
 }
 section.sectionOne .row2 .col-md-3 a {
 	padding-left: 10px;
-	border-left:6px solid #fab005;
+	border-left:6px solid #578db0;
 	font-weight: bold;
 	color: #000;
 	display: block;
@@ -104,12 +104,12 @@ section.sectionOne .row3 .col-md-3 {
 }
 section.sectionOne .row3 .col-md-3 span {
 	font-size: 180px;
-	color: #235ea7;
+	color:#356686;
 	opacity: 0;
 }
 section.sectionOne .row3 .col-md-3 p {
 	font-size: 40px;
-	color: #fab005;
+	color: #578db0;
 	letter-spacing: 5px;
 	font-family: "微软雅黑";
 	opacity: 0;
@@ -125,7 +125,7 @@ section.sectionOne .row3 .col-md-3 p {
 	font-size: 40px;
 	line-height: 55px;
 	text-align: center;
-	background-color: #235ea7;
+	background-color: #084469;
 	color: #fff;
 	cursor: pointer;
 	transition:all .5s;
@@ -233,7 +233,7 @@ section.sectionOne .row4 .zhe {
 	height: 100%;
 	background-color: rgba(244,244,244,0.5);
 	z-index: 15;
-	color: #235ea7;
+	color: #356686;
 	font-weight: bold;
 	font-size: 60px;
 }
