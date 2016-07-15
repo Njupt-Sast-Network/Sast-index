@@ -19,6 +19,7 @@ class SearchController extends Controller {
 		}
 		$Listcard['card'] = $Database -> where($map) ->order($or) -> page($_POST['page'].',7') -> select();
 		$Listcard['count'] = $Database -> where($map) -> count();
+		$Listcard['img'] = 
 		$this -> ajaxReturn($Listcard);	
 	}
 
@@ -35,6 +36,7 @@ class SearchController extends Controller {
 		case 2:
 			$table = M('news');
 			$or = "news_id desc";
+			$isimg = 1;
 			break;
 		case 3:
 			$table = M('wiki');
