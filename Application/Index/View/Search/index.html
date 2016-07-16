@@ -87,21 +87,11 @@
 								<ul class="xinwen allUl" style="display: none">
 									<template v-for="item in items">
 									<li>
-										<img class="newsImg" :src="item.url"><p class="newTime">{{item.time}}</p>
-										<div class="newsList"><a class="newTitle" :href="item.newsHref">{{item.title}}</a>
+										<img class="newsImg" src="http://www.sinaimg.cn/dy/slidenews/1_img/2016_28/2841_710705_219235.jpg"><p class="newTime">{{item.timestamp}}</p>
+										<div class="newsList"><a class="newTitle"href="javascript:;" @click="getNews(item.news_id)">{{item.title}}</a>
 										<p class="news">{{item.text}}</p></div>
 									</li>
 									</template>
-										<!--<li>
-										<img class="newsImg" src="http://www.sinaimg.cn/dy/slidenews/1_img/2016_28/2841_710705_219235.jpg"><p class="newTime">2016年5月12日</p>
-										<div class="newsList"><a class="newTitle" :href="">校科协招新通知</a>
-										<p class="news">【来听听创业赛冠军的创业经验吧！】亲爱的柚子们，你们是否有想要创业的想法呢？是否想要听取大神们的创业心得呢？机会来了！6月22日下午2点，著名的“草根”创业者——李获鼎将在南京黑马全球路演中心，放大成功者的声音，让更多在成为创业黑马路上的人收获宝贵的经验。【来听听创业赛冠军的创业经验吧！】亲爱的柚子们，你们是否有想要创业的想法呢？是否想要听取大神们的创业心得呢？机会来了！6月22日下午2点，著名的“草根”创业者——李获鼎将在南京黑马全球路演中心，放大成功者的声音，让更多在成为创业黑马路上的人收获宝贵的经验。</p></div>
-									</li>
-										<li>
-										<img class="newsImg" src="http://www.sinaimg.cn/dy/slidenews/1_img/2016_28/2841_710705_219235.jpg">
-										<div class="newsList"><a class="newTitle" :href="item.newsHref">{{item.title}}</a>
-										<p class="news">{{item.text}}</p></div>
-									</li>-->
 								</ul>
 								<ul class="wiki allUl" style="display: none">
 								<!--
@@ -120,8 +110,8 @@
 						<!--分页-->
 						<div class="row" style="margin-bottom:30px;">
 							<ul class="pageAll" style="width: 100%;text-align: center;">
-								<li class="page" @click="toFirst();">第一页</li>
-								<li class="page" @click="less();">上一页</li>
+								<li class="page" @click="toFirst()">第一页</li>
+								<li class="page" @click="less()">上一页</li>
 								<li class="page" v-for="index in indexs" @click="changeBtn(index)" :class="{'choosen': current == index}">{{index}}</li>
 								<li class="page" @click="add()">下一页</li>
 								<li class="amount">{{current}}/<span class="pages"></span></li>
@@ -151,19 +141,10 @@
 		</div>
 	</div>
 	
-	<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/js/bootstrap.js"></script>
+	<script src="__PUBLIC__/js/jquery.js"></script>
+	<script src="__PUBLIC__/js/bootstrap.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/js/Login.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/js/register.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/js/search.js"></script>
-	<script type="text/javascript">
-	(function() {
-			var menuBtn = $(".nav .menu"),
-			hideBar = $(".nav .hideBar");
-			menuBtn.click(function() {
-			hideBar.slideToggle();
-		});
-	})()
-	</script>
-</body>
+	</body>
 </html>

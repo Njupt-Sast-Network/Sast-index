@@ -17,6 +17,11 @@ var xinwenTemplate = new Vue({
 	el:".xinwen",
 	data: {
 		items:[],
+	},
+	methods:{
+		getNews: function(id) {
+			window.location.href = "http://127.0.0.1/index.php/Index/View?type=2&id="+id
+		}
 	}
 });
 //wiki组件
@@ -42,14 +47,30 @@ var pageTemplate = new Vue({
 		pages:0,
 	},
 	computed: {
-		indexs: function() {
-			//数组的关系
-			var pageArry = [];
-			for(var i = 0; i < this.pages;i++) {
-				pageArry.push(i+1);
-			}	
-			return pageArry;
-		} 
+		indexs: function(){
+              var left = 1
+              var right = this.pages
+              var ar = [] 
+              if(this.pages>= 11){
+                if(this.current > 5 && this.current < this.pages-4){
+                        left = this.current - 5
+                        right = this.current + 4
+                }else{
+                    if(this.current<=5){
+                        left = 1
+                        right = 10
+                    }else{
+                        right = this.pages
+                        left = this.pages -9
+                    }
+                }
+             }
+            while (left <= right){
+                ar.push(left)
+                left ++
+            }   
+            return ar
+           },
 	},
 	methods: {
 		changeBtn: function(item) {

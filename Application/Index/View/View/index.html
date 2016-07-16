@@ -2,10 +2,84 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Test</title>
+	<title>{$title}</title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/indexTop.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/login.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/register.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/news.css">
 </head>
 <body>
-	<br/>
-	{$title}
+	<include file="./Public/html/navbar.html"/>
+	<div class="contant">
+		<div class="container">
+		<div class="row rowBiggest">
+			<div class="col-md-8">
+				<div class="row">
+					<div class="newsContent">
+						<div class="easyNews">
+							<div class="newsTitle" style="margin-bottom: 30px"><h1>科协招新开始啦！！！</h1></div>
+							<div class="newsTime"><span>时间：</span></div>
+							<div class="newsAuthor"><span>来自：</span>{{此处写作者}}</div>
+							<div class="keyWords"><span>关键词：</span></div>
+						</div>
+						<div class="more">
+							{{此处是具体内容}}
+						</div>
+						<div class="row like" align="center">
+							<span class="glyphicon glyphicon-thumbs-up" style="font-size: 40px;border-radius: 50%;border:1px solid #7b7b7b;padding: 20px;cursor: pointer;box-shadow: 0 0 5px gray;margin-bottom: 60px;"></span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="comment">
+						<h4>我来说几句</h4>
+						<textarea class="mine" placeholder="请输入想评论的内容..."></textarea>
+						<br>	
+						<div class="row" style="margin-top: 10px;margin-left: 10px;font-size: 14px;">
+							<span class="all">已评论数</span><span class="num">(7)</span>
+							<button class="subm">登录后评论</button>
+						</div>
+						<br>
+					</div>
+					<!--已评论部分-->
+					<div class="commeted">
+						
+					</div>
+				</div>
+			</div>
+			<div class="col-md-1"></div>
+			<div class="col-md-3">
+				<div class="row rightRow">
+					<div class="title">最新动态</div>
+					<div class="newNew">
+						<ol>
+							<li style="padding-top: 30px"><a href="">科协招新开始啦！</a></li>
+							<li><a href="">科协招新开始啦！</a></li>
+							<li><a href="">科协招新开始啦！</a></li>
+							<li><a href="">科协招新开始啦！</a></li>
+							<li><a href="">科协招新开始啦！</a></li>
+							<li><a href="">科协招新开始啦！</a></li>
+							<li><a href="">科协招新开始啦！</a></li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		<div class="container-fluid foot" style="background-color: #084469;">
+			<div class="row">
+				<p style="color:#fff;margin-top:4px;margin-left:20px;">Copyright &copy;校科协网络部  github:https://github.com/Njupt-Sast-Network</p>
+			</div>
+		</div>
+	</div>
 </body>
+	<script src="__PUBLIC__/js/jquery.js"></script>
+	<script src="__PUBLIC__/js/bootstrap.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/Login.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/register.js"></script>
+	<script type="text/javascript">
+	
+	
+	</script>
 </html>

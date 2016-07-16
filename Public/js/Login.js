@@ -1,3 +1,10 @@
+(function() {
+			var menuBtn = $(".nav .menu"),
+			hideBar = $(".nav .hideBar");
+			menuBtn.click(function() {
+			hideBar.slideToggle();
+		});
+	})();
 $(function() {
 	var login = function() {
 		var user = $("#shelter .loginContent ul li .username");

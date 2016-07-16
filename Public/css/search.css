@@ -1,6 +1,3 @@
-body {
-	font-family: "Microsoft Yahei";
-}
 .findS {
 	position: absolute;
 	top: 0;
@@ -9,9 +6,6 @@ body {
 	background: url(../images/search.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
-}
-nav.nav .navLi ul li:hover {
-	background-color: #000 !important;
 }
 div.findS .filter {
 	position: absolute;
@@ -262,6 +256,7 @@ div.findS .same:focus {
 }
 /*新闻区样式*/
 .contant .rowBiggest .col-md-8 .rowContant .xinwen li {
+	position: relative;
 	display: flex;
 	display: -webkit-flex;
 }
@@ -279,6 +274,7 @@ div.findS .same:focus {
  	-webkit-line-clamp:1;
  	-webkit-box-orient:vertical; 
 	font-weight: bold;
+	text-decoration: none;
 }
 .contant .rowBiggest .col-md-8 .rowContant .xinwen .newTitle:hover {
 	color: #1f60a9;
@@ -294,8 +290,8 @@ div.findS .same:focus {
 }
 .contant .rowBiggest .col-md-8 .rowContant .xinwen .newTime {
 	position: absolute;
-	top: 280px;
-	left: 120px;
+	top: 160px;
+	left: 60px;
 }
 /*wiki*/
 .contant .rowBiggest .col-md-8 .rowContant .wiki .wikiTitle {
