@@ -29,7 +29,28 @@ class ViewController extends Controller {
 
 		$id = $or.$_GET['id'];
 		$content = $table -> where($id) -> find();
+		$type = $_GET['type'];
+		$id = $_GET['id'];
+if(session('userinfo')){
+		$data = session('userinfo');
+		$username = $data['username'];
+		$db = M('like');
+		$where = "type=".$type." and id=".$id." and username='".$username."'";
+		$islike = 0;
+		if($abc = $db -> where($where) -> find()){
+			$islike=$abc['islike'];
+		}
+		$this -> assign('islike',$islike);
+	}
+	else
+	{
+		$abc['islike'] = 0;
+		$this -> assign('islike',$abc['islike']);
+	}
 		$this -> assign($content);
+		$this -> assign('type',$type);
+		$this -> assign('id',$id);
+
 		$this -> display();
 	}
 
