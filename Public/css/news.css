@@ -54,7 +54,7 @@ nav.nav {
 }
 .contant .rowBiggest .col-md-8 .newsContent .easyNews {
 	margin-bottom: 50px;
-	border-bottom: 2px dotted #222
+	border-bottom: 2px dotted #d6d6d6;
 }
 .contant .rowBiggest .col-md-8 .newsContent .easyNews span {
 	color: gray;
@@ -128,4 +128,33 @@ nav.nav {
 }
 .contant .rowBiggest .col-md-8 .comment .subm:hover {
 	border: 1px solid #356686;
+}
+/*已评论区*/
+.contant .rowBiggest .col-md-8 .commented .row {
+	border-top:1px solid #d6d6d6;
+	border-bottom:  border-top:1px solid #d6d6d6;
+	padding: 20px;
+	position: relative;
+}
+.contant .rowBiggest .col-md-8 .commented .row .comment_Img {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+}
+.contant .rowBiggest .col-md-8 .commented .row .comment_Time {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	color:gray;
+}
+.contant .rowBiggest .col-md-8 .commented .row .comment_Name {
+	position: absolute;
+	top: 20px;
+	left: 100px;
+}
+.contant .rowBiggest .col-md-8 .commented .row .comment_Container {
+	margin-left: 80px;
+	margin-bottom: 20px;
+	margin-right: 10px;
+	text-align: justify;
 }

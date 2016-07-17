@@ -58,10 +58,10 @@ class ViewController extends Controller {
 		$abc['islike'] = 0;
 		$this -> assign('islike',$abc['islike']);
 	}// 查好了，返回了islike
-	//下面开始写显示前两条评论。
+	//下面开始写显示前三条评论。
 	$comdb = M('comment');
 	$wheretwo = "type=".$type." and id=".$id;
-	$comdata = $comdb -> where($wheretwo) ->order('com_id desc')->limit(2)->select();
+	$comdata = $comdb -> where($wheretwo) ->order('com_id desc')->limit(3)->select();
 	$this -> assign('comdata',$comdata);
 
 	//前两条评论显示完了。
@@ -83,31 +83,30 @@ class ViewController extends Controller {
 
 		$this -> display();
 	}
+//下面是请求更多的评论，一次三条。
+	public function more(){
+		$table = M('comment');
+		if (!$_POST['page']) $_POST['page'] = 1;
+		$where = "type=".$_POST['type']." and id=".$_POST['id'];
+		$page=$_POST['page']+1;
+		$listcard = $table -> where($where) ->page($page.',3') -> select();
+			$this -> ajaxReturn($listcard);	
 
-	private function gettable($data){
-		switch ($data) {
-		case 0:
-			$table = M('work');
-			$or = "work_id =";
-			break;
-		case 1:
-			$table = M('talk');
-			$or = "talk_id =";
-			break;
-		case 2:
-			$table = M('news');
-			$or = "news_id =";
-			break;
-		case 3:
-			$table = M('wiki');
-			$or = "wiki_id =";
-			break;
-		default:
-			$table = M('work');
-			$or = "work_id =";
-			break;
-		}
-		return $table;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	}
 }
 ?>

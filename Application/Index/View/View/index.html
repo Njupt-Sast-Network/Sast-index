@@ -45,8 +45,37 @@
 						<br>
 					</div>
 					<!--已评论部分-->
-					<div class="commeted">
-						测试:{$comdata[0]['content']}
+
+					<div class="commented">
+						<div class="row">
+							<img src="__PUBLIC__/images/img0.jpg" class="comment_Img">
+							<div class="comment_Name">{$comdata[0]['commentor']}</div>
+							<div class="comment_Time">{$comdata[0]['time']}</div>
+							<br>
+							<div class="comment_Container">{$comdata[0]['content']}</div>
+						</div>
+												<div class="row">
+							<img src="__PUBLIC__/images/img0.jpg" class="comment_Img">
+							<div class="comment_Name">{$comdata[1]['commentor']}</div>
+							<div class="comment_Time">{$comdata[1]['time']}</div>
+							<br>
+							<div class="comment_Container">{$comdata[1]['content']}</div>
+						</div>
+							<div class="row">
+							<img src="__PUBLIC__/images/img0.jpg" class="comment_Img">
+							<div class="comment_Name">{$comdata[2]['commentor']}</div>
+							<div class="comment_Time">{$comdata[2]['time']}</div>
+							<br>
+							<div class="comment_Container">{$comdata[2]['content']}</div>
+						</div>
+							<div class="row">
+							<form method="post" action="__ROOT__/index.php/View/more">
+								<input value=33 name='id' type='text'>
+								<input value=2 name='type' type='text'>
+								<input  name='page' type='text'>
+								<input type="submit">
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
