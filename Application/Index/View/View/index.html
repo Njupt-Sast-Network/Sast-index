@@ -44,8 +44,14 @@
 						<br>
 					</div>
 					<!--已评论部分-->
-					<div class="commeted">
-						
+					<div class="commented">
+						<div class="row">
+							<img src="__PUBLIC__/images/img0.jpg" class="comment_Img">
+							<div class="comment_Name">关于风的故事</div>
+							<div class="comment_Time">2016-5-12</div>
+							<br>
+							<div class="comment_Container">这个是空指针错误，把IMG =（ImageView的）findViewById（R.drawable.ic_launcher）;改成IMG =（ImageView的）findViewById（R.id控件名）;就行了这个是空指针错误，把IMG =（ImageView的）findViewById（R.drawable.ic_launcher）;改成IMG =（ImageView的）findViewById（R.id控件名）;就行了这个是空指针错误，把IMG =（ImageView的）findViewById（R.drawable.ic_launcher）;改成IMG =（ImageView的）findViewById（R.id控件名）;就行了</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -83,6 +89,11 @@
 		function someInfo() {
 			var arr = [];
 			var id = {$id},type = {$type},islike = {$islike};
+			if (islike == 0) {
+				islike = false;
+			}else {
+				islike = true;
+			}
 			arr.push(type);
 			arr.push(id);
 			arr.push(islike);
