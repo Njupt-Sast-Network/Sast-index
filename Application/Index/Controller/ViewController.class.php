@@ -58,13 +58,6 @@ class ViewController extends Controller {
 		$abc['islike'] = 0;
 		$this -> assign('islike',$abc['islike']);
 	}// 查好了，返回了islike
-	//下面开始写显示前三条评论。
-	$comdb = M('comment');
-	$wheretwo = "type=".$type." and id=".$id;
-	$comdata = $comdb -> where($wheretwo) ->order('com_id desc')->limit(3)->select();
-	$this -> assign('comdata',$comdata);
-
-	//前两条评论显示完了。
 	//下面开始写评论数
 	$comnumber = $comdb -> where($wheretwo) -> count();
 	$this -> assign('comnumber',$comnumber);
@@ -88,7 +81,7 @@ class ViewController extends Controller {
 		$table = M('comment');
 		if (!$_POST['page']) $_POST['page'] = 1;
 		$where = "type=".$_POST['type']." and id=".$_POST['id'];
-		$page=$_POST['page']+1;
+		$page=$_POST['page'];
 		$listcard = $table -> where($where) ->page($page.',3') -> select();
 			$this -> ajaxReturn($listcard);	
 
