@@ -20,12 +20,13 @@
 				<div class="row">
 					<div class="newsContent">
 						<div class="easyNews">
-							<div class="newsTitle" style="margin-bottom: 30px"><h1>科协招新开始啦！！！</h1></div>
-							<div class="newsTime"><span>时间：</span></div>
-							<div class="newsAuthor"><span>来自：</span></div>
+							<div class="newsTitle" style="margin-bottom: 30px"><h1>{$title}</h1></div>
+							<div class="newsTime"><span>时间：{$timestamp}</span></div>
+							<div class="newsAuthor"><span>来自：{$author}</span></div>
 							<div class="keyWords"><span>关键词：</span></div>
 						</div>
 						<div class="more">
+					{$text}
 						</div>
 						<div class="row like" align="center">
 							<span class="glyphicon glyphicon-thumbs-up" style="font-size: 40px;border-radius: 50%;padding: 20px;cursor: pointer;box-shadow: 0 0 5px gray;margin-bottom: 60px" :class="{'liked' : islike}" @click="ajaxLike();"></span>
@@ -38,14 +39,14 @@
 						<textarea class="mine" placeholder="请输入想评论的内容..."></textarea>
 						<br>	
 						<div class="row" style="margin-top: 10px;margin-left: 10px;font-size: 14px;">
-							<span class="all">已评论数</span><span class="num">(7)</span>
+							<span class="all">已评论数</span><span class="num">({$comnumber})</span>
 							<button class="subm">登录后评论</button>
 						</div>
 						<br>
 					</div>
 					<!--已评论部分-->
 					<div class="commeted">
-						
+						测试:{$comdata[0]['content']}
 					</div>
 				</div>
 			</div>
@@ -55,13 +56,13 @@
 					<div class="title">最新动态</div>
 					<div class="newNew">
 						<ol>
-							<li style="padding-top: 30px"><a href="">科协招新开始啦！</a></li>
-							<li><a href="">科协招新开始啦！</a></li>
-							<li><a href="">科协招新开始啦！</a></li>
-							<li><a href="">科协招新开始啦！</a></li>
-							<li><a href="">科协招新开始啦！</a></li>
-							<li><a href="">科协招新开始啦！</a></li>
-							<li><a href="">科协招新开始啦！</a></li>
+							<li style="padding-top: 30px"><a href="__ROOT__/View?type=2&amp;id={$title1['news_id']}">{$title1['title']}</a></li>
+							<li><a href="__ROOT__/View?type=2&amp;id={$title2['news_id']}">{$title2['title']}</a></li>
+							<li><a href="__ROOT__/View?type=2&amp;id={$title3['news_id']}">{$title3['title']}</a></li>
+							<li><a href="__ROOT__/View?type=2&amp;id={$title4['news_id']}">{$title4['title']}</a></li>
+							<li><a href="__ROOT__/View?type=2&amp;id={$title5['news_id']}">{$title5['title']}</a></li>
+							<li><a href="__ROOT__/View?type=2&amp;id={$title6['news_id']}">{$title6['title']}</a></li>
+							<li><a href="__ROOT__/View?type=2&amp;id={$title7['news_id']}">{$title7['title']}</a></li>
 						</ol>
 					</div>
 				</div>
@@ -83,6 +84,11 @@
 		function someInfo() {
 			var arr = [];
 			var id = {$id},type = {$type},islike = {$islike};
+			if (islike == 0){
+				islike = false;
+			}else{
+				islike = true;
+			}
 			arr.push(type);
 			arr.push(id);
 			arr.push(islike);

@@ -17,34 +17,38 @@ class SearchController extends Controller {
 			}
 			$map['_logic'] = 'and';
 		}
-		$Listcard['card'] = $Database -> where($map) ->order($or) -> page($_POST['page'].',7') -> select();
+		$Listcard['card'] = $Database -> where($map)  -> page($_POST['page'].',7') -> select();
 		$Listcard['count'] = $Database -> where($map) -> count();
-		$Listcard['img'] = 
 		$this -> ajaxReturn($Listcard);	
 	}
 
 	private function gettable($data){
 		switch ($data) {
 		case 0:
-			$table = M('work');
-			$or = "work_id desc";
+					$or = "work_id desc";
+			$table = M('work') ->order($or);
+
 			break;
 		case 1:
-			$table = M('talk');
-			$or = "talk_id desc";
+					$or = "talk_id desc";
+			$table = M('talk') ->order($or);
+
 			break;
 		case 2:
-			$table = M('news');
-			$or = "news_id desc";
+					$or = "news_id desc";
+			$table = M('news') ->order($or);
+
 			$isimg = 1;
 			break;
 		case 3:
-			$table = M('wiki');
-			$or = "wiki_id desc";
+					$or = "wiki_id desc";
+			$table = M('wiki') ->order($or);
+
 			break;
 		default:
-			$table = M('work');
-			$or = "work_id desc";
+					$or = "work_id desc";
+			$table = M('work') ->order($or);
+
 			break;
 		}
 		return $table;

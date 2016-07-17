@@ -71,9 +71,16 @@ class LoginController extends Controller {
 	}
 
 	public function logout(){
-		$Url = I('server.HTTP_REFERER');
+		// $Url = I('server.HTTP_REFERER');
+		$Url = $_SERVER['HTTP_REFERER'];
 		session('userinfo',null);
-		redirect($Url,0,null);
+		// redirect($Url,0,null);
+		if (isset($Url)) 
+{ 
+Header("HTTP/1.1 303 See Other"); 
+Header("Location: $Url"); 
+exit; 
+} 
 	}
 
 	public function getverify(){

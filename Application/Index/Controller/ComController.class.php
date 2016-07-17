@@ -14,9 +14,16 @@ if (session('userinfo'))
 		$data['type'] = $_POST['type'];
 		$data['id'] = $_POST['id'];
 		$data['username'] = $sess['username'];
-		$data['islike'] = true;
+		$data['islike'] = 1;
 		$db = M('like');
-		$db -> data($data) -> add();
+		$where = "type=".$_POST['type']." and id=".$_POST['id']." and username='".$data['username']."'";
+		if(!$db ->where($where)->find()){
+			$db -> data($data) -> add();
+		}
+		else
+		{
+			$db -> where($where) -> setField('islike','1');
+		}
 		$isdone = ture;
 	}
 }
@@ -46,7 +53,7 @@ if (session('userinfo'))
 		$data['islike'] = false;
 		$db = M('like');
 		$where = "type=".$type." and id=".$id;
-		$db -> where($where) -> setField('id','0');
+		$db -> where($where) -> setField('islike','0');
 		$isdone = ture;
 	}
 }
