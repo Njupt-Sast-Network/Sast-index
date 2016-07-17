@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/login.css">
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/register.css">
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/news.css">
+	<script type="text/javascript" src="__PUBLIC__/js/vue.js"></script>
 </head>
 <body>
 	<include file="./Public/html/navbar.html"/>
@@ -15,22 +16,19 @@
 		<div class="container">
 		<div class="row rowBiggest">
 			<div class="col-md-8">
+				<div class="tip" v-if="tipDis">{{tip}}</div>
 				<div class="row">
 					<div class="newsContent">
 						<div class="easyNews">
 							<div class="newsTitle" style="margin-bottom: 30px"><h1>科协招新开始啦！！！</h1></div>
 							<div class="newsTime"><span>时间：</span></div>
-							<div class="newsAuthor"><span>来自：</span>{{此处写作者}}</div>
+							<div class="newsAuthor"><span>来自：</span></div>
 							<div class="keyWords"><span>关键词：</span></div>
 						</div>
 						<div class="more">
-							{{此处是具体内容}}
-							id {$id}
-							type {$type}
-							islike {$islike}
 						</div>
 						<div class="row like" align="center">
-							<span class="glyphicon glyphicon-thumbs-up" style="font-size: 40px;border-radius: 50%;border:1px solid #7b7b7b;padding: 20px;cursor: pointer;box-shadow: 0 0 5px gray;margin-bottom: 60px;"></span>
+							<span class="glyphicon glyphicon-thumbs-up" style="font-size: 40px;border-radius: 50%;padding: 20px;cursor: pointer;box-shadow: 0 0 5px gray;margin-bottom: 60px" :class="{'liked' : islike}" @click="ajaxLike();"></span>
 						</div>
 					</div>
 				</div>
@@ -82,7 +80,14 @@
 	<script type="text/javascript" src="__PUBLIC__/js/Login.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/js/register.js"></script>
 	<script type="text/javascript">
-	
-	
+		function someInfo() {
+			var arr = [];
+			var id = {$id},type = {$type},islike = {$islike};
+			arr.push(type);
+			arr.push(id);
+			arr.push(islike);
+			return arr;
+		}
 	</script>
+	<script type="text/javascript" src="__PUBLIC__/js/news.js"></script>
 </html>

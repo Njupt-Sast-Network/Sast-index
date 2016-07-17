@@ -5,7 +5,7 @@ class ComController extends Controller {
 	public function like(){
 
 		$islogin = ture;
-		$isdone = fause;
+		$isdone = false;
 if (session('userinfo')) 
 {
 	if(IS_POST)
@@ -14,7 +14,7 @@ if (session('userinfo'))
 		$data['type'] = $_POST['type'];
 		$data['id'] = $_POST['id'];
 		$data['username'] = $sess['username'];
-		$data['islike'] = 1;
+		$data['islike'] = true;
 		$db = M('like');
 		$db -> data($data) -> add();
 		$isdone = ture;
@@ -22,7 +22,7 @@ if (session('userinfo'))
 }
 else
 {
-	$islogin = fause;
+	$islogin = false;
 }
 	$ajax['islogin'] = $islogin;
 	$ajax['isdone'] = $isdone;
@@ -34,7 +34,7 @@ else
 	public function dislike(){
 
 		$islogin = ture;
-		$isdone = fause;
+		$isdone = false;
 if (session('userinfo')) 
 {
 	if(IS_POST)
@@ -43,7 +43,7 @@ if (session('userinfo'))
 		$type = $_POST['type'];
 		$id = $_POST['id'];
 		$data['username'] = $sess['username'];
-		$data['islike'] = 0;
+		$data['islike'] = false;
 		$db = M('like');
 		$where = "type=".$type." and id=".$id;
 		$db -> where($where) -> setField('id','0');
@@ -52,7 +52,7 @@ if (session('userinfo'))
 }
 else
 {
-	$islogin = fause;
+	$islogin = false;
 }
 	$ajax['islogin'] = $islogin;
 	$ajax['isdone'] = $isdone;

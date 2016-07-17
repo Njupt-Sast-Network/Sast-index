@@ -18,11 +18,6 @@ var xinwenTemplate = new Vue({
 	data: {
 		items:[],
 	},
-	methods:{
-		getNews: function(id) {
-			window.location.href = "http://127.0.0.1/index.php/Index/View?type=2&id="+id
-		}
-	}
 });
 //wiki组件
 var wikiTemplate = new Vue({
