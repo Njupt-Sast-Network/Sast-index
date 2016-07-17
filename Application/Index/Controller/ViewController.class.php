@@ -90,7 +90,7 @@ class ViewController extends Controller {
 		if (!$_POST['page']) $_POST['page'] = 1;
 		$where = "type=".$_POST['type']." and id=".$_POST['id'];
 		$page=$_POST['page'];
-		$listcard = $table -> where($where) ->page($page.',3') -> select();
+		$listcard = $table -> where($where) ->order('com_id desc') ->page($page.',3') -> select();
 		$islogin = false;
 		if(session('userinfo'))
 		{

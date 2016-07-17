@@ -58,6 +58,7 @@
 			sendComment : function() {
 				if(textarea.val() != "") {
 					$.ajax({
+						type: "post",
 						url : "/index.php/Com/com",
 						data : {
 							id : like[1],
@@ -108,6 +109,7 @@
 			}
 			page++;
 		});
+		data.page = page+1 ;
 	}
 	function tipMake() {
 		vm.tipDis = true;
