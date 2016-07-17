@@ -130,31 +130,32 @@ nav.nav {
 	border: 1px solid #356686;
 }
 /*已评论区*/
-.contant .rowBiggest .col-md-8 .commented .row {
+.contant .rowBiggest .col-md-8 .commented .rowImp {
 	border-top:1px solid #d6d6d6;
 	border-bottom:  border-top:1px solid #d6d6d6;
 	padding: 20px;
+	padding-bottom: 0;
 	position: relative;
 }
-.contant .rowBiggest .col-md-8 .commented .row .comment_Img {
+.contant .rowBiggest .col-md-8 .commented .rowImp .comment_Img {
 	width: 60px;
 	height: 60px;
 	border-radius: 50%;
 }
-.contant .rowBiggest .col-md-8 .commented .row .comment_Time {
+.contant .rowBiggest .col-md-8 .commented .rowImp .comment_Time {
 	position: absolute;
 	top: 20px;
 	right: 20px;
 	color:gray;
 }
-.contant .rowBiggest .col-md-8 .commented .row .comment_Name {
+.contant .rowBiggest .col-md-8 .commented .rowImp .comment_Name {
 	position: absolute;
 	top: 20px;
 	left: 100px;
 }
-.contant .rowBiggest .col-md-8 .commented .row .comment_Container {
+.contant .rowBiggest .col-md-8 .commented .rowImp .comment_Container {
 	margin-left: 80px;
-	margin-bottom: 20px;
+	margin-bottom: 50px;
 	margin-right: 10px;
 	text-align: justify;
 }

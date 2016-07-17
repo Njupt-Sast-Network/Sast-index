@@ -36,22 +36,25 @@
 				<div class="row">
 					<div class="comment">
 						<h4>我来说几句</h4>
-						<textarea class="mine" placeholder="请输入想评论的内容..."></textarea>
+						<textarea class="mine" placeholder="请输入200字以内的评论的内容..." maxlength = "200" @paste="checkNum()" @cut="checkNum()"></textarea>
 						<br>	
 						<div class="row" style="margin-top: 10px;margin-left: 10px;font-size: 14px;">
 							<span class="all">已评论数</span><span class="num">({$comnumber})</span>
-							<button class="subm">登录后评论</button>
+							<button class="subm" @click="sendComment()">{{msg}}</button>
 						</div>
 						<br>
 					</div>
 					<!--已评论部分-->
-
 					<div class="commented">
-						<div class="row">
-	
-
-						</div>
-							
+						<template v-for="item in items">
+                            <div class="row rowImp">
+                                <img src="__PUBLIC__/images/img0.jpg" class="comment_Img">
+                                <div class="comment_Name">{{item.commentor}}</div>
+                                <div class="comment_Time">{{item.time}}</div>
+                                <div class="comment_Container">{{item.content}}</div>
+                            </div>
+                        </template>
+                        <div class="row" align="center" v-if="getInfo"><span style="cursor: pointer;color: #356686" @click="ajaxCom()">查看更多评论</span></div>
 					</div>
 				</div>
 			</div>
@@ -88,7 +91,7 @@
 	<script type="text/javascript">
 		function someInfo() {
 			var arr = [];
-			var id = {$id},type = {$type},islike = {$islike};
+			var id = {$id},type = {$type},islike = {$islike},comnumber = {$comnumber};
 			if (islike == 0){
 				islike = false;
 			}else{
@@ -97,6 +100,7 @@
 			arr.push(type);
 			arr.push(id);
 			arr.push(islike);
+			arr.push(comnumber);
 			return arr;
 		}
 	</script>
