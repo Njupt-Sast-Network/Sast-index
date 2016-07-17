@@ -69,6 +69,40 @@ else
 	}
 
 
+	public function com(){
+		$islogin = ture;
+		$isdone = false;
+if (session('userinfo')) 
+{
+	if(IS_POST)
+	{
+		$sess = session('userinfo');
+		$data['id'] = $_POST['id'];
+		$data['type'] = $_POST['type'];
+		$data['content'] = $_POST['content'];
+		$data['commentor'] = $sess['username'];
+		$db = M('comment');
+		if($db -> data($data) ->filter('strip_tags')-> add())
+		{
+			$isdone = ture;
+		}
+	}
+}
+else
+{
+	$islogin = false;
+}
+	$ajax['islogin'] = $islogin;
+	$ajax['isdone'] = $isdone;
+	$this->ajaxReturn($ajax);
+
+
+
+
+
+	}
+
+
 
 }
 ?>
