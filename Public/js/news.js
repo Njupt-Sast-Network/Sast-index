@@ -100,7 +100,9 @@
 		$.post("/index.php/View/more",data,function(data){
 			status = data["islogin"];
 			for(var i = 0;i < 3;i++) {
-				vm.items.push(data[i]);
+				if(data[i].content != "") {
+					vm.items.push(data[i]);
+				}
 			}
 			if (like[3] > page*3) {
 				vm.getInfo = true;

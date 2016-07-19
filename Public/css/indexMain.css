@@ -28,6 +28,8 @@ section.sectionOne {
 .moreContainer .more a {
 	font-size: 12px;
 	color:#356686;
+	text-decoration: none;
+	cursor: pointer;
 }
 section.sectionOne .row2 {
 	margin-top: 60px;
