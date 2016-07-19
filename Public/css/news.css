@@ -160,3 +160,8 @@ nav.nav {
 	margin-right: 10px;
 	text-align: justify;
 }
+@media screen and (max-width: 1200px) {
+	nav.nav {
+		min-width: 100%;
+	}
+}
