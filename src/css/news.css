@@ -1,0 +1,161 @@
+body {
+	background-color: #f4f6f8;
+}
+nav.nav {
+	box-shadow: 0px 2px 5px #c9c9cd;
+}
+.contant {
+	position: absolute;
+	left: 0;
+	top: 100px;
+	width: 100%;
+}
+/*右侧*/
+.contant .rowBiggest .col-md-3 .rightRow .title {
+	font-weight: bold;
+	font-size: 18px;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+	box-shadow: 0px 2px 5px #c9c9cd;
+	background-color: #fff;
+}
+
+.contant .rowBiggest .col-md-3 .rightRow .newNew {
+	margin-top: 50px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	box-shadow: 0px 2px 5px #c9c9cd;
+	background-color: #fff;
+}
+.contant .rowBiggest .col-md-3 .rightRow .newNew ol {
+	padding: 0;
+	margin-left: 20px;
+}
+.contant .rowBiggest .col-md-3 .rightRow .newNew ol li {
+	margin-bottom: 20px;
+}
+.contant .rowBiggest .col-md-3 .rightRow .newNew ol li a {
+	color: #356686;
+	font-size: 16px;
+	text-decoration: none;
+}
+/*左侧*/
+.contant .rowBiggest .col-md-8 {
+	box-shadow: 0px 2px 5px #c9c9cd;
+	background-color: #fff;
+	padding-right: 30px;
+	padding-left: 30px;
+	margin-bottom: 50px;
+}
+.contant .rowBiggest .col-md-8 .newsContent {
+	font-size: 14px;
+}
+.contant .rowBiggest .col-md-8 .newsContent .easyNews {
+	margin-bottom: 50px;
+	border-bottom: 2px dotted #d6d6d6;
+}
+.contant .rowBiggest .col-md-8 .newsContent .easyNews span {
+	color: gray;
+}
+.contant .rowBiggest .col-md-8 .newsContent .easyNews div {
+	margin-bottom: 10px;
+	color: #356686;
+}
+.contant .rowBiggest .col-md-8 .newsContent .more {
+	margin-bottom: 50px;
+	min-height: 200px;
+}
+/*提示*/ 
+.contant .rowBiggest .col-md-8 .tip {
+	color: #fff;
+	font-size: 16px;
+	background-color: rgba(23,21,21,0.8);
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -58px;
+	margin-top: -37px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	z-index: 1000;
+	font-weight: bold;
+	border-radius: 6px;
+}
+/*点赞样式*/
+.contant .rowBiggest .col-md-8 .like span {
+	color: gray;
+}
+.contant .rowBiggest .col-md-8 .like span:hover {
+	background-color: #d6d6d6;
+}
+.contant .rowBiggest .col-md-8 .like .liked {
+	color: #356686;
+}
+.contant .rowBiggest .col-md-8 .comment {
+	background-color: #f1f1f1;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-top: 10px;
+	margin-bottom: 50px;
+}
+.contant .rowBiggest .col-md-8 .comment .mine {
+	resize: none;
+	width: 100%;
+	height: 100px;
+	border-radius: 5px;
+	border: 1px solid #d9d9d9;
+	padding: 6px;
+}
+.contant .rowBiggest .col-md-8 .comment .mine:focus {
+	border: 1px solid #356686;
+	outline: none;
+}
+.contant .rowBiggest .col-md-8 .comment .subm {
+	float: right;
+	margin-right: 20px;
+	outline: none;
+	background-color: #fff;
+	border: 1px solid #d9d9d9;
+	margin-top: -4px;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+.contant .rowBiggest .col-md-8 .comment .subm:hover {
+	border: 1px solid #356686;
+}
+/*已评论区*/
+.contant .rowBiggest .col-md-8 .commented .rowImp {
+	border-top:1px solid #d6d6d6;
+	border-bottom:1px solid #d6d6d6;
+	padding: 20px;
+	padding-bottom: 0;
+	position: relative;
+}
+.contant .rowBiggest .col-md-8 .commented .rowImp .comment_Img {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+}
+.contant .rowBiggest .col-md-8 .commented .rowImp .comment_Time {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	color:gray;
+}
+.contant .rowBiggest .col-md-8 .commented .rowImp .comment_Name {
+	position: absolute;
+	top: 20px;
+	left: 100px;
+}
+.contant .rowBiggest .col-md-8 .commented .rowImp .comment_Container {
+	margin-left: 80px;
+	margin-bottom: 50px;
+	margin-right: 10px;
+	text-align: justify;
+}

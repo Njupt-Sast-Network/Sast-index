@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>科协陈列馆</title>
+	<script type="text/javascript" src="__PUBLIC__/js/vue.js"></script>	
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/indexTop.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/login.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/register.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/search.css">
+</head>
+<body>
+	<include file="./Public/html/navbar.html"/>
+	<div class="findS">
+		<div class="filter">
+			<input type="text" class="put same" placeholder="请输入想搜索的内容...">
+			<input type="button" class="same btn" value="搜索">
+		</div>
+	</div>
+	<div class="contant">
+		<div class="container">	
+				<div class="row rowBiggest">
+					<div class="col-md-8" >
+						<div class="row rowNav">
+							<ul>
+								<navli msg="作品" class="choose"></navli>
+								<navli msg="讨论区"></navli>
+								<navli msg="科协动态"></navli>
+								<navli msg="学长分享"></navli>
+							</ul>
+						</div>
+						<template id="navtemplate">
+							<li @click="changeChoose($el)">{{msg}}</li>
+						</template>
+						<div class="row rowTip" style="background-color:#F9F9F9">
+							<span class="spanTitle">为您搜索到相关答案<span class="number"></span>个</span>
+						</div>
+						<div class="row rowContant" style="min-height: 1000px;">
+							<ul class="zuopin allUl">
+								<template v-for="item in items">
+								<li>
+									<a  href="dd" class="title">{{item.title}}</a>
+									<p class="name">作者：{{item.author}}</p>
+									<p class="xueyuan">学院：{{item.department}}</p>
+									<p class="pContant">简介：{{item.text}}</p>
+								</li>
+								</template>			
+							</ul>
+								<ul class="taolun" style="display: none">
+								<!--
+									<template v-for="item in items">
+									<li>
+										<img :src="item.src" alt="用户头像" class="taolunImg"><span class="from">来自</span><a class="username">{{item.nickname}}</a>
+										<p class="problem">{{item.problem}}</p>
+										<div class="caozuo">
+											<a href="javascript:;" class="ping">评论</a>&nbsp;&nbsp;
+											<a href="javascript:;" class="open">展开评论</a>
+										</div>
+										评论内容不是第一次请求得到
+										<div class="row comment">
+											<div class="row small">
+												<span class="name">狒狒神:</span>
+												<span class="answer">你可以去查一下官方文档你可以去查一下官方文档你可以去查一下官方文档你可以去查一下官方文档你可以去查一下官方文档你可以去查一下官方文档你可以去查一下官方文档</span>
+											</div>
+										 	<a href="javascript:;" class="response">回复</a>
+										</div>
+									</li>
+									</template>
+									-->
+									<li>
+										<img src="__PUBLIC__/images/img3.jpg" alt="用户头像" class="taolunImg"><span class="from">来自</span><a class="username">小泉花阳</a>
+										<p class="problem">请问thinkphp中M函数的作用是什么？</p>
+										<div class="caozuo">
+											<a href="javascript:;" class="ping">评论</a>&nbsp;&nbsp;
+											<a href="javascript:;" class="open">展开评论</a>
+										</div>
+										<div class="row comment">
+											<div class="row small">
+												<span class="name">狒狒神:</span>
+												<span class="answer">你可以去查一下官方文档你可以去查一下官方文档你可以去查一下官方文档你可以去查一下官方文档你可以去查一下官方文档你可以去查一下官方文档你可以去查一下官方文档</span>
+											</div>
+										 	<a href="javascript:;" class="response">回复</a>
+										</div>
+									</li>	
+								</ul>
+								<ul class="xinwen allUl" style="display: none">
+									<template v-for="item in items">
+									<li>
+										<img class="newsImg" src="http://www.sinaimg.cn/dy/slidenews/1_img/2016_28/2841_710705_219235.jpg"><p class="newTime">{{item.timestamp}}</p>
+										<div class="newsList"><a class="newTitle"
+										:href="'__ROOT__/index.php/Index/View?type=2&id='+item.news_id">{{item.title}}</a>
+										<p class="news">{{item.text}}</p></div>
+									</li>
+									</template>
+								</ul>
+								<ul class="wiki allUl" style="display: none">
+								<!--
+									<template v-for="item in items">
+									<li>
+										<a class="wikiTitle" :href="wikiHref">{{item.title}}</a>
+										<p class="wikiContent">{{item.text}}</p>
+										<div class="more"><span class="author">{{item.author}}</span>&nbsp;&nbsp;<span class="time">{{item.timestamp}}</span></div>
+									</li>
+									</template>
+								-->
+								</ul>
+							<img src="__PUBLIC__/images/loading.gif" height="40" width="40" alt="loading..." class="loading" style="display:none;">
+							<div class="searchTip"><span class="notFind">没有关于“<span class="content"></span>”的搜索结果</span></div>
+						</div>
+						<!--分页-->
+						<div class="row" style="margin-bottom:30px;">
+							<ul class="pageAll" style="width: 100%;text-align: center;">
+								<li class="page" @click="toFirst()">第一页</li>
+								<li class="page" @click="less()">上一页</li>
+								<li class="page" v-for="index in indexs" @click="changeBtn(index)" :class="{'choosen': current == index}">{{index}}</li>
+								<li class="page" @click="add()">下一页</li>
+								<li class="amount">{{current}}/<span class="pages"></span></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="row rightRow" style="height:700px;">
+							<div class="title">热门搜索</div>
+							<a href="{这是链接}" class="s1">多写代码少装逼</a>
+							<a href="{这是链接}" class="s2">多写代码少装逼</a>
+							<a href="{这是链接}" class="s3">多写代码少装逼</a>
+							<a href="{这是链接}" class="s4">多写代码少装逼</a>
+							<a href="{这是链接}" class="s5">多写代码少装逼</a>
+							<a href="{这是链接}" class="s6">多写代码少装逼</a>
+							<a href="{这是链接}" class="s7">多写代码少装逼</a>
+							<a href="{这是链接}" class="s8">多写代码少装逼</a>
+							<a href="{这是链接}" class="s9">多写代码少装逼</a>
+						</div>
+					</div>
+				</div>
+		</div>
+		<div class="container-fluid foot" style="background-color: #084469;">
+			<div class="row">
+				<p style="color:#fff;margin-top:4px;margin-left:20px;">Copyright &copy;校科协网络部  github:https://github.com/Njupt-Sast-Network</p>
+			</div>
+		</div>
+	</div>
+	<script src="__PUBLIC__/js/jquery.js"></script>
+	<script src="__PUBLIC__/js/bootstrap.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/Login.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/register.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/search.js"></script>
+	</body>
+</html>

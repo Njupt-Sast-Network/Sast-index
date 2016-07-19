@@ -1,0 +1,99 @@
+#myCarousel {
+	height: 600px;
+	z-index: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	overflow: hidden;
+}
+#myCarousel .item {
+	height: 600px;
+	width: 100%;
+}
+#myCarousel img {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+#myCarousel .carousel-inner .item .introduce {
+	position: absolute;
+	top: 150px;
+	left: 250px;
+	width: 400px;
+	margin-left: -200px;
+	color: #fff;
+	text-shadow: 0 0 8px #458E41;
+	border: none;
+	padding: 20px;
+	font-size: 16px;
+	font-family: "微软雅黑";
+	background-color: rgba(000,000,000,0.6);
+	-webkit-animation: introduce 2.5s ease-in-out;
+	-o-animation: introduce 2.5s ease-in-out;
+	animation: introduce 2.5s ease-in-out;
+}
+@keyframes introduce {
+from {top: -300px;}
+to {top: 150px}
+}
+@-webkit-keyframes introduce {
+from {top: -300px;}
+to {top: 150px}
+}
+#myCarousel .carousel-inner .item  .continue {
+	position: absolute;
+	z-index: 5;
+	top: 450px;
+	width: 400px;
+	left: 250px;
+	margin-left: -200px;
+	text-align: center;
+	-webkit-animation: continue 2.5s ease-in-out;
+	-moz-animation: continue 2.5s ease-in-out;
+	-ms-animation: continue 2.5s ease-in-out;
+	-o-animation: continue 2.5s ease-in-out;
+	animation: continue 2.5s ease-in-out;	
+}
+@keyframes continue {
+from {top: 800px;}
+to {top: 450px}
+}
+@-webkit-keyframes continue {
+from {top: 800px;}
+to {top: 450px}
+}
+#myCarousel .carousel-inner .item  .continue a {
+	text-shadow: 0 0 8px #458E41;
+	border: 1px solid #fff;
+	padding: 10px;
+	font-size: 14px;
+	color: #fff;
+	font-family: "微软雅黑";
+	margin-left: 35px;
+	margin-right: 20px;
+	background-color: rgba(000,000,000,0.6);
+	transition:all .5s;
+}
+#myCarousel .carousel-inner .item  .continue a:hover {
+	text-decoration: none;
+	background-color: #979797;
+	transition:all .5s;
+}
+#myCarousel .carousel-inner .item .introduce .introContent {
+	margin-top: 20px;
+	text-align: justify;
+}
+#myCarousel .carousel-indicators li{
+	z-index: 0;
+	background-color: #222!important;
+	width: 20px;
+	height: 20px;
+	border-radius: 20px;
+	border: none;
+	margin-left:10px; 
+}
+#myCarousel .carousel-indicators li.active {
+	background-color: #fff!important;
+}
+
+

@@ -1,0 +1,30 @@
+#shelter .resContent {
+	position: absolute;
+	top: 80px;
+	font-size: 14px;
+	width: 100%;
+	background-color: #fff;
+	height: 260px;
+	display: none;
+}
+#shelter .resContent ul li {
+	list-style-type: none;
+	margin-bottom: 20px;
+}
+#shelter .resContent button {
+	position: absolute;
+	width: 320px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	font-size: 18px;
+	top: 210px;
+	background-color: #578db0;
+	outline: none;
+	border: none;
+	color: #fff;
+	transition:all .2s;
+}
+#shelter .resContent button:hover {
+	transition:all .2s;
+	background-color: #084469;
+}
