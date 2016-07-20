@@ -77,7 +77,7 @@ gulp.task('copy_fonts', function () {
 });*/
 
 gulp.task('clean', function () {
-    return del([DIST]);
+    return del([DIST+'*/*','!'+DIST+'video/*']);
 });
 
 gulp.task('copy_static_html', function () {
