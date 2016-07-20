@@ -4,7 +4,7 @@ const gulp         = require('gulp'),
       del          = require('del'),
       replace      = require('gulp-replace'),
       rev          = require('gulp-rev-append'),
-      ifElse       = require('gulp-if-else'),
+      // ifElse       = require('gulp-if-else'),
       //htmlreplace  = require('gulp-html-replace'),
       base64       = require('gulp-base64'),
       postcss      = require('gulp-postcss'),
@@ -28,21 +28,18 @@ const SRC              = './src/',
       DIST_IMG         = DIST + 'images/';
 
 var urlTag = '';
-var NODE_ENV = '';
 
 gulp.task('uglify', function () {
-    return gulp.src(SRC_JS).pipe(replace('__target__', urlTag))
+    return gulp.src(SRC_JS)
                .pipe(replace('__PUBLIC__/', '../'))
-               .pipe(ifElse(NODE_ENV === 'public', uglify))
+               .pipe(uglify())
                .pipe(gulp.dest(DIST_JS));
 });
 
 gulp.task('css', function () {
     var processes = [cssnano];
     gulp.src(SRC_CSS)
-        .pipe(ifElse(NODE_ENV === 'public', function () {
-            return postcss(processes)
-        }))
+        .pipe(postcss(processes))
         .pipe(base64({
             extensions: ['png', /\.jpg#datauri$/i],
             maxImageSize: 10 * 1024 // bytes,
@@ -89,7 +86,6 @@ gulp.task('copy_static_html', function () {
 });
 
 gulp.task('build', ['clean'], function () {
-    NODE_ENV = 'public';
     gulp.start('uglify', 'css', 'copy_fonts', 'images', 'copy_static_html');
 });
 
