@@ -11,22 +11,23 @@ nav.nav {
 	width: 100%;
 }
 /*右侧*/
+.contant .rowBiggest .col-md-3  {
+	box-shadow: 0px 2px 5px #c9c9cd;
+	margin-bottom: 50px;
+}
 .contant .rowBiggest .col-md-3 .rightRow .title {
 	font-weight: bold;
 	font-size: 18px;
 	padding-top: 20px;
 	padding-left: 20px;
 	padding-bottom: 20px;
-	box-shadow: 0px 2px 5px #c9c9cd;
 	background-color: #fff;
 }
 
 .contant .rowBiggest .col-md-3 .rightRow .newNew {
-	margin-top: 50px;
 	padding-left: 20px;
 	padding-right: 20px;
 	padding-bottom: 10px;
-	box-shadow: 0px 2px 5px #c9c9cd;
 	background-color: #fff;
 }
 .contant .rowBiggest .col-md-3 .rightRow .newNew ol {
@@ -132,7 +133,7 @@ nav.nav {
 /*已评论区*/
 .contant .rowBiggest .col-md-8 .commented .rowImp {
 	border-top:1px solid #d6d6d6;
-	border-bottom:1px solid #d6d6d6;
+	border-bottom:  border-top:1px solid #d6d6d6;
 	padding: 20px;
 	padding-bottom: 0;
 	position: relative;
@@ -158,4 +159,9 @@ nav.nav {
 	margin-bottom: 50px;
 	margin-right: 10px;
 	text-align: justify;
+}
+@media screen and (max-width: 1200px) {
+	nav.nav {
+		min-width: 100%;
+	}
 }

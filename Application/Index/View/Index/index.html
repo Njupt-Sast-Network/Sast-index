@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>南京邮电大学科学技术协会</title>
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/indexTop.css">
@@ -10,6 +9,8 @@
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/login.css">
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/register.css">
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/indexMain.css">
+	<link href="__PUBLIC__/css/video-js.css" rel="stylesheet">
+	<script type='text/javascript'>window.BWEUM||(BWEUM={});BWEUM.info = {"stand":true,"agentType":"browser","agent":"bi-collector.oneapm.com/static/js/bw-send-411.4.5.js","beaconUrl":"bi-collector.oneapm.com/beacon","licenseKey":"EiMjy~qiYf6JiNRE","applicationID":2285487};</script><script type="text/javascript">/*!OneAPM-v411.4.5 */!function(){window.NREUM||(window.NREUM={}),window.BWEUM||(window.BWEUM=window.NREUM);var a;window.BWEUM.require=a,window.apmFirstbyte=window.apmUserFirstbyte||(new Date).getTime(),a=function b(c,d,e){function f(h,i){if(!d[h]){if(!c[h]){var j="function"==typeof a&&a;if(!i&&j)return j(h,!0);if(g)return g(h,!0);var k=new Error("Cannot find module '"+h+"'");throw k.code="MODULE_NOT_FOUND",k}var l=d[h]={exports:{}};c[h][0].call(l.exports,function(a){var b=c[h][1][a];return f(b?b:a)},l,l.exports,b,c,d,e)}return d[h].exports}for(var g="function"==typeof a&&a,h=0;h<e.length;h++)f(e[h]);return f}({38:[function(a,b){b.exports=function(a){var b=document.createElement("a"),c=window.location,d={};b.href=a,d.port=b.port;var e=b.href.split("://");return!d.port&&e[1]&&(d.port=e[1].split("/")[0].split(":")[1]),d.port&&"0"!==d.port||(d.port="https"===e[0]?"443":"80"),d.hostname=b.hostname||c.hostname,d.pathname=b.pathname,"/"!==d.pathname.charAt(0)&&(d.pathname="/"+d.pathname),d.sameOrigin=!b.hostname||b.hostname===document.domain&&b.port===c.port&&b.protocol===c.protocol,d}},{}],34:[function(a,b){function c(){var a=m.info=window.BWEUM.info;if(a&&a.agent&&a.licenseKey&&a.applicationID&&i&&i.body){m.proto="https"===l.split(":")[0]||a.sslForHttp?"https://":"http://",g("mark",["onload",f()]);var b=i.createElement("script");b.src=0==a.agent.indexOf("//")?a.agent:m.proto+a.agent,b.src+="?v=411.4.5 ",i.body.appendChild(b)}}function d(){o||"complete"===i.readyState&&e()}function e(){g("mark",["domContent",f()])}function f(){return(new Date).getTime()}var g=a("handle"),h=window,i=h.document,j="addEventListener",k="attachEvent",l=(""+location).split("?")[0],m=b.exports={offset:window.apmFirstbyte||f(),origin:l,features:{}};g("mark",["firstbyte",window.apmFirstbyte||f()]),"complete"===document.readyState?(e(),c()):i[j]?(i[j]("DOMContentLoaded",e,!1),h[j]("load",c,!1)):(i[k]("onreadystatechange",d),h[k]("onload",c));var n=!1,o=!1;try{n=null==window.frameElement&&document.documentElement}catch(m){}n&&n.doScroll&&!function p(){if(!o){try{n.doScroll("left")}catch(a){return setTimeout(p,50)}o=!0,e()}}()},{handle:33}],33:[function(a,b){function c(a,b,c){return d.listeners(a).length?d.emit(a,b,c):(e[a]||(e[a]=[]),void e[a].push(b))}var d=a("ee").create(),e={};b.exports=c,c.ee=d,d.q=e},{ee:31}],36:[function(a,b){function c(a,b,c){b||(b=0),"undefined"==typeof c&&(c=a?a.length:0);for(var d=-1,e=c-b||0,f=new Array(0>e?0:e);++d<e;)f[d]=a[b+d];return f}b.exports=c},{}],31:[function(a,b){function c(a){function b(b,c,g){a&&a(b,c,g),g||(g={});var i=h(b),j=i.length,k={};try{k=f(g,e,d)}catch(l){}for(var m=0;j>m;m++)i[m].apply(k,c);return k}function g(a,b){j[a]=h(a).concat(b)}function h(a){return j[a]||[]}function i(){return c(b)}var j={};return{on:g,emit:b,create:i,listeners:h,_events:j}}function d(){return{}}var e="bw@context",f=a("gos");b.exports=c()},{gos:32}],32:[function(a,b){function c(a,b,c){if(d.call(a,b))return a[b];var e=c();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(a,b,{value:e,writable:!0,enumerable:!1}),e}catch(f){}try{a[b]=e}catch(f){}return e}var d=Object.prototype.hasOwnProperty;b.exports=c},{}]},{},[]),a=function c(b,d,e){function f(h,i){if(!d[h]){if(!b[h]){var j="function"==typeof a&&a;if(!i&&j)return j(h,!0);if(g)return g(h,!0);var k=new Error("Cannot find module '"+h+"'");throw k.code="MODULE_NOT_FOUND",k}var l=d[h]={exports:{}};b[h][0].call(l.exports,function(a){var c=b[h][1][a];return f(c?c:a)},l,l.exports,c,b,d,e)}return d[h].exports}for(var g="function"==typeof a&&a,h=0;h<e.length;h++)f(e[h]);return f}({1:[function(a){a("loader"),a("errorload"),a("xhrload"),a("perfload")},{errorload:5,loader:34,perfload:6,xhrload:7}],7:[function(a){function b(a){if("string"==typeof a&&a.length)return a.length;if("object"!=typeof a)return void 0;if("undefined"!=typeof ArrayBuffer&&a instanceof ArrayBuffer&&a.byteLength)return a.byteLength;if("undefined"!=typeof Blob&&a instanceof Blob&&a.size)return a.size;if("undefined"!=typeof FormData&&a instanceof FormData)return void 0;try{return JSON.stringify(a).length}catch(b){return void 0}}function c(a,b){return b}function d(a){a.send=o.wrapOld(a.send,"send-xhr-",c),a.onreadystatechange=o.wrapOld(a.onreadystatechange,"iexhr-onreadystatechange-",c),a.onerror=o.wrapOld(a.onerror,"iexhr-onerror-",c)}function e(a){var c=this.params,d=this.metrics;if(!this.ended){if(this.ended=!0,a.removeEventListener)for(var e=0;m>e;e++)a.removeEventListener(l[e],this.listener,!1);if(!c.aborted){if(d.duration=(new Date).getTime()-this.startTime,4===a.readyState){c.status=a.status;var f=a.responseType,g="arraybuffer"===f||"blob"===f||"json"===f?a.response:a.responseText,h=b(g);h&&(d.rxSize=h)}else c.status=0;d.cbTime=this.cbTime,c&&c.pathname&&c.pathname.indexOf("beacon/resources")<0&&i("xhr",[c,d,this.startTime,this.creatType])}}}function f(a,b){var c=j(b),d=a.params;d.host=c.hostname+":"+c.port,d.pathname=c.pathname,a.sameOrigin=c.sameOrigin}var g=window,h=(g.performance,window.XMLHttpRequest);if(h&&h.prototype&&!/CriOS/.test(navigator.userAgent)){a("loader").features.xhr=!0;var i=a("handle"),j=a("parse-url"),k=a("ee"),l=["load","error","abort","timeout"],m=l.length,n=a("loader_id"),o=a("wrap-function")(k);a("wrap-events"),a("wrap-xhr"),k.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),k.on("open-xhr-start",function(a){this.params={method:a[0]},f(this,a[1]),this.metrics={}}),k.on("open-xhr-end",function(a,b){b.__oldie&&d(b)}),k.on("send-xhr-start",function(a,c){var d=this.metrics,e=a[0],f=this;if(d&&e){var g=b(e);g&&(d.txSize=g)}if(this.startTime=(new Date).getTime(),this.listener=function(a){try{"abort"===a.type&&(f.params.aborted=!0),("load"!==a.type||f.called===f.totalCbs&&(f.onloadCalled||"function"!=typeof c.onload))&&f.end&&f.end(c)}catch(b){try{k.emit("internal-error",[b])}catch(d){}}},c.addEventListener)for(var h=0;m>h;h++)c.addEventListener(l[h],this.listener,!1)}),k.on("iexhr-onreadystatechange-start",function(a,b){if(1==b.readyState){var d=b.onreadystatechange;setTimeout(function(){b.onreadystatechange!==d&&(b.onreadystatechange=o.wrapOld(b.onreadystatechange,"iexhr-onreadystatechange-",c))},0)}4==b.readyState&&(this.xhrCbStart=(new Date).getTime())}),k.on("iexhr-onreadystatechange-end",function(a,b){var c=this;this.xhrCbStart&&k.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,b],b),4==b.readyState&&c.end(b)}),k.on("xhr-cb-time",function(a,b,c){this.cbTime+=a,b?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof c.onload||this.end(c)}),k.on("xhr-load-added",function(a,b){var c=""+n(a)+!!b;this.xhrGuids&&!this.xhrGuids[c]&&(this.xhrGuids[c]=!0,this.totalCbs+=1)}),k.on("xhr-load-removed",function(a,b){var c=""+n(a)+!!b;this.xhrGuids&&this.xhrGuids[c]&&(delete this.xhrGuids[c],this.totalCbs-=1)}),k.on("addEventListener-end",function(a,b){b instanceof XMLHttpRequest&&"load"===a[0]&&k.emit("xhr-load-added",[a[1],a[2]],b)}),k.on("removeEventListener-end",function(a,b){b instanceof XMLHttpRequest&&"load"===a[0]&&k.emit("xhr-load-removed",[a[1],a[2]],b)}),k.on("fn-start",function(a,b,c){b instanceof XMLHttpRequest&&("onload"===c&&(this.onload=!0),("load"===(a[0]&&a[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),k.on("fn-end",function(a,b){this.xhrCbStart&&k.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,b],b)})}},{ee:31,handle:33,loader:34,loader_id:35,"parse-url":38,"wrap-events":28,"wrap-function":39,"wrap-xhr":30}],35:[function(a,b){function c(a){var b=typeof a;return!a||"object"!==b&&"function"!==b?-1:a===window?0:f(a,e,function(){return d++})}var d=1,e="bw@id",f=a("gos");b.exports=c},{gos:32}],6:[function(a){var b=window.performance;if(b&&b.timing&&b.getEntriesByType){var c=a("ee"),d=a("handle"),e=(a("wrap-timer"),a("loader"));e.features.stn=!0,c.on("fn-start",function(a){var b=a[0];b instanceof Event&&(this.bstStart=Date.now())}),c.on("fn-end",function(a,b){var c=a[0];c instanceof Event&&d("bst",[c,b,this.bstStart,Date.now()])})}},{ee:31,handle:33,loader:34,"wrap-timer":29}],5:[function(a){function b(a,b,d,g,i){try{j?j-=1:e("err",[i||new c(a,b,d)])}catch(k){try{e("ierr",[k,(new Date).getTime(),!0])}catch(l){}}return"function"==typeof h?h.apply(this,f(arguments)):!1}function c(a,b,c){this.message=a||"Uncaught error with no additional information",this.sourceURL=b,this.line=c}function d(a){e("err",[a,(new Date).getTime()])}var e=a("handle"),f=a("lodash._slice"),g=a("ee"),h=window.onerror,i=!1,j=0;a("loader").features.err=!0,window.onerror=b,window.BWEUM.noticeError=d;var k=window.XMLHttpRequest;try{throw new Error}catch(l){"stack"in l&&(a("wrap-timer"),"addEventListener"in window&&a("wrap-events"),k&&k.prototype&&k.prototype.addEventListener&&a("wrap-xhr"),i=!0)}g.on("fn-start",function(){i&&(j+=1)}),g.on("fn-err",function(a,b,c){i&&(this.thrown=!0,d(c))}),g.on("fn-end",function(){i&&!this.thrown&&j>0&&(j-=1)}),g.on("internal-error",function(a){e("ierr",[a,(new Date).getTime(),!0])})},{ee:31,handle:33,loader:34,"lodash._slice":36,"wrap-events":28,"wrap-timer":29,"wrap-xhr":30}],30:[function(a,b){function c(){j.inPlace(this,m,"fn-")}function d(a,b){j.inPlace(b,["onreadystatechange"],"fn-")}function e(a){a.open=j.wrapOld(a.open,"open-xhr-",f)}function f(a,b){return b}var g=a("ee").create(),h=a("wrap-events"),i=a("wrap-function"),j=i(g),k=i(h),l=window.XMLHttpRequest,m=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];b.exports=g,window._ApmXMLHttpRequest=window.XMLHttpRequest,window.XMLHttpRequest=function(a){var b=new l(a);try{g.emit("new-xhr",[],b),l.prototype.addEventListener?(k.inPlace(b,["addEventListener","removeEventListener"],"-",function(a,b){return b}),b.addEventListener("readystatechange",c,!1)):(b.__oldie=!0,e(b))}catch(d){try{g.emit("internal-error",[d])}catch(f){}}return b},window.XMLHttpRequest.prototype=l.prototype,j.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",f),g.on("send-xhr-start",d),g.on("open-xhr-start",d)},{ee:31,"wrap-events":28,"wrap-function":39}],29:[function(a,b){function c(a,b,c){var d=a[0];"string"==typeof d&&(d=new Function(d)),a[0]=e(d,"fn-",null,c)}var d=(a("lodash._slice"),a("ee").create()),e=a("wrap-function")(d);b.exports=d,e.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),d.on("setTimer-start",c)},{ee:31,"lodash._slice":36,"wrap-function":39}],28:[function(a,b){function c(a){f.inPlace(a,["addEventListener","removeEventListener"],"-",d)}function d(a){return a[1]}var e=(a("lodash._slice"),a("ee").create()),f=a("wrap-function")(e),g=a("gos");if(b.exports=e,c(window),"getPrototypeOf"in Object){for(var h=document;h&&!h.hasOwnProperty("addEventListener");)h=Object.getPrototypeOf(h);h&&c(h);for(var i=XMLHttpRequest.prototype;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&c(i)}else Object.prototype.hasOwnProperty.call(XMLHttpRequest,"addEventListener")&&c(XMLHttpRequest.prototype);e.on("addEventListener-start",function(a){if(a[1]){var b=a[1];"function"==typeof b?this.wrapped=a[1]=g(b,"bw@wrapped",function(){return f(b,"fn-",null,b.name||"anonymous")}):"function"==typeof b.handleEvent&&f.inPlace(b,["handleEvent"],"fn-")}}),e.on("removeEventListener-start",function(a){var b=this.wrapped;b&&(a[1]=b)})},{ee:31,gos:32,"lodash._slice":36,"wrap-function":39}],39:[function(a,b){function c(a){return!(a&&"function"==typeof a&&a.apply&&!a[f])}var d=a("ee"),e=a("lodash._slice"),f="bw@wrapper",g=Object.prototype.hasOwnProperty;b.exports=function(a){function b(a,b,d,g,i){function j(){var c=this;return h(a,b,c,e(arguments),d,g,i)}if(c(a))return a;b||(b="");try{j[f]=!0}catch(k){}return l(a,j),j}function h(a,b,c,d,e,f){var d,c,g,h;try{g=e&&e(d,c)||{}}catch(i){m([i,"",[d,c,f],g])}_apmfnName=a.name||"",k(b+"start",[d,c,f,_apmfnName],g);try{return h=a.apply(c,d)}catch(j){var l=window.console;throw void 0!=l&&l.error&&l.log&&void 0!=j.stack&&(l.log("OneAPM  catch  error"),l.error(j.stack)),k(b+"err",[d,c,j],g),j}finally{k(b+"end",[d,c,h,_apmfnName],g)}}function i(a,b,c){var a=a||function(){},b=b||"-";return function(){var d=this;return h(a,b,d,e(arguments),c)}}function j(a,d,e,f){e||(e="");var g,h,i,j="-"===e.charAt(0);for(i=0;i<d.length;i++)h=d[i],g=a[h],c(g)||(a[h]=b(g,j?h+e:e,f,h,a))}function k(b,c,d){try{a.emit(b,c,d)}catch(e){m([e,b,c,d])}}function l(a,b){if(Object.defineProperty&&Object.keys)try{var c=Object.keys(a);return c.forEach(function(c){Object.defineProperty(b,c,{get:function(){return a[c]},set:function(b){return a[c]=b,b}})}),b}catch(d){m([d])}for(var e in a)g.call(a,e)&&(b[e]=a[e]);return b}function m(b){try{a.emit("internal-error",b)}catch(c){}}return a||(a=d),b.inPlace=j,b.flag=f,b.wrapOld=i,b}},{ee:31,"lodash._slice":36}]},{},[1]),window.BWEUM.require=a}();</script>
 </head>
 <body>
 	<include file="./Public/html/navbar.html"/>
@@ -31,6 +32,16 @@
 		   <!-- 轮播（Carousel）项目 -->
 		   <div class="carousel-inner">
 		      <div class="item active">
+				<script type="text/javascript">
+							function al(){
+								alert("暂未开放哟~");
+							}
+				</script>
+
+
+
+
+
 		         <img src="__PUBLIC__/images/home.jpg" alt="First slide">
 		         <div class="introduce">
 		         	<div class="frosted-glass"></div>
@@ -38,7 +49,7 @@
 		         	<div class="introContent">计算机部是校科协的传统部门，主要负责开展计算机软件方面的竞赛、技术培训以及项目和科研工作，目前主要有以下几个研究方向：Windows编程，acm算法，linux系统，游戏开发。同时拥有若干个项目组和专业研究小组。</div>
 		         </div>
 		         <div class="continue">
-		         	<a href="javascript:;" class="down">继续向下</a><a href="dddd">报名入口</a>
+		         	<a href="javascript:;" class="down">继续向下</a><a onclick="al()">报名入口</a>
 		         </div>
 		      </div>
 		        <div class="item">
@@ -49,7 +60,7 @@
 		         	<div class="introContent">电子部主要开展电子信息类科学技术的研究，授课和竞赛培训。学习的内容以模拟电路、数字电路、编程语言为基础，以自动控制系统、通信系统、仪器仪表、电源系统、物联网系统为方向，专攻电子电路设计、嵌入式系统开发，FPGA和片上系统。部门活动主要涵盖授课，交流和竞赛培训。</div>
 		         </div>
 		         <div class="continue">
-		         	<a href="javascript:;" class="down">继续向下</a><a href="dddd">报名入口</a>
+		         	<a href="javascript:;" class="down">继续向下</a><a onclick="al()">报名入口</a>
 		         </div>
 		      </div>
 		      <div class="item">
@@ -59,7 +70,7 @@
 		         	<div class="introContent">网络部是一个热衷于web前后端开发、网络安全和多媒体制作的技术部门。我们不仅喜欢热门的web前端技术，我们还研究数据库 服务器 http协议 web脚本语言(python php ruby and Node.js)等方面的知识使用。我们喜欢渗透、逆向的快感，我们还做的了视频拍的了绚丽的mv。</div>
 		         </div>
 		         <div class="continue">
-		         	<a href="javascript:;" class="down">继续向下</a><a href="dddd">报名入口</a>
+		         	<a href="javascript:;" class="down">继续向下</a><a onclick="al()">报名入口</a>
 		         </div>
 		      </div>
 		      <div class="item">
@@ -70,7 +81,7 @@
 		         	<div class="introContent">办公室，作为主席团、指导老师和各个部门的沟通纽带，是校科协运作的保障部门。我们主要负责人员的组织与调配、活动的策划与总结、档案的归类与整理、文案的编辑与制作、会议的展开与记录等等。在这里，你能提高自己的组织策划能力，学到很多实用且高大上的办公技巧，并在与各部门的合作交流中认识传说中的大神、牛人。办公室需要的是极具责任心，遇事不急躁，办事不懈怠的人，我们欢迎有上进心、责任心、恒心的你。</div>
 		         </div>
 		         <div class="continue">
-		         	<a href="javascript:;" class="down">继续向下</a><a href="dddd">报名入口</a>
+		         	<a href="javascript:;" class="down">继续向下</a><a onclick="al()">报名入口</a>
 		         </div>
 		      </div>
 		      <div class="item">
@@ -81,7 +92,7 @@
 		         	<div class="introContent">科宣部，全称科普宣传部。正如其名，我们负责管理校科协的各网络平台，致力于宣传校科协的各项活动。运用Photoshop设计宣传册、海报等展示科技魅力，用网络科普科技知识，将科技与艺术紧密结合，把创新的思想融入到科普宣传中。科宣部的工作需要使用Photoshop等图像制作软件的应用能力以及新闻稿的写作能力（其中PS我们会联合网络部进行授课教学）。</div>
 		         </div>
 		         <div class="continue">
-		         	<a href="javascript:;" class="down">继续向下</a><a href="dddd">报名入口</a>
+		         	<a href="javascript:;" class="down">继续向下</a><a onclick="al()">报名入口</a>
 		         </div>
 		      </div>
 		      <div class="item">
@@ -92,7 +103,7 @@
 		         	<div class="introContent">外联部，是校科协对外交流的桥梁，主要负责校科协和外界的联系、日常活动的组织与开展以及提供社团经费保障。其中包括校科协与我校九大社团的工作交流，与兄弟院校之间的联系交流，以及与企业之间的沟通。这是一个极具挑战性的部门，同时也是开拓大学生视野的窗口，在这里你可以认识更多本校以及兄弟院校科协的牛人，还可以结识许多企业人士。</div>
 		         </div>
 		         <div class="continue">
-		         	<a href="javascript:;" class="down">继续向下</a><a href="dddd">报名入口</a>
+		         	<a href="javascript:;" class="down">继续向下</a><a onclick="al()">报名入口</a>
 		         </div>
 		      </div>
 		      <div class="item">
@@ -103,7 +114,7 @@
 		         	<div class="introContent">社团发展部主要负责校科协与各科技类直属社团的联系和交流，建立起两者间的桥梁。发挥科协与直属社团间的不同优势，调度信息资源，促进双方的共同发展。作为创新中心下属部门，社发部还担负着组织参赛的职能，在利用各方资源的同时积极动员同学们参加创新创业方面赛事，同时处理和参与创新中心和科协内的日常工作和活动。</div>
 		         </div>
 		         <div class="continue">
-		         	<a href="javascript:;" class="down">继续向下</a><a href="dddd">报名入口</a>
+		         	<a href="javascript:;" class="down">继续向下</a><a onclick="al()">报名入口</a>
 		         </div>
 		      </div>
 		      <div class="item">
@@ -114,7 +125,7 @@
 		         	<div class="introContent">赛事部隶属于创新中心，是负责组织和管理学生课内外竞赛的职能部门，致力于竞赛体系的建设和完善。其职能主要有赛事提醒、赛事推介、赛事经验传授、赛事资料汇总等，并负责全国一级赛事"挑战杯"在校内的承办。</div>
 		         </div>
 		         <div class="continue">
-		         	<a href="javascript:;" class="down">继续向下</a><a href="dddd">报名入口</a>
+		         	<a href="javascript:;" class="down">继续向下</a><a onclick="al()">报名入口</a>
 		         </div>
 		      </div>
    			</div>
@@ -125,36 +136,36 @@
 				<div class="row">
 					<div class="col-md-1 title">
 						<span class="glyphicon glyphicon-list-alt ii"></span>科协动态
-						<div class="more"><a href="sdds">more <span class="glyphicon glyphicon-forward"></span></a></div>
+						<div class="more"><a onclick="al()">更多 <span class="glyphicon glyphicon-forward"></span></a></div>
 					</div>
 				</div>
 				<div class="row row2">
 					  <div class="col-md-3">
-					  	<h4>{$news[0].title}</h4>
+					  	<h4>FAQ</h4>
 						<div class="image">
-							<img src="http://www.sinaimg.cn/dy/slidenews/1_img/2016_28/2841_710705_219235.jpg">
+							<img src="__PUBLIC__/images/sastlogo.jpg">
 						</div>
 						<p class="introduce">
-						{$news[0].text}</p>
-						<a href="dsfs">READ MORE</a>
+						学弟学妹们看过来啦~招新、部门……校科协FAQ告诉你关于科协的一切~务必点击下面的view more进来看看哟~</p>
+						<a href="__ROOT__/index.php/View?type=2&amp;id=33">READ MORE</a>
 					  </div>
 					  <div class="col-md-3" >
-					  	<h4>{$news[1].title}</h4>
+					  	<h4>校科协全体中干会议召开</h4>
 						<div class="image">
-							<img src="http://www.sinaimg.cn/dy/slidenews/1_img/2016_28/2841_710705_219235.jpg">
+							<img src="__PUBLIC__/images/news2.png">
 						</div>
 						<p class="introduce">
-						{$news[1].text}</p>
-						<a href="dsfs">READ MORE</a>
+						 2016年6月20日中午十二点整，南京邮电大学大学生科学技术协会第二十五届第一次中干会议在大学生活动中心三楼会议室顺利召开。参加本次会议的有校团委书记李晓华，主席顾怡、副主席李赫、郑致远、叶子新、刘心宇与技术中心、办公中心和创新中心各部门的新任中干。</p>
+						<a href="http://mp.weixin.qq.com/s?__biz=MzA5MDg2NDgzOA==&mid=2656710971&idx=1&sn=eb22119473c0a416e10308affc70e496&scene=0#wechat_redirect">READ MORE</a>
 					  </div>
 					  <div class="col-md-3">
-					  	<h4>{$news[2].title}</h4>
+					  	<h4>第二十五届校科协换届名单公示</h4>
 						<div class="image">
-							<img src="http://www.sinaimg.cn/dy/slidenews/1_img/2016_28/2841_710705_219235.jpg">
+							<img src="__PUBLIC__/images/sastlogo.jpg">
 						</div>
 						<p class="introduce">
-						{$news[2].text}</p>
-						<a href="dsfs">READ MORE</a>
+						截止6月12日，第二十五届南京邮电大学大学生科学技术协会换届名单最终得到确认，2016级新任中干以及主席团公布！</p>
+						<a href="http://mp.weixin.qq.com/s?__biz=MzA5MDg2NDgzOA==&mid=2656710960&idx=1&sn=d58d7d73145ff17f12b75da55098fc54&scene=0#wechat_redirect">READ MORE</a>
 					  </div>
 				</div> 
 				<br><br>
@@ -171,7 +182,18 @@
 南京邮电大学大学生科学技术协会始终以“增强科技意识，活跃学术气氛，提高创新能力，培养科技人才”为目标，努力让更多的南邮学子在这里点燃梦想，成功启航！ 
 </p>
 					<br>
-					<p class="sastVideo" style="margin-top: 80px;"><embed src="http://player.youku.com/player.php/sid/XNDUwOTAxMjgw/v.swf" allowfullscreen="true" quality="high" width="480" height="400" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash"></p>
+				<!-- 	<p class="sastVideo" style="margin-top: 80px;"><embed src="http://player.youku.com/player.php/sid/XNDUwOTAxMjgw/v.swf" allowfullscreen="true" quality="high" width="480" height="400" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash"></p> -->
+				<video id="my-video" class="video-js" controls preload="auto" width="480" height="400"
+  poster="__PUBLIC__/images/sast.png" data-setup="{}">
+    <source src="__PUBLIC__/video/sast.mp4" type='video/mp4'>
+    <!-- <source src="MY_VIDEO.webm" type='video/webm'> -->
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a web browser that
+      <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    </p>
+  </video>
+
+ 
 				</div>	
 				<div class="row row4" style="margin-top:80px;height:480px;">
 					<div class="zhe"><span>科协这个大家庭</span></div>
@@ -181,33 +203,34 @@
 								<img src="__PUBLIC__/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce1 pos">
-								<p class="name">崔天昊</p>
-								<p class="job">现任通院科协主席</p>
-								<p class="contant">研究方向web前端，并有一定经验。</p>
+								<p class="name">王凯</p>
+								<p class="job">曾任校科协主席</p>
+								<p class="contant">在校积极参与“挑战杯”、“创青春”和“科技节”等科创活动。现在北京大学就读</p>
 							</div>
 							<div class="min allmin">
 								<img src="__PUBLIC__/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce1 pos pos3">
-								<p class="name">董家睿</p>
-								<p class="job">2015届网络部副部长</p>
-								<p class="contant">研究方向web后端，尤其对thinkphp的使用较为熟悉</p>
+								<p class="name">沈天弋</p>
+								<p class="job">曾任计算机部linux组组长</p>
+								<p class="contant">现为Google软件工程师，曾在ACM/ICPC国际大学生程序设计大赛获得两个铜牌。</p>
 							</div>
 							<div class="min allmin">
 								<img src="__PUBLIC__/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce1 pos2">
-								<p class="name">倪丁凡</p>
-								<p class="job">2015届电子部讲师</p>
-								<p class="contant">之前研究硬件方向，现在主要研究ios开发</p>
+								<p class="name">高飞</p>
+								<p class="job">曾任校科协主席</p>
+								<p class="contant"> ACM国际大学生程序设计大赛亚洲区域赛铜奖。创青春江苏省大学生创业计划竞赛金奖。</p>
 							</div>
 							<div class="min allmin">
 								<img src="__PUBLIC__/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce1 pos2 pos3">
-								<p class="name">顾怡</p>
-								<p class="job">2015届网络部部长</p>
-								<p class="contant">web知识面广，研究web前端方向，经验较为丰富。</p>
+								<p class="name">刘泽宇</p>
+								<p class="job">曾任校科协副主席</p>
+								<p class="contant">web腾讯产品经理、南京互联网菁英圈创始人、南京谷歌开发者社区组织者。
+</p>
 							</div>
 						</div>
 						<div class="smallBox">
@@ -215,9 +238,9 @@
 								<img src="__PUBLIC__/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce2 pos">
-								<p class="name">奚佳伟</p>
-								<p class="job">2013届网络部部长</p>
-								<p class="contant contantBig">web前端工程师，南邮前端第一人，前端经验非常丰富，曾在阿里巴巴，百度实习，现就职于百度公司。开发过各种网站，大学期间通过写代码，自己挣生活费，让自己的优秀成为一种习惯。</p>
+								<p class="name">奚佳炜</p>
+								<p class="job">曾任网络部部长</p>
+								<p class="contant contantBig">web工程师，前后端经验非常丰富，曾在阿里巴巴，百度实习，现就职于百度公司大数据部门。对web开发非常感兴趣，大一时开发了个人网站Miyijia.com，日均pv达50万。经常与学弟学妹们交流经验，建立了南邮前端经验分享会。担任网络部部长期间出色完成任务，使校科协网络部技术水平更上一层楼。</p>
 							</div>
 						</div>
 						<div class="smallBox">
@@ -226,8 +249,8 @@
 							</div>
 							<div class="introduce introduce2 pos">
 								<p class="name">孙放</p>
-								<p class="job">科协传奇人物</p>
-								<p class="contant contantBig">放叔，全称孙放，江湖人称鼎山女尸，曾任校科协主席，现担任阿里高级产品经理。个人经典语录：Bug总是会有的，不会凭空消失，也不会凭空产生，它总是从一段代码转移到另一段代码中，从一种影响转换为另一种影响，在转移和转换的过程中，bug的总量是不变的。</p>
+								<p class="job">曾任校科协主席</p>
+								<p class="contant contantBig">2010年6月至2011年6月在校科协担任主席一职，任内建立校科协学术指导老师聘任制度、建设了南京邮电大学大学生科技创新基金等机制。在学校时参与过数个产业项目，对软件的开发与设计有一定的经验，并对大型软件与Web系统的架构有一定的了解。现为淘宝软件有限公司工程师。</p>
 							</div>
 						</div>
 						<div class="smallBox">
@@ -235,32 +258,32 @@
 								<img src="__PUBLIC__/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce1 pos">
-								<p class="name">刘强胜</p>
-								<p class="job">2015届计算机部部长</p>
-								<p class="contant">主要研究方向是python，经验较为丰富。</p>
+								<p class="name">杨颖</p>
+								<p class="job">曾任办公中心主席</p>
+								<p class="contant">2013钱旺智能杯青年志愿者徽章大赛优胜奖，创青春校赛金奖、省赛银奖、国赛银奖 </p>
 							</div>
 							<div class="min allmin">
 								<img src="__PUBLIC__/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce1 pos pos3">
-								<p class="name">郑致远</p>
-								<p class="job">2015届计算机部副部长</p>
-								<p class="contant">主要研究java，其他各类语言都比较熟悉，擅长于acm比赛。</p>
+								<p class="name">江如意</p>
+								<p class="job">曾任技术中心主席</p>
+								<p class="contant">挑战杯全国大学生课外学术科技作品省级三等奖，创青春创业计划大赛省级银奖校级金奖。</p>
 							</div>
 							<div class="min allmin">
 								<img src="__PUBLIC__/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce1 pos2">
-								<p class="name">周捷</p>
-								<p class="job">2015届网络部网安组组长</p>
-								<p class="contant">擅长于渗透等信安技术，多次提交网站漏洞，ctf比赛成绩优异。</p>
+								<p class="name">任然</p>
+								<p class="job">曾任校科协主席</p>
+								<p class="contant">国际数学建模大赛二等奖，联合国国际电信联盟世界电信展青年领袖。</p>
 							</div>
 							<div class="min allmin">
 								<img src="__PUBLIC__/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce1 pos2 pos3">
-								<p class="name">褚鑫强</p>
-								<p class="job">2014届网络部部长</p>
+								<p class="name">诸鑫强</p>
+								<p class="job">曾任网络部部长</p>
 								<p class="contant">web前端工程师，web技术较为全面，经验较为丰富。</p>
 							</div>
 						</div>
@@ -272,32 +295,32 @@
 							</div>
 							<div class="introduce introduce3 pos pos4">
 								<p class="name">张丹阳</p>
-								<p class="job">2015届主席团</p>
+								<p class="job">曾任校科协主席</p>
 								<p class="contant">主持过科协大大小小活动，功不可没。</p>
 							</div>
 							<div class="min allmin">
 								<img src="__PUBLIC__/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce3 pos">
-								<p class="name">叶子新</p>
-								<p class="job">2015届办公室主任</p>
-								<p class="contant">将科协内部交流梳理的有条不紊，做事非常周全细致。</p>
+								<p class="name">郑致远</p>
+								<p class="job">现任技术中心主席</p>
+								<p class="contant">主要研究java，其他各类语言都比较熟悉，擅长于acm比赛。</p>
 							</div>
 							<div class="min allmin">
 								<img src="__PUBLIC__/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce3 pos2  pos4">
-								<p class="name">徐铄芮</p>
-								<p class="job">2015届科宣部副部长</p>
-								<p class="contant">外表甜美，擅长ps等多媒体技术，在科协宣传工作中起到很大作用。</p>
+								<p class="name">周捷</p>
+								<p class="job">曾任网络部网安组组长</p>
+								<p class="contant">擅长于渗透等信安技术，多次提交网站漏洞，ctf比赛成绩优异。</p>
 							</div>
 							<div class="min allmin">
 								<img src="__PUBLIC__/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce3 pos2">
-								<p class="name">李赫</p>
-								<p class="job">2015届科宣部部长</p>
-								<p class="contant">性格爽朗，为科协宣传全力付出。</p>
+								<p class="name">黄诚博</p>
+								<p class="job">曾任技术中心主席</p>
+								<p class="contant">ACM-ICPC亚洲区域赛（北京站）铜奖；南京邮电大学第六届程序设计大赛一等奖。</p>
 							</div>
 						</div>
 						<div class="smallBox">
@@ -305,9 +328,9 @@
 								<img src="__PUBLIC__/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce4 pos">
-								<p class="name">黄诚博</p>
-								<p class="job">2015届技术中心主席</p>
-								<p class="contant contantBig">在担任主席期间，尽职尽责，本人技术过硬。ACM-ICPC亚洲区域赛（北京站）铜奖；南京邮电大学第六届程序设计大赛一等奖等等，为科协的部员起着学习榜样的作用。</p>
+								<p class="name">鞠林</p>
+								<p class="job">曾任校科协主席</p>
+								<p class="contant contantBig">第35届ACM/ICPC国际大学生程序设计大赛亚洲区现场赛铜牌。担任校科协主席期间，带领同学完成校科协在线管理系统的开发。团结同学，技术过硬。现为百度高级研发工程师。</p>
 							</div>
 						</div>
 						<div class="smallBox">
@@ -316,8 +339,8 @@
 							</div>
 							<div class="introduce introduce4 pos">
 								<p class="name">樊超</p>
-								<p class="job">2013届计算机部部长</p>
-								<p class="contant contantBig">曾在Red Hat (Linux内核)实习，现在就职于富士通，兴趣点在于Linux的学习与开发。虽然是物理专业出身，但是编程着实厉害。</p>
+								<p class="job">曾任计算机部部长</p>
+								<p class="contant contantBig">曾在Red Hat (Linux内核)实习，现就职于南京富士通南大软件技术公司，兴趣点在于Linux的学习与开发。虽然是物理专业出身，但是编程着实厉害。</p>
 							</div>
 						</div>
 						<div class="smallBox">
@@ -325,16 +348,16 @@
 								<img src="__PUBLIC__/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce3 pos pos4">
-								<p class="name">曹文</p>
-								<p class="job">2015届外联部部长</p>
-								<p class="contant">组织过各种科协与外界的交流活动。</p>
+								<p class="name">崔天昊</p>
+								<p class="job">现任通院科协主席，原校科协网络部讲师</p>
+								<p class="contant">研究方向web前端，并有一定经验。</p>
 							</div>
 							<div class="min allmin">
 								<img src="__PUBLIC__/images/lazy.jpg" alt="">
 							</div>
 							<div class="introduce introduce3 pos">
 								<p class="name">朱立宇</p>
-								<p class="job">2015届电子部长</p>
+								<p class="job">曾任电子部长</p>
 								<p class="contant">研究方向在硬件开发，兴趣驱使，经验丰富。</p>
 							</div>
 							<div class="min allmin">
@@ -342,7 +365,7 @@
 							</div>
 							<div class="introduce introduce3 pos2  pos4">
 								<p class="name">王悉宇</p>
-								<p class="job">2015届网络部核心部员</p>
+								<p class="job">网络部核心部员</p>
 								<p class="contant">对各种计算机技术非常感兴趣，也乐于与其他部员交流自己的学习成果。</p>
 							</div>
 							<div class="min allmin">
@@ -350,7 +373,7 @@
 							</div>
 							<div class="introduce introduce3 pos2">
 								<p class="name">陶黎成</p>
-								<p class="job">2015届计算机部核心部员</p>
+								<p class="job">计算机部核心部员</p>
 								<p class="contant">擅长acm比赛，为人随和，在同届当中技术较为出色。</p>
 							</div>
 						</div>
@@ -377,7 +400,7 @@
 			<br>
 			<br>
 			<div class="container lessContainer" style="background-color:#084469">
-				<div class="row"><h1>联系我们</h1></div>
+				<div class="row"><h1 style="margin-top: 40px;">联系我们</h1></div>
 				<div class="row">
 					<br>
 					<br>
@@ -402,6 +425,9 @@
 			</div>
 		</section>
 		<span id="hui" class="glyphicon glyphicon-menu-up"></span>
+		<!-- If you'd like to support IE8 -->
+  <script src="__PUBLIC__/js/videojs-ie8.min.js"></script>
+		 <script src="__PUBLIC__/js/video.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/js/bootstrap.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/js/top.js"></script>

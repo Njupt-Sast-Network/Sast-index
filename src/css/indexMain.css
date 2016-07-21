@@ -16,7 +16,8 @@ section.sectionOne {
 	color: #578db0;
 	font-size: 26px;
 	font-weight: bold;
-	box-shadow: 0 0 8px #578db0
+	box-shadow: 0 0 8px #969696;
+	border-radius: 20px;
 }
 .moreContainer .title .ii  {
 	margin-right: 10px
@@ -27,6 +28,8 @@ section.sectionOne {
 .moreContainer .more a {
 	font-size: 12px;
 	color:#356686;
+	text-decoration: none;
+	cursor: pointer;
 }
 section.sectionOne .row2 {
 	margin-top: 60px;
@@ -34,7 +37,7 @@ section.sectionOne .row2 {
 section.sectionOne .row2 .col-md-3 {
 	margin-left: 6.25%;
 	overflow: hidden;
-	box-shadow: 0px 0px 5px #578db0;
+	box-shadow: 0 0 8px #969696;
 	transition:all 0.3s;
 	border-radius: 20px;
 }
@@ -103,7 +106,7 @@ section.sectionOne .row3 .col-md-3 {
 	overflow: hidden;
 }
 section.sectionOne .row3 .col-md-3 span {
-	font-size: 180px;
+	font-size: 140px;
 	color:#356686;
 	opacity: 0;
 }
@@ -184,7 +187,7 @@ section.sectionOne .row4 .Box .smallBox .min {
 }
 section.sectionOne .row4 .introduce {
 	position: absolute;
-	background-color: #235ea7;
+	background-color: #356686;
 	color: #fff;
 	padding:6px;
 	display: none;

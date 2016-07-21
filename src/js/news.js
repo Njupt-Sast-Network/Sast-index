@@ -1,12 +1,11 @@
 (function(){
 	//点赞请求
 	var like = someInfo();
-	var data = {
+	var info = {
 		type : like[0],
 		id : like[1],
 		page: 1,
 	};
-	var page = data.page;
 	var status = null;
 	var textarea = $(".contant .rowBiggest .col-md-8 .comment .mine");
 	//打开网页立即请求信息
@@ -27,7 +26,7 @@
 			},
 			ajaxLike : function() {
 				if(!this.islike) {
-					$.post("/index.php/Com/like",data,function(data){
+					$.post("/index.php/Com/like",info,function(data){
 						if(!data.islogin) {
 							vm.tip = "请先登录...";
 							tipMake();
@@ -43,7 +42,7 @@
 						}
 					});
 				}else {
-					$.post("/index.php/Com/dislike",data,function(data){
+					$.post("/index.php/Com/dislike",info,function(data){
 							if(data.isdone) {
 								vm.islike = false;
 								vm.tip = "赞已取消!";
@@ -73,7 +72,10 @@
 								if(data.isdone) {
 									vm.islike = true;
 									vm.tip = "谢谢您的评论!";
+									textarea.val("");
 									tipMake();
+									vm.items = [];
+									info.page = 1;
 									ajaxComment();
 								}else {
 									vm.tip = "操作失败!";
@@ -88,7 +90,6 @@
 				}
 			},
 			checkNum : function() {
-				console.log(1)
 				if (textarea.val().length == 200) {
 					this.tip = "只能输入200字!";
 					tipMake();
@@ -97,19 +98,25 @@
 		}
 	});
 	function ajaxComment() {
-		$.post("/index.php/View/more",data,function(data){
+		$.post("/index.php/View/more",info,function(data){
 			status = data["islogin"];
-			for(var i = 0;i < 3;i++) {
-				vm.items.push(data[i]);
+			var len = like[3] - info.page*3;
+			if ( len < 3) {
+				for(var i = 0;i < len;i++) {
+					vm.items.push(data[i]); 
+				}
+			} else {
+				for(var i = 0;i < 3;i++) {
+					vm.items.push(data[i]); 
+				}
 			}
-			if (like[3] > page*3) {
+			if (like[3] > info.page*3) {
 				vm.getInfo = true;
 			}else {
 				vm.getInfo = false;
 			}
-			page++;
+			info.page++;
 		});
-		data.page = page+1 ;
 	}
 	function tipMake() {
 		vm.tipDis = true;
