@@ -13,7 +13,7 @@
 
 <body>
     <div class="container-fluid" id="theBiggest">
-        <nav class="navbar navbar-default" role="navigation">
+        <nav class="navbar navbar-inverse" role="navigation">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
                     <span class="sr-only">切换导航</span>
@@ -29,8 +29,8 @@
                     <li><a href="#" class="commentMana">讨论区管理</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-		             	动态管理<b class="caret"></b>
-		            </a>
+                        动态管理<b class="caret"></b>
+                    </a>
                         <ul class="dropdown-menu">
                             <li><a href="#" class="newsList">动态列表</a></li>
                             <li><a href="#" class="sendNews">发布动态</a></li>
@@ -38,8 +38,8 @@
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-		             	作品管理<b class="caret"></b>
-		            </a>
+                        作品管理<b class="caret"></b>
+                    </a>
                         <ul class="dropdown-menu">
                             <li><a href="#" class="resultList">作品列表</a></li>
                             <li><a href="#" class="sendResult">发布作品</a></li>
@@ -49,8 +49,8 @@
             </div>
         </nav>
         <div class="container-fluid" v-cloak>
-        	<div class="tip" v-if="showTip">{{tip}}</div>
-        	<div class="row" style="width: 80%;margin: 0 auto" v-if="showUser">
+            <div class="tip" v-if="showTip">{{tip}}</div>
+            <div class="row" style="width: 80%;margin: 0 auto" v-if="showUser">
                 <table class="table table-hover table-bordered">
                     <thead>
                         <tr>
@@ -64,25 +64,30 @@
                     </thead>
                     <tbody>
                         <tr v-for="user in users ">
-                            <td class="text-center">{{user.username}}</td>
-                            <td class="text-center">{{user.company}}</td>
+                            <td class="text-center">{{user.name}}</td>
+                            <td class="text-center">{{user.department}}</td>
                             <td class="text-center">{{user.mail}}</td>
-                            <td class="text-center">{{user.right}}</td>
+                            <td class="text-center">{{user.level | reverse}}</td>
                             <td class="text-center"><a href="javascript:;" style="text-decoration: none;" class="problem">{{user.problems}}</a></td>
-                            <td class="text-center"><button type="button" class="btn btn-danger" @click="delUser(user)">删除</button></td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-danger" @click="delUser(user,user.uid)">删除</button>
+                            </td>
                         </tr>
                         <tr>
-                        	<td colspan="6" class="pageTd"><ul class="pageAll" style="width: 100%;">
-								<li class="page" @click="toFirst()">首页</li>
-								<li class="page" @click="less()">上一页</li>
-								<li class="page" v-for="index in indexs" @click="changeBtn(index)" :class="{'choosen': current == index}">{{index}}</li>
-								<li class="page" @click="add()">下一页</li>
-							</ul></td>
+                            <td colspan="6" class="pageTd">
+                                <ul class="pageAll" style="width: 100%;">
+                                    <li class="page" @click="toFirst()">首页</li>
+                                    <li class="page" @click="less()">上一页</li>
+                                    <li class="page" v-for="index in indexs" @click="changeBtn(index)" :class="{'choosen': current == index}">{{index}}</li>
+                                    <li class="page" @click="add()">下一页</li>
+                                    <li class="page">共计{{all}}名用户</li>
+                                </ul>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-           <div class="row" style="width: 80%;margin: 0 auto" v-if="showNews">
+            <div class="row" style="width: 80%;margin: 0 auto" v-if="showNews">
                 <table class="table table-hover table-bordered">
                     <thead>
                         <tr>
@@ -94,44 +99,68 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="">
-                            <td class="text-center"></td>
-                            <td class="text-center"></td>
-                            <td class="text-center"></td>
-                            <td class="text-center"></td>
-                            <td class="text-center"><button class="btn btn-primary" style="margin-right: 50px;">修改</button><button type="button" class="btn btn-danger" style="margin-left: 50px;">删除</button></td>
+                        <tr v-for="one in news">
+                            <td class="text-center">{{one.title}}</td>
+                            <td class="text-center">{{one.time}}</td>
+                            <td class="text-center">{{one.comment}}</td>
+                            <td class="text-center">{{one.like}}</td>
+                            <td class="text-center">
+                                <button class="btn btn-primary" style="margin-right: 50px;">修改</button>
+                                <button type="button" class="btn btn-danger" style="margin-left: 50px;">删除</button>
+                            </td>
                         </tr>
                         <tr>
-                        	<td colspan="6" class="pageTd"><ul class="pageAll" style="width: 100%;">
-								<li class="page" @click="toFirst()">首页</li>
-								<li class="page" @click="less()">上一页</li>
-								<li class="page" v-for="index in indexs" @click="changeBtn(index)" :class="{'choosen': current == index}">{{index}}</li>
-								<li class="page" @click="add()">下一页</li>
-							</ul></td>
+                            <td colspan="6" class="pageTd">
+                                <ul class="pageAll" style="width: 100%;">
+                                    <li class="page" @click="toFirst()">首页</li>
+                                    <li class="page" @click="less()">上一页</li>
+                                    <li class="page" v-for="index in indexs" @click="changeBtn(index)" :class="{'choosen': current == index}">{{index}}</li>
+                                    <li class="page" @click="add()">下一页</li>
+                                </ul>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <!--<div class="row" style="width: 90%;margin: 0 auto">
-                <div id="add-book">
-                    <legend>添加书籍</legend>
-                    <div class="form-group">
-                        <label for="">书名</label>
-                        <input type="text" class="form-control" v-model="book.name">
+            <div class="row textContainer" style="width: 90%;margin: 0 auto">
+                <form enctype="multipart/form-data" id="form_1">
+                    <div class="row"><span>标题：&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <br>
+                        <br>
+                        <input type="text" name="title" maxlength="20">
                     </div>
-                    <div class="form-group">
-                        <label for="">作者</label>
-                        <input type="text" class="form-control" v-model="book.author">
+                    <div class="row"><span>作者：&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <br>
+                        <br>
+                        <input type="text" name="author">
                     </div>
-                    <div class="form-group">
-                        <label for="">价格</label>
-                        <input type="text" class="form-control" v-model="book.price">
+                    <div class="row"><span>关键字：</span>
+                        <br>
+                        <br>
+                        <input type="text" name="keywords">
                     </div>
-                    <button class="btn btn-primary btn-block" v-on:click="addBook()">添加</button>
-                </div>
-            </div>-->
-            <div class="row" v-if="showText">
-                <textarea id="editor" placeholder="这里输入内容" autofocus></textarea>
+                    <div class="row"><span>首屏图片(长宽比250*150)：</span>
+                        <br>
+                        <br>
+                        <input type="file" name="img">
+                    </div>
+                    <div class="row"><span>文章概述：</span>
+                        <br>
+                        <br>
+                        <textarea class="simple" name="simple"></textarea>
+                    </div>
+                        <textarea name="text" id="textCon" style="display: none;"></textarea>
+                     </form>
+                    <div class="row">
+                        <div>正文：</div>
+                        <br>
+                        <br>
+                        <textarea id="editor" placeholder="请输入发布正文" autofocus></textarea>
+                    </div>
+                    <div class="row" style="margin-bottom: 10px;">
+                        <button class="passNews btn btn-primary" style="float: right;">确认提交</button>
+                    </div>
+               
             </div>
         </div>
     </div>
@@ -141,6 +170,7 @@
     <script type="text/javascript" src="__PUBLIC__/admin//scripts/hotkeys.min.js"></script>
     <script type="text/javascript" src="__PUBLIC__/admin//scripts/uploader.min.js"></script>
     <script type="text/javascript" src="__PUBLIC__/admin//scripts/simditor.js"></script>
+      <script type="text/javascript" src="__PUBLIC__/admin//scripts/form.min.js"></script>
     <script src="http://cdn.bootcss.com/vue/1.0.23/vue.min.js"></script>
     <script type="text/javascript" src="__PUBLIC__/admin//admin.js"></script>
 </body>

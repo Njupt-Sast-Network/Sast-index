@@ -1,4 +1,3 @@
-var userInfo;
 var editor = new Simditor({
     textarea: $('#editor'),
     toolbar: [
@@ -50,7 +49,9 @@ var manage = new Vue({
         showUser: true,
         showText: false,
         showNews: false,
-        users: []
+        users: [],
+        news: [],
+        results: []
     },
     computed: {
         indexs: function() {
@@ -79,8 +80,12 @@ var manage = new Vue({
         },
     },
     methods: {
-        delUser: function(user) {
+        delUser: function(user,uid) {
             if (confirm("确定要删除此用户么？")) {
+                var userInfo = {
+                    id : uid,
+                    type : manage.type
+                };
                 //此处是删除用户的ajax请求
                 $.post("/index.php/Admin/index/deluser", userInfo, function(data) {
                     if (data.isdone) {
@@ -119,7 +124,14 @@ var manage = new Vue({
         }
     }
 });
-
+//注册自定义过滤器
+Vue.filter('reverse', function (value) {
+    if(value == 1) {
+        return "管理员";
+    }else if(value == 2) {
+        return "sast学长";
+    }else return "普通";
+})
 function tipMake() {
     manage.showTip = true;
     setTimeout(function() {
@@ -134,10 +146,14 @@ function ajaxGet() {
         type: manage.type,
         page: manage.current
     };
-    $.post("/index.php/Admin/index/get",info,function(data) {
-    	manage.all = data.all;
-    	manage.pages= Math.ceil(manage.all/10);
-    	manage.users = [].concat(data.card);
+    $.post("/index.php/Admin/index/get", info, function(data) {
+        manage.all = data.count;
+        manage.pages = Math.ceil(manage.all / 5);
+        switch(info.type) {
+            case 0: manage.users = [].concat(data.card);break;
+            case 2: manage.news = [].concat(data.card);break;
+            case 3: manage.results = [].concat(data.card);break;
+        }
     })
 }
 //点击状态的切换
@@ -147,58 +163,108 @@ navList.each(function(index) {
         switch (index) {
             //用户管理
             case 0:
-                navList.removeClass("active");
+                clear();
                 $(this).addClass("active");
                 manage.showNews = false;
-                manage.showText = false;
+                $(".textContainer").removeClass("showText");
                 manage.showUser = true;
                 manage.type = 0;
                 ajaxGet();
                 break;
                 //讨论区管理
             case 1:
+                clear();
                 navList.removeClass("active");
                 $(this).addClass("active");
                 manage.showNews = false;
-                manage.showText = false;
+                editor.setValue("");
+                $(".textContainer").removeClass("showText");
                 manage.showUser = false;
                 manage.type = 1;
                 ajaxGet();
                 break;
                 //动态管理
             case 3:
+                clear();    
                 navList.removeClass("active");
                 navList.eq(2).addClass("active");
                 manage.showNews = true;
-                manage.showText = false;
+                $(".textContainer").removeClass("showText");
+                editor.setValue("");
                 manage.showUser = false;
                 manage.type = 2;
                 ajaxGet();
                 break;
             case 4:
+                clear();
                 navList.removeClass("active");
                 navList.eq(2).addClass("active");
                 manage.showNews = false;
-                manage.showText = true;
+                $(".textContainer").addClass("showText");
+                editor.setValue("");
                 manage.showUser = false;
                 break;
                 //作品管理
             case 6:
+                clear();
                 navList.removeClass("active");
                 navList.eq(5).addClass("active");
                 manage.showNews = false;
-                manage.showText = false;
+                $(".textContainer").removeClass("showText");
+                editor.setValue("");
                 manage.showUser = false;
                 manage.type = 3;
                 ajaxGet();
                 break;
             case 7:
+                clear();
                 navList.removeClass("active");
                 navList.eq(5).addClass("active");
                 manage.showNews = false;
-                manage.showText = true;
+                $(".textContainer").addClass("showText");
+                editor.setValue("");
                 manage.showUser = false;
                 break;
         }
     });
-})
+});
+var input = $("input"),intro = $(".simple");
+function clear() {
+    navList.removeClass("active");
+    editor.setValue("");
+    input.val("");
+    intro.val("");
+}
+//提交按钮
+var sub = $(".textContainer .passNews");
+var exp = $("#textCon");
+sub.click(function() {
+    //提交表单
+    exp.val(editor.getValue());
+    var form = $("#form_1")[0];
+    var formData = new FormData(form);
+    $.ajax({
+        type : "post",
+        url : "",
+        data : formData,
+        dataType:"json",
+        success: function(data) {
+            if(data.isdone) {
+                manage.tip = "发布成功!";
+                tipMake();
+                form.clearForm();
+            }else {
+                manage.tip = "发布失败!";
+                tipMake();
+            }
+        }
+    })
+});
+
+
+
+
+
+
+
+
