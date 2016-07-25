@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+    <title>后台管理系统</title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin//styles/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin//styles/simditor.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin//index.css">
+</head>
+
+<body>
+    <div class="container-fluid" id="theBiggest">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">SAST</a>
+            </div>
+            <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#" class="userMana">用户管理</a></li>
+                    <li><a href="#" class="commentMana">讨论区管理</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		             	动态管理<b class="caret"></b>
+		            </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="newsList">动态列表</a></li>
+                            <li><a href="#" class="sendNews">发布动态</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		             	作品管理<b class="caret"></b>
+		            </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="resultList">作品列表</a></li>
+                            <li><a href="#" class="sendResult">发布作品</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container-fluid" v-cloak>
+        	<div class="tip" v-if="showTip">{{tip}}</div>
+        	<div class="row" style="width: 80%;margin: 0 auto" v-if="showUser">
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="text-center">用户名</th>
+                            <th class="text-center">部门</th>
+                            <th class="text-center">邮箱</th>
+                            <th class="text-center">权限</th>
+                            <th class="text-center">共提出的问题</th>
+                            <th class="text-center">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="user in users ">
+                            <td class="text-center">{{user.username}}</td>
+                            <td class="text-center">{{user.company}}</td>
+                            <td class="text-center">{{user.mail}}</td>
+                            <td class="text-center">{{user.right}}</td>
+                            <td class="text-center"><a href="javascript:;" style="text-decoration: none;" class="problem">{{user.problems}}</a></td>
+                            <td class="text-center"><button type="button" class="btn btn-danger" @click="delUser(user)">删除</button></td>
+                        </tr>
+                        <tr>
+                        	<td colspan="6" class="pageTd"><ul class="pageAll" style="width: 100%;">
+								<li class="page" @click="toFirst()">首页</li>
+								<li class="page" @click="less()">上一页</li>
+								<li class="page" v-for="index in indexs" @click="changeBtn(index)" :class="{'choosen': current == index}">{{index}}</li>
+								<li class="page" @click="add()">下一页</li>
+							</ul></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+           <div class="row" style="width: 80%;margin: 0 auto" v-if="showNews">
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="text-center">新闻标题</th>
+                            <th class="text-center">发布时间</th>
+                            <th class="text-center">评论数</th>
+                            <th class="text-center">点赞数</th>
+                            <th class="text-center">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="">
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                            <td class="text-center"><button class="btn btn-primary" style="margin-right: 50px;">修改</button><button type="button" class="btn btn-danger" style="margin-left: 50px;">删除</button></td>
+                        </tr>
+                        <tr>
+                        	<td colspan="6" class="pageTd"><ul class="pageAll" style="width: 100%;">
+								<li class="page" @click="toFirst()">首页</li>
+								<li class="page" @click="less()">上一页</li>
+								<li class="page" v-for="index in indexs" @click="changeBtn(index)" :class="{'choosen': current == index}">{{index}}</li>
+								<li class="page" @click="add()">下一页</li>
+							</ul></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--<div class="row" style="width: 90%;margin: 0 auto">
+                <div id="add-book">
+                    <legend>添加书籍</legend>
+                    <div class="form-group">
+                        <label for="">书名</label>
+                        <input type="text" class="form-control" v-model="book.name">
+                    </div>
+                    <div class="form-group">
+                        <label for="">作者</label>
+                        <input type="text" class="form-control" v-model="book.author">
+                    </div>
+                    <div class="form-group">
+                        <label for="">价格</label>
+                        <input type="text" class="form-control" v-model="book.price">
+                    </div>
+                    <button class="btn btn-primary btn-block" v-on:click="addBook()">添加</button>
+                </div>
+            </div>-->
+            <div class="row" v-if="showText">
+                <textarea id="editor" placeholder="这里输入内容" autofocus></textarea>
+            </div>
+        </div>
+    </div>
+    <script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/admin//scripts/module.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/admin//scripts/hotkeys.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/admin//scripts/uploader.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/admin//scripts/simditor.js"></script>
+    <script src="http://cdn.bootcss.com/vue/1.0.23/vue.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/admin//admin.js"></script>
+</body>
+
+</html>

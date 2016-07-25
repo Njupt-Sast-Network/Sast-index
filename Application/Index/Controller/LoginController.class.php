@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 namespace Index\Controller;
 use Think\Controller;
 class LoginController extends Controller {

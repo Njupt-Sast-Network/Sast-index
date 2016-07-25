@@ -1,0 +1,55 @@
+#theBiggest {
+	padding: 0;
+}
+nav.navbar {
+	margin-bottom: 100px;
+}
+[v-cloak] {
+  display: none;
+}
+#theBiggest .row table tbody td {
+	vertical-align: middle;
+}
+/*分页样式*/
+.pageTd:hover {
+	background-color: #fff;
+}
+.pageAll  {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.pageAll .page {
+	list-style: none;
+	display: inline;
+	font-size: 12px;
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px solid #d6d6d6;
+	margin-left: 14px;
+	cursor: pointer;
+} 
+.pageAll .page:hover {
+	background-color: #f4f4f4;
+}
+.pageAll .choosen {
+	text-decoration: none;
+	background-color: #f4f4f4;
+}
+/*提示*/
+.tip {
+	color: #fff;
+	font-size: 16px;
+	background-color: rgba(23,21,21,0.8);
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -58px;
+	margin-top: -37px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	z-index: 1000;
+	font-weight: bold;
+	border-radius: 6px;
+}

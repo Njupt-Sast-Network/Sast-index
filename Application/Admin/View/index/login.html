@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>管理员登录</title>
+	<style type="text/css" media="screen">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			background-color: #f1f2f7;
+		}
+		ul li {
+			list-style-type: none;
+		}
+		.title {
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: #356686;
+			color: #fff;
+			text-align: center;
+			width: 100%;
+			height: 50px;
+			font-size: 20px;
+			line-height: 50px;
+			border-radius: 10px 10px 0 0;
+		}
+		.login {
+			position: absolute;
+			padding: 20px;
+			top: 50px;
+			left: 0;
+			width: 100%;
+		}
+		input {
+			height: 40px;
+			width: 356px;
+			border: 1px solid #d6d6d6;
+			border-radius: 5px;
+			margin-top: 10px;
+			margin-bottom: 20px;
+			font-size: 18px;
+			padding-left: 4px;
+			outline: none;
+		}
+		button {
+			position: absolute;
+			top: 180px;
+			width: 360px;
+			height: 40px;
+			background-color: #4f877a;
+			outline: none;
+			color: #fff;
+			font-size: 20px;
+			line-height: 40px;
+			margin-top: 10px;
+			border: none; 
+			border-radius: 5px;
+			cursor: pointer;
+			transition: all .3s;
+		}
+		button:hover {
+			box-shadow: 0 2px 2px #222;
+			transition: all .3s;
+		}
+		.tip {
+			color: red;
+		}
+		.content {
+			animation: con 3s;
+		}
+		@keyframes con {
+			from {transform: scale(0);}
+			to {transform: scale(1.0);}
+		}
+	</style>
+</head>
+<body>
+	<div class="content" style="width: 400px;height: 300px;position: absolute;left: 50%;top: 20%;box-shadow: 0 0 10px #969696;margin-left: -200px;background-color: #fff;border-radius: 10px">
+		<div class="title">欢迎登录</div>
+		<div class="login">
+			<ul>
+				<li><input type="text" placeholder="用户名" class="adminName"></input></li>
+				<li><input type="password" placeholder="密码" class="password"></input></li>
+				<div class="tip"></div>
+				<button class="pass">登录</button>
+			</ul>
+		</div>
+	</div>
+	<script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
+	<script type="text/javascript">
+		(function() {
+			var adminName = $(".adminName").val();
+			var password = $(".password").val();
+			var tip = $(".tip");
+			var pass = $(".pass");
+			function stripscript(s) {  
+    			return s.replace(/<script.*?>.*?<\/script>/ig,'');  
+			}  
+			pass.click(function() {
+				adminName = stripscript(adminName);
+				password = stripscript(password);
+				var info = {
+					adminName : adminName,
+					password : password
+				}
+				$.post("xxxx",info,function(data) {
+					if(data.istrue) {
+						tip.text("");
+						window.location.href = "登录成功的路径";
+					}else {
+						tip.text(data.msg);
+					}
+				});
+			});
+		})();
+	</script>
+</body>
+</html>
