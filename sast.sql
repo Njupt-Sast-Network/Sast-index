@@ -1,47 +1,46 @@
-# ************************************************************
-# Sequel Pro SQL dump
-# Version 4541
-#
-# http://www.sequelpro.com/
-# https://github.com/sequelpro/sequelpro
-#
-# Host: 127.0.0.1 (MySQL 5.6.30-0ubuntu0.14.04.1)
-# Database: sast
-# Generation Time: 2016-07-19 07:43:01 +0000
-# ************************************************************
+-- phpMyAdmin SQL Dump
+-- version 4.6.3
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Generation Time: 2016-07-27 18:21:01
+-- 服务器版本： 5.6.11
+-- PHP Version: 5.5.1
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET NAMES utf8mb4 */;
 
+--
+-- Database: `sast`
+--
 
-# Dump of table sast_comment
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `sast_comment`;
+--
+-- 表的结构 `sast_comment`
+--
 
 CREATE TABLE `sast_comment` (
-  `com_id` int(11) NOT NULL AUTO_INCREMENT,
+  `com_id` int(11) NOT NULL,
   `commentor` varchar(255) DEFAULT NULL,
   `islike` int(255) DEFAULT NULL,
   `id` int(255) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   `content` text,
-  `time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`com_id`)
+  `time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
 
-
-# Dump of table sast_like
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `sast_like`;
+--
+-- 表的结构 `sast_like`
+--
 
 CREATE TABLE `sast_like` (
   `username` varchar(255) DEFAULT NULL,
@@ -50,32 +49,41 @@ CREATE TABLE `sast_like` (
   `id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
 
-
-# Dump of table sast_news
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `sast_news`;
+--
+-- 表的结构 `sast_news`
+--
 
 CREATE TABLE `sast_news` (
-  `news_id` int(11) NOT NULL AUTO_INCREMENT,
+  `news_id` int(11) NOT NULL,
   `title` tinytext NOT NULL,
+  `keywords` tinytext NOT NULL,
   `text` text NOT NULL,
+  `img` tinytext NOT NULL,
+  `simple` tinytext NOT NULL,
   `author` tinytext NOT NULL,
-  `timestamp` datetime NOT NULL,
-  `img` varchar(128) NOT NULL DEFAULT '',
-  PRIMARY KEY (`news_id`)
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- 转存表中的数据 `sast_news`
+--
 
+INSERT INTO `sast_news` (`news_id`, `title`, `keywords`, `text`, `img`, `simple`, `author`, `timestamp`) VALUES
+(6, '2', '', '<p>啊</p>', '', '', '是', '2016-07-27 16:04:28'),
+(7, '哈哈', '', '<p>水水水水</p>', '', '', '你好哦', '2016-07-27 16:06:49'),
+(8, '1', '', '<p>到底是</p>', '', '', '的', '2016-07-27 16:08:18'),
+(9, '21', '地方', '<p>发</p>', '2016-07-28/5798df04a8895.png', '阿松', '阿萨德', '2016-07-27 16:19:16');
 
-# Dump of table sast_user
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `sast_user`;
+--
+-- 表的结构 `sast_user`
+--
 
 CREATE TABLE `sast_user` (
-  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `uid` int(10) UNSIGNED NOT NULL,
   `username` varchar(64) NOT NULL DEFAULT '',
   `password` varchar(64) NOT NULL DEFAULT '',
   `nickname` tinytext NOT NULL,
@@ -86,34 +94,85 @@ CREATE TABLE `sast_user` (
   `mail` varchar(64) NOT NULL DEFAULT '',
   `phone` varchar(64) NOT NULL DEFAULT '',
   `level` set('1','2','3','4') DEFAULT '',
-  `image` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`uid`)
+  `image` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- 转存表中的数据 `sast_user`
+--
 
+INSERT INTO `sast_user` (`uid`, `username`, `password`, `nickname`, `name`, `studentnum`, `department`, `major`, `mail`, `phone`, `level`, `image`) VALUES
+(1, '123', '123', 'ased', '123', 'asd', '123', 'asd', '123', 'asd', '2', NULL),
+(2, '23', 'as', 'zdx ', '213', 'asd', '213', 'asd', '', '', '2', NULL);
 
-# Dump of table sast_work
-# ------------------------------------------------------------
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `sast_work`;
+--
+-- 表的结构 `sast_work`
+--
 
 CREATE TABLE `sast_work` (
-  `work_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `work_id` int(11) UNSIGNED NOT NULL,
   `title` tinytext,
   `keyword` tinytext,
   `text` text,
   `author` tinytext,
   `department` tinytext,
-  `timestamp` datetime DEFAULT NULL,
-  PRIMARY KEY (`work_id`)
+  `timestamp` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Indexes for dumped tables
+--
 
+--
+-- Indexes for table `sast_comment`
+--
+ALTER TABLE `sast_comment`
+  ADD PRIMARY KEY (`com_id`);
 
+--
+-- Indexes for table `sast_news`
+--
+ALTER TABLE `sast_news`
+  ADD PRIMARY KEY (`news_id`);
 
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+--
+-- Indexes for table `sast_user`
+--
+ALTER TABLE `sast_user`
+  ADD PRIMARY KEY (`uid`);
+
+--
+-- Indexes for table `sast_work`
+--
+ALTER TABLE `sast_work`
+  ADD PRIMARY KEY (`work_id`);
+
+--
+-- 在导出的表使用AUTO_INCREMENT
+--
+
+--
+-- 使用表AUTO_INCREMENT `sast_comment`
+--
+ALTER TABLE `sast_comment`
+  MODIFY `com_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- 使用表AUTO_INCREMENT `sast_news`
+--
+ALTER TABLE `sast_news`
+  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
+-- 使用表AUTO_INCREMENT `sast_user`
+--
+ALTER TABLE `sast_user`
+  MODIFY `uid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- 使用表AUTO_INCREMENT `sast_work`
+--
+ALTER TABLE `sast_work`
+  MODIFY `work_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

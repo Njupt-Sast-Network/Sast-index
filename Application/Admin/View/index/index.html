@@ -50,7 +50,7 @@
         </nav>
         <div class="container-fluid" v-cloak>
             <div class="tip" v-if="showTip">{{tip}}</div>
-            <div class="row" style="width: 80%;margin: 0 auto" v-if="showUser">
+            <div class="row" style="width: 94%;margin: 0 auto" v-if="showUser">
                 <table class="table table-hover table-bordered">
                     <thead>
                         <tr>
@@ -80,14 +80,14 @@
                                     <li class="page" @click="less()">上一页</li>
                                     <li class="page" v-for="index in indexs" @click="changeBtn(index)" :class="{'choosen': current == index}">{{index}}</li>
                                     <li class="page" @click="add()">下一页</li>
-                                    <li class="page">共计{{all}}名用户</li>
+                                    
                                 </ul>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <div class="row" style="width: 80%;margin: 0 auto" v-if="showNews">
+            <div class="row" style="width: 94%;margin: 0 auto" v-if="showNews">
                 <table class="table table-hover table-bordered">
                     <thead>
                         <tr>
@@ -101,7 +101,7 @@
                     <tbody>
                         <tr v-for="one in news">
                             <td class="text-center">{{one.title}}</td>
-                            <td class="text-center">{{one.time}}</td>
+                            <td class="text-center">{{one.timestamp}}</td>
                             <td class="text-center">{{one.comment}}</td>
                             <td class="text-center">{{one.like}}</td>
                             <td class="text-center">
@@ -123,7 +123,7 @@
                 </table>
             </div>
             <div class="row textContainer" style="width: 90%;margin: 0 auto">
-                <form enctype="multipart/form-data" id="form_1">
+                <form enctype="multipart/form-data" id="form_1" action="index.php/Admin/add/upload" method='post'>
                     <div class="row"><span>标题：&nbsp;&nbsp;&nbsp;&nbsp;</span>
                         <br>
                         <br>
@@ -150,7 +150,6 @@
                         <textarea class="simple" name="simple"></textarea>
                     </div>
                         <textarea name="text" id="textCon" style="display: none;"></textarea>
-                     </form>
                     <div class="row">
                         <div>正文：</div>
                         <br>
@@ -158,9 +157,9 @@
                         <textarea id="editor" placeholder="请输入发布正文" autofocus></textarea>
                     </div>
                     <div class="row" style="margin-bottom: 10px;">
-                        <button class="passNews btn btn-primary" style="float: right;">确认提交</button>
+                        <button class="passNews btn btn-primary" style="float: right;" type="submit" onclick="passText()">确认提交</button>
                     </div>
-               
+                    </form>
             </div>
         </div>
     </div>
@@ -170,7 +169,6 @@
     <script type="text/javascript" src="__PUBLIC__/admin//scripts/hotkeys.min.js"></script>
     <script type="text/javascript" src="__PUBLIC__/admin//scripts/uploader.min.js"></script>
     <script type="text/javascript" src="__PUBLIC__/admin//scripts/simditor.js"></script>
-      <script type="text/javascript" src="__PUBLIC__/admin//scripts/form.min.js"></script>
     <script src="http://cdn.bootcss.com/vue/1.0.23/vue.min.js"></script>
     <script type="text/javascript" src="__PUBLIC__/admin//admin.js"></script>
 </body>

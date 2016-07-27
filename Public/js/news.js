@@ -100,7 +100,7 @@
 	function ajaxComment() {
 		$.post("/index.php/View/more",info,function(data){
 			status = data["islogin"];
-			var len = like[3] - info.page*3;
+			var len = like[3] - (info.page-1)*3;
 			if ( len < 3) {
 				for(var i = 0;i < len;i++) {
 					vm.items.push(data[i]); 

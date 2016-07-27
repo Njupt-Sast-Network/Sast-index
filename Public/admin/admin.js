@@ -236,35 +236,9 @@ function clear() {
     intro.val("");
 }
 //提交按钮
-var sub = $(".textContainer .passNews");
-var exp = $("#textCon");
-sub.click(function() {
-    //提交表单
-    exp.val(editor.getValue());
-    var form = $("#form_1")[0];
-    var formData = new FormData(form);
-    $.ajax({
-        type : "post",
-        url : "",
-        data : formData,
-        dataType:"json",
-        success: function(data) {
-            if(data.isdone) {
-                manage.tip = "发布成功!";
-                tipMake();
-                form.clearForm();
-            }else {
-                manage.tip = "发布失败!";
-                tipMake();
-            }
-        }
-    })
-});
+function passText() {
+   var exp = $("#textCon");
+    exp.val(editor.getValue()); 
+}
 
-
-
-
-
-
-
-
+    
