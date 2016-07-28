@@ -3,8 +3,26 @@ namespace Admin\Controller;
 use Think\Controller;
 class IndexController extends Controller {
     public function index(){
-        $this->display();
-    }
+        if (session('userinfo')) 
+{
+    $sess = session('userinfo');
+        $data['username'] = $sess['username'];
+        $db = M('user');
+        $where = "level=1 and username='".$data['username']."'";
+        if($db->where($where)->find())
+        {
+                    $this->display();
+        }
+        else
+        {
+            echo('Your account is not permitted to enter this page.');
+        }
+
+}
+else{
+     echo("Please login in first.");
+}
+}
 
     public function get(){
     	switch ($_POST['type']) {

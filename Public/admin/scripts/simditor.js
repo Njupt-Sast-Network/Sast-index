@@ -2670,7 +2670,7 @@ Simditor.i18n = {
     'image': '插入图片',
     'externalImage': '外链图片',
     'uploadImage': '上传图片',
-    'uploadFailed': '上传失败了',
+    'uploadFailed': '图片上传成功了',
     'uploadError': '上传出错了',
     'imageUrl': '图片地址',
     'imageSize': '图片尺寸',
