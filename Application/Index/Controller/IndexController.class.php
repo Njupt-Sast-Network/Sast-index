@@ -9,7 +9,7 @@ class IndexController extends Controller {
     	$this -> display();
     }
     private function news(){
-    	$news = D('News') -> field('title,text') -> where()->order('news_id desc') -> select();
+    	$news = D('News') -> field('title,simple,img,news_id') -> where()->order('news_id desc') -> select();
     	if (!F('news')) F('news',$news);
     }
     public function mobile(){

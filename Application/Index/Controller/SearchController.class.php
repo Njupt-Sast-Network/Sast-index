@@ -41,8 +41,8 @@ class SearchController extends Controller {
 			$isimg = 1;
 			break;
 		case 3:
-					$or = "wiki_id desc";
-			$table = M('wiki') ->order($or);
+					$or = "share_id desc";
+			$table = M('share') ->order($or);
 
 			break;
 		default:
