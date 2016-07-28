@@ -2,6 +2,7 @@
 <html lang="zh-cn">
 <head>
 	<meta charset="UTF-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
 	<title>科协陈列馆</title>
 	<script type="text/javascript" src="__PUBLIC__/js/vue.js"></script>	
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.css">
@@ -24,8 +25,8 @@
 					<div class="col-md-8" >
 						<div class="row rowNav">
 							<ul>
-								<navli msg="作品" class="choose"></navli>
-								<navli msg="讨论区"></navli>
+								<navli msg="作品" style="display: none;"></navli>
+								<navli msg="讨论区" class="choose"></navli>
 								<navli msg="科协动态"></navli>
 								<navli msg="学长分享"></navli>
 							</ul>
@@ -37,17 +38,7 @@
 							<span class="spanTitle">为您搜索到相关答案<span class="number"></span>个</span>
 						</div>
 						<div class="row rowContant" style="min-height: 1000px;">
-							<ul class="zuopin allUl">
-								<template v-for="item in items">
-								<li>
-									<a  href="dd" class="title">{{item.title}}</a>
-									<p class="name">作者：{{item.author}}</p>
-									<p class="xueyuan">学院：{{item.department}}</p>
-									<p class="pContant">简介：{{item.text}}</p>
-								</li>
-								</template>			
-							</ul>
-								<ul class="taolun" style="display: none">
+								<ul class="taolun">
 								<!--
 									<template v-for="item in items">
 									<li>
@@ -87,7 +78,7 @@
 								<ul class="xinwen allUl" style="display: none">
 									<template v-for="item in items">
 									<li>
-										<img class="newsImg" src="http://www.sinaimg.cn/dy/slidenews/1_img/2016_28/2841_710705_219235.jpg"><p class="newTime">{{item.timestamp}}</p>
+										<img class="newsImg" :src="item.img"><p class="newTime">{{item.timestamp}}</p>
 										<div class="newsList"><a class="newTitle"
 										:href="'__ROOT__/index.php/Index/View?type=2&id='+item.news_id">{{item.title}}</a>
 										<p class="news">{{item.text}}</p></div>
@@ -95,15 +86,13 @@
 									</template>
 								</ul>
 								<ul class="wiki allUl" style="display: none">
-								<!--
 									<template v-for="item in items">
 									<li>
-										<a class="wikiTitle" :href="wikiHref">{{item.title}}</a>
+										<a class="wikiTitle" :href="'__ROOT__/index.php/Index/View?type=3&id='+item.news_id">{{item.title}}</a>
 										<p class="wikiContent">{{item.text}}</p>
 										<div class="more"><span class="author">{{item.author}}</span>&nbsp;&nbsp;<span class="time">{{item.timestamp}}</span></div>
 									</li>
 									</template>
-								-->
 								</ul>
 							<img src="__PUBLIC__/images/loading.gif" height="40" width="40" alt="loading..." class="loading" style="display:none;">
 							<div class="searchTip"><span class="notFind">没有关于“<span class="content"></span>”的搜索结果</span></div>

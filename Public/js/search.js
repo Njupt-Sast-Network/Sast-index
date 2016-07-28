@@ -1,10 +1,3 @@
-//作品组件
-var zuoTemplate = new Vue({
-	el:".zuopin",
-	data: {
-		items:[],
-	}
-});
 //讨论组件
 var taolunTemplate = new Vue({
 	el:".taolun",
@@ -136,13 +129,9 @@ function ajaxGet () {
 								var index = $(".contant .rowBiggest .col-md-8 .rowNav ul li").index(e);	
 								switch(index) {
 									//此处只是为了测试前端，，，，真正使用之后会用ajax请求完成数据的切换
-									case 0 : $(".rowContant ul").hide();
-											 $(".zuopin").show();
-											 loadContent(index);
-											 break;
 									case 1 : $(".rowContant ul").hide();
 											 $(".taolun").show();
-											 //loadContent(index);
+											 loadContent(index);
 											 break;
 									case 2 : $(".rowContant ul").hide();
 											 $(".xinwen").show();
@@ -150,7 +139,7 @@ function ajaxGet () {
 											 break;
 									case 3 : $(".rowContant ul").hide();
 											 $(".wiki").show();
-											 //loadContent(index);
+											 loadContent(index);
 											 break;
 								}				
 							}
@@ -191,9 +180,6 @@ function loadContent(index) {
 			}
 			//四个分区的渲染
 			switch(index) {
-				case 0: zuoTemplate.items = [];
-				zuoTemplate.items= [].concat(data.card);
-				break;
 				case 1: taolunTemplate.items = [];
 				taolunTemplate.items= [].concat(data.card);
 				break;

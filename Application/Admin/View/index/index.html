@@ -36,15 +36,6 @@
                             <li><a href="#" class="sendNews">发布动态</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        作品管理<b class="caret"></b>
-                    </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" class="resultList">作品列表</a></li>
-                            <li><a href="#" class="sendResult">发布作品</a></li>
-                        </ul>
-                    </li>
                 </ul>
             </div>
         </nav>
@@ -80,7 +71,7 @@
                                     <li class="page" @click="less()">上一页</li>
                                     <li class="page" v-for="index in indexs" @click="changeBtn(index)" :class="{'choosen': current == index}">{{index}}</li>
                                     <li class="page" @click="add()">下一页</li>
-                                    
+                                    <li class="page">共计{{all}}名用户</li>
                                 </ul>
                             </td>
                         </tr>
@@ -106,7 +97,7 @@
                             <td class="text-center">{{one.like}}</td>
                             <td class="text-center">
                                 <button class="btn btn-primary" style="margin-right: 50px;">修改</button>
-                                <button type="button" class="btn btn-danger" style="margin-left: 50px;">删除</button>
+                                <button type="button" class="btn btn-danger" style="margin-left: 50px;" @click="delNews(one.news_id)">删除</button>
                             </td>
                         </tr>
                         <tr>
@@ -116,6 +107,7 @@
                                     <li class="page" @click="less()">上一页</li>
                                     <li class="page" v-for="index in indexs" @click="changeBtn(index)" :class="{'choosen': current == index}">{{index}}</li>
                                     <li class="page" @click="add()">下一页</li>
+                                    <li class="page">共计{{all}}条动态</li>
                                 </ul>
                             </td>
                         </tr>

@@ -91,7 +91,26 @@ var manage = new Vue({
                     if (data.isdone) {
                         manage.tip = "操作成功!";
                         tipMake();
-                        manage.users.$remove(user);
+                        ajaxGet(0);
+                    } else {
+                        manage.tip = "操作失败!";
+                        tipMake();
+                    }
+                });
+            }
+        },
+        delNews: function(id) {
+            if (confirm("确定要删除此条动态么？")) {
+                var userInfo = {
+                    id : id,
+                    type : manage.type
+                };
+                //此处是删除动态的ajax请求
+                $.post("/index.php/Admin/index/deluser", userInfo, function(data) {
+                    if (data.isdone) {
+                        manage.tip = "操作成功!";
+                        tipMake();
+                        ajaxGet();
                     } else {
                         manage.tip = "操作失败!";
                         tipMake();
@@ -148,11 +167,11 @@ function ajaxGet() {
     };
     $.post("/index.php/Admin/index/get", info, function(data) {
         manage.all = data.count;
+        console.log(data.card[0].name)
         manage.pages = Math.ceil(manage.all / 5);
         switch(info.type) {
             case 0: manage.users = [].concat(data.card);break;
             case 2: manage.news = [].concat(data.card);break;
-            case 3: manage.results = [].concat(data.card);break;
         }
     })
 }
@@ -199,27 +218,6 @@ navList.each(function(index) {
                 clear();
                 navList.removeClass("active");
                 navList.eq(2).addClass("active");
-                manage.showNews = false;
-                $(".textContainer").addClass("showText");
-                editor.setValue("");
-                manage.showUser = false;
-                break;
-                //作品管理
-            case 6:
-                clear();
-                navList.removeClass("active");
-                navList.eq(5).addClass("active");
-                manage.showNews = false;
-                $(".textContainer").removeClass("showText");
-                editor.setValue("");
-                manage.showUser = false;
-                manage.type = 3;
-                ajaxGet();
-                break;
-            case 7:
-                clear();
-                navList.removeClass("active");
-                navList.eq(5).addClass("active");
                 manage.showNews = false;
                 $(".textContainer").addClass("showText");
                 editor.setValue("");
