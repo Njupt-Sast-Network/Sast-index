@@ -47,6 +47,13 @@ else{
     	$user['card'] = $db -> order($order) -> page($page.',5') -> select();
     	$count = $db -> count();
     	$user['count'] = $count;
+                       //去除密码
+        for ($i=0; $i < 6; $i++) { 
+            if($_POST['type'] == 0)
+               {
+                    unset($user['card'][$i]['password']);
+               }
+        }
         if($_POST['type']==2)//返回评论数和点赞数
         {  
             $dblike = M('like');

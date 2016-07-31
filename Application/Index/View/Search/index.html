@@ -38,6 +38,17 @@
 							<span class="spanTitle">为您搜索到相关答案<span class="number"></span>个</span>
 						</div>
 						<div class="row rowContant" style="min-height: 1000px;">
+								
+								<ul class="xinwen allUl" style="display: none">
+									<template v-for="item in items">
+									<li>
+										<img class="newsImg" src="/Uploads/{{item.img}}"><p class="newTime">{{item.timestamp}}</p>
+										<div class="newsList"><a class="newTitle"
+										:href="'__ROOT__/index.php/Index/View?type=2&id='+item.news_id">{{item.title}}</a>
+										<p class="news">{{item.simple}}</p></div>
+									</li>
+									</template>
+								</ul>
 								<ul class="taolun">
 								<!--
 									<template v-for="item in items">
@@ -74,16 +85,6 @@
 										 	<a href="javascript:;" class="response">回复</a>
 										</div>
 									</li>	
-								</ul>
-								<ul class="xinwen allUl" style="display: none">
-									<template v-for="item in items">
-									<li>
-										<img class="newsImg" src="/Uploads/{{item.img}}"><p class="newTime">{{item.timestamp}}</p>
-										<div class="newsList"><a class="newTitle"
-										:href="'__ROOT__/index.php/Index/View?type=2&id='+item.news_id">{{item.title}}</a>
-										<p class="news">{{item.simple}}</p></div>
-									</li>
-									</template>
 								</ul>
 								<ul class="wiki allUl" style="display: none">
 									<template v-for="item in items">

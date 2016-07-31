@@ -29,7 +29,7 @@ class LoginController extends Controller {
 	$this->ajaxReturn($data);
 	}
 
-		public function reg(){
+public function reg(){
 					if (!session('userinfo')) {
 			if (IS_POST) {
 				$loginfo['verify']=$_POST['verify'];
@@ -40,7 +40,7 @@ class LoginController extends Controller {
 					$loginfo['username'] = $_POST['username'];
 					$loginfo['password'] = md5($_POST['password']);
 					$loginfo['mail'] = $_POST['email'];
-					$loginfo['level'] = 3;
+					$loginfo['level'] = '3';
 					$test['username'] =  $_POST['username'];
 					if (!($info = M('user') -> where($test) -> find())){  // check if user is exist
 					$info = D("user");
