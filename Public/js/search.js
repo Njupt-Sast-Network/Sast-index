@@ -3,6 +3,23 @@ var taolunTemplate = new Vue({
 	el:".taolun",
 	data: {
 		items:[],
+		cons: [],
+		more: false
+	},
+	methods:{
+		getCon : function(id) {
+			var info = {
+				type : 1,
+				id : id,
+				page: 1,
+			};
+			$.post("讨论区评论请求url",info,function(data) {
+				if(data.length == 5 ) {
+					taolunTemplate.more = true
+				}
+				taolunTemplate.cons = [].concat(data);
+			})
+		}
 	}
 });
 //新闻组件

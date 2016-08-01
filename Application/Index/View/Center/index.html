@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+	<title>个人中心</title>
+	<script type="text/javascript" src="__PUBLIC__/js/vue.js"></script>	
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/center.css">
+</head>
+<body>
+	<div class="container-fluid" id="theBiggest">
+		<div class="nav row" style="height: 50px;background-color: #151613;color: #fff;">
+			<div class="logo">SAST</div>
+			<div class="back"><a href="__ROOT__/index.php/Index/">返回首页</a></div>
+		</div>
+		<div class="row" align="center">
+			<img src="__PUBLIC__/images/lazy.jpg" alt="用户头像" class="userImg">
+		</div>
+		<div class="row" align="center" style="margin-top: 50px;">
+			<div class="col-md-1"></div>
+			<div class="col-md-4 choosen">我的WIKI</div>
+			<div class="col-md-2"></div>
+			<div class="col-md-4">个人信息</div>
+		</div>
+		<div class="row">
+			<div class="row" style="width: 94%;margin: 0 auto">
+                <table class="table table-hover table-bordered" style="margin-top: 60px;">
+                    <thead>
+                        <tr>
+                            <th class="text-center">问题</th>
+                            <th class="text-center">发布时间</th>
+                            <th class="text-center">评论数</th>
+                            <th class="text-center">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center"><a href="">按实际大事记</a></td>
+                            <td class="text-center">2016-1-12</td>
+                            <td class="text-center">324</td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-danger">删除</button>
+                            </td>
+                        </tr>
+                        <!--<tr>
+                            <td colspan="6" class="pageTd">
+                                <ul class="pageAll" style="width: 100%;">
+                                    <li class="page" @click="toFirst()">首页</li>
+                                    <li class="page" @click="less()">上一页</li>
+                                    <li class="page" v-for="index in indexs" @click="changeBtn(index)" :class="{'choosen': current == index}">{{index}}</li>
+                                    <li class="page" @click="add()">下一页</li>
+                                    <li class="page">共计{{all}}名用户</li>
+                                </ul>
+                            </td>
+                        </tr>-->
+                    </tbody>
+                </table>
+            </div>
+		</div>
+	</div>
+	<script src="__PUBLIC__/js/jquery.js"></script>
+	<script src="__PUBLIC__/js/bootstrap.js"></script>
+</body>
+</html>

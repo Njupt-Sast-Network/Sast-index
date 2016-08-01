@@ -50,48 +50,36 @@
 									</template>
 								</ul>
 								<ul class="taolun">
-								<!--
 									<template v-for="item in items">
 									<li>
-										<img :src="item.src" alt="用户头像" class="taolunImg"><span class="from">来自</span><a class="username">{{item.nickname}}</a>
-										<p class="problem">{{item.problem}}</p>
+										<img src="__PUBLIC__/images/lazy.jpg" alt="用户头像" class="taolunImg"><span class="from">来自</span><a class="username">{{item.name}}</a>
+										<p class="problem">
+										<a :href="'__ROOT__/index.php/Index/View?type=1&id='+item.taolun_id">{{item.title}}</a></p>
 										<div class="caozuo">
-											<a href="javascript:;" class="ping">评论</a>&nbsp;&nbsp;
-											<a href="javascript:;" class="open">展开评论</a>
+											<span style="margin-right: 6px;">{{item.like}}个赞</span>
+											<span style="margin-right: 6px;">{{item.item.number}}条评论</span>
+											<a href="javascript:;" class="open" @click="getCon(item.taolun_id)">展开评论</a>
 										</div>
-										评论内容不是第一次请求得到
-										<div class="row comment">
+										<div class="row comment">	
+										<template v-for="con in cons">
 											<div class="row small">
-												<span class="name">狒狒神:</span>
-												<span class="answer">你可以去查一下官方文档你可以去查一下官方文档你可以去查一下官方文档你可以去查一下官方文档你可以去查一下官方文档你可以去查一下官方文档你可以去查一下官方文档</span>
+												<span class="name">{{con.name}}：</span>
+												<span class="answer">{{con.answer}}</span>
 											</div>
-										 	<a href="javascript:;" class="response">回复</a>
-										</div>
-									</li>
-									</template>
-									-->
-									<li>
-										<img src="__PUBLIC__/images/img3.jpg" alt="用户头像" class="taolunImg"><span class="from">来自</span><a class="username">小泉花阳</a>
-										<p class="problem">请问thinkphp中M函数的作用是什么？</p>
-										<div class="caozuo">
-											<a href="javascript:;" class="ping">评论</a>&nbsp;&nbsp;
-											<a href="javascript:;" class="open">展开评论</a>
-										</div>
-										<div class="row comment">
-											<div class="row small">
-												<span class="name">狒狒神:</span>
-												<span class="answer">你可以去查一下官方文档你可以去查一下官方文档你可以去查一下官方文档你可以去查一下官方文档你可以去查一下官方文档你可以去查一下官方文档你可以去查一下官方文档</span>
+											<div class="row" align="center">
+												<a :href="'__ROOT__/index.php/Index/View?type=1&id='+item.taolun_id" v-if="more">查看更多>></a>
 											</div>
-										 	<a href="javascript:;" class="response">回复</a>
 										</div>
+										</template>
 									</li>	
+									</template>
 								</ul>
 								<ul class="wiki allUl" style="display: none">
 									<template v-for="item in items">
 									<li>
-										<a class="wikiTitle" :href="'__ROOT__/index.php/Index/View?type=3&id='+item.news_id">{{item.title}}</a>
+										<a class="wikiTitle" :href="'__ROOT__/index.php/Index/View?type=3&id='+item.wiki_id">{{item.title}}</a>
 										<p class="wikiContent">{{item.simple}}</p>
-										<div class="more"><span class="author">{{item.author}}</span>&nbsp;&nbsp;<span class="time">{{item.timestamp}}</span></div>
+										<div class="more"><span class="author">{{item.author}}</span>&nbsp;&nbsp;<span>{{item.like}}个赞</span>&nbsp;&nbsp;<span class="time">{{item.timestamp}}</span></div>
 									</li>
 									</template>
 								</ul>
