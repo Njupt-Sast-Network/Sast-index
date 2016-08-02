@@ -228,6 +228,9 @@ div.findS .same:focus {
 	margin-top: -30px;
 	margin-bottom: 60px;
 }
+.contant .rowBiggest .col-md-8 .rowContant .taolun .problem a:hover {
+	color: #356686;
+}
 .contant .rowBiggest .col-md-8 .rowContant .taolun .comment {
 	display: none;
 }
@@ -273,7 +276,7 @@ div.findS .same:focus {
 	text-decoration: none;
 }
 .contant .rowBiggest .col-md-8 .rowContant .xinwen .newTitle:hover {
-	color: #1f60a9;
+	color: #356686;
 	text-decoration: none;
 	cursor: pointer;
 }
@@ -287,17 +290,17 @@ div.findS .same:focus {
 .contant .rowBiggest .col-md-8 .rowContant .xinwen .newTime {
 	position: absolute;
 	top: 160px;
-	left: 60px;
+	left: 90px;
 }
 /*wiki*/
 .contant .rowBiggest .col-md-8 .rowContant .wiki .wikiTitle {
 	font-size: 18px;
 	color: #000;
 	font-weight: bold;
+	text-decoration: none;
 }
 .contant .rowBiggest .col-md-8 .rowContant .wiki .wikiTitle:hover {
-	color: #337D69;
-	text-decoration: none;
+	color: #356686;
 }
 .contant .rowBiggest .col-md-8 .rowContant .wiki .wikiContent {
 	font-size: 14px;

@@ -77,6 +77,8 @@
 									vm.items = [];
 									info.page = 1;
 									ajaxComment();
+									like[3]++;
+									$(".num").text('('+like[3]+')');
 								}else {
 									vm.tip = "操作失败!";
 									tipMake();
@@ -96,18 +98,21 @@
 				}
 			}
 		}
-	});
+	}); 
 	function ajaxComment() {
+
 		$.post("/index.php/View/more",info,function(data){
 			status = data["islogin"];
 			var len = like[3] - (info.page-1)*3;
 			if ( len < 3) {
 				for(var i = 0;i < len;i++) {
 					vm.items.push(data[i]); 
+					console.log(1)
 				}
 			} else {
 				for(var i = 0;i < 3;i++) {
 					vm.items.push(data[i]); 
+					console.log(2)
 				}
 			}
 			if (like[3] > info.page*3) {

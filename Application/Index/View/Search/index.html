@@ -42,7 +42,7 @@
 								<ul class="xinwen allUl" style="display: none">
 									<template v-for="item in items">
 									<li>
-										<img class="newsImg" src="/Uploads/{{item.img}}"><p class="newTime">{{item.timestamp}}</p>
+										<img class="newsImg" src="/Uploads/{{item.img}}"><p class="newTime">{{item.timestamp | timeRule}}</p>
 										<div class="newsList"><a class="newTitle"
 										:href="'__ROOT__/index.php/Index/View?type=2&id='+item.news_id">{{item.title}}</a>
 										<p class="news">{{item.simple}}</p></div>
@@ -58,9 +58,10 @@
 										<div class="caozuo">
 											<span style="margin-right: 6px;">{{item.likenumber}}个赞</span>
 											<span style="margin-right: 6px;">{{item.comnumber}}条评论</span>
-											<a href="javascript:;" class="open" @click="getCon(item.talk_id)">展开评论</a>
+											<a href="javascript:;" class="open" @click="getCon(item.talk_id,$index,item.check)">{{msg}}</a>
 										</div>
 										<div class="row comment">	
+										
 										<template v-for="con in cons">
 											<div class="row small">
 												<span class="name">{{con.commentor}}：</span>
@@ -79,7 +80,7 @@
 									<li>
 										<a class="wikiTitle" :href="'__ROOT__/index.php/Index/View?type=3&id='+item.wiki_id">{{item.title}}</a>
 										<p class="wikiContent">{{item.simple}}</p>
-										<div class="more"><span class="author">{{item.author}}</span>&nbsp;&nbsp;<span>{{item.likenumber}}个赞</span>&nbsp;&nbsp;<span class="time">{{item.timestamp}}</span></div>
+										<div class="more"><span class="author">作者:{{item.author}}</span>&nbsp;&nbsp;<span>{{item.likenumber}}个赞</span>&nbsp;&nbsp;<span class="time">{{item.timestamp | timeRule}}</span></div>
 									</li>
 									</template>
 								</ul>
