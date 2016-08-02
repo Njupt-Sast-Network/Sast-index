@@ -60,7 +60,7 @@
                                     <div class="caozuo">
                                         <span style="margin-right: 6px;">{{item.likenumber}}个赞</span>
                                         <span style="margin-right: 6px;">{{item.comnumber}}条评论</span>
-                                        <a href="javascript:;" class="open" @click="getCon(item.talk_id,$index,item.check)">展开评论</a>
+                                        <a href="javascript:;" class="open" @click="getCon(item.talk_id,$index,item.check)">展开评论&nbsp;&nbsp;</a>
                                     </div>
                                     <div class="row comment" style="border: 1px solid #dddddd;">
                                     	<div class="single"></div>
@@ -82,7 +82,7 @@
                                 <li>
                                     <a class="wikiTitle" :href="'__ROOT__/index.php/Index/View?type=3&id='+item.wiki_id">{{item.title}}</a>
                                     <p class="wikiContent">{{item.simple}}</p>
-                                    <div class="more"><span class="author">作者:{{item.author}}</span>&nbsp;&nbsp;<span>{{item.likenumber}}个赞</span>&nbsp;&nbsp;<span class="time">{{item.timestamp | timeRule}}</span></div>
+                                    <div class="more"><span class="author">作者:{{item.author}}</span>&nbsp;&nbsp;&nbsp;<span>{{item.likenumber}}个赞</span>&nbsp;&nbsp;&nbsp;<span class="time">{{item.timestamp | timeRule}}&nbsp;&nbsp;</span></div>
                                 </li>
                             </template>
                         </ul>
