@@ -207,9 +207,6 @@ div.findS .same:focus {
 .contant .rowBiggest .col-md-8 .rowContant .taolun img {
 	width: 80px;
 	height: 80px;
-	border: 1px solid #317865;
-	box-shadow: 0 0 10px #333; 
-	border-radius: 50%;
 }
 .contant .rowBiggest .col-md-8 .rowContant .taolun a {
 	color: #000;
@@ -225,7 +222,7 @@ div.findS .same:focus {
 .contant .rowBiggest .col-md-8 .rowContant .taolun .problem {
 	margin-left: 100px;
 	font-size: 18px;
-	margin-top: -30px;
+	margin-top: -30px; 
 	margin-bottom: 60px;
 }
 .contant .rowBiggest .col-md-8 .rowContant .taolun .problem a:hover {
@@ -250,8 +247,24 @@ div.findS .same:focus {
 	font-size: 14px;
 	color: #484846;
 }
+.contant .rowBiggest .col-md-8 .rowContant .taolun .name {
+	color: #084367;
+}
 .contant .rowBiggest .col-md-8 .rowContant .taolun .row {
 	margin: 0;
+}
+.contant .rowBiggest .col-md-8 .rowContant .taolun .single {
+	position: relative;
+	z-index: 10000;
+	width: 14px;
+	height: 14px;
+	background-color: #fff;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
+	top: -8px;
+	left: 100px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
 }
 /*新闻区样式*/
 .contant .rowBiggest .col-md-8 .rowContant .xinwen li {

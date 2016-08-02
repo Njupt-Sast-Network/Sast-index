@@ -33,6 +33,7 @@ class SearchController extends Controller {
 			$Listcard['card'][$i]['likenumber']=getlikenumber($_POST['table'],$Listcard['card'][$i][$id]);
 		}
 		$Listcard['check'] = false;
+		$Listcard['cons'] = [];
 		$this -> ajaxReturn($Listcard);	
 	}
 

@@ -3,12 +3,11 @@ var taolunTemplate = new Vue({
     el: ".taolun",
     data: {
         items: [],
-        cons: [],
         more: false,
-        msg: "展开评论"
+        cons: []
     },
     methods: {
-        getCon: function(id,e,check) {
+        getCon: function(id, e, check) {
             var info = {
                 type: 1,
                 id: id,
@@ -16,25 +15,33 @@ var taolunTemplate = new Vue({
                 front: 1,
             };
             var openComment = $(".contant .rowBiggest .col-md-8 .rowContant .taolun .comment").eq(e);
-            $.post("/index.php/View/more", info, function(data) {
-                if (data.length > 0) {
-                	if(!check) {
-                		openComment.slideToggle();
-                		taolunTemplate.msg = "收起";
-                		taolunTemplate.items[e].check = true;
-                	}else {
-                		openComment.slideToggle();
-                		taolunTemplate.msg = "展开评论";
-                		taolunTemplate.items[e].check = false;
-                	}
-                }else {
-                	alert("暂无评论！");
-                }
-                if (data.length == 5) {
-                    taolunTemplate.more = true
-                }
-                taolunTemplate.cons = [].concat(data);
-            });
+            var openTrue = $(".contant .rowBiggest .col-md-8 .rowContant .taolun .open").eq(e);
+            if (!taolunTemplate.items[e].check) {
+                $.post("/index.php/View/more", info, function(data) {
+                    if (data.length > 0) {
+                        
+                        taolunTemplate.cons.$set(e, data);
+                        if (!check) {
+                            openComment.slideToggle();
+                            taolunTemplate.items[e].check = true;
+                            openTrue.text("收起评论");
+                        } else {
+                            openComment.slideToggle();
+                            taolunTemplate.items[e].check = false;
+                            openTrue.text("展开评论");
+                        }
+                    } else {
+                        alert("暂时没有相关评论");
+                    }
+                    if (data.length == 5) {
+                        taolunTemplate.more = true
+                    }
+                });
+            }else {
+                openComment.slideToggle();
+                taolunTemplate.items[e].check = false;
+                openTrue.text("展开评论");
+            }
 
         }
     }
