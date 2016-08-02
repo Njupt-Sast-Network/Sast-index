@@ -17,8 +17,22 @@ class SearchController extends Controller {
 			}
 			$map['_logic'] = 'and';
 		}
+		$Listcard['map'] = $map;
 		$Listcard['card'] = $Database -> where($map)  -> page($_POST['page'].',7') -> select();
 		$Listcard['count'] = $Database -> where($map) -> count();
+		//返回评论数
+		for ($i=0; $i < 7; $i++) { 
+			$Listcard['card'][$i]['comnumber']=0;
+			$id = whichid($_POST['table']);
+			$Listcard['card'][$i]['comnumber']=getlikenumber($_POST['table'],$Listcard['card'][$i][$id]);
+		}
+		//返回赞数
+		for ($i=0; $i < 7; $i++) { 
+			$Listcard['card'][$i]['likenumber']=0;
+			$id = whichid($_POST['table']);
+			$Listcard['card'][$i]['likenumber']=getlikenumber($_POST['table'],$Listcard['card'][$i][$id]);
+		}
+		
 		$this -> ajaxReturn($Listcard);	
 	}
 
@@ -41,8 +55,8 @@ class SearchController extends Controller {
 			$isimg = 1;
 			break;
 		case 3:
-					$or = "share_id desc";
-			$table = M('share') ->order($or);
+					$or = "wiki_id desc";
+			$table = M('wiki') ->order($or);
 
 			break;
 		default:

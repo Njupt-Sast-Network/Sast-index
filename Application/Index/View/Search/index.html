@@ -52,22 +52,22 @@
 								<ul class="taolun">
 									<template v-for="item in items">
 									<li>
-										<img src="__PUBLIC__/images/lazy.jpg" alt="用户头像" class="taolunImg"><span class="from">来自</span><a class="username">{{item.name}}</a>
+										<img src="__PUBLIC__/images/lazy.jpg" alt="用户头像" class="taolunImg"><span class="from">来自</span><a class="username">{{item.author}}</a>
 										<p class="problem">
-										<a :href="'__ROOT__/index.php/Index/View?type=1&id='+item.taolun_id">{{item.title}}</a></p>
+										<a :href="'__ROOT__/index.php/Index/View?type=1&id='+item.talk_id">{{item.title}}</a></p>
 										<div class="caozuo">
-											<span style="margin-right: 6px;">{{item.like}}个赞</span>
-											<span style="margin-right: 6px;">{{item.item.number}}条评论</span>
-											<a href="javascript:;" class="open" @click="getCon(item.taolun_id)">展开评论</a>
+											<span style="margin-right: 6px;">{{item.likenumber}}个赞</span>
+											<span style="margin-right: 6px;">{{item.comnumber}}条评论</span>
+											<a href="javascript:;" class="open" @click="getCon(item.talk_id)">展开评论</a>
 										</div>
 										<div class="row comment">	
 										<template v-for="con in cons">
 											<div class="row small">
-												<span class="name">{{con.name}}：</span>
-												<span class="answer">{{con.answer}}</span>
+												<span class="name">{{con.commentor}}：</span>
+												<span class="answer">{{con.content}}</span>
 											</div>
 											<div class="row" align="center">
-												<a :href="'__ROOT__/index.php/Index/View?type=1&id='+item.taolun_id" v-if="more">查看更多>></a>
+												<a :href="'__ROOT__/index.php/Index/View?type=1&id='+item.talk_id" v-if="more">查看更多>></a>
 											</div>
 										</div>
 										</template>
@@ -79,7 +79,7 @@
 									<li>
 										<a class="wikiTitle" :href="'__ROOT__/index.php/Index/View?type=3&id='+item.wiki_id">{{item.title}}</a>
 										<p class="wikiContent">{{item.simple}}</p>
-										<div class="more"><span class="author">{{item.author}}</span>&nbsp;&nbsp;<span>{{item.like}}个赞</span>&nbsp;&nbsp;<span class="time">{{item.timestamp}}</span></div>
+										<div class="more"><span class="author">{{item.author}}</span>&nbsp;&nbsp;<span>{{item.likenumber}}个赞</span>&nbsp;&nbsp;<span class="time">{{item.timestamp}}</span></div>
 									</li>
 									</template>
 								</ul>

@@ -13,11 +13,11 @@ var taolunTemplate = new Vue({
 				id : id,
 				page: 1,
 			};
-			$.post("讨论区评论请求url",info,function(data) {
+			$.post("/index.php/View/more",info,function(data) {
 				if(data.length == 5 ) {
 					taolunTemplate.more = true
 				}
-				taolunTemplate.cons = [].concat(data);
+				taolunTemplate.cons = [].concat(data.card);
 			})
 		}
 	}

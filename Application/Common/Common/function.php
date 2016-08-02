@@ -35,4 +35,37 @@ function check_verify($code, $id = ""){//检查验证码输入是否正确
 	$verify = new \Think\Verify();
 	return $verify->check($code, $id);
 }  
+
+function getcomnumber($type,$id){
+	$comdb = M('comment');
+	$wheretwo = "type=".$type." and id=".$id;
+	$comnumber = $comdb -> where($wheretwo) -> count();
+	return $comnumber;
+}
+function getlikenumber($type,$id){
+	$comdb = M('like');
+	$wheretwo = "type=".$type." and id=".$id;
+	$comnumber = $comdb -> where($wheretwo) -> count();
+	return $comnumber;
+}
+function whichid($type){
+			switch ($type) {
+		case 0:
+			$or = "work_id";
+			break;
+		case 1:
+			$or = "talk_id";
+			break;
+		case 2:
+			$or = "news_id";
+			break;
+		case 3:
+			$or = "wiki_id";
+			break;
+		default:
+			$or = "news_id";
+			break;
+		}
+		return $or;
+}
 ?>

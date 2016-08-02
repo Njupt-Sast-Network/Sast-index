@@ -47,11 +47,13 @@ else{
     	$user['card'] = $db -> order($order) -> page($page.',5') -> select();
     	$count = $db -> count();
     	$user['count'] = $count;
-                       //去除密码
+                       //去除密码 返回提问数
         for ($i=0; $i < 6; $i++) { 
             if($_POST['type'] == 0)
                {
                     unset($user['card'][$i]['password']);
+                    $talkdb = M('talk');
+                    $user['card'][$i]['talknumber'] = $talkdb -> where('author = \''.$user['card'][$i]['username']."'")->count();
                }
         }
         if($_POST['type']==2)//返回评论数和点赞数

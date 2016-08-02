@@ -8,28 +8,33 @@ class ViewController extends Controller {
 		case 0:
 			$table = M('work');
 			$or = "work_id =";
+			$order = "work_id desc";
 			break;
 		case 1:
 			$table = M('talk');
 			$or = "talk_id =";
+			$order = "talk_id desc";
 			break;
 		case 2:
 			$table = M('news');
 			$or = "news_id =";
+			$order = "news_id desc";
 			break;
 		case 3:
 			$table = M('wiki');
 			$or = "wiki_id =";
+			$order = "wiki_id desc";
 			break;
 		default:
-			$table = M('work');
-			$or = "work_id =";
+			$table = M('news');
+			$or = "news_id =";
+			$order = "news_id desc";
 			break;
 		}
 
 		$id = $or.$_GET['id'];
 		$content = $table -> where($id) -> find();
-		$titleseven['card'] = $table -> order('news_id desc') -> limit(7)->select();//查最近7个新闻
+		$titleseven['card'] = $table -> order($order) -> limit(7)->select();//查最近7个新闻
 		$title1 = $titleseven['card'][0];
 		$title2 = $titleseven['card'][1];
 		$title3 = $titleseven['card'][2];
@@ -101,7 +106,13 @@ class ViewController extends Controller {
 
 
 
-
+		if($_POST['type']==1)
+		{
+			for ($i=0; $i < 5; $i++) { 
+				$back['card'][$i] = $listcard[$i];
+			}
+			$this -> ajaxReturn($back);	
+		}else
 		$this -> ajaxReturn($listcard);	
 
 
