@@ -13,6 +13,7 @@ var taolunTemplate = new Vue({
                 type: 1,
                 id: id,
                 page: 1,
+                front: 1,
             };
             var openComment = $(".contant .rowBiggest .col-md-8 .rowContant .taolun .comment").eq(e);
             $.post("/index.php/View/more", info, function(data) {
@@ -32,7 +33,7 @@ var taolunTemplate = new Vue({
                 if (data.length == 5) {
                     taolunTemplate.more = true
                 }
-                taolunTemplate.cons = [].concat(data.card);
+                taolunTemplate.cons = [].concat(data);
             });
 
         }

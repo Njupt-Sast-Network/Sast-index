@@ -37,6 +37,7 @@ public function upload(){
     $db = M('news');
     if($db->add($news))
     {
+        F('news',NULL);
         echo("<script>alert('发布成功')</script>");
                 $Url = $_SERVER['HTTP_REFERER'];
         if (isset($Url)) 

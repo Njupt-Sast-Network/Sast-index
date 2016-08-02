@@ -108,8 +108,12 @@ class ViewController extends Controller {
 
 		if($_POST['type']==1)
 		{
+			if($_POST['front'] == 1)
+			$listcard = $table -> where($where) ->order('com_id desc') ->page($page.',5') -> select();
 			for ($i=0; $i < 5; $i++) { 
-				$back['card'][$i] = $listcard[$i];
+				$back[$i] = $listcard[$i];
+				if($listcard[$i]==NULL)
+					unset($back[$i]);
 			}
 			$this -> ajaxReturn($back);	
 		}else

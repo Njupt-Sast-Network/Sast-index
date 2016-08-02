@@ -31,7 +31,7 @@ else{
     			$order = "uid desc";
     			break; 
     		case 1:
-    			$db = M('taolun');
+    			$db = M('wiki');
     			$order = "id desc";
     			break;
     		case 2:

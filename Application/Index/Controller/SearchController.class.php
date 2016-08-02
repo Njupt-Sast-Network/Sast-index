@@ -21,18 +21,18 @@ class SearchController extends Controller {
 		$Listcard['card'] = $Database -> where($map)  -> page($_POST['page'].',7') -> select();
 		$Listcard['count'] = $Database -> where($map) -> count();
 		//返回评论数
-		for ($i=0; $i < 7; $i++) { 
+		for ($i=0; $i < count($Listcard['card']); $i++) { 
 			$Listcard['card'][$i]['comnumber']=0;
 			$id = whichid($_POST['table']);
-			$Listcard['card'][$i]['comnumber']=getlikenumber($_POST['table'],$Listcard['card'][$i][$id]);
+			$Listcard['card'][$i]['comnumber']=getcomnumber($_POST['table'],$Listcard['card'][$i][$id]);
 		}
 		//返回赞数
-		for ($i=0; $i < 7; $i++) { 
+		for ($i=0; $i < count($Listcard['card']); $i++) { 
 			$Listcard['card'][$i]['likenumber']=0;
 			$id = whichid($_POST['table']);
 			$Listcard['card'][$i]['likenumber']=getlikenumber($_POST['table'],$Listcard['card'][$i][$id]);
 		}
-		
+		$Listcard['check'] = false;
 		$this -> ajaxReturn($Listcard);	
 	}
 

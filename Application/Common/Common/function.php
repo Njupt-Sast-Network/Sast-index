@@ -68,4 +68,45 @@ function whichid($type){
 		}
 		return $or;
 }
+function verifyadmin()
+{
+ if (session('userinfo')) 
+{
+    	$sess = session('userinfo');
+        $data['username'] = $sess['username'];
+        $db = M('user');
+        $where = "level=1 and username='".$data['username']."'";
+        if($db->where($where)->find())
+        {
+        	return 1;
+        }
+        else
+        {
+        	return 0;
+        }
+    }else{
+    	return 0;
+    }
+}
+function verifyuser()
+{
+ if (session('userinfo')) 
+{
+    	$sess = session('userinfo');
+        $data['username'] = $sess['username'];
+        $db = M('user');
+        $where = "username='".$data['username']."'";
+        if($db->where($where)->find())
+        {
+        	return 1;
+        }
+        else
+        {
+        	return 0;
+        }
+    }else{
+    	return 0;
+    }
+}
+
 ?>

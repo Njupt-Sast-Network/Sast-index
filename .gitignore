@@ -262,3 +262,4 @@ Application/Admin/Conf/config.php
 Application/Index/Conf/config.php
 .idea/
 Uploads/
+phpMyAdmin/
