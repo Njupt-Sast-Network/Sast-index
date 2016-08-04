@@ -5,11 +5,7 @@ class IndexController extends Controller {
     public function index(){
         if (session('userinfo')) 
 {
-    $sess = session('userinfo');
-        $data['username'] = $sess['username'];
-        $db = M('user');
-        $where = "level=1 and username='".$data['username']."'";
-        if($db->where($where)->find())
+        if(verifyadmin())
         {
                     $this->display();
         }
@@ -25,6 +21,7 @@ else{
 }
 
     public function get(){
+    if(verifyadmin()){
     	switch ($_POST['type']) {
     		case 0:
     			$db = M('user');
@@ -69,8 +66,13 @@ else{
             }
         }
     	$this -> ajaxReturn($user);
+    }else{
+        echo "You are not permitted to do this";
     }
+    }
+
     public function deluser(){
+    if(verifyadmin()){
     	$type = $_POST['type'];
     	$id = $_POST['id'];
     	    	switch ($_POST['type']) {
@@ -99,6 +101,9 @@ else{
     	}
     	$card['isdone'] = $isdone;
     	$this -> ajaxReturn($card);
+    }else{
+        echo "You are not permitted to do this";
+    }
     }
 
 

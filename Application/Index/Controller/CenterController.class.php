@@ -20,7 +20,7 @@ class CenterController extends Controller {
         	$this -> ajaxReturn($info);
         }else
         {
-        	echo "PLease login in"
+        	echo "PLease login in";
         }
 	}
 
@@ -69,9 +69,64 @@ class CenterController extends Controller {
         {
         	echo "Please login in first";
         }
-
-
-
 	}
+
+    public function del(){
+    if(verifyuser()){
+        $type = $_POST['type'];
+        $id = $_POST['id'];
+                switch ($_POST['type']) {
+            case 0:
+                $db = M('user');
+                $order = "uid =";
+                break; 
+            case 1:
+                $db = M('taolun');
+                $order = "id =";
+                break;
+            case 2:
+                $db = M('news');
+                $order = "news_id =";
+                break;
+             default:
+                $db = M('user');
+                $order = "uid =";
+                break;
+        }
+        $where = $order.$id;
+        $isdone = false;
+        $name = $db -> where($where) -> select();
+        $sess = session('userinfo'); //获取当前用户
+        $sessname = $sess['usernamer'];
+        if($name['author'] == $sessname)  //确认文章删除权限
+        {
+        if($db -> where($where) -> delete())
+        {
+            $isdone = true;
+        }
+        $card['isdone'] = $isdone;
+        $this -> ajaxReturn($card);
+        }
+        else{
+            echo "You are not permitted to do this";
+        }
+    }else{
+        echo "You are not permitted to do this";
+    }
+    }
+
+public function changeinfo(){
+    if(verifyuser()){
+        $sess = session('userinfo');
+        $name = $sess['username'];
+        
+    }else{
+        echo "You are not permitted to do this";
+    }
+}
+
+
+
+
 }
 ?>

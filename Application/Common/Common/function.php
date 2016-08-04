@@ -68,26 +68,7 @@ function whichid($type){
 		}
 		return $or;
 }
-function verifyadmin()
-{
- if (session('userinfo')) 
-{
-    	$sess = session('userinfo');
-        $data['username'] = $sess['username'];
-        $db = M('user');
-        $where = "level=1 and username='".$data['username']."'";
-        if($db->where($where)->find())
-        {
-        	return 1;
-        }
-        else
-        {
-        	return 0;
-        }
-    }else{
-    	return 0;
-    }
-}
+
 function verifyuser()
 {
  if (session('userinfo')) 
@@ -108,6 +89,7 @@ function verifyuser()
     	return 0;
     }
 }
+
 function getpassword( $length = 8 ) {
     // 密码字符集，可任意添加你需要的字符
     $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_ []{}<>~`+=,.;:/?|';
@@ -123,5 +105,26 @@ function getpassword( $length = 8 ) {
     }
 
     return $password;
+}
+
+	function verifyadmin()
+{
+ if(session('userinfo')) 
+{
+    	$sess = session('userinfo');
+        $data['username'] = $sess['username'];
+        $db = M('user');
+        $where = "level=1 and username='".$data['username']."'";
+        if($db->where($where)->find())
+        {
+        	return 1;
+        }
+        else
+        {
+        	return 0;
+        }
+    }else{
+    	return 0;
+    }
 }
 ?>

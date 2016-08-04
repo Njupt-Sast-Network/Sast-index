@@ -1,129 +1,133 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
+
 <head>
-	<meta charset="UTF-8">
-	 <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
-	<title>科协陈列馆</title>
-	<script type="text/javascript" src="__PUBLIC__/js/vue.js"></script>	
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/indexTop.css">
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/login.css">
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/register.css">
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/search.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+    <title>科协陈列馆</title>
+    <script type="text/javascript" src="__PUBLIC__/js/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/indexTop.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/login.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/register.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/search.css">
 </head>
+
 <body>
-	<include file="./Public/html/navbar.html"/>
-	<div class="findS">
-		<div class="filter">
-			<input type="text" class="put same" placeholder="请输入想搜索的内容...">
-			<input type="button" class="same btn" value="搜索">
-		</div>
-	</div>
-	<div class="contant">
-		<div class="container">	
-				<div class="row rowBiggest">
-					<div class="col-md-8" >
-						<div class="row rowNav">
-							<ul>
-								<navli msg="作品" style="display: none;"></navli>
-								<navli msg="讨论区" class="choose"></navli>
-								<navli msg="科协动态"></navli>
-								<navli msg="学长分享"></navli>
-							</ul>
-						</div>
-						<template id="navtemplate">
-							<li @click="changeChoose($el)">{{msg}}</li>
-						</template>
-						<div class="row rowTip" style="background-color:#F9F9F9">
-							<span class="spanTitle">为您搜索到相关答案<span class="number"></span>个</span>
-						</div>
-						<div class="row rowContant" style="min-height: 1000px;">
-								
-								<ul class="xinwen allUl" style="display: none">
-									<template v-for="item in items">
-									<li>
-										<img class="newsImg" src="/Uploads/{{item.img}}"><p class="newTime">{{item.timestamp | timeRule}}</p>
-										<div class="newsList"><a class="newTitle"
-										:href="'__ROOT__/index.php/Index/View?type=2&id='+item.news_id">{{item.title}}</a>
-										<p class="news">{{item.simple}}</p></div>
-									</li>
-									</template>
-								</ul>
-								<ul class="taolun">
-									<template v-for="item in items">
-									<li>
-										<img src="__PUBLIC__/images/lazy.jpg" alt="用户头像" class="taolunImg"><span class="from">来自</span><a class="username">{{item.author}}</a>
-										<p class="problem">
-										<a :href="'__ROOT__/index.php/Index/View?type=1&id='+item.talk_id">{{item.title}}</a></p>
-										<div class="caozuo">
-											<span style="margin-right: 6px;">{{item.likenumber}}个赞</span>
-											<span style="margin-right: 6px;">{{item.comnumber}}条评论</span>
-											<a href="javascript:;" class="open" @click="getCon(item.talk_id,$index,item.check)">{{msg}}</a>
-										</div>
-										<div class="row comment">	
-										
-										<template v-for="con in cons">
-											<div class="row small">
-												<span class="name">{{con.commentor}}：</span>
-												<span class="answer">{{con.content}}</span>
-											</div>
-											<div class="row" align="center">
-												<a :href="'__ROOT__/index.php/Index/View?type=1&id='+item.talk_id" v-if="more">查看更多>></a>
-											</div>
-										</div>
-										</template>
-									</li>	
-									</template>
-								</ul>
-								<ul class="wiki allUl" style="display: none">
-									<template v-for="item in items">
-									<li>
-										<a class="wikiTitle" :href="'__ROOT__/index.php/Index/View?type=3&id='+item.wiki_id">{{item.title}}</a>
-										<p class="wikiContent">{{item.simple}}</p>
-										<div class="more"><span class="author">作者:{{item.author}}</span>&nbsp;&nbsp;<span>{{item.likenumber}}个赞</span>&nbsp;&nbsp;<span class="time">{{item.timestamp | timeRule}}</span></div>
-									</li>
-									</template>
-								</ul>
-							<img src="__PUBLIC__/images/loading.gif" height="40" width="40" alt="loading..." class="loading" style="display:none;">
-							<div class="searchTip"><span class="notFind">没有关于“<span class="content"></span>”的搜索结果</span></div>
-						</div>
-						<!--分页-->
-						<div class="row" style="margin-bottom:30px;">
-							<ul class="pageAll" style="width: 100%;text-align: center;">
-								<li class="page" @click="toFirst()">第一页</li>
-								<li class="page" @click="less()">上一页</li>
-								<li class="page" v-for="index in indexs" @click="changeBtn(index)" :class="{'choosen': current == index}">{{index}}</li>
-								<li class="page" @click="add()">下一页</li>
-								<li class="amount">{{current}}/<span class="pages"></span></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-md-3">
-						<div class="row rightRow" style="height:700px;">
-							<div class="title">热门搜索</div>
-							<a href="{这是链接}" class="s1">多写代码少装逼</a>
-							<a href="{这是链接}" class="s2">多写代码少装逼</a>
-							<a href="{这是链接}" class="s3">多写代码少装逼</a>
-							<a href="{这是链接}" class="s4">多写代码少装逼</a>
-							<a href="{这是链接}" class="s5">多写代码少装逼</a>
-							<a href="{这是链接}" class="s6">多写代码少装逼</a>
-							<a href="{这是链接}" class="s7">多写代码少装逼</a>
-							<a href="{这是链接}" class="s8">多写代码少装逼</a>
-							<a href="{这是链接}" class="s9">多写代码少装逼</a>
-						</div>
-					</div>
-				</div>
-		</div>
-		<div class="container-fluid foot" style="background-color: #084469;">
-			<div class="row">
-				<p style="color:#fff;margin-top:4px;margin-left:20px;">Copyright &copy;校科协网络部  github:https://github.com/Njupt-Sast-Network</p>
-			</div>
-		</div>
-	</div>
-	<script src="__PUBLIC__/js/jquery.js"></script>
-	<script src="__PUBLIC__/js/bootstrap.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/js/Login.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/js/register.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/js/search.js"></script>
-	</body>
+    <include file="./Public/html/navbar.html" />
+    <div class="findS">
+        <div class="filter">
+            <input type="text" class="put same" placeholder="请输入想搜索的内容...">
+            <input type="button" class="same btn" value="搜索">
+        </div>
+    </div>
+    <div class="contant">
+        <div class="container">
+            <div class="row rowBiggest">
+                <div class="col-md-8">
+                    <div class="row rowNav">
+                        <ul>
+                            <navli msg="作品" style="display: none;"></navli>
+                            <navli msg="讨论区" class="choose"></navli>
+                            <navli msg="科协动态"></navli>
+                            <navli msg="学长分享"></navli>
+                        </ul>
+                    </div>
+                    <template id="navtemplate">
+                        <li @click="changeChoose($el)">{{msg}}</li>
+                    </template>
+                    <div class="row rowTip" style="background-color:#F9F9F9">
+                        <span class="spanTitle">为您搜索到相关答案<span class="number"></span>个</span>
+                    </div>
+                    <div class="row rowContant" style="min-height: 1000px;">
+                        <ul class="xinwen allUl" style="display: none">
+                            <template v-for="item in items">
+                                <li>
+                                    <img class="newsImg" src="/Uploads/{{item.img}}">
+                                    <p class="newTime">{{item.timestamp | timeRule}}</p>
+                                    <div class="newsList"><a class="newTitle" :href="'__ROOT__/index.php/Index/View?type=2&id='+item.news_id">{{item.title}}</a>
+                                        <p class="news">{{item.simple}}</p>
+                                    </div>
+                                </li>
+                            </template>
+                        </ul>
+                        <ul class="taolun">
+                            <template v-for="item in items">
+                                <li>
+                                    <img src="__PUBLIC__/images/lazy.jpg" alt="用户头像" class="taolunImg"><span class="from">来自</span><a class="username">{{item.author}}</a>
+                                    <p class="problem">
+                                        <a :href="'__ROOT__/index.php/Index/View?type=1&id='+item.talk_id">{{item.title}}</a></p>
+                                    <div class="caozuo">
+                                        <span style="margin-right: 6px;">{{item.likenumber}}个赞</span>
+                                        <span style="margin-right: 6px;">{{item.comnumber}}条评论</span>
+                                        <a href="javascript:;" class="open" @click="getCon(item.talk_id,$index,item.check)">展开评论&nbsp;&nbsp;</a>
+                                    </div>
+                                    <div class="row comment" style="border: 1px solid #dddddd;">
+                                    	<div class="single"></div>
+                                       <template v-for="con in cons[$index]">
+                                            <div class="row small" style="padding:20px;border-bottom: 1px solid #dddddd">
+                                                <img src="__PUBLIC__/images/xiaomi.jpg" alt="" style="width: 24px;height: 24px;margin-right: 6px;"><span class="name">{{con.commentor}}：</span>
+                                                <span class="answer">{{con.content}}</span>
+                                                <div class="row">
+                                                	<span style="float: right;border-font-size: 14px;margin-right: 10px;color:#969696;margin-bottom: -10px;">{{con.time | timeRule}}</span>
+                                                </div>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </li>
+                            </template>
+                        </ul>
+                        <ul class="wiki allUl" style="display: none">
+                            <template v-for="item in items">
+                                <li>
+                                    <a class="wikiTitle" :href="'__ROOT__/index.php/Index/View?type=3&id='+item.wiki_id">{{item.title}}</a>
+                                    <p class="wikiContent">{{item.simple}}</p>
+                                    <div class="more"><span class="author">作者:{{item.author}}</span>&nbsp;&nbsp;&nbsp;<span>{{item.likenumber}}个赞</span>&nbsp;&nbsp;&nbsp;<span class="time">{{item.timestamp | timeRule}}&nbsp;&nbsp;</span></div>
+                                </li>
+                            </template>
+                        </ul>
+                        <img src="__PUBLIC__/images/loading.gif" height="40" width="40" alt="loading..." class="loading" style="display:none;">
+                        <div class="searchTip"><span class="notFind">没有关于“<span class="content"></span>”的搜索结果</span>
+                        </div>
+                    </div>
+                    <!--分页-->
+                    <div class="row" style="margin-bottom:30px;">
+                        <ul class="pageAll" style="width: 100%;text-align: center;">
+                            <li class="page" @click="toFirst()">第一页</li>
+                            <li class="page" @click="less()">上一页</li>
+                            <li class="page" v-for="index in indexs" @click="changeBtn(index)" :class="{'choosen': current == index}">{{index}}</li>
+                            <li class="page" @click="add()">下一页</li>
+                            <li class="amount">{{current}}/<span class="pages"></span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row rightRow" style="height:700px;">
+                        <div class="title">热门搜索</div>
+                        <a class="s6">FAQ</a>
+                        <a class="s7">中干名单</a>
+                        <a  class="s2">中干会议</a>
+                        <a  class="s4">校科协</a>
+<!--                         <a href="{这是链接}" class="s5">多写代码少装逼</a>
+                        <a href="{这是链接}" class="s6">多写代码少装逼</a>
+                        <a href="{这是链接}" class="s7">多写代码少装逼</a>
+                        <a href="{这是链接}" class="s8">多写代码少装逼</a>
+                        <a href="{这是链接}" class="s9">多写代码少装逼</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid foot" style="background-color: #084469;">
+            <div class="row">
+                <p style="color:#fff;margin-top:4px;margin-left:20px;">Copyright &copy;校科协网络部 github:https://github.com/Njupt-Sast-Network</p>
+            </div>
+        </div>
+    </div>
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/js/bootstrap.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/Login.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/register.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/search.js"></script>
+</body>
+
 </html>
