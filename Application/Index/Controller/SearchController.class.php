@@ -17,6 +17,11 @@ class SearchController extends Controller {
 			}
 			$map['_logic'] = 'and';
 		}
+		//热搜
+		if($_POST['content']!=NULL){
+			$redb = M('news');
+
+		}
 		$Listcard['map'] = $map;
 		$Listcard['card'] = $Database -> where($map)  -> page($_POST['page'].',7') -> select();
 		$Listcard['count'] = $Database -> where($map) -> count();
@@ -33,6 +38,7 @@ class SearchController extends Controller {
 			$Listcard['card'][$i]['likenumber']=getlikenumber($_POST['table'],$Listcard['card'][$i][$id]);
 		}
 		$Listcard['check'] = false;
+		$Listcard['cons'][0] = NULL;
 		$this -> ajaxReturn($Listcard);	
 	}
 

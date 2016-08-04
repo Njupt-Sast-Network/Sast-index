@@ -29,6 +29,8 @@ class LoginController extends Controller {
 	$this->ajaxReturn($data);
 	}
 
+
+
 public function reg(){
 					if (!session('userinfo')) {
 			if (IS_POST) {
@@ -42,7 +44,8 @@ public function reg(){
 					$loginfo['mail'] = $_POST['email'];
 					$loginfo['level'] = '3';
 					$test['username'] =  $_POST['username'];
-					if (!($info = M('user') -> where($test) -> find())){  // check if user is exist
+					$test1['mail'] =  $_POST['email'];
+					if (!($info = M('user') -> where($test) -> find()) && !($info = M('user') -> where($test1) -> find())){  // check if user or mail is exist
 					$info = D("user");
 					if(!$info->create($loginfo)){
 						exit($User->getError());
@@ -60,7 +63,7 @@ public function reg(){
 						} //End
 					}else{
 						$valid = false;
-						$message = "该用户已存在";
+						$message = "该用户或邮箱已存在";
 					}
 				}
 			}
@@ -70,7 +73,6 @@ public function reg(){
 	$data['message'] = $message;
 	$this->ajaxReturn($data);
 	}
-
 	public function logout(){
 		// $Url = I('server.HTTP_REFERER');
 		$Url = $_SERVER['HTTP_REFERER'];
@@ -83,10 +85,8 @@ Header("Location: $Url");
 exit; 
 } 
 	}
-
 	public function getverify(){
 		verify();
 	}
 }
-
 ?>
