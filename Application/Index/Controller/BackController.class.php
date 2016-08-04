@@ -10,7 +10,7 @@ class BackController extends Controller {
                 $user = $db -> where("mail = '".$_POST['mail']."'") -> select();
                 $authid = md5(getpassword());
                 $info['mail'] = $_POST['mail'];
-                $info['id'] = $authid;
+                $info['id'] = "请打开以下地址来设置你的新密码。 http://sast.njupt.edu.cn/index.php/Back/verifymail?id=".$authid;
                 if($auth -> data($info) -> add())
                 {
                              //发邮件开始
@@ -30,11 +30,55 @@ class BackController extends Controller {
         $mail->Subject ='密码重置秘钥'; //邮件主题
         $mail->Body = $authid; //邮件内容
         $mail->AltBody = "这是一个纯文本的身体在非营利的HTML电子邮件客户端"; //邮件正文不支持HTML的备用显示
-                echo $mail->Send();
+                $msg['isdone'] = true;
                 }
         }else{
-                echo "mei you zhe ge di zhi";
+          $msg['isdone'] = false;
         }
+        $this -> ajaxReturn($msg);
 }
+
+        public function verifymail(){
+                if($_GET['id']!=NULL)
+                {
+                        $authid = $_GET['id'];
+                        $dbback = M('back');
+                        if($dbback -> where("id ='".$authid."'") -> find())
+                        {
+                                $mail = $dbback -> where("id ='".$authid."'") -> select();
+                                $mail['isdone'] = true;
+                                $this -> display();
+                        }else{
+                                 $mail['isdone'] = false;
+                        }
+                }
+                else
+                {
+                           $mail['isdone'] = false;
+                }
+        $this -> ajaxReturn($mail);
+        }
+
+        public function change(){
+                if(IS_POST){
+                        $authid = $_POST['authid'];
+                        $dbback = M('back');
+                        $dbuser = M('user');
+                        $pass = MD5($_POST['password']);
+                        if($dbback -> where("id ='".$authid."'") -> find())
+                        {
+                                $mail = $dbback -> where("id ='".$authid."'") -> select();
+                                $data['password'] = $pass;
+                                if($dbuser -> where("mail='".$mail['mail']."'") -> save($data))
+                                        $isdone = true;
+                                else
+                                        $isdone =false;
+                        }else{
+                                $isdone =false;
+                        }
+                }
+                $info['isdone'] =$isdone;
+                $this -> ajaxReturn($info);
+        }
 }
 ?>
