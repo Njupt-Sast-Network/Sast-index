@@ -55,7 +55,7 @@ class CenterController extends Controller {
         $dbuser = M('user');
         $level = $dbuser -> where($wherelevel) -> select();
         unset($level[0]['password']);
-        $user['level'] = $level;
+        $user['level'][0] = $level['level'];
     	$page=$_POST['page'];
     	$user['card'] = $db -> order($order) -> page($page.',5')->where("author = '".$name."'") -> select();
     	$count = $db -> where("author = '".$name."'") -> count();

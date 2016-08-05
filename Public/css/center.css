@@ -47,3 +47,30 @@ input.file {
 	font-weight: bold;
 	border-radius: 6px;
 }
+/*分页样式*/
+.pageTd:hover {
+	background-color: #fff;
+}
+.pageAll  {
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+.pageAll .page {
+	list-style: none;
+	display: inline;
+	font-size: 12px;
+	padding: 5px;
+	margin-top: 6px;
+	margin-bottom: 6px;
+	border-radius: 5px;
+	border: 1px solid #d6d6d6;
+	margin-left: 4px;
+	cursor: pointer;
+} 
+.pageAll .page:hover {
+	background-color: #f4f4f4;
+}
+.pageAll .choosen {
+	text-decoration: none;
+	background-color: #f4f4f4;
+}
