@@ -64,9 +64,9 @@ var center = new Vue({
         },
         setUserInfo: function() {
             //验证用户名
-            this.username.length <= 16 && 3 <= this.username.length ? a = true : a = false;
+            this.username.length <= 16 && 3 <= this.username.length ? (a = true) : a = false;
             //验证邮箱
-            this.mail.match(/\w+@\w+.\w/) ? b = true : b = false;
+            this.mail.match(/\w+@\w+.\w/) ? (b = true) : b = false;
             //提交
             console.log(this.username.length)
             if (a) {
@@ -189,6 +189,7 @@ navList.each(function(index) {
                 center.showWiki = false;
 	        	center.showSendPro = false;
 	        	center.showShareList = true;
+                console.log(center.showShareList)
 	        	center.showShare = false;
 	        	center.showInfo = false;
                 navList.eq(2).addClass("active");
