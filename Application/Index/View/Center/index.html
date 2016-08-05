@@ -28,7 +28,7 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">我的wiki</a></li>
                     <li><a href="#">发布问题</a></li>
-                    <li class="dropdown">
+                    <li class="dropdown"  v-if="brothers">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         我的分享<b class="caret"></b>
                     </a>
@@ -165,7 +165,25 @@
                     <button class="subPro btn btn-primary" @click="subPro()" style="float: right;margin-right: 50px;">确认提交</button>
                 </div>            
             </div>
+            <div class="row user" v-if="showShare" style="width: 90%;margin: 60px auto">
+                 <div class="row">
+                    <span>标题：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <input type="text" class="shareTitle">
+                </div>
+                <div class="row">
+                    <span>关键词：&nbsp;&nbsp;</span>
+                    <input type="text" class="shareKey">
+                </div>
+                <div class="row">
+                    <span>问题详细：</span><br><br>
+                     <textarea id="editorTwo" placeholder="请输入发布正文" autofocus></textarea>
+                </div>   
+                <div class="row">
+                    <button class="subPro btn btn-primary" @click="subShare()" style="float: right;margin-right: 50px;">确认提交</button>
+                </div>            
+            </div>
         </div>
+        <div class="row" align="center" style="margin-top: 70px;font-size: 24px;color: #969696" v-if="no">您还没发布啥呢~</div>
     </div>
     <script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

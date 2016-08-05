@@ -29,6 +29,38 @@ var editor = new Simditor({
     },
     pasteImage: true
 });
+//分享编辑器
+var editorTwo = new Simditor({
+    textarea: $('#editorTwo'),
+    toolbar: [
+        'title',
+        'bold',
+        'italic',
+        'underline',
+        'strikethrough',
+        'fontScale',
+        'color',
+        'ol',
+        'ul',
+        'blockquote',
+        'code',
+        'table',
+        'link',
+        'image',
+        'hr',
+        'indent',
+        'outdent',
+        'alignment'
+    ],
+    upload: {
+        url: 'index.php/Admin/add/addimg', //文件上传的接口地址
+        params: null, //键值对,指定文件上传接口的额外参数,上传的时候随文件一起提交
+        fileKey: 'fileDataFileName', //服务器端获取文件数据的参数名
+        connectionCount: 3,
+        leaveConfirm: '正在上传文件...'
+    },
+    pasteImage: true
+});
 var a = b = c = false;
 var center = new Vue({
     el: "#theBiggest",
@@ -45,7 +77,8 @@ var center = new Vue({
         userInfos: [],
         shareList: [],
         id: null,
-        showWiki: true,
+        no: false,
+        showWiki: false,
         showSendPro: false,
         showShareList: false,
         showShare: false,
@@ -189,6 +222,28 @@ var center = new Vue({
                 });
             }
         },
+        subShare: function() {
+            var title = $(".shareTitle").val(),
+                proKey = $(".shareKey").val(),
+                content = editorTwo.getValue();
+            if (title == "" || proKey == "" || content == "") {
+                center.tip = "不能有空信息!";
+                tipMake();
+            } else {
+                //提交问题
+                $.post("问题发送url", { title: title, keywords: proKey, content: content }, function(data) {
+                    if (data.isdone) {
+                        center.tip = "操作成功!";
+                        tipMake();
+                        input.val("");
+                        editorTwo.setValue("");
+                    } else {
+                        center.tip = "操作失败!";
+                        tipMake();
+                    }
+                });
+            }
+        },
         //分页函数
         changeBtn: function(item) {
             if (this.current != item) {
@@ -222,7 +277,6 @@ navList.each(function(index) {
             //wiki
             case 0:
                 clear();
-                center.showWiki = true;
                 center.showSendPro = false;
                 center.showShareList = false;
                 center.showShare = false;
@@ -272,6 +326,7 @@ function clear() {
     navList.removeClass("active");
     input.val("");
     center.showInfo = false;
+    center.no = false;
 }
 
 function tipMake() {
@@ -305,15 +360,22 @@ function ajaxGet() {
         switch (info.type) {
             case 0:
                 center.userInfos = [].concat(data.card);
-                if (data.card.length == 0) {
-                    alert("您暂时还没提过问题哟！");
+                if(center.userInfos.length != 0) {
+                    center.showWiki = true;
+                }else {
+                    center.showWiki = false;
+                    center.no = true;
                 }
                 break;
             case 3:
                 center.shareList = [].concat(data.card);
-                console.log(1);
+                if(center.shareList.length != 0) {
+                    center.showShareList = true;
+                }else {
+                    center.showShareList = false;
+                    center.no = true;
+                }
                 break;
-
         }
     })
 }
