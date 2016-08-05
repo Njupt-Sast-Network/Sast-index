@@ -73,6 +73,7 @@
                                                 </div>
                                             </div>
                                         </template>
+                                        <div class="row" v-if="more" align="center" style="background-color: #356686;padding: 6px;"><a :href="'__ROOT__/index.php/Index/View?type=1&id='+item.talk_id" style="font-size: 14px;color: #fff">查看更多>></a></div>
                                     </div>
                                 </li>
                             </template>
@@ -104,7 +105,7 @@
                 <div class="col-md-3">
                     <div class="row rightRow" style="height:700px;">
                         <div class="title">热门搜索</div>
-                        <a class="s6">FAQ</a>
+                        <a class="s6" href="">FAQ</a>
                         <a class="s7">中干名单</a>
                         <a  class="s2">中干会议</a>
                         <a  class="s4">校科协</a>

@@ -78,6 +78,40 @@
                     </tbody>
                 </table>
             </div>
+            <div class="row" style="width: 94%;margin: 0 auto" v-if="showText">
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="text-center">用户名</th>
+                            <th class="text-center">讨论的问题</th>
+                            <th class="text-center">评论数</th>
+                            <th class="text-center">点赞数</th>
+                            <th class="text-center">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="problem in problems">
+                            <td class="text-center">{{problem.username}}</td>
+                            <td class="text-center">{{problem.title}}</td>
+                            <td class="text-center">{{problem.comments}}</td>
+                            <td class="text-center">{{problem.likes}}</td>
+                                <button type="button" class="btn btn-danger" @click="delPro(problem.taolun_id)">删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" class="pageTd">
+                                <ul class="pageAll" style="width: 100%;">
+                                    <li class="page" @click="toFirst()">首页</li>
+                                    <li class="page" @click="less()">上一页</li>
+                                    <li class="page" v-for="index in indexs" @click="changeBtn(index)" :class="{'choosen': current == index}">{{index}}</li>
+                                    <li class="page" @click="add()">下一页</li>
+                                    <li class="page">共计{{all}}名用户</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <div class="row" style="width: 94%;margin: 0 auto" v-if="showNews">
                 <table class="table table-hover table-bordered">
                     <thead>

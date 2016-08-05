@@ -51,7 +51,8 @@ var manage = new Vue({
         showNews: false,
         users: [],
         news: [],
-        results: []
+        results: [],
+        problems: [],
     },
     computed: {
         indexs: function() {
@@ -118,6 +119,25 @@ var manage = new Vue({
                 });
             }
         },
+        delPro: function(id) {
+            if (confirm("确定要删除此问题么？")) {
+                var userInfo = {
+                    id : id,
+                    type : manage.type
+                };
+                //此处是删除动态的ajax请求
+                $.post("/index.php/Admin/index/deluser", userInfo, function(data) {
+                    if (data.isdone) {
+                        manage.tip = "操作成功!";
+                        tipMake();
+                        ajaxGet();
+                    } else {
+                        manage.tip = "操作失败!";
+                        tipMake();
+                    }
+                });
+            }
+        },
         //分页函数
         changeBtn: function(item) {
             if (this.current != item) {
@@ -167,13 +187,12 @@ function ajaxGet() {
     };
     $.post("/index.php/Admin/index/get", info, function(data) {
         manage.all = data.count;
-        console.log(data.card[0].name)
         manage.pages = Math.ceil(manage.all / 5);
         switch(info.type) {
             case 0: manage.users = [].concat(data.card);break;
             case 2: manage.news = [].concat(data.card);break;
         }
-    })
+    }) 
 }
 //点击状态的切换
 var navList = $(".container-fluid .navbar .collapse .nav li");
@@ -184,6 +203,7 @@ navList.each(function(index) {
             case 0:
                 clear();
                 $(this).addClass("active");
+                manage.showText = false;
                 manage.showNews = false;
                 $(".textContainer").removeClass("showText");
                 manage.showUser = true;
@@ -199,6 +219,7 @@ navList.each(function(index) {
                 editor.setValue("");
                 $(".textContainer").removeClass("showText");
                 manage.showUser = false;
+                manage.showText = true;
                 manage.type = 1;
                 ajaxGet();
                 break;
@@ -207,6 +228,7 @@ navList.each(function(index) {
                 clear();    
                 navList.removeClass("active");
                 navList.eq(2).addClass("active");
+                manage.showText = false;
                 manage.showNews = true;
                 $(".textContainer").removeClass("showText");
                 editor.setValue("");
@@ -218,6 +240,7 @@ navList.each(function(index) {
                 clear();
                 navList.removeClass("active");
                 navList.eq(2).addClass("active");
+                manage.showText = false;
                 manage.showNews = false;
                 $(".textContainer").addClass("showText");
                 editor.setValue("");

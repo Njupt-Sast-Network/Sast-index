@@ -1,47 +1,11 @@
 #theBiggest {
 	padding: 0;
 }
-#theBiggest .logo {
-	margin-left: 50px;
-	height: 100%;
-	font-size: 2rem;
-	line-height: 50px;
-	display: inline-block;
-	cursor: pointer;
-	width: 100px;
+nav.navbar {
+	margin-bottom: 100px;
 }
-#theBiggest .back {
-	float: right;
-}
-#theBiggest .back a {
-	color: #fff;
-	font-size: 1.8rem;
-	line-height: 50px;
-	text-decoration: none;
-	margin-right: 30px;
-}
-#theBiggest .userImg {
-	width: 10rem;
-	height: 10rem;
-	border-radius: 50%;
-	margin-top: 50px;
-	border: 1px solid #969696;
-	box-shadow: 0 0 5px #222;
-}
-#theBiggest .col-md-4 {
-	padding: 6px;
-	border: 1px solid #151613;
-	margin-bottom: 20px;
-}
-#theBiggest .col-md-4:hover {
-	background-color: #151613;
-	color: #fff;
-	transition: all .3s;
-	cursor: pointer;
-}
-#theBiggest .choosen {
-	background-color: #151613;
-	color: #fff;
+[v-cloak] {
+  display: none;
 }
 #theBiggest table tbody tr td {
 	vertical-align: middle;
