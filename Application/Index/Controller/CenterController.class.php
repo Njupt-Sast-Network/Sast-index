@@ -35,12 +35,15 @@ class CenterController extends Controller {
     		case 1:
     			$db = M('wiki');
     			$order = "wiki_id desc";
-
     			break;
     		case 2:
     			$db = M('news');
     			$order = "news_id desc";
     			break;
+            case 3:
+                $db = M('work');
+                $order = "work_id desc";
+                break;
     		 default:
     			$db = M('user');
     			$order = "uid desc";
@@ -48,6 +51,10 @@ class CenterController extends Controller {
     	}
         $sess = session('userinfo');
         $name= $sess['username'];
+        $wherelevel = "username ='".$name."'";
+        $dbuser = M('user');
+        $level = $dbuser -> where($wherelevel) -> select();
+        $user['level'] = $level;
     	$page=$_POST['page'];
     	$user['card'] = $db -> order($order) -> page($page.',5')->where("author = '".$name."'") -> select();
     	$count = $db -> count();

@@ -21,7 +21,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">SAST</a>
+                <a class="navbar-brand" href="__ROOT__">SAST</a>
             </div>
             <div class="collapse navbar-collapse" id="example-navbar-collapse">
                 <ul class="nav navbar-nav">
@@ -91,11 +91,12 @@
                     </thead>
                     <tbody>
                         <tr v-for="problem in problems">
-                            <td class="text-center">{{problem.username}}</td>
+                            <td class="text-center">{{problem.author}}</td>
                             <td class="text-center">{{problem.title}}</td>
-                            <td class="text-center">{{problem.comments}}</td>
-                            <td class="text-center">{{problem.likes}}</td>
-                                <button type="button" class="btn btn-danger" @click="delPro(problem.taolun_id)">删除</button>
+                            <td class="text-center">{{problem.comment}}</td>
+                            <td class="text-center">{{problem.like}}</td>
+                             <td class="text-center">
+                                <button type="button" class="btn btn-danger" @click="delPro(problem.wiki_id)">删除</button>
                             </td>
                         </tr>
                         <tr>
