@@ -9,7 +9,7 @@
 				<?php if (!$_SESSION['userinfo']) { ?>				
 				<li class="login" id="user"><a href="javascript:;">登录|注册</a></li>
 				<?php }else{ ?>
-								<li><a href='javascript:;'>{$Think.session.userinfo.username}</a></li>
+								<li><a href='__ROOT__/index.php/Center'>{$Think.session.userinfo.username}</a></li>
 				<li><a href="__ROOT__/index.php/Index/Login/logout">退出</a></li>
 				
 
@@ -31,7 +31,7 @@
 			<ul class="contentLi">
 				<li><a href="__ROOT__/index.php/Index/">首页</a></li>
 				<li><a href="__ROOT__/index.php/Search/">科协陈列馆</a></li>
-								<li><a href='javascript:;'>{$Think.session.userinfo.username}</a></li>
+								<li><a href='__ROOT__/index.php/Center'>{$Think.session.userinfo.username}</a></li>
 				<li><a href="__ROOT__/index.php/Index/Login/logout">退出</a></li>
 				<li>
 					<!--<span class="glyphicon glyphicon-search" aria-hidden="true"></span>

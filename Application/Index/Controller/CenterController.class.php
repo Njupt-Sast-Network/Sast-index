@@ -3,8 +3,11 @@ namespace Index\Controller;
 use Think\Controller;
 class CenterController extends Controller {
 	public function index(){
-	if(verifyuser()==1)
-		$this -> display();
+	if(verifyuser()==1){
+                $sess = session('userinfo');
+        $name= $sess['username'];
+        $this -> assign('name',$name);
+		$this -> display();}
 	else
 		echo "Please login in first";
 	}
@@ -16,8 +19,9 @@ class CenterController extends Controller {
         	$name = $sess['username'];
         	$db = M("user");
         	$info = $db -> where("username = '".$name."'") -> select();
-        	unset($info['password']);
-        	$this -> ajaxReturn($info);
+        	unset($info[0]['password']);
+            $data['card'] = $info;
+        	$this -> ajaxReturn($info[0]);
         }else
         {
         	echo "PLease login in";
@@ -55,13 +59,12 @@ class CenterController extends Controller {
         $dbuser = M('user');
         $level = $dbuser -> where($wherelevel) -> select();
         unset($level[0]['password']);
-        $user['level'] = $level;
+        $user['level'] = $level[0]['level'];
     	$page=$_POST['page'];
     	$user['card'] = $db -> order($order) -> page($page.',5')->where("author = '".$name."'") -> select();
     	$count = $db -> where("author = '".$name."'") -> count();
     	$user['count'] = $count;
-        if($_POST['type']==1)//返回评论数和点赞数
-        {  
+ 
             $dblike = M('like');
             $dbcom = M('comment');
             for ($i=0; $i < count($user['card']); $i++) { 
@@ -71,7 +74,7 @@ class CenterController extends Controller {
               $com = $dbcom -> where($where) ->count();
                $user['card'][$i]['comment'] = $com ;
             }
-        }
+        
     	$this -> ajaxReturn($user);
         }else
         {
@@ -85,16 +88,20 @@ class CenterController extends Controller {
         $id = $_POST['id'];
                 switch ($_POST['type']) {
             case 0:
-                $db = M('user');
-                $order = "uid =";
+                $db = M('wiki');
+                $order = "wiki_id =";
                 break; 
             case 1:
-                $db = M('taolun');
-                $order = "id =";
+                $db = M('wiki');
+                $order = "wiki_id =";
                 break;
             case 2:
                 $db = M('news');
                 $order = "news_id =";
+                break;
+            case 3:
+                $db = M('work');
+                $order = "work_id =";
                 break;
              default:
                 $db = M('user');
@@ -127,10 +134,20 @@ public function changeinfo(){
     if(verifyuser()){
         $sess = session('userinfo');
         $name = $sess['username'];
-        
+        $data['username'] = $_POST['username'];
+        $data['mail'] = $_POST['mail'];
+        $data['department'] = $_POST['department'];
+        $db = M('user');
+        $isdone = false;
+        if($db -> data($data) -> where("username = '".$data['username']."'") -> save())
+        {
+            $isdone = true;
+        }
     }else{
-        echo "You are not permitted to do this";
+        $isdone =false;
     }
+    $card['isdone'] = $isdone;
+    $this ->ajaxReturn($card);
 }
 
 

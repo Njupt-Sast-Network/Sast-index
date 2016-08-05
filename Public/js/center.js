@@ -56,17 +56,22 @@ var center = new Vue({
         	this.showShare = false;
             this.showInfo = true;
             //请求用户信息
-            $.post("index.php/Center/userinfo", function(data) {
-                $(".username").val(data.username);
-                $(".mail").val(data.mail);
-                $(".depart").val(data.depart);
+            $.post("/index.php/Center/userinfo", function(data) {
+                center.username = data.username;
+                center.mail = data.mail;
+                center.depart = data.department;
             });
         },
         setUserInfo: function() {
             //验证用户名
-            this.username.length <= 16 && 3 <= this.username.length ? a = true : a = false;
+            this.username.length <= 16 && 3 <= this.username.length ? (a = false) : a = true;
+
+            // if(this.username.match(/^\S+$/)&&this.username.length>=3&&this.username.length<=16)
+            //     a = 1;
+            // else
+            //     a= 0;
             //验证邮箱
-            this.mail.match(/\w+@\w+.\w/) ? b = true : b = false;
+            this.mail.match(/\w+@\w+.\w/) ? (b = false) : b = true;
             //提交
             if (a) {
                 center.tip = "用户名格式不对!";
@@ -76,11 +81,11 @@ var center = new Vue({
                 tipMake();
             } else {
                 var userInfo = {
-                    id: center.id,
-                    username: username,
-                    mail: mail
+                    department: center.depart,
+                    username: center.username,
+                    mail: center.mail
                 }
-                $.post("修改用户名的url", userInfo, function(data) {
+                $.post("/index.php/Center/changeinfo", userInfo, function(data) {
                     if (data.isdone) {
                         center.tip = "修改成功!";
                         tipMake();
@@ -99,7 +104,7 @@ var center = new Vue({
                     type: center.type
                 };
                 //此处是删除问题的ajax请求
-                $.post("url", info, function(data) {
+                $.post("/index.php/Center/del", info, function(data) {
                     if (data.isdone) {
                         center.tip = "操作成功!";
                         tipMake();
@@ -209,7 +214,7 @@ function ajaxGet() {
         type: center.type,
         page: center.current
     };
-    $.post("/Center/userwiki", info, function(data) {
+    $.post("/index.php/Center/userwiki", info, function(data) {
         switch (data.level) {
             //此处是管理员跳转
             case 1:
@@ -223,7 +228,7 @@ function ajaxGet() {
         center.all = data.count;
         center.pages = Math.ceil(center.all / 5);
         switch (info.type) {
-            case 1:
+            case 0:
                 center.userInfos = [].concat(data.card);
                 if(data.card.length == 0) {
                 	alert("您暂时还没提过问题哟！");
