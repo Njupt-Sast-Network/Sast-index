@@ -21,7 +21,7 @@ var editor = new Simditor({
         'alignment'
     ],
     upload: {
-        url: 'index.php/Admin/add/addimg', //文件上传的接口地址
+        url: '', //文件上传的接口地址
         params: null, //键值对,指定文件上传接口的额外参数,上传的时候随文件一起提交
         fileKey: 'fileDataFileName', //服务器端获取文件数据的参数名
         connectionCount: 3,
@@ -79,9 +79,7 @@ var center = new Vue({
         id: null,
         no: false,
         showWiki: false,
-        showSendPro: false,
         showShareList: false,
-        showShare: false,
         current: 1,
         all: 0,
         pages: 0
@@ -115,9 +113,9 @@ var center = new Vue({
     methods: {
         getUserInfo: function() {
             this.showWiki = false;
-            this.showSendPro = false;
+            $(".showSendPro").removeClass("showText");
             this.showShareList = false;
-            this.showShare = false;
+            $(".showShare").removeClass("showText");
             this.showInfo = true;
             //请求用户信息
             $.post("/index.php/Center/userinfo", function(data) {
@@ -155,6 +153,7 @@ var center = new Vue({
                     if (data.isdone) {
                         center.tip = "修改成功!";
                         tipMake();
+                        $("#nick").text(center.username);
                     } else {
                         center.tip = "修改失败!";
                         tipMake();
@@ -279,9 +278,9 @@ navList.each(function(index) {
             //wiki
             case 0:
                 clear();
-                center.showSendPro = false;
+                $(".showSendPro").removeClass("showText");
                 center.showShareList = false;
-                center.showShare = false;
+                $(".showShare").removeClass("showText");
                 center.showInfo = false;
                 $(this).addClass("active");
                 center.type = 0;
@@ -290,9 +289,9 @@ navList.each(function(index) {
             case 1:
                 clear();
                 center.showWiki = false;
-                center.showSendPro = true;
+                $(".showSendPro").addClass("showText");
                 center.showShareList = false;
-                center.showShare = false;
+                $(".showShare").removeClass("showText");
                 center.showInfo = false;
                 $(this).addClass("active");
                 center.type = 1;
@@ -301,9 +300,9 @@ navList.each(function(index) {
             case 3:
                 clear();
                 center.showWiki = false;
-                center.showSendPro = false;
+                $(".showSendPro").removeClass("showText");
                 center.showShareList = true;
-                center.showShare = false;
+                $(".showShare").removeClass("showText");
                 center.showInfo = false;
                 navList.eq(2).addClass("active");
                 center.type = 3;
@@ -312,9 +311,9 @@ navList.each(function(index) {
             case 4:
                 clear();
                 center.showWiki = false;
-                center.showSendPro = false;
+                $(".showSendPro").removeClass("showText");
                 center.showShareList = false;
-                center.showShare = true;
+                $(".showShare").addClass("showText");
                 center.showInfo = false;
                 navList.eq(2).addClass("active");
                 center.type = 4;
@@ -349,7 +348,7 @@ function ajaxGet() {
     $.post("/index.php/Center/userwiki",info,function(data) {
         var n = data.level;
         if( n ==1 ) {
-            window.location = "__ROOT__/index.php/Admin";
+            window.location = "/index.php/Admin";
         }else if ( n ==2 ) {
             center.brothers = true;
         }
