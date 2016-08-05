@@ -43,12 +43,12 @@ var center = new Vue({
         depart: "",
         brothers: false,
         userInfos: [],
-        shareList:[],
+        shareList: [],
         id: null,
         showWiki: true,
-        showSendPro : false,
+        showSendPro: false,
         showShareList: false,
-        showShare : false,
+        showShare: false,
         current: 1,
         all: 0,
         pages: 0
@@ -81,10 +81,10 @@ var center = new Vue({
     },
     methods: {
         getUserInfo: function() {
-        	this.showWiki = false;
-        	this.showSendPro = false;
-        	this.showShareList = false;
-        	this.showShare = false;
+            this.showWiki = false;
+            this.showSendPro = false;
+            this.showShareList = false;
+            this.showShare = false;
             this.showInfo = true;
             //请求用户信息
             $.post("/index.php/Center/userinfo", function(data) {
@@ -167,7 +167,28 @@ var center = new Vue({
                 });
             }
         },
-
+        subPro: function() {
+            var title = $(".proTitle").val(),
+                proKey = $(".proKey").val(),
+                content = editor.getValue();
+            if (title == "" || proKey == "" || content == "") {
+                center.tip = "不能有空信息!";
+                tipMake();
+            } else {
+                //提交问题
+                $.post("问题发送url", { title: title, keywords: proKey, content: content }, function(data) {
+                    if (data.isdone) {
+                        center.tip = "操作成功!";
+                        tipMake();
+                        input.val("");
+                        editor.setValue("");
+                    } else {
+                        center.tip = "操作失败!";
+                        tipMake();
+                    }
+                });
+            }
+        },
         //分页函数
         changeBtn: function(item) {
             if (this.current != item) {
@@ -202,10 +223,10 @@ navList.each(function(index) {
             case 0:
                 clear();
                 center.showWiki = true;
-	        	center.showSendPro = false;
-	        	center.showShareList = false;
-	        	center.showShare = false;
-	        	center.showInfo = false;
+                center.showSendPro = false;
+                center.showShareList = false;
+                center.showShare = false;
+                center.showInfo = false;
                 $(this).addClass("active");
                 center.type = 0;
                 ajaxGet();
@@ -213,21 +234,21 @@ navList.each(function(index) {
             case 1:
                 clear();
                 center.showWiki = false;
-	        	center.showSendPro = true;
-	        	center.showShareList = false;
-	        	center.showShare = false;
-	        	center.showInfo = false;
+                center.showSendPro = true;
+                center.showShareList = false;
+                center.showShare = false;
+                center.showInfo = false;
                 $(this).addClass("active");
                 center.type = 1;
                 break;
-            //share
+                //share
             case 3:
                 clear();
                 center.showWiki = false;
-	        	center.showSendPro = false;
-	        	center.showShareList = true;
-	        	center.showShare = false;
-	        	center.showInfo = false;
+                center.showSendPro = false;
+                center.showShareList = true;
+                center.showShare = false;
+                center.showInfo = false;
                 navList.eq(2).addClass("active");
                 center.type = 3;
                 ajaxGet();
@@ -235,10 +256,10 @@ navList.each(function(index) {
             case 4:
                 clear();
                 center.showWiki = false;
-	        	center.showSendPro = false;
-	        	center.showShareList = false;
-	        	center.showShare = true;
-	        	center.showInfo = false;
+                center.showSendPro = false;
+                center.showShareList = false;
+                center.showShare = true;
+                center.showInfo = false;
                 navList.eq(2).addClass("active");
                 center.type = 4;
                 break;
@@ -261,6 +282,7 @@ function tipMake() {
 }
 //打开页面请求数据
 ajaxGet();
+
 function ajaxGet() {
     var info = {
         type: center.type,
@@ -283,14 +305,15 @@ function ajaxGet() {
         switch (info.type) {
             case 0:
                 center.userInfos = [].concat(data.card);
-                if(data.card.length == 0) {
-                	alert("您暂时还没提过问题哟！");
+                if (data.card.length == 0) {
+                    alert("您暂时还没提过问题哟！");
                 }
                 break;
-             case 3:
-                 center.shareList = [].concat(data.card);
-                 console.log(1);break;
-               
+            case 3:
+                center.shareList = [].concat(data.card);
+                console.log(1);
+                break;
+
         }
     })
 }
