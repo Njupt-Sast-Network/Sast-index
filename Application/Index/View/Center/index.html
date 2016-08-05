@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="zh">
-<head> 
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
-	<title>个人中心</title>
-	<script type="text/javascript" src="__PUBLIC__/js/vue.js"></script>	
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/center.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+    <title>个人中心</title>
+    <script type="text/javascript" src="__PUBLIC__/js/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/center.css">
 </head>
+
 <body>
-	<div class="container-fluid" id="theBiggest">
+    <div class="container-fluid" id="theBiggest">
         <nav class="navbar navbar-inverse" role="navigation">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
@@ -24,7 +26,7 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">我的wiki</a></li>
                     <li><a href="#">发布问题</a></li>
-                    <li class="dropdown">
+                    <li class="dropdown"  v-if="brothers">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         我的分享<b class="caret"></b>
                     </a>
@@ -33,13 +35,86 @@
                             <li><a href="#" class="sendNews">发布分享</a></li>
                         </ul>
                     </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
                     <li><a href="__ROOT__/index.php/Index/">返回首页</a></li>
                 </ul>
             </div>
         </nav>
         <div class="container-fluid" v-cloak>
-            <div class="tip" v-if="showTip"></div>
+            <div class="tip" v-if="showTip">{{tip}}</div>
+            <div class="row" v-if="userList">
+                <div class="row" align="center">
+                    <img src="__PUBLIC__/images/lazy.jpg" alt="" style="width:10rem;height:10rem">
+                    <p style="font-size: 14px;color: #969696;margin-top: 20px;"><span class="glyphicon glyphicon-pencil" style="margin-left: -20px;cursor: pointer;" @click="getUserInfo()"></span>&nbsp;&nbsp;&nbsp;狒狒神</p>
+                </div>
+            </div>
+            <div class="row user" v-if="showInfo" style="width: 90%;margin: 20px auto">
+                <form enctype="multipart/form-data" id="form_1" action="__ROOT__/index.php/Admin/add/upload" method='post'>
+                </form>
+                <div class="row">
+                    <span>用户名：&nbsp;&nbsp;</span>
+                    <input type="text" class="username" v-model="username">
+                </div>
+                <div class="row">
+                    <span>邮箱：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <input type="text" class="mail" v-model="mail">
+                </div>
+                <div class="row">
+                    <span>部门：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <select class="depart" v-model="depart">
+                        <option value="无">无</option>
+                        <option value="计算机部">计算机部</option>
+                        <option value="电子部">电子部</option>
+                        <option value="网络部">网络部</option>
+                        <option value="办公室">办公室</option>
+                        <option value="科宣部">科宣部</option>
+                        <option value="外联部">外联部</option>
+                        <option value="社团发展部">社团发展部</option>
+                        <option value="赛事部">赛事部</option>
+                    </select>
+                </div>
+                <div class="row" align="center">
+                    <button class="subUser btn btn-danger" @click="setUserInfo()">确认修改</button>
+                </div>
+            </div>
+            <div class="row user" v-if="showWiki" style="width: 90%;margin: 60px auto">
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="text-center">提出的问题</th>
+                            <th class="text-center">发布时间</th>
+                            <th class="text-center">点赞数</th>
+                            <th class="text-center">评论数</th>
+                            <th class="text-center">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="userInfo in userInfos">
+                            <td class="text-center">{{userInfo.author}}<a :href=:href="'__ROOT__/index.php/Index/View?type=1&id='+userInfo.wiki_id"></a></td>
+                            <td class="text-center">{{userInfo.timestamp}}</td>
+                            <td class="text-center">{{userInfo.like}}</td>
+                            <td class="text-center">{{userInfo.comment}}</td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-danger" @click="delPro(userInfo.wiki_id)">删除</button>
+                            </td>
+                        </tr>
+                       <tr>
+                            <td colspan="6" class="pageTd">
+                                <ul class="pageAll" style="width: 100%;">
+                                    <li class="page" @click="toFirst()">首页</li>
+                                    <li class="page" @click="less()">上一页</li>
+                                    <li class="page" v-for="index in indexs" @click="changeBtn(index)" :class="{'choosen': current == index}">{{index}}</li>
+                                    <li class="page" @click="add()">下一页</li>
+                                    <li class="page">共计{{all}}个问题</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
+    </div>
     <script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="__PUBLIC__/admin//scripts/module.min.js"></script>
@@ -47,6 +122,7 @@
     <script type="text/javascript" src="__PUBLIC__/admin//scripts/uploader.min.js"></script>
     <script type="text/javascript" src="__PUBLIC__/admin//scripts/simditor.js"></script>
     <script src="http://cdn.bootcss.com/vue/1.0.23/vue.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/center.js"></script>
 </body>
 
 </html>

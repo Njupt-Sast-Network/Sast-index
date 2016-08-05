@@ -29,8 +29,8 @@ class CenterController extends Controller {
         {
     	switch ($_POST['type']) {
     		case 0:
-    			$db = M('user');
-    			$order = "uid desc";
+    			$db = M('wiki');
+    			$order = "wiki_id desc";
     			break; 
     		case 1:
     			$db = M('wiki');
@@ -54,10 +54,11 @@ class CenterController extends Controller {
         $wherelevel = "username ='".$name."'";
         $dbuser = M('user');
         $level = $dbuser -> where($wherelevel) -> select();
+        unset($level[0]['password']);
         $user['level'] = $level;
     	$page=$_POST['page'];
     	$user['card'] = $db -> order($order) -> page($page.',5')->where("author = '".$name."'") -> select();
-    	$count = $db -> count();
+    	$count = $db -> where("author = '".$name."'") -> count();
     	$user['count'] = $count;
         if($_POST['type']==1)//返回评论数和点赞数
         {  
