@@ -1,5 +1,35 @@
-var a = b = c = null;
-
+var editor = new Simditor({
+    textarea: $('#editor'),
+    toolbar: [
+        'title',
+        'bold',
+        'italic',
+        'underline',
+        'strikethrough',
+        'fontScale',
+        'color',
+        'ol',
+        'ul',
+        'blockquote',
+        'code',
+        'table',
+        'link',
+        'image',
+        'hr',
+        'indent',
+        'outdent',
+        'alignment'
+    ],
+    upload: {
+        url: 'index.php/Admin/add/addimg', //文件上传的接口地址
+        params: null, //键值对,指定文件上传接口的额外参数,上传的时候随文件一起提交
+        fileKey: 'fileDataFileName', //服务器端获取文件数据的参数名
+        connectionCount: 3,
+        leaveConfirm: '正在上传文件...'
+    },
+    pasteImage: true
+});
+var a = b = c = false;
 var center = new Vue({
     el: "#theBiggest",
     data: {
@@ -74,17 +104,19 @@ var center = new Vue({
             this.mail.match(/\w+@\w+.\w/) ? (b = false) : b = true;
             //提交
             console.log(this.username.length)
-            if (a) {
+            if (!a) {
+                console.log(a)
                 center.tip = "用户名格式不对!";
                 tipMake();
-            } else if (b) {
+            } else if (!b) {
                 center.tip = "邮箱格式不对!";
                 tipMake();
             } else {
                 var userInfo = {
                     department: center.depart,
                     username: center.username,
-                    mail: center.mail
+                    mail: center.mail,
+                    department: center.depart
                 }
                 $.post("/index.php/Center/changeinfo", userInfo, function(data) {
                     if (data.isdone) {
@@ -252,14 +284,12 @@ function ajaxGet() {
         switch (info.type) {
             case 0:
                 center.userInfos = [].concat(data.card);
-                console.log(center.userInfos)
                 if(data.card.length == 0) {
                 	alert("您暂时还没提过问题哟！");
                 }
                 break;
                 case 3:
                 center.showShareList = [].concat(data.card);break;
-
         }
     })
 }

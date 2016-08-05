@@ -8,6 +8,8 @@
     <script type="text/javascript" src="__PUBLIC__/js/vue.js"></script>
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/center.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin//styles/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin//styles/simditor.css" />
 </head>
 
 <body>
@@ -50,8 +52,6 @@
                 </div>
             </div>
             <div class="row user" v-if="showInfo" style="width: 90%;margin: 20px auto">
-                <form enctype="multipart/form-data" id="form_1" action="__ROOT__/index.php/Admin/add/upload" method='post'>
-                </form>
                 <div class="row">
                     <span>用户名：&nbsp;&nbsp;</span>
                     <input type="text" class="username" v-model="username">
@@ -126,7 +126,7 @@
                     </thead>
                     <tbody>
                         <tr v-for="share in shareList">
-                            <td class="text-center"><a :href=:href="'__ROOT__/index.php/Index/View?type=3&id='+userInfo.work_id">{{share.author}}</a></td>
+                            <td class="text-center"><a :href="'__ROOT__/index.php/Index/View?type=3&id='+userInfo.work_id">{{share.author}}</a></td>
                             <td class="text-center">{{share.timestamp}}</td>
                             <td class="text-center">{{share.like}}</td>
                             <td class="text-center">{{share.comment}}</td>
@@ -141,12 +141,29 @@
                                     <li class="page" @click="less()">上一页</li>
                                     <li class="page" v-for="index in indexs" @click="changeBtn(index)" :class="{'choosen': current == index}">{{index}}</li>
                                     <li class="page" @click="add()">下一页</li>
-                                    <li class="page">共计{{all}}个问题</li>
+                                    <li class="page">共计{{all}}个分享</li>
                                 </ul>
                             </td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+            <div class="row user" v-if="showSendPro" style="width: 90%;margin: 60px auto">
+                 <div class="row">
+                    <span>标题：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <input type="text" class="proTitle">
+                </div>
+                <div class="row">
+                    <span>关键词：&nbsp;&nbsp;</span>
+                    <input type="text" class="proKey">
+                </div>
+                <div class="row">
+                    <span>问题详细：</span><br><br>
+                     <textarea id="editor" placeholder="请输入发布正文" autofocus></textarea>
+                </div>   
+                <div class="row" align="center">
+                    <button class="subUser btn btn-danger" @click="setUserInfo()">确认提交</button>
+                </div>            
             </div>
         </div>
     </div>
