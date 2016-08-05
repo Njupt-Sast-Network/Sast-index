@@ -26,7 +26,7 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">我的wiki</a></li>
                     <li><a href="#">发布问题</a></li>
-                    <li class="dropdown"  v-if="brothers">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         我的分享<b class="caret"></b>
                     </a>
@@ -91,12 +91,47 @@
                     </thead>
                     <tbody>
                         <tr v-for="userInfo in userInfos">
-                            <td class="text-center">{{userInfo.author}}<a :href=:href="'__ROOT__/index.php/Index/View?type=1&id='+userInfo.wiki_id"></a></td>
+                            <td class="text-center"><a :href="'__ROOT__/index.php/Index/View?type=1&id='+userInfo.wiki_id">{{userInfo.author}}</a></td>
                             <td class="text-center">{{userInfo.timestamp}}</td>
                             <td class="text-center">{{userInfo.like}}</td>
                             <td class="text-center">{{userInfo.comment}}</td>
                             <td class="text-center">
                                 <button type="button" class="btn btn-danger" @click="delPro(userInfo.wiki_id)">删除</button>
+                            </td>
+                        </tr>
+                       <tr>
+                            <td colspan="6" class="pageTd">
+                                <ul class="pageAll" style="width: 100%;">
+                                    <li class="page" @click="toFirst()">首页</li>
+                                    <li class="page" @click="less()">上一页</li>
+                                    <li class="page" v-for="index in indexs" @click="changeBtn(index)" :class="{'choosen': current == index}">{{index}}</li>
+                                    <li class="page" @click="add()">下一页</li>
+                                    <li class="page">共计{{all}}个问题</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row user" v-if="showShareList" style="width: 90%;margin: 60px auto">
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="text-center">我的Share</th>
+                            <th class="text-center">发布时间</th>
+                            <th class="text-center">点赞数</th>
+                            <th class="text-center">评论数</th>
+                            <th class="text-center">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="share in shareList">
+                            <td class="text-center"><a :href=:href="'__ROOT__/index.php/Index/View?type=3&id='+userInfo.work_id">{{share.author}}</a></td>
+                            <td class="text-center">{{share.timestamp}}</td>
+                            <td class="text-center">{{share.like}}</td>
+                            <td class="text-center">{{share.comment}}</td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-danger" @click="delShare(userInfo.work_id)">删除</button>
                             </td>
                         </tr>
                        <tr>

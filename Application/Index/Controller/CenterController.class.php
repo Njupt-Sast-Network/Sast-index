@@ -65,15 +65,15 @@ class CenterController extends Controller {
     	$count = $db -> where("author = '".$name."'") -> count();
     	$user['count'] = $count;
  
-            $dblike = M('like');
-            $dbcom = M('comment');
-            for ($i=0; $i < count($user['card']); $i++) { 
-                $where = "type = 2 and id=".$user['card'][$i]['wiki_id'];
-              $like = $dblike -> where($where) ->count();
-               $user['card'][$i]['like'] = $like ;
-              $com = $dbcom -> where($where) ->count();
-               $user['card'][$i]['comment'] = $com ;
-            }
+            // $dblike = M('like');
+            // $dbcom = M('comment');
+            // for ($i=0; $i < count($user['card']); $i++) { 
+            //     $where = "type = 2 and id=".$user['card'][$i]['wiki_id'];
+            //   $like = $dblike -> where($where) ->count();
+            //    $user['card'][$i]['like'] = $like ;
+            //   $com = $dbcom -> where($where) ->count();
+            //    $user['card'][$i]['comment'] = $com ;
+            // }
         
     	$this -> ajaxReturn($user);
         }else

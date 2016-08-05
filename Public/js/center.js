@@ -8,9 +8,9 @@ var center = new Vue({
         type: 0,
         tip: null,
         showTip: false,
-        username: null,
-        mail: null,
-        depart: null,
+        username: "",
+        mail: "",
+        depart: "",
         brothers: false,
         userInfos: [],
         id: null,
@@ -73,6 +73,7 @@ var center = new Vue({
             //验证邮箱
             this.mail.match(/\w+@\w+.\w/) ? (b = false) : b = true;
             //提交
+            console.log(this.username.length)
             if (a) {
                 center.tip = "用户名格式不对!";
                 tipMake();
@@ -89,7 +90,6 @@ var center = new Vue({
                     if (data.isdone) {
                         center.tip = "修改成功!";
                         tipMake();
-                        input.val("")
                     } else {
                         center.tip = "修改失败!";
                         tipMake();
@@ -116,6 +116,26 @@ var center = new Vue({
                 });
             }
         },
+        delShare: function(id) {
+            if (confirm("确定要删除此分享？")) {
+                var info = {
+                    id: id,
+                    type: center.type
+                };
+                //此处是删除分享的ajax请求
+                $.post("url", info, function(data) {
+                    if (data.isdone) {
+                        center.tip = "操作成功!";
+                        tipMake();
+                        ajaxGet(0);
+                    } else {
+                        center.tip = "操作失败!";
+                        tipMake();
+                    }
+                });
+            }
+        },
+
         //分页函数
         changeBtn: function(item) {
             if (this.current != item) {
@@ -149,44 +169,45 @@ navList.each(function(index) {
             //wiki
             case 0:
                 clear();
-                this.showWiki = true;
-	        	this.showSendPro = false;
-	        	this.showShareList = false;
-	        	this.showShare = false;
-	        	this.showInfo = false;
+                center.showWiki = true;
+	        	center.showSendPro = false;
+	        	center.showShareList = false;
+	        	center.showShare = false;
+	        	center.showInfo = false;
                 $(this).addClass("active");
                 center.type = 0;
                 ajaxGet();
                 break;
             case 1:
                 clear();
-                this.showWiki = false;
-	        	this.showSendPro = true;
-	        	this.showShareList = false;
-	        	this.showShare = false;
-	        	this.showInfo = false;
+                center.showWiki = false;
+	        	center.showSendPro = true;
+	        	center.showShareList = false;
+	        	center.showShare = false;
+	        	center.showInfo = false;
                 $(this).addClass("active");
                 center.type = 1;
                 break;
             //share
             case 3:
                 clear();
-                this.showWiki = false;
-	        	this.showSendPro = false;
-	        	this.showShareList = true;
-	        	this.showShare = false;
-	        	this.showInfo = false;
+                center.showWiki = false;
+	        	center.showSendPro = false;
+	        	center.showShareList = true;
+                console.log(center.showShareList)
+	        	center.showShare = false;
+	        	center.showInfo = false;
                 navList.eq(2).addClass("active");
                 center.type = 3;
                 ajaxGet();
                 break;
             case 4:
                 clear();
-                this.showWiki = false;
-	        	this.showSendPro = false;
-	        	this.showShareList = false;
-	        	this.showShare = true;
-	        	this.showInfo = false;
+                center.showWiki = false;
+	        	center.showSendPro = false;
+	        	center.showShareList = false;
+	        	center.showShare = true;
+	        	center.showInfo = false;
                 navList.eq(2).addClass("active");
                 center.type = 4;
                 break;
@@ -227,13 +248,18 @@ function ajaxGet() {
         }
         center.all = data.count;
         center.pages = Math.ceil(center.all / 5);
+        console.log(info.type)
         switch (info.type) {
             case 0:
                 center.userInfos = [].concat(data.card);
+                console.log(center.userInfos)
                 if(data.card.length == 0) {
                 	alert("您暂时还没提过问题哟！");
                 }
                 break;
+                case 3:
+                center.showShareList = [].concat(data.card);break;
+
         }
     })
 }
