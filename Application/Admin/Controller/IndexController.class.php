@@ -29,7 +29,7 @@ else{
     			break; 
     		case 1:
     			$db = M('wiki');
-    			$order = "id desc";
+    			$order = "wiki_id desc";
     			break;
     		case 2:
     			$db = M('news');

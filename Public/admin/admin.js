@@ -190,6 +190,7 @@ function ajaxGet() {
         manage.pages = Math.ceil(manage.all / 5);
         switch(info.type) {
             case 0: manage.users = [].concat(data.card);break;
+            case 1: manage.problems = [].concat(data.card);break;
             case 2: manage.news = [].concat(data.card);break;
         }
     }) 
