@@ -73,7 +73,7 @@ var center = new Vue({
         username: "",
         mail: "",
         depart: "",
-        brothers: false,
+        brothers: true,
         userInfos: [],
         shareList: [],
         id: null,
@@ -203,13 +203,14 @@ var center = new Vue({
         subPro: function() {
             var title = $(".proTitle").val(),
                 proKey = $(".proKey").val(),
-                content = editor.getValue();
-            if (title == "" || proKey == "" || content == "") {
+                content = editor.getValue(),
+                simple  = $(".simple1").val();
+            if (title == "" || proKey == "" || content == "" || simple == "") {
                 center.tip = "不能有空信息!";
                 tipMake();
             } else {
                 //提交问题
-                $.post("问题发送url", { title: title, keywords: proKey, content: content }, function(data) {
+                $.post("问题发送url", { title: title, keywords: proKey, content: content ,simple:simple}, function(data) {
                     if (data.isdone) {
                         center.tip = "操作成功!";
                         tipMake();
@@ -226,12 +227,13 @@ var center = new Vue({
             var title = $(".shareTitle").val(),
                 proKey = $(".shareKey").val(),
                 content = editorTwo.getValue();
-            if (title == "" || proKey == "" || content == "") {
+                simple  = $(".simple2").val();
+            if (title == "" || proKey == "" || content == "" || simple == "") {
                 center.tip = "不能有空信息!";
                 tipMake();
             } else {
                 //提交问题
-                $.post("问题发送url", { title: title, keywords: proKey, content: content }, function(data) {
+                $.post("问题发送url", { title: title, keywords: proKey, content: content ,simple:simple}, function(data) {
                     if (data.isdone) {
                         center.tip = "操作成功!";
                         tipMake();
@@ -325,6 +327,7 @@ var input = $("input");
 function clear() {
     navList.removeClass("active");
     input.val("");
+    $(".simple").val("");
     center.showInfo = false;
     center.no = false;
 }
@@ -343,21 +346,16 @@ function ajaxGet() {
         type: center.type,
         page: center.current
     };
-    $.post("/index.php/Center/userwiki", info, function(data) {
-        switch (data.level) {
-            //此处是管理员跳转
-            case 1:
-                window.location = "__ROOT__/index.php/Admin";
-                break;
-                //学长分享
-            case 2:
-                center.brothers = true;
-                break;
+    $.post("/index.php/Center/userwiki",info,function(data) {
+        var n = data.level;
+        if( n ==1 ) {
+            window.location = "__ROOT__/index.php/Admin";
+        }else if ( n ==2 ) {
+            center.brothers = true;
         }
         center.all = data.count;
         center.pages = Math.ceil(center.all / 5);
-        console.log(center.type)
-        switch (info.type) {
+        switch(info.type) {
             case 0:
                 center.userInfos = [].concat(data.card);
                 if(center.userInfos.length != 0) {
