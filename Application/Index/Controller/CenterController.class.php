@@ -150,7 +150,95 @@ public function changeinfo(){
     $this ->ajaxReturn($card);
 }
 
+public function wikiupload(){
+    $sess=session('userinfo');
+    $name = $sess['username'];
+    $news['title'] = $_POST['title'];
+    $news['author'] = $name;
+    $news['keywords'] = $_POST['keywords'];
+    $news['simple'] = $_POST['simple'];
+    $news['text'] = $_POST['text'];
+    $db = M('wiki');
+    if($db->add($news))
+    {
+        F('news',NULL);
+        echo("<script>alert('发布成功')</script>");
+                $Url = $_SERVER['HTTP_REFERER'];
+        if (isset($Url)) 
+{ 
+Header("HTTP/1.1 303 See Other"); 
+Header("Location: $Url"); 
+exit; 
+} 
+    }
+}
 
+public function workupload(){
+    $sess=session('userinfo');
+    $name = $sess['username'];
+    $news['title'] = $_POST['title'];
+    $news['author'] = $name;
+    $news['keywords'] = $_POST['keywords'];
+    $news['simple'] = $_POST['simple'];
+    $news['text'] = $_POST['text'];
+    $db = M('work');
+    if($db->add($news))
+    {
+        F('news',NULL);
+        echo("<script>alert('发布成功')</script>");
+                $Url = $_SERVER['HTTP_REFERER'];
+        if (isset($Url)) 
+{ 
+Header("HTTP/1.1 303 See Other"); 
+Header("Location: $Url"); 
+exit; 
+} 
+    }
+}
+
+
+
+    public function addimg(){
+        if (session('userinfo')) 
+{
+    $sess = session('userinfo');
+        $data['username'] = $sess['username'];
+        $db = M('user');
+        $where = "level=1 and username='".$data['username']."'";
+        if(1)
+        {
+            $upload = new \Think\Upload();// 实例化上传类
+    $upload->maxSize   =     3145728 ;// 设置附件上传大小
+    $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+    $upload->rootPath  =      './Uploads/'; // 设置附件上传根目录
+    $upload->savePath  =      ''; // 设置附件上传（子）目录
+    // 上传文件 
+    $info   =   $upload->upload();
+    if(!$info) {// 上传错误提示错误信息
+            $this->error($upload->getError());
+            $info['success'] = false;
+        }
+        else{
+                        foreach($info as $file){
+                 $img ="http://".$_SERVER['SERVER_NAME']."/Uploads/".$file['savepath'].$file['savename'];
+                                    }
+             $info['success'] = true;
+             $info['file_path'] = $img;
+        }
+        $this -> ajaxReturn($info);
+
+
+
+        }
+        else
+        {
+            echo('Your account is not permitted to enter this page.');
+        }
+}
+else{
+     echo("Please login in first.");
+}
+    }
 
 
 }
