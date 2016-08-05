@@ -43,6 +43,7 @@ var center = new Vue({
         depart: "",
         brothers: false,
         userInfos: [],
+        shareList:[],
         id: null,
         showWiki: true,
         showSendPro : false,
@@ -103,7 +104,6 @@ var center = new Vue({
             //验证邮箱
             this.mail.match(/\w+@\w+.\w/) ? (b = false) : b = true;
             //提交
-            console.log(this.username.length)
             if (!a) {
                 console.log(a)
                 center.tip = "用户名格式不对!";
@@ -226,7 +226,6 @@ navList.each(function(index) {
                 center.showWiki = false;
 	        	center.showSendPro = false;
 	        	center.showShareList = true;
-                console.log(center.showShareList)
 	        	center.showShare = false;
 	        	center.showInfo = false;
                 navList.eq(2).addClass("active");
@@ -280,7 +279,7 @@ function ajaxGet() {
         }
         center.all = data.count;
         center.pages = Math.ceil(center.all / 5);
-        console.log(info.type)
+        console.log(center.type)
         switch (info.type) {
             case 0:
                 center.userInfos = [].concat(data.card);
@@ -288,8 +287,10 @@ function ajaxGet() {
                 	alert("您暂时还没提过问题哟！");
                 }
                 break;
-                case 3:
-                center.showShareList = [].concat(data.card);break;
+             case 3:
+                 center.shareList = [].concat(data.card);
+                 console.log(1);break;
+               
         }
     })
 }
