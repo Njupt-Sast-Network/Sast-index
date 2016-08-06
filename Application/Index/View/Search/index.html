@@ -44,7 +44,7 @@
                                 <li>
                                     <img class="newsImg" src="/Uploads/{{item.img}}">
                                     <p class="newTime">{{item.timestamp | timeRule}}</p>
-                                    <div class="newsList"><a class="newTitle" :href="'__ROOT__/index.php/Index/View?type=2&id='+item.news_id">{{item.title}}</a>
+                                    <div class="newsList"><a class="newTitle" :href="'__ROOT__/index.php/Index/View?type=1&id='+item.news_id">{{item.title}}</a>
                                         <p class="news">{{item.simple}}</p>
                                     </div>
                                 </li>
@@ -55,7 +55,7 @@
                                 <li>
                                     <img src="__PUBLIC__/images/lazy.jpg" alt="用户头像" class="taolunImg"><span class="from">来自</span><a class="username">{{item.author}}</a>
                                     <p class="problem">
-                                        <a :href="'__ROOT__/index.php/Index/View?type=1&id='+item.talk_id">{{item.title}}</a></p>
+                                        <a :href="'__ROOT__/index.php/Index/View?type=2&id='+item.talk_id">{{item.title}}</a></p>
                                     <div class="caozuo">
                                         <span style="margin-right: 6px;">{{item.likenumber}}个赞</span>
                                         <span style="margin-right: 6px;">{{item.comnumber}}条评论</span>
