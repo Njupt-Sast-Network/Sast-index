@@ -1,4 +1,4 @@
-//讨论组件
+//讨论组件 
 var taolunTemplate = new Vue({
     el: ".taolun",
     data: {
@@ -9,7 +9,7 @@ var taolunTemplate = new Vue({
     methods: {
         getCon: function(id, e, check) {
             var info = {
-                type: 1,
+                type: 2,
                 id: id,
                 page: 1,
                 front: 1,
@@ -72,7 +72,7 @@ var pageTemplate = new Vue({
     data: {
         all: 0,
         current: 1,
-        type: 0,
+        type: 1,
         pages: 0,
     },
     computed: {
@@ -173,12 +173,12 @@ function ajaxGet() {
                                     //此处只是为了测试前端，，，，真正使用之后会用ajax请求完成数据的切换
                                     case 1:
                                         $(".rowContant ul").hide();
-                                        $(".taolun").show();
+                                        $(".xinwen").show();
                                         loadContent(index);
                                         break;
                                     case 2:
                                         $(".rowContant ul").hide();
-                                        $(".xinwen").show();
+                                        $(".taolun").show();                                      
                                         loadContent(index);
                                         break;
                                     case 3:
@@ -226,13 +226,12 @@ function loadContent(index) {
             //四个分区的渲染
             switch (index) {
                 case 1:
-                    taolunTemplate.items = [];
-                    taolunTemplate.items = [].concat(data.card);
-                    console.log(data.card[0])
-                    break;
-                case 2:
                     xinwenTemplate.items = [];
                     xinwenTemplate.items = [].concat(data.card);
+                    break;
+                case 2:
+                    taolunTemplate.items = [];
+                    taolunTemplate.items = [].concat(data.card);
                     break;
                 case 3:
                     wikiTemplate.items = [];
@@ -244,7 +243,6 @@ function loadContent(index) {
 }
 //分页函数
 function paging(count, index) {
-
     //获取总条数的dom
     var total = $(".rowTip .number");
     //获取分页dom的父元素

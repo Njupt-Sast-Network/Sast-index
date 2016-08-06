@@ -36,6 +36,7 @@
                             <li><a href="#" class="sendNews">发布动态</a></li>
                         </ul>
                     </li>
+                    <li><a href="#">分享列表</a></li>
                 </ul>
             </div>
         </nav>
@@ -133,6 +134,43 @@
                             <td class="text-center">
                                 <button class="btn btn-primary" style="margin-right: 50px;">修改</button>
                                 <button type="button" class="btn btn-danger" style="margin-left: 50px;" @click="delNews(one.news_id)">删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" class="pageTd">
+                                <ul class="pageAll" style="width: 100%;">
+                                    <li class="page" @click="toFirst()">首页</li>
+                                    <li class="page" @click="less()">上一页</li>
+                                    <li class="page" v-for="index in indexs" @click="changeBtn(index)" :class="{'choosen': current == index}">{{index}}</li>
+                                    <li class="page" @click="add()">下一页</li>
+                                    <li class="page">共计{{all}}条动态</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row" style="width: 94%;margin: 0 auto" v-if="showShare">
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="text-center">wiki</th>
+                            <th class="text-center">作者</th>
+                            <th class="text-center">发布时间</th>
+                            <th class="text-center">评论数</th>
+                            <th class="text-center">点赞数</th>
+                            <th class="text-center">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="share in shareList">
+                            <td class="text-center"><a :href="'__ROOT__/index.php/Index/View?type=3&id='+share.share_id">{{share.title}}</a></td>
+                            <td class="text-center">{{share.author}}</td>
+                            <td class="text-center">{{one.timestamp}}</td>
+                            <td class="text-center">{{one.comment}}</td>
+                            <td class="text-center">{{one.like}}</td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-danger" @click="delShare(share.share_id)">删除</button>
                             </td>
                         </tr>
                         <tr>

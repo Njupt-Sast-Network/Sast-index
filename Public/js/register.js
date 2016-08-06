@@ -37,7 +37,7 @@ $(function() {
 						$("#shelter").css("display","none");
 						che();
 						$(".contentLi").find("#user").remove();
-						$(".contentLi").append("<li><a href='ddd'>"+data.username+"</a></li>");
+						$(".contentLi").append("<li><a href='/index.php/Center'>"+data.username+"</a></li>");
 						$(".contentLi").append("<li><a href='/index.php/Index/Login/logout'>退出</a></li>");
 						$(".hideBar").css("height","200px");
 					}else {		
@@ -45,9 +45,7 @@ $(function() {
 						//刷新验证码
 						fleshVerify(document.getElementById('VerifyImg'));
 						tip.addClass("wrong").text(data.message);
-						// console.log("1234567890");
 					}	
-					// console.log(data.valid,data.message);
 				},
 			})
 		}
