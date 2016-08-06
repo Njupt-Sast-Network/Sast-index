@@ -79,9 +79,7 @@ var center = new Vue({
         id: null,
         no: false,
         showWiki: false,
-        showSendPro: false,
         showShareList: false,
-        showShare: false,
         current: 1,
         all: 0,
         pages: 0
@@ -115,9 +113,9 @@ var center = new Vue({
     methods: {
         getUserInfo: function() {
             this.showWiki = false;
-            this.showSendPro = false;
+            $(".showSendPro").removeClass("showText");
             this.showShareList = false;
-            this.showShare = false;
+            $(".showShare").removeClass("showText");
             this.showInfo = true;
             //请求用户信息
             $.post("/index.php/Center/userinfo", function(data) {
@@ -155,6 +153,7 @@ var center = new Vue({
                     if (data.isdone) {
                         center.tip = "修改成功!";
                         tipMake();
+                        $("#nick").text(center.username);
                     } else {
                         center.tip = "修改失败!";
                         tipMake();
@@ -188,7 +187,7 @@ var center = new Vue({
                     type: center.type
                 };
                 //此处是删除分享的ajax请求
-                $.post("url", info, function(data) {
+                $.post("/index.php/Center/del", info, function(data) {
                     if (data.isdone) {
                         center.tip = "操作成功!";
                         tipMake();
@@ -210,7 +209,7 @@ var center = new Vue({
                 tipMake();
             } else {
                 //提交问题
-                $.post("问题发送url", { title: title, keywords: proKey, content: content ,simple:simple}, function(data) {
+                $.post("/index.php/Center/talkupload", { title: title, keywords: proKey, content: content ,simple:simple}, function(data) {
                     if (data.isdone) {
                         center.tip = "操作成功!";
                         tipMake();
@@ -279,9 +278,9 @@ navList.each(function(index) {
             //wiki
             case 0:
                 clear();
-                center.showSendPro = false;
+                $(".showSendPro").removeClass("showText");
                 center.showShareList = false;
-                center.showShare = false;
+                $(".showShare").removeClass("showText");
                 center.showInfo = false;
                 $(this).addClass("active");
                 center.type = 0;
@@ -290,9 +289,9 @@ navList.each(function(index) {
             case 1:
                 clear();
                 center.showWiki = false;
-                center.showSendPro = true;
+                $(".showSendPro").addClass("showText");
                 center.showShareList = false;
-                center.showShare = false;
+                $(".showShare").removeClass("showText");
                 center.showInfo = false;
                 $(this).addClass("active");
                 center.type = 1;
@@ -301,9 +300,9 @@ navList.each(function(index) {
             case 3:
                 clear();
                 center.showWiki = false;
-                center.showSendPro = false;
+                $(".showSendPro").removeClass("showText");
                 center.showShareList = true;
-                center.showShare = false;
+                $(".showShare").removeClass("showText");
                 center.showInfo = false;
                 navList.eq(2).addClass("active");
                 center.type = 3;
@@ -312,9 +311,9 @@ navList.each(function(index) {
             case 4:
                 clear();
                 center.showWiki = false;
-                center.showSendPro = false;
+                $(".showSendPro").removeClass("showText");
                 center.showShareList = false;
-                center.showShare = true;
+                $(".showShare").addClass("showText");
                 center.showInfo = false;
                 navList.eq(2).addClass("active");
                 center.type = 4;

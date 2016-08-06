@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
     <title>个人中心</title>
-    <script type="text/javascript" src="__PUBLIC__/js/vue.js"></script>
-    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/center.css">
+     <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin//styles/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin//styles/simditor.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/center.css">
 </head>
 
 <body>
@@ -26,8 +25,8 @@
             </div>
             <div class="collapse navbar-collapse" id="example-navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">我的wiki</a></li>
-                    <li><a href="#">发布问题</a></li>
+                    <li class="active"><a href="#">我的讨论</a></li>
+                    <li><a href="#">发布讨论</a></li>
                     <li class="dropdown"  v-if="brothers">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         我的分享<b class="caret"></b>
@@ -48,7 +47,7 @@
             <div class="row" v-if="userList">
                 <div class="row" align="center">
                     <img src="__PUBLIC__/images/lazy.jpg" alt="" style="width:10rem;height:10rem">
-                    <p style="font-size: 14px;color: #969696;margin-top: 20px;"><span class="glyphicon glyphicon-pencil" style="margin-left: -20px;cursor: pointer;" @click="getUserInfo()"></span>&nbsp;&nbsp;&nbsp;{$name}</p>
+                    <p style="font-size: 14px;color: #969696;margin-top: 20px;"><span class="glyphicon glyphicon-pencil" style="margin-left: -20px;cursor: pointer;" @click="getUserInfo()"></span>&nbsp;&nbsp;&nbsp;<span id="nick">{$name}</span></p>
                 </div>
             </div>
             <div class="row user" v-if="showInfo" style="width: 90%;margin: 20px auto">
@@ -91,12 +90,12 @@
                     </thead>
                     <tbody>
                         <tr v-for="userInfo in userInfos">
-                            <td class="text-center"><a :href="'__ROOT__/index.php/Index/View?type=1&id='+userInfo.wiki_id">{{userInfo.author}}</a></td>
+                            <td class="text-center"><a :href="'__ROOT__/index.php/Index/View?type=1&id='+userInfo.talk_id">{{userInfo.title}}</a></td>
                             <td class="text-center">{{userInfo.timestamp}}</td>
                             <td class="text-center">{{userInfo.like}}</td>
                             <td class="text-center">{{userInfo.comment}}</td>
                             <td class="text-center">
-                                <button type="button" class="btn btn-danger" @click="delPro(userInfo.wiki_id)">删除</button>
+                                <button type="button" class="btn btn-danger" @click="delPro(userInfo.talk_id)">删除</button>
                             </td>
                         </tr>
                        <tr>
@@ -126,12 +125,12 @@
                     </thead>
                     <tbody>
                         <tr v-for="share in shareList">
-                            <td class="text-center"><a :href="'__ROOT__/index.php/Index/View?type=3&id='+userInfo.work_id">{{share.author}}</a></td>
+                            <td class="text-center"><a :href="'__ROOT__/index.php/Index/View?type=3&id='+share.wiki_id">{{share.title}}</a></td>
                             <td class="text-center">{{share.timestamp}}</td>
                             <td class="text-center">{{share.like}}</td>
                             <td class="text-center">{{share.comment}}</td>
                             <td class="text-center">
-                                <button type="button" class="btn btn-danger" @click="delShare(userInfo.work_id)">删除</button>
+                                <button type="button" class="btn btn-danger" @click="delShare(share.wiki_id)">删除</button>
                             </td>
                         </tr>
                        <tr>
@@ -148,7 +147,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="row user" v-if="showSendPro" style="width: 90%;margin: 60px auto">
+            <div class="row user showSendPro" style="width: 90%;margin: 60px auto;">
                  <div class="row">
                     <span>标题：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                     <input type="text" class="proTitle">
@@ -169,7 +168,7 @@
                     <button class="subPro btn btn-primary" @click="subPro()" style="float: right;margin-right: 50px;">确认提交</button>
                 </div>            
             </div>
-            <div class="row user" v-if="showShare" style="width: 90%;margin: 60px auto">
+            <div class="row user showShare" style="width: 90%;margin: 60px auto;">
                  <div class="row">
                     <span>标题：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                     <input type="text" class="shareTitle">

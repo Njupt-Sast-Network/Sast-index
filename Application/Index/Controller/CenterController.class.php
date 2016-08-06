@@ -33,8 +33,8 @@ class CenterController extends Controller {
         {
     	switch ($_POST['type']) {
     		case 0:
-    			$db = M('wiki');
-    			$order = "wiki_id desc";
+    			$db = M('talk');
+    			$order = "talk_id desc";
     			break; 
     		case 1:
     			$db = M('wiki');
@@ -45,8 +45,8 @@ class CenterController extends Controller {
     			$order = "news_id desc";
     			break;
             case 3:
-                $db = M('work');
-                $order = "work_id desc";
+                $db = M('wiki');
+                $order = "wiki_id desc";
                 break;
     		 default:
     			$db = M('user');
@@ -88,8 +88,8 @@ class CenterController extends Controller {
         $id = $_POST['id'];
                 switch ($_POST['type']) {
             case 0:
-                $db = M('wiki');
-                $order = "wiki_id =";
+                $db = M('talk');
+                $order = "talk_id =";
                 break; 
             case 1:
                 $db = M('wiki');
@@ -100,8 +100,8 @@ class CenterController extends Controller {
                 $order = "news_id =";
                 break;
             case 3:
-                $db = M('work');
-                $order = "work_id =";
+                $db = M('wiki');
+                $order = "wiki_id =";
                 break;
              default:
                 $db = M('user');
@@ -150,6 +150,23 @@ public function changeinfo(){
     $this ->ajaxReturn($card);
 }
 
+public function talkupload(){
+    $sess=session('userinfo');
+    $name = $sess['username'];
+    $news['title'] = $_POST['title'];
+    $news['author'] = $name;
+    $news['keywords'] = $_POST['keywords'];
+    $news['simple'] = $_POST['simple'];
+    $news['text'] = $_POST['content'];
+    $db = M('talk');
+    if($db->add($news))
+    {
+        $isdone = true;
+    }
+    $info['isdone'] = $isdone;
+    $this -> ajaxReturn($info);
+}
+
 public function wikiupload(){
     $sess=session('userinfo');
     $name = $sess['username'];
@@ -164,24 +181,7 @@ public function wikiupload(){
         $isdone = true;
     }
     $info['isdone'] = $isdone;
-    $this -> ajaxReturn($isdone);
-}
-
-public function workupload(){
-    $sess=session('userinfo');
-    $name = $sess['username'];
-    $news['title'] = $_POST['title'];
-    $news['author'] = $name;
-    $news['keywords'] = $_POST['keywords'];
-    $news['simple'] = $_POST['simple'];
-    $news['text'] = $_POST['content'];
-    $db = M('work');
-    if($db->add($news))
-    {
-        $isdone = true;
-    }
-    $info['isdone'] = $isdone;
-    $this -> ajaxReturn($isdone);
+    $this -> ajaxReturn($info);
 }
 
 

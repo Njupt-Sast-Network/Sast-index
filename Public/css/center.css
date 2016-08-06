@@ -21,6 +21,16 @@ nav.navbar {
 	resize: none;
 	border: 1px solid #dfdfdf;
 }
+
+.showShare {
+	display: none;
+}
+.showSendPro {
+	display: none;
+}
+.showText {
+	display: block !important;
+}
 /*分页样式*/
 .pageTd:hover {
 	background-color: #fff;
@@ -57,11 +67,6 @@ input {
 }
 input,textarea,button {
 	outline: none;
-}
-input.file {
-	width: 60px;
-	margin-right: 10%;
-	display: inline-block;
 }
 /*提示*/
 .tip {
