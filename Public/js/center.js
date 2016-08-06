@@ -233,7 +233,7 @@ var center = new Vue({
                 tipMake();
             } else {
                 //提交问题
-                $.post("问题发送url", { title: title, keywords: proKey, content: content ,simple:simple}, function(data) {
+                $.post("/index.php/Center/wikiupload", { title: title, keywords: proKey, content: content ,simple:simple}, function(data) {
                     if (data.isdone) {
                         center.tip = "操作成功!";
                         tipMake();
@@ -349,7 +349,7 @@ function ajaxGet() {
     $.post("/index.php/Center/userwiki",info,function(data) {
         var n = data.level;
         if( n ==1 ) {
-            window.location = "__ROOT__/index.php/Admin";
+            window.location = "/index.php/Admin";
         }else if ( n ==2 ) {
             center.brothers = true;
         }

@@ -157,20 +157,14 @@ public function wikiupload(){
     $news['author'] = $name;
     $news['keywords'] = $_POST['keywords'];
     $news['simple'] = $_POST['simple'];
-    $news['text'] = $_POST['text'];
+    $news['text'] = $_POST['content'];
     $db = M('wiki');
     if($db->add($news))
     {
-        F('news',NULL);
-        echo("<script>alert('发布成功')</script>");
-                $Url = $_SERVER['HTTP_REFERER'];
-        if (isset($Url)) 
-{ 
-Header("HTTP/1.1 303 See Other"); 
-Header("Location: $Url"); 
-exit; 
-} 
+        $isdone = true;
     }
+    $info['isdone'] = $isdone;
+    $this -> ajaxReturn($isdone);
 }
 
 public function workupload(){
@@ -180,21 +174,16 @@ public function workupload(){
     $news['author'] = $name;
     $news['keywords'] = $_POST['keywords'];
     $news['simple'] = $_POST['simple'];
-    $news['text'] = $_POST['text'];
+    $news['text'] = $_POST['content'];
     $db = M('work');
     if($db->add($news))
     {
-        F('news',NULL);
-        echo("<script>alert('发布成功')</script>");
-                $Url = $_SERVER['HTTP_REFERER'];
-        if (isset($Url)) 
-{ 
-Header("HTTP/1.1 303 See Other"); 
-Header("Location: $Url"); 
-exit; 
-} 
+        $isdone = true;
     }
+    $info['isdone'] = $isdone;
+    $this -> ajaxReturn($isdone);
 }
+
 
 
 
