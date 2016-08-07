@@ -9,7 +9,7 @@ var taolunTemplate = new Vue({
     methods: {
         getCon: function(id, e, check) {
             var info = {
-                type: 2,
+                type: 1,
                 id: id,
                 page: 1,
                 front: 1,
