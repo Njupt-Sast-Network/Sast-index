@@ -50,10 +50,8 @@ $(function() {
 						//刷新验证码
 						fleshVerify(document.getElementById('Verifyimg'));
 						tip.addClass("wrong").text(data.message);
-						// console.log("1234567890");
+						
 					}	
-					// console.log(data.valid,data.message);
-					// console.log(data)
 				},
 			})
 		}
@@ -187,5 +185,3 @@ $(function() {
 	})();
 	login();
 });
-
-/*切换登录注册*/

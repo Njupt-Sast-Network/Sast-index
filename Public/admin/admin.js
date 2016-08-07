@@ -49,6 +49,7 @@ var manage = new Vue({
         showUser: true,
         showText: false,
         showNews: false,
+        showShare: false,
         users: [],
         news: [],
         results: [],
@@ -138,6 +139,25 @@ var manage = new Vue({
                 });
             }
         },
+        delShare: function(id) {
+            if (confirm("确定要删除此分享么？")) {
+                var userInfo = {
+                    id : id,
+                    type : manage.type
+                };
+                //此处是删除分享的ajax请求
+                $.post("/index.php/Admin/index/deluser", userInfo, function(data) {
+                    if (data.isdone) {
+                        manage.tip = "操作成功!";
+                        tipMake();
+                        ajaxGet();
+                    } else {
+                        manage.tip = "操作失败!";
+                        tipMake();
+                    }
+                });
+            }
+        },
         //分页函数
         changeBtn: function(item) {
             if (this.current != item) {
@@ -206,6 +226,7 @@ navList.each(function(index) {
                 $(this).addClass("active");
                 manage.showText = false;
                 manage.showNews = false;
+                manage.showShare = false;
                 $(".textContainer").removeClass("showText");
                 manage.showUser = true;
                 manage.type = 0;
@@ -217,6 +238,7 @@ navList.each(function(index) {
                 navList.removeClass("active");
                 $(this).addClass("active");
                 manage.showNews = false;
+                manage.showShare = false;
                 editor.setValue("");
                 $(".textContainer").removeClass("showText");
                 manage.showUser = false;
@@ -229,6 +251,7 @@ navList.each(function(index) {
                 clear();    
                 navList.removeClass("active");
                 navList.eq(2).addClass("active");
+                manage.showShare = false;
                 manage.showText = false;
                 manage.showNews = true;
                 $(".textContainer").removeClass("showText");
@@ -241,11 +264,26 @@ navList.each(function(index) {
                 clear();
                 navList.removeClass("active");
                 navList.eq(2).addClass("active");
+                manage.showShare = false;
                 manage.showText = false;
                 manage.showNews = false;
                 $(".textContainer").addClass("showText");
                 editor.setValue("");
                 manage.showUser = false;
+                break;
+            // 分享列表
+            case 5:
+                clear();
+                navList.removeClass("active");
+                $(this).addClass("active");
+                manage.showNews = false;
+                editor.setValue("");
+                $(".textContainer").removeClass("showText");
+                manage.showUser = false;
+                manage.showText = false;
+                manage.showShare = true;
+                manage.type = 3;
+                ajaxGet();
                 break;
         }
     });

@@ -45,9 +45,7 @@ $(function() {
 						//刷新验证码
 						fleshVerify(document.getElementById('VerifyImg'));
 						tip.addClass("wrong").text(data.message);
-						// console.log("1234567890");
 					}	
-					// console.log(data.valid,data.message);
 				},
 			})
 		}
