@@ -29,7 +29,7 @@ else{
     			break; 
     		case 1:
     			$db = M('talk');
-    			$order = "wiki_id desc";
+    			$order = "talk_id desc";
     			break;
     		case 2:
     			$db = M('news');
@@ -74,7 +74,7 @@ else{
             $dblike = M('like');
             $dbcom = M('comment');
             for ($i=0; $i < count($user['card']); $i++) { 
-                $where = "type = 1 and id=".$user['card'][$i]['wiki_id'];
+                $where = "type = 1 and id=".$user['card'][$i]['talk_id'];
               $like = $dblike -> where($where) ->count();
                $user['card'][$i]['like'] = $like ;
               $com = $dbcom -> where($where) ->count();
