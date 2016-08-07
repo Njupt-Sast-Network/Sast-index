@@ -42,7 +42,7 @@ $(function() {
 						$("#shelter").css("display","none");
 						che();
 						$(".contentLi").find("#user").remove();
-						$(".contentLi").append("<li><a href='ddd'>"+data.username+"</a></li>");
+						$(".contentLi").append("<li><a href='/index.php/Center'>"+data.username+"</a></li>");
 						$(".contentLi").append("<li><a href='/index.php/Index/Login/logout'>退出</a></li>");
 						$(".hideBar").css("height","200px");	
 					}else {

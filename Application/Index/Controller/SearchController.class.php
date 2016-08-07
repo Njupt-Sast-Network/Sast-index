@@ -49,12 +49,12 @@ class SearchController extends Controller {
 			$table = M('work') ->order($or);
 
 			break;
-		case 1:
+		case 2:
 					$or = "talk_id desc";
 			$table = M('talk') ->order($or);
 
 			break;
-		case 2:
+		case 1:
 					$or = "news_id desc";
 			$table = M('news') ->order($or);
 

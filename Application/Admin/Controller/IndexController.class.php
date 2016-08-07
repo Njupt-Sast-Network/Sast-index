@@ -28,13 +28,17 @@ else{
     			$order = "uid desc";
     			break; 
     		case 1:
-    			$db = M('wiki');
+    			$db = M('talk');
     			$order = "wiki_id desc";
     			break;
     		case 2:
     			$db = M('news');
     			$order = "news_id desc";
     			break;
+                        case 3:
+                $db = M('wiki');
+                $order = "wiki_id desc";
+                break;
     		 default:
     			$db = M('user');
     			$order = "uid desc";
