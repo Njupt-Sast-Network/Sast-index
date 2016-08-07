@@ -4,7 +4,7 @@ var taolunTemplate = new Vue({
     data: {
         items: [],
         more: false,
-        cons: []
+        cons: [] 
     },
     methods: {
         getCon: function(id, e, check) {

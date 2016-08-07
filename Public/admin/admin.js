@@ -54,6 +54,7 @@ var manage = new Vue({
         news: [],
         results: [],
         problems: [],
+        shareList:[],
     },
     computed: {
         indexs: function() {
@@ -212,6 +213,7 @@ function ajaxGet() {
             case 0: manage.users = [].concat(data.card);break;
             case 1: manage.problems = [].concat(data.card);break;
             case 2: manage.news = [].concat(data.card);break;
+            case 3: manage.shareList = [].concat(data.card);break;
         }
     }) 
 }
