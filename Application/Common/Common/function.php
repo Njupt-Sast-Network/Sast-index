@@ -51,9 +51,9 @@ function getlikenumber($type,$id){
 
 function getcomnumbersearch($type,$id){
 	if($type == 1)
-		$type == 2;
+		$type = 2;
 	if($type == 2)
-		$type == 1;
+		$type = 1;
 	$comdb = M('comment');
 	$wheretwo = "type=".$type." and id=".$id;
 	$comnumber = $comdb -> where($wheretwo) -> count();
@@ -61,11 +61,11 @@ function getcomnumbersearch($type,$id){
 }
 function getlikenumbersearch($type,$id){
 	if($type == 1)
-		$type == 2;
+		$type = 2;
 	if($type == 2)
-		$type == 1;
+		$type = 1;
 	$comdb = M('like');
-	$wheretwo = "type=".$type." and id=".$id;
+	$wheretwo = "type=".$type." and id=".$id." and islike = 1";
 	$comnumber = $comdb -> where($wheretwo) -> count();
 	return $comnumber;
 }
