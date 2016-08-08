@@ -126,17 +126,20 @@ var center = new Vue({
         },
         setUserInfo: function() {
             //验证用户名
-            this.username.length <= 16 && 3 <= this.username.length ? (a = false) : a = true;
-
+            if (this.username.length >=3) {
+                a=true;
+            }
             // if(this.username.match(/^\S+$/)&&this.username.length>=3&&this.username.length<=16)
             //     a = 1;
             // else
             //     a= 0;
             //验证邮箱
-            this.mail.match(/\w+@\w+.\w/) ? (b = false) : b = true;
+            if(this.mail.match(/\w+@\w+.\w/) ) {
+                b = true;
+            }
             //提交
             if (!a) {
-                console.log(a)
+                
                 center.tip = "用户名格式不对!";
                 tipMake();
             } else if (!b) {
@@ -349,8 +352,10 @@ function ajaxGet() {
         var n = data.level;
         if( n ==1 ) {
             window.location = "/Admin";
-        }else if ( n ==2 ) {
+        }else if ( n == 2 ) {
             center.brothers = true;
+        }else {
+            center.brothers = false;
         }
         center.all = data.count;
         center.pages = Math.ceil(center.all / 5);

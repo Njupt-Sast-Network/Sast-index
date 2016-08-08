@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>管理员登录</title>
+    <style type="text/css" media="screen">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        background-color: #f1f2f7;
+    }
+    
+    ul li {
+        list-style-type: none;
+    }
+    
+    .title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #356686;
+        color: #fff;
+        text-align: center;
+        width: 100%;
+        height: 50px;
+        font-size: 20px;
+        line-height: 50px;
+        border-radius: 10px 10px 0 0;
+    }
+    
+    .login {
+        position: absolute;
+        padding: 20px;
+        top: 50px;
+        left: 0;
+        width: 100%;
+    }
+    
+    input {
+        height: 40px;
+        width: 356px;
+        border: 1px solid #d6d6d6;
+        border-radius: 5px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-size: 18px;
+        padding-left: 4px;
+        outline: none;
+    }
+    
+    button {
+        position: absolute;
+        top: 100px;
+        width: 360px;
+        height: 40px;
+        background-color: #4f877a;
+        outline: none;
+        color: #fff;
+        font-size: 16px;
+        line-height: 40px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all .3s;
+    }
+    
+    button.change {
+        background-color: #ddd;
+        color: #969696;
+    }
+    
+    .tip {
+        color: #DC524A;
+        font-size: 12px;
+    }
+    
+    .content {
+        animation: con 3s;
+    }
+    
+    @keyframes con {
+        from {
+            transform: scale(0);
+        }
+        to {
+            transform: scale(1.0);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="content" style="width: 400px;height: 220px;position: absolute;left: 50%;top: 30%;box-shadow: 0 0 10px #969696;margin-left: -200px;background-color: #fff;border-radius: 10px">
+        <div class="title">找回密码</div>
+        <div class="login">
+            <ul>
+                <li>
+                    <input type="text" placeholder="请输入邮箱" class="mail"></input>
+                </li>
+                <div class="tip"></div>
+                <button class="pass">发送验证邮件</button>
+            </ul>
+        </div>
+    </div>
+    <script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
+    <script type="text/javascript">
+    (function() {
+        var tip = $(".tip");
+        var pass = $(".pass");
+        var mail = $(".mail");
+        var password = $(".password");
+        var a = false;
+
+        function stripscript(s) {
+            return s.replace(/<script.*?>.*?<\/script>/ig, '');
+        }
+        pass.click(function() {
+            if (!a) {
+                a = true;
+                console.log(1)
+                var u = 120;
+                var mailText = stripscript(mail.val());
+                var info = {
+                    mail: mailText,
+                }
+                if (mailText != "" && mailText.match(/\w+@\w+.\w/)) {
+                    tip.text("");
+                    pass.addClass("change").removeClass("pass");
+                    $.post("url", info, function(data) {
+                        if (!data.isdone) {
+                            tip.text(data.msg);
+                       	}
+                    });
+
+                    function showTime() {
+                        pass.text("等待验证（" + u + "S）");
+                        u--;
+                        if (u == -1) {
+                            pass.addClass("pass").removeClass("change");
+                            pass.text("发送验证邮件");
+                            a = false;
+                            return 0;
+                        }
+                        var t = setTimeout(function() {
+                            showTime();
+                        }, 1000);
+                    }
+                    showTime();
+                } else {
+
+                    a = false;
+                    tip.text("邮箱格式不正确");
+                }
+            }
+        });
+    })();
+    </script>
+</body>
+
+</html>
