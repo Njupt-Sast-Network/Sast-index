@@ -97,7 +97,7 @@
                             <td class="text-center">{{problem.comment}}</td>
                             <td class="text-center">{{problem.like}}</td>
                             <td class="text-center">
-                                <button type="button" class="btn btn-danger" @click="delPro(problem.wiki_id)">删除</button>
+                                <button type="button" class="btn btn-danger" @click="delPro(problem.talk_id)">删除</button>
                             </td>
                         </tr>
                         <tr>
@@ -165,9 +165,9 @@
                         <tr v-for="share in shareList">
                             <td class="text-center"><a :href="'__ROOT__/index.php/Index/View?type=3&id='+share.wiki_id">{{share.title}}</a></td>
                             <td class="text-center">{{share.author}}</td>
-                            <td class="text-center">{{one.timestamp}}</td>
-                            <td class="text-center">{{one.comment}}</td>
-                            <td class="text-center">{{one.like}}</td>
+                            <td class="text-center">{{share.timestamp}}</td>
+                            <td class="text-center">{{share.comment}}</td>
+                            <td class="text-center">{{share.like}}</td>
                             <td class="text-center">
                                 <button type="button" class="btn btn-danger" @click="delShare(share.wiki_id)">删除</button>
                             </td>

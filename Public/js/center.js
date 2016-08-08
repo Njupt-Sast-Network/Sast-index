@@ -21,7 +21,7 @@ var editor = new Simditor({
         'alignment'
     ],
     upload: {
-        url: 'index.php/Center/addimg', //文件上传的接口地址
+        url: '/index.php/Center/addimg', //文件上传的接口地址
         params: null, //键值对,指定文件上传接口的额外参数,上传的时候随文件一起提交
         fileKey: 'fileDataFileName', //服务器端获取文件数据的参数名
         connectionCount: 3,
@@ -53,7 +53,7 @@ var editorTwo = new Simditor({
         'alignment'
     ],
     upload: {
-        url: 'index.php/Center/addimg', //文件上传的接口地址
+        url: '/index.php/Center/addimg', //文件上传的接口地址
         params: null, //键值对,指定文件上传接口的额外参数,上传的时候随文件一起提交
         fileKey: 'fileDataFileName', //服务器端获取文件数据的参数名
         connectionCount: 3,
@@ -348,7 +348,7 @@ function ajaxGet() {
     $.post("/index.php/Center/userwiki",info,function(data) {
         var n = data.level;
         if( n ==1 ) {
-            window.location = "/index.php/Admin";
+            window.location = "/Admin";
         }else if ( n ==2 ) {
             center.brothers = true;
         }
