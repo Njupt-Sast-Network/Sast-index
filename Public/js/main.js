@@ -1,14 +1,6 @@
 (function() {
 	//滚动事件
 	$(document).scroll(function() {
-		if($("html body").scrollTop() > 800) {
-			$("section.sectionOne .row3 .col-md-3 span").animate({opacity:"1"},600,function() {
-				$(this).next().animate({opacity:"1"},300)
-			});
-		}
-		if($("html body").scrollTop() > 1300){
-			$("section.sectionOne .row5").animate({opacity:"1"},300);
-		}
 		if($("html body").scrollTop() > 10) {
 			$("#hui").css("display","inline-block");
 		}else {

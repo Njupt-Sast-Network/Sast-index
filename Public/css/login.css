@@ -29,7 +29,7 @@
 	border-bottom: 1px solid gray;
 }
 #shelter .conshelter .tool span {
-	padding-bottom: 8.5px;
+	padding-bottom: 9px;
 	padding-left:10px;
 	padding-right: 10px;
 	cursor: pointer;
@@ -68,7 +68,7 @@
 	padding-top: 10px;
 	padding-bottom: 10px;
 	font-size: 16px;
-	top: 180px;
+	top: 184px;
 	background-color: #578db0;
 	outline: none;
 	border: none;

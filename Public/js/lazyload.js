@@ -3,10 +3,15 @@
 	$(document).scroll(function() {
 		var photo = $(".Box"),
 		photoObj = $(".Box img");
-		if($("html body").scrollTop() > photo.offset().top-400) {
+		setTimeout(function() {
 			for(var i = 0;i < 20;i++) {
+				
+				console.log(i)
 				photoObj.eq(i).attr("src","/Public/images/img"+i+".jpg");
 			}
-		}
+			},1000);
+			
+			
+
 	})
 })();

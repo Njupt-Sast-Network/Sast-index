@@ -108,14 +108,14 @@ section.sectionOne .row3 .col-md-3 {
 section.sectionOne .row3 .col-md-3 span {
 	font-size: 140px;
 	color:#356686;
-	opacity: 0;
+	opacity: 1;
 }
 section.sectionOne .row3 .col-md-3 p {
 	font-size: 40px;
 	color: #578db0;
 	letter-spacing: 5px;
 	font-family: "微软雅黑";
-	opacity: 0;
+	opacity: 1;
 	margin-top: 50px;
 	font-weight: bold;
 }
@@ -253,7 +253,7 @@ section.sectionOne .row4 .chuxian {
 /*sast介绍*/
 section.sectionOne .row5 {
 	margin-top: 80px;
-	opacity: 0;
+	opacity: 1;
 }
 section.sectionOne .row6 {
 	margin-top: 120px;
