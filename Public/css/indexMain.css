@@ -268,59 +268,78 @@ section.sectionOne .row6 img{
 }
 section.sectionOne .row6 .ani0 {
 	animation: myani 1s;
+	-o-animation :myani 1s;;
 	-webkit-animation: myani 1s;
 }
 section.sectionOne .row6 .ani1 {
 	animation: myani 1s;
+	-o-animation: myani 1s;
 	-webkit-animation: myani 1s;
 	animation-delay:.5s;
+	-o-animation-delay:.5s;
 	-webkit-animation-delay:.5s; /* Safari 和 Chrome */
 }
 section.sectionOne .row6 .ani2 {
 	animation: myani 1s;
+	-o-animation: myani 1s;
 	-webkit-animation: myani 1s;
 	animation-delay:1s;
+	-o-animation-delay:1s;
 	-webkit-animation-delay:1s; /* Safari 和 Chrome */
 }
 section.sectionOne .row6 .ani3 {
 	animation: myani 1s;
+	-o-animation: myani 1s;
 	-webkit-animation: myani 1s;
 	animation-delay:1.5s;
+	-o-animation-delay:1.5s;
 	-webkit-animation-delay:1.5s; /* Safari 和 Chrome */
 }
 section.sectionOne .row6 .ani4 {
 	animation: myani 1s;
 	-webkit-animation: myani 1s;
+	-o-animation: myani 1s;
 	animation-delay:2s;
+	-o-animation-delay:2s;
 	-webkit-animation-delay:2s; /* Safari 和 Chrome */
 }
 section.sectionOne .row6 .ani5 {
 	animation: myani 1s;
+	-o-animation: myani 1s;
 	-webkit-animation: myani 1s;
 	animation-delay:2.5s;
+	-o-animation-delay:2.5s;
 	-webkit-animation-delay:2.5s; /* Safari 和 Chrome */
 }
 section.sectionOne .row6 .ani6 {
 	animation: myani 1s;
+	-o-animation: myani 1s;
 	-webkit-animation: myani 1s;
 	animation-delay:3s;
+	-o-animation-delay:2.5s;
 	-webkit-animation-delay:3s; /* Safari 和 Chrome */
 }
 section.sectionOne .row6 .ani7 {
 	animation: myani 1s;
+	-o-animation: myani 1s;
 	-webkit-animation: myani 1s;
 	animation-delay:3.5s;
+	-o-animation-delay:3.5s;
 	-webkit-animation-delay:3.5s; /* Safari 和 Chrome */
 }
 section.sectionOne .row6 .ani8 {
 	animation: myani 1s;
+	-o-animation: myani 1s;
 	-webkit-animation: myani 1s;
 	animation-delay:4s;
+	-o-animation-delay:4s;
 	-webkit-animation-delay:4s; /* Safari 和 Chrome */
 }
 section.sectionOne .row6 .ani9 {
 	animation: myani 1s;
+	-o-animation: myani 1s;
 	-webkit-animation: myani 1s;
+	animation-delay:4.5s;
 	animation-delay:4.5s;
 	-webkit-animation-delay:4.5s; /* Safari 和 Chrome */
 }
@@ -333,6 +352,11 @@ section.sectionOne .row6 .ani9 {
 	0% {-webkit-transform: scale(1)}
 	50% {-webkit-transform: scale(0.5)}
 	100%{-webkit-transform: scale(1)}
+}
+@-o-keyframes myani {
+	0% {-o-transform: scale(1)}
+	50% {-o-transform: scale(0.5)}
+	100%{-o-transform: scale(1)}
 }
 /*页脚*/
 section.sectionOne .lessContainer {

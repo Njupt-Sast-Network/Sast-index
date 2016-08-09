@@ -136,7 +136,9 @@
                     $.post("/index.php/Back/getmail", info, function(data) {
                         if (!data.isdone) {
                             tip.text(data.msg);
-                       	}
+                       	}else {
+                            showTime();
+                        }
                     });
 
                     function showTime() {
@@ -154,7 +156,7 @@
                             showTime();
                         }, 1000);
                     }
-                    showTime();
+                    
                 } else {
 
                     a = false;
