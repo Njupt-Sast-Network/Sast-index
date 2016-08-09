@@ -1,6 +1,16 @@
 (function() {
+	setTimeout(function() {
+			$("section.sectionOne .row3 .col-md-3 span").addClass("op");
+		},500);
+		setTimeout(function() {
+			$("section.sectionOne .row3 .col-md-3 p").addClass("op");
+		},700);
+		setTimeout(function() {
+			$("section.sectionOne .row5").addClass("op");
+		},900);
 	//滚动事件
 	$(document).scroll(function() {
+		
 		if($("html body").scrollTop() > 10) {
 			$("#hui").css("display","inline-block");
 		}else {
