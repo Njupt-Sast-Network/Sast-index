@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>管理员登录</title>
+    <title>找回密码</title>
     <style type="text/css" media="screen">
     * {
         margin: 0;
@@ -131,7 +131,7 @@
                 if (mailText != "" && mailText.match(/\w+@\w+.\w/)) {
                     tip.text("");
                     pass.addClass("change").removeClass("pass");
-                    $.post("url", info, function(data) {
+                    $.post("/index.php/Back/getmail", info, function(data) {
                         if (!data.isdone) {
                             tip.text(data.msg);
                        	}

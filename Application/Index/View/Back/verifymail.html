@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>管理员登录</title>
+    <title>修改密码</title>
     <style type="text/css" media="screen">
     * {
         margin: 0;
@@ -121,7 +121,7 @@
                 var result = password.val();
                 result = stripscript(result);
                 if(result.match(/^\S+$/)&&result.length>=6&&result.length<=16) {
-                    $.post("设置新密码url",{password:result},function(data) {
+                    $.post("/index.php/Back/change",{password:result},function(data) {
                         if(data.isdone) {
                             window.location = "/index.php/Index";
                         }else tip.text(data.msg);

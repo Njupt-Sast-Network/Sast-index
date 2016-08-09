@@ -2,15 +2,25 @@
 namespace Index\Controller;
 use Think\Controller;
 class BackController extends Controller {
+        public function index(){
+            $this ->display();
+        }
         public function getmail(){
         $db = M('user');
         $auth = M('back');
         if($db -> where("mail = '".$_POST['mail']."'") -> find())
         {
+            if($auth -> where("mail = '".$_POST['mail']."'") -> find())
+            {
+                $auth -> where("mail = '".$_POST['mail']."'") -> delete();
+            }
+
+
                 $user = $db -> where("mail = '".$_POST['mail']."'") -> select();
                 $authid = md5(getpassword());
                 $info['mail'] = $_POST['mail'];
-                $info['id'] = "请打开以下地址来设置你的新密码。 http://sast.njupt.edu.cn/index.php/Back/verifymail?id=".$authid;
+                $info['id'] = $authid;
+                $content = "请打开以下地址来设置你的新密码。 http://sast.njupt.edu.cn/index.php/Back/verifymail?id=".$authid;
                 if($auth -> data($info) -> add())
                 {
                              //发邮件开始
@@ -27,10 +37,13 @@ class BackController extends Controller {
         $mail->WordWrap = 50; //设置每行字符长度
         $mail->IsHTML(C('MAIL_ISHTML')); // 是否HTML格式邮件
         $mail->CharSet=C('MAIL_CHARSET'); //设置邮件编码
-        $mail->Subject ='密码重置秘钥'; //邮件主题
-        $mail->Body = $authid; //邮件内容
+        $mail->Subject ='密码重置'; //邮件主题
+        $mail->Body = $content; //邮件内容
         $mail->AltBody = "这是一个纯文本的身体在非营利的HTML电子邮件客户端"; //邮件正文不支持HTML的备用显示
+        if($mail->send())
                 $msg['isdone'] = true;
+            else
+                $msg['isdone'] = false;
                 }
         }else{
           $msg['isdone'] = false;
@@ -46,39 +59,45 @@ class BackController extends Controller {
                         if($dbback -> where("id ='".$authid."'") -> find())
                         {
                                 $mail = $dbback -> where("id ='".$authid."'") -> select();
-                                $mail['isdone'] = true;
+                                $dbback -> where("mail = '".$mail[0]['mail']."'") -> delete();
+                                $change['authid'] = $authid;
+                                $change['mail'] = $mail[0]['mail'];
+                                $change['isvalid'] = true;
+                                session('changeinfo',$change);
                                 $this -> display();
-                        }else{
-                                 $mail['isdone'] = false;
                         }
-                }
-                else
+                }else
                 {
-                           $mail['isdone'] = false;
+                    echo "Error";
                 }
-        $this -> ajaxReturn($mail);
         }
 
         public function change(){
+            if(session('changeinfo')){
                 if(IS_POST){
-                        $authid = $_POST['authid'];
-                        $dbback = M('back');
+                    $sess = session('changeinfo');
+                    if($sess['isvalid'] == true){
+                        $authid = $sess['authid'];
                         $dbuser = M('user');
                         $pass = MD5($_POST['password']);
-                        if($dbback -> where("id ='".$authid."'") -> find())
-                        {
-                                $mail = $dbback -> where("id ='".$authid."'") -> select();
-                                $data['password'] = $pass;
-                                if($dbuser -> where("mail='".$mail['mail']."'") -> save($data))
+                        $data['password'] = $pass;
+                        if($dbuser -> where("mail='".$sess['mail']."'") -> save($data))
                                         $isdone = true;
                                 else
                                         $isdone =false;
-                        }else{
-                                $isdone =false;
-                        }
-                }
+                     
+                }else{
+            $isdone = false;
+        }
+            }else{
+            $isdone = false;
+        }
+        }else{
+            $isdone = false;
+        }
                 $info['isdone'] =$isdone;
                 $this -> ajaxReturn($info);
+            
         }
 }
 ?>
