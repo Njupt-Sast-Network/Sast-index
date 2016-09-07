@@ -82,7 +82,8 @@ var center = new Vue({
         showShareList: false,
         current: 1,
         all: 0,
-        pages: 0
+        pages: 0,
+        myImg: ''
     },
     computed: {
         indexs: function() {
@@ -111,6 +112,26 @@ var center = new Vue({
         },
     },
     methods: {
+        changeImg: function() {
+            var fileImg = document.getElementById('fileImg');
+            console.log(fileImg.files[0].size)
+            //发送头像
+           if(fileImg.files[0].size != 0) {
+            var myinfo = new FormData();
+            myinfo.append('file',fileImg.files[0])
+             $.ajax({
+                url: "/index.php/Center/addimg",
+                type: "post",
+                cache: false,
+                data: myinfo,
+                processData: false,
+                contentType: false,
+                success: function(data) {
+
+                }
+             })
+           }
+        },
         getUserInfo: function() {
             this.showWiki = false;
             $(".showSendPro").removeClass("showText");
@@ -357,6 +378,7 @@ function ajaxGet() {
         }else {
             center.brothers = false;
         }
+        center.myImg = data.img;
         center.all = data.count;
         center.pages = Math.ceil(center.all / 5);
         switch(info.type) {
