@@ -3,8 +3,8 @@ namespace Index\Controller;
 use Think\Controller;
 class LoginController extends Controller {
 	public function login(){
-		$iusername = I('post.username',"");
-		$ipassword = I('post.password',"");
+		$iusername = I('post.username',"",'string');
+		$ipassword = I('post.password',"",'string');
 		$iverify = I('post.verify',"");
 		if (!session('userinfo')) {
 			if (IS_POST) {
@@ -35,8 +35,8 @@ class LoginController extends Controller {
 
 
 public function reg(){
-			$iusername = I('post.username',"");
-			$ipassword = I('post.password',"");
+			$iusername = I('post.username',"",'string');
+			$ipassword = I('post.password',"",'string');
 			$iverify = I('post.verify',"");
 			$iemail = I('post.email',"","email");
 					if (!session('userinfo')) {

@@ -137,9 +137,9 @@ public function changeinfo(){
     if(verifyuser()){
         $sess = session('userinfo');
         $name = $sess['username'];
-        $data['username'] = I('post.username',"");
+        $data['username'] = I('post.username',"",'string');
         $data['mail'] = I('post.mail',"",'email');
-        $data['department'] = I('post.department',"");
+        $data['department'] = I('post.department',"",'string');
         $db = M('user');
         $isdone = false;
         $where['username'] = $data['username'];
@@ -157,11 +157,11 @@ public function changeinfo(){
 public function talkupload(){
     $sess=session('userinfo');
     $name = $sess['username'];
-    $news['title'] = I('post.title',"");
+    $news['title'] = I('post.title',"",'string,htmlspecialchars');
     $news['author'] = $name;
-    $news['keywords'] =I('post.keywords',"");
-    $news['simple'] = I('post.simple',"");
-    $news['text'] = I('post.text',"");
+    $news['keywords'] =I('post.keywords',"",'string,htmlspecialchars');
+    $news['simple'] = I('post.simple',"",'string,htmlspecialchars');
+    $news['text'] = I('post.content',"",'string,htmlspecialchars');
     $db = M('talk');
     if($db->add($news))
     {
@@ -174,11 +174,11 @@ public function talkupload(){
 public function wikiupload(){
     $sess=session('userinfo');
     $name = $sess['username'];
-    $news['title'] = I('post.title',"");
+    $news['title'] = I('post.title',"",'string,htmlspecialchars');
     $news['author'] = $name;
-    $news['keywords'] =I('post.keywords',"");
-    $news['simple'] = I('post.simple',"");
-    $news['text'] = I('post.text',"");
+    $news['keywords'] =I('post.keywords',"",'string,htmlspecialchars');
+    $news['simple'] = I('post.simple',"",'string,htmlspecialchars');
+    $news['text'] = I('post.content',"",'string,htmlspecialchars');
     $db = M('wiki');
     if($db->add($news))
     {
