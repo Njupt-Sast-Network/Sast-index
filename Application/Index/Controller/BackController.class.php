@@ -40,14 +40,16 @@ class BackController extends Controller {
         $mail->CharSet=C('MAIL_CHARSET'); //设置邮件编码
         $mail->Subject ='密码重置'; //邮件主题
         $mail->Body = $content; //邮件内容
-        $mail->AltBody = "这是一个纯文本的身体在非营利的HTML电子邮件客户端"; //邮件正文不支持HTML的备用显示
+        $mail->AltBody = "请使用浏览器打开此邮件"; //邮件正文不支持HTML的备用显示
         if($mail->send())
                 $msg['isdone'] = true;
-            else
+            else{
                 $msg['isdone'] = false;
+                        $msg['msg'] = "发送失败。";}
                 }
         }else{
           $msg['isdone'] = false;
+          $msg['msg'] = "没有这个用户！";
         }
         $this -> ajaxReturn($msg);
 }
@@ -93,12 +95,15 @@ class BackController extends Controller {
                      
                 }else{
             $isdone = false;
+                        $info['msg'] = "你没有权限进入这里。";
         }
             }else{
             $isdone = false;
+            $info['msg'] = "你没有权限进入这里。";
         }
         }else{
             $isdone = false;
+            $info['msg'] = "你没有权限进入这里。";
         }
                 $info['isdone'] =$isdone;
                 $this -> ajaxReturn($info);
