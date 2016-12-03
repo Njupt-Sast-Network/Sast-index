@@ -8,17 +8,18 @@ class BackController extends Controller {
         public function getmail(){
         $db = M('user');
         $auth = M('back');
-        if($db -> where("mail = '".$_POST['mail']."'") -> find())
+        $where['mail'] = I('post.mail',"",'email');
+        if($db -> where($where) -> find())
         {
-            if($auth -> where("mail = '".$_POST['mail']."'") -> find())
+            if($auth -> where($where) -> find())
             {
-                $auth -> where("mail = '".$_POST['mail']."'") -> delete();
+                $auth -> where($where) -> delete();
             }
 
 
-                $user = $db -> where("mail = '".$_POST['mail']."'") -> select();
+                $user = $db -> where($where) -> select();
                 $authid = md5(getpassword());
-                $info['mail'] = $_POST['mail'];
+                $info['mail'] = I('post.mail',"",'email');
                 $info['id'] = $authid;
                 $content = "请打开以下地址来设置你的新密码。 http://sast.njupt.edu.cn/index.php/Back/verifymail?id=".$authid;
                 if($auth -> data($info) -> add())
@@ -33,7 +34,7 @@ class BackController extends Controller {
         $mail->Password = C('MAIL_PASSWORD') ; //邮箱密码
         $mail->From = C('MAIL_FROM'); //发件人地址（也就是你的邮箱地址）
         $mail->FromName = C('MAIL_FROMNAME'); //发件人姓名
-        $mail->AddAddress($_POST['mail'],"用户");
+        $mail->AddAddress($info['mail'],"用户");
         $mail->WordWrap = 50; //设置每行字符长度
         $mail->IsHTML(C('MAIL_ISHTML')); // 是否HTML格式邮件
         $mail->CharSet=C('MAIL_CHARSET'); //设置邮件编码
@@ -54,12 +55,14 @@ class BackController extends Controller {
         public function verifymail(){
                 if($_GET['id']!=NULL)
                 {
-                        $authid = $_GET['id'];
+                        $authid = I('get.id',"");
                         $dbback = M('back');
-                        if($dbback -> where("id ='".$authid."'") -> find())
+                        $where['id'] = $authid;
+                        if($dbback -> where($where) -> find())
                         {
-                                $mail = $dbback -> where("id ='".$authid."'") -> select();
-                                $dbback -> where("mail = '".$mail[0]['mail']."'") -> delete();
+                                $mail = $dbback -> where($where) -> select();
+                                $consult['mail'] = $mail[0]['mail'];
+                                $dbback -> where($consult) -> delete();
                                 $change['authid'] = $authid;
                                 $change['mail'] = $mail[0]['mail'];
                                 $change['isvalid'] = true;
@@ -79,9 +82,11 @@ class BackController extends Controller {
                     if($sess['isvalid'] == true){
                         $authid = $sess['authid'];
                         $dbuser = M('user');
-                        $pass = MD5($_POST['password']);
+                        $ipassword = I('post.password',"");
+                        $pass = MD5($ipassword);
                         $data['password'] = $pass;
-                        if($dbuser -> where("mail='".$sess['mail']."'") -> save($data))
+                        $where['mail'] = $sess['mail'];
+                        if($dbuser -> where($where) -> save($data))
                                         $isdone = true;
                                 else
                                         $isdone =false;

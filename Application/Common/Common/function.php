@@ -38,13 +38,13 @@ function check_verify($code, $id = ""){//检查验证码输入是否正确
 
 function getcomnumber($type,$id){
 	$comdb = M('comment');
-	$wheretwo = "type=".$type." and id=".$id;
+	$wheretwo = array("type" => $type,"id" => $id);
 	$comnumber = $comdb -> where($wheretwo) -> count();
 	return $comnumber;
 }
 function getlikenumber($type,$id){
 	$comdb = M('like');
-	$wheretwo = "type=".$type." and id=".$id;
+	$wheretwo = array("type" => $type,"id" => $id);
 	$comnumber = $comdb -> where($wheretwo) -> count();
 	return $comnumber;
 }
@@ -55,7 +55,7 @@ function getcomnumbersearch($type,$id){
 	if($type == 2)
 		$type = 1;
 	$comdb = M('comment');
-	$wheretwo = "type=".$type." and id=".$id;
+	$wheretwo = array("type" => $type,"id" => $id);
 	$comnumber = $comdb -> where($wheretwo) -> count();
 	return $comnumber;
 }
@@ -65,7 +65,7 @@ function getlikenumbersearch($type,$id){
 	if($type == 2)
 		$type = 1;
 	$comdb = M('like');
-	$wheretwo = "type=".$type." and id=".$id." and islike = 1";
+	$wheretwo = array("type" => $type,"id" => $id,"islike"=>1);
 	$comnumber = $comdb -> where($wheretwo) -> count();
 	return $comnumber;
 }
@@ -121,7 +121,7 @@ function verifyuser()
     	$sess = session('userinfo');
         $data['username'] = $sess['username'];
         $db = M('user');
-        $where = "username='".$data['username']."'";
+        $where = array('username' => $data['username']);
         if($db->where($where)->find())
         {
         	return 1;
@@ -159,7 +159,7 @@ function getpassword( $length = 8 ) {
     	$sess = session('userinfo');
         $data['username'] = $sess['username'];
         $db = M('user');
-        $where = "level=1 and username='".$data['username']."'";
+        $where = array('level' => 1 , 'username' => $data['username']);
         if($db->where($where)->find())
         {
         	return 1;

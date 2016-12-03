@@ -18,7 +18,8 @@ class CenterController extends Controller {
         	$sess = session('userinfo');
         	$name = $sess['username'];
         	$db = M("user");
-        	$info = $db -> where("username = '".$name."'") -> select();
+            $where['username'] = $name;
+        	$info = $db -> where($where) -> select();
         	unset($info[0]['password']);
             $data['card'] = $info;
         	$this -> ajaxReturn($info[0]);
@@ -31,7 +32,8 @@ class CenterController extends Controller {
 	public function userwiki(){
         if (session('userinfo')) 
         {
-    	switch ($_POST['type']) {
+            $itype = I('post.type',1,'int');
+    	switch ($itype) {
     		case 0:
     			$db = M('talk');
     			$order = "talk_id desc";
@@ -55,14 +57,15 @@ class CenterController extends Controller {
     	}
         $sess = session('userinfo');
         $name= $sess['username'];
-        $wherelevel = "username ='".$name."'";
+        $wherelevel['username'] = $name; 
         $dbuser = M('user');
         $level = $dbuser -> where($wherelevel) -> select();
         unset($level[0]['password']);
         $user['level'] = $level[0]['level'];
-    	$page=$_POST['page'];
-    	$user['card'] = $db -> order($order) -> page($page.',5')->where("author = '".$name."'") -> select();
-    	$count = $db -> where("author = '".$name."'") -> count();
+    	$page=I('post.page',1,'int');
+        $iauthor['author'] = $name;
+    	$user['card'] = $db -> order($order) -> page($page.',5')->where($iauthor) -> select();
+    	$count = $db -> where($iauthor) -> count();
     	$user['count'] = $count;
  
             // $dblike = M('like');
@@ -84,35 +87,35 @@ class CenterController extends Controller {
 
     public function del(){
     if(verifyuser()){
-        $type = $_POST['type'];
-        $id = $_POST['id'];
-                switch ($_POST['type']) {
+        $type = I('post.type',1,'int');
+        $id = I('post.id',1,'int');
+                switch ($type) {
             case 0:
                 $db = M('talk');
-                $order = "talk_id =";
+                $order = "talk_id";
                 break; 
             case 1:
                 $db = M('wiki');
-                $order = "wiki_id =";
+                $order = "wiki_id";
                 break;
             case 2:
                 $db = M('news');
-                $order = "news_id =";
+                $order = "news_id";
                 break;
             case 3:
                 $db = M('wiki');
-                $order = "wiki_id =";
+                $order = "wiki_id";
                 break;
              default:
                 $db = M('user');
-                $order = "uid =";
+                $order = "uid";
                 break;
         }
-        $where = $order.$id;
+        $where[$order] = $id;
         $isdone = false;
         $name = $db -> where($where) -> select();
         $sess = session('userinfo'); //获取当前用户
-        $sessname = $sess['usernamer'];
+        $sessname = $sess['username'];
         if($name['author'] == $sessname)  //确认文章删除权限
         {
         if($db -> where($where) -> delete())
@@ -134,12 +137,13 @@ public function changeinfo(){
     if(verifyuser()){
         $sess = session('userinfo');
         $name = $sess['username'];
-        $data['username'] = $_POST['username'];
-        $data['mail'] = $_POST['mail'];
-        $data['department'] = $_POST['department'];
+        $data['username'] = I('post.username',"");
+        $data['mail'] = I('post.mail',"",'email');
+        $data['department'] = I('post.department',"");
         $db = M('user');
         $isdone = false;
-        if($db -> data($data) -> where("username = '".$data['username']."'") -> save())
+        $where['username'] = $data['username'];
+        if($db -> data($data) -> where($where) -> save())
         {
             $isdone = true;
         }
@@ -153,11 +157,11 @@ public function changeinfo(){
 public function talkupload(){
     $sess=session('userinfo');
     $name = $sess['username'];
-    $news['title'] = $_POST['title'];
+    $news['title'] = I('post.title',"");
     $news['author'] = $name;
-    $news['keywords'] = $_POST['keywords'];
-    $news['simple'] = $_POST['simple'];
-    $news['text'] = $_POST['content'];
+    $news['keywords'] =I('post.keywords',"");
+    $news['simple'] = I('post.simple',"");
+    $news['text'] = I('post.text',"");
     $db = M('talk');
     if($db->add($news))
     {
@@ -170,11 +174,11 @@ public function talkupload(){
 public function wikiupload(){
     $sess=session('userinfo');
     $name = $sess['username'];
-    $news['title'] = $_POST['title'];
+    $news['title'] = I('post.title',"");
     $news['author'] = $name;
-    $news['keywords'] = $_POST['keywords'];
-    $news['simple'] = $_POST['simple'];
-    $news['text'] = $_POST['content'];
+    $news['keywords'] =I('post.keywords',"");
+    $news['simple'] = I('post.simple',"");
+    $news['text'] = I('post.text',"");
     $db = M('wiki');
     if($db->add($news))
     {
@@ -193,7 +197,7 @@ public function wikiupload(){
     $sess = session('userinfo');
         $data['username'] = $sess['username'];
         $db = M('user');
-        $where = "level=1 and username='".$data['username']."'";
+        $where = array('level' => 1 , 'username' => $data['username']);
         if(1)
         {
             $upload = new \Think\Upload();// 实例化上传类
@@ -209,7 +213,7 @@ public function wikiupload(){
         }
         else{
                         foreach($info as $file){
-                 $img ="http://".$_SERVER['SERVER_NAME']."/Uploads/".$file['savepath'].$file['savename'];
+                 $img = "/Uploads/".$file['savepath'].$file['savename'];
                                     }
              $info['success'] = true;
              $info['file_path'] = $img;

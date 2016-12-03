@@ -11,12 +11,12 @@ if (session('userinfo'))
 	if(IS_POST)
 	{
 		$sess = session('userinfo');
-		$data['type'] = $_POST['type'];
-		$data['id'] = $_POST['id'];
+		$data['type'] = I('post.type',1,'int');
+		$data['id'] = I('post.id',1,'int');
 		$data['username'] = $sess['username'];
 		$data['islike'] = 1;
 		$db = M('like');
-		$where = "type=".$_POST['type']." and id=".$_POST['id']." and username='".$data['username']."'";
+		$where = array("type" => $data['type'],'id' => $data['id'],'username' => $data['username']);
 		if(!$db ->where($where)->find()){
 			$db -> data($data) -> add();
 		}
@@ -47,12 +47,12 @@ if (session('userinfo'))
 	if(IS_POST)
 	{
 		$sess = session('userinfo');
-		$type = $_POST['type'];
-		$id = $_POST['id'];
+		$type = I('post.type',1,'int');
+		$id = I('post.id',1,'int');
 		$data['username'] = $sess['username'];
 		$data['islike'] = false;
 		$db = M('like');
-		$where = "type=".$type." and id=".$id;
+		$where = array('type' => $type,'id' => $id);
 		$db -> where($where) -> setField('islike','0');
 		$isdone = ture;
 	}
@@ -77,9 +77,9 @@ if (session('userinfo'))
 	if(IS_POST)
 	{
 		$sess = session('userinfo');
-		$data['id'] = $_POST['id'];
-		$data['type'] = $_POST['type'];
-		$data['content'] = $_POST['content'];
+		$data['id'] = I('post.id',1,'int');
+		$data['type'] = I('post.type',1,'int');
+		$data['content'] = I('post.content',"");
 		$data['commentor'] = $sess['username'];
 		$db = M('comment');
 		if($db -> data($data) ->filter('strip_tags')-> add())

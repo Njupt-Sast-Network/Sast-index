@@ -22,7 +22,8 @@ else{
 
     public function get(){
     if(verifyadmin()){
-    	switch ($_POST['type']) {
+        $itype = I('post.type',1,'int');
+    	switch ($itype) {
     		case 0:
     			$db = M('user');
     			$order = "uid desc";
@@ -44,37 +45,38 @@ else{
     			$order = "uid desc";
     			break;
     	}
-    	$page=$_POST['page'];
+    	$page=I('post.page',1,'int');
     	$user['card'] = $db -> order($order) -> page($page.',5') -> select();
     	$count = $db -> count();
     	$user['count'] = $count;
                        //去除密码 返回提问数
         for ($i=0; $i < count($user['card']); $i++) { 
-            if($_POST['type'] == 0)
+            if($itype == 0)
                {
                     unset($user['card'][$i]['password']);
                     $talkdb = M('talk');
-                    $user['card'][$i]['talknumber'] = $talkdb -> where('author = \''.$user['card'][$i]['username']."'")->count();
+                    $where['author'] = $user['card'][$i]['username'];
+                    $user['card'][$i]['talknumber'] = $talkdb -> where($where)->count();
                }
         }
-        if($_POST['type']==2)//返回评论数和点赞数
+        if($itype==2)//返回评论数和点赞数
         {  
             $dblike = M('like');
             $dbcom = M('comment');
             for ($i=0; $i < count($user['card']); $i++) { 
-                $where = "type = 2 and id=".$user['card'][$i]['news_id'];
+                $where = array('type' => 2 , 'id' => $user['card'][$i]['news_id']);
               $like = $dblike -> where($where) ->count();
                $user['card'][$i]['like'] = $like ;
               $com = $dbcom -> where($where) ->count();
                $user['card'][$i]['comment'] = $com ;
             }
         }
-                if($_POST['type']==1)//返回评论数和点赞数
+                if($itype==1)//返回评论数和点赞数
         {  
             $dblike = M('like');
             $dbcom = M('comment');
             for ($i=0; $i < count($user['card']); $i++) { 
-                $where = "type = 1 and id=".$user['card'][$i]['talk_id'];
+                $where = array('type' => 1 , 'id' => $user['card'][$i]['talk_id']);
               $like = $dblike -> where($where) ->count();
                $user['card'][$i]['like'] = $like ;
               $com = $dbcom -> where($where) ->count();
@@ -89,31 +91,31 @@ else{
 
     public function deluser(){
     if(verifyadmin()){
-    	$type = $_POST['type'];
-    	$id = $_POST['id'];
-    	    	switch ($_POST['type']) {
+    	$type = I('post.type',"",'int');
+    	$id = I('post.id',"",'int');
+    	    	switch ($type) {
     		case 0:
     			$db = M('user');
-    			$order = "uid =";
+    			$order = "uid";
     			break; 
     		case 1:
     			$db = M('talk');
-    			$order = "talk_id =";
+    			$order = "talk_id";
     			break;
     		case 2:
     			$db = M('news');
-    			$order = "news_id =";
+    			$order = "news_id";
     			break;
             case 3:
                 $db = M('wiki');
-                $order = "wiki_id =";
+                $order = "wiki_id";
                 break;
     		 default:
     			$db = M('user');
-    			$order = "uid =";
+    			$order = "uid";
     			break;
     	}
-    	$where = $order.$id;
+        $where[$order] = $id;
     	$isdone = false;
     	if($db -> where($where) -> delete())
     	{

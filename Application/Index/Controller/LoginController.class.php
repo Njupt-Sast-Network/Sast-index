@@ -3,15 +3,18 @@ namespace Index\Controller;
 use Think\Controller;
 class LoginController extends Controller {
 	public function login(){
+		$iusername = I('post.username',"");
+		$ipassword = I('post.password',"");
+		$iverify = I('post.verify',"");
 		if (!session('userinfo')) {
 			if (IS_POST) {
-				$loginfo['verify']=$_POST['verify'];
+				$loginfo['verify']=$iverify;
 				if (!check_verify($loginfo["verify"])) {
 					$valid = false;
 					$message = '验证码错误';
 				}else{
-					$loginfo['username'] = $_POST['username'];
-					$loginfo['password'] = md5($_POST['password']);
+					$loginfo['username'] = $iusername;
+					$loginfo['password'] = md5($ipassword);
 					if ($info = M('user') -> where($loginfo) -> find()) {
 						$valid = true;
 						unset($info['password']);
@@ -32,19 +35,23 @@ class LoginController extends Controller {
 
 
 public function reg(){
+			$iusername = I('post.username',"");
+			$ipassword = I('post.password',"");
+			$iverify = I('post.verify',"");
+			$iemail = I('post.email',"","email");
 					if (!session('userinfo')) {
 			if (IS_POST) {
-				$loginfo['verify']=$_POST['verify'];
+				$loginfo['verify']=$iverify;
 				if (!check_verify($loginfo["verify"])) {
 					$valid = false;
 					$message = '验证码错误';
 				}else{
-					$loginfo['username'] = $_POST['username'];
-					$loginfo['password'] = md5($_POST['password']);
-					$loginfo['mail'] = $_POST['email'];
+					$loginfo['username'] = $iusername;
+					$loginfo['password'] = md5($ipassword);
+					$loginfo['mail'] = $iemail;
 					$loginfo['level'] = '3';
-					$test['username'] =  $_POST['username'];
-					$test1['mail'] =  $_POST['email'];
+					$test['username'] =  $iusername;
+					$test1['mail'] =  $iemail;
 					if (!($info = M('user') -> where($test) -> find()) && !($info = M('user') -> where($test1) -> find())){  // check if user or mail is exist
 					$info = D("user");
 					if(!$info->create($loginfo)){

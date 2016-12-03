@@ -10,7 +10,7 @@ public function upload(){
     $sess = session('userinfo');
         $data['username'] = $sess['username'];
         $db = M('user');
-        $where = "level=1 and username='".$data['username']."'";
+        $where = array('level' => 1 , 'username' => $data['username']);
         if($db->where($where)->find())
         {
                     
@@ -28,10 +28,10 @@ public function upload(){
                  $img = $file['savepath'].$file['savename'];
                                     }
                  }
-    $news['title'] = $_POST['title'];
-    $news['author'] = $_POST['author'];
-    $news['keywords'] = $_POST['keywords'];
-    $news['simple'] = $_POST['simple'];
+    $news['title'] = I('post.title',"");
+    $news['author'] = I('post.author',"");
+    $news['keywords'] = I('post.keywords',"");
+    $news['simple'] = I('post.simple',"");
     $news['text'] = $_POST['text'];
     $news['img'] = $img;
     $db = M('news');
@@ -64,7 +64,7 @@ else{
     $sess = session('userinfo');
         $data['username'] = $sess['username'];
         $db = M('user');
-        $where = "level=1 and username='".$data['username']."'";
+        $where = array('level' => 1 , 'username' => $data['username']);
         if($db->where($where)->find())
         {
             $upload = new \Think\Upload();// 实例化上传类
@@ -80,7 +80,7 @@ else{
         }
         else{
                         foreach($info as $file){
-                 $img ="http://".$_SERVER['SERVER_NAME']."/Uploads/".$file['savepath'].$file['savename'];
+                 $img ="/Uploads/".$file['savepath'].$file['savename'];
                                     }
              $info['success'] = true;
              $info['file_path'] = $img;

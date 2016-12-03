@@ -6,36 +6,37 @@ class SearchController extends Controller {
 		$this -> display();
 	}
 	public function search(){
-		$Database = $this -> gettable($_POST['table']);
-		if (!$_POST['page']) $_POST['page'] = 1;
-		if (!$_POST['field']) $_POST['field'] = 'title';
-		if ($_POST['content']) {
-			$SearchData = trim($_POST['content']);
+		$table = I('post.table',1,'int');
+		$Database = $this -> gettable($table);
+		$page = I('post.page',1,'int');
+		$field = I('post.field','title');
+		$content = I('post.content','');
+		if ($content) {
+			$SearchData = trim($content);
 			$words = explode(" ",$SearchData);
 			foreach ($words as $val){
-				$map[$_POST['field']] = array('like', '%'.$val.'%');
+				$map[$field] = array('like', '%'.$val.'%');
 			}
 			$map['_logic'] = 'and';
 		}
 		//热搜
-		if($_POST['content']!=NULL){
+		if($content!=NULL){
 			$redb = M('news');
-
 		}
 		$Listcard['map'] = $map;
-		$Listcard['card'] = $Database -> where($map)  -> page($_POST['page'].',7') -> select();
+		$Listcard['card'] = $Database -> where($map)  -> page($page.',7') -> select();
 		$Listcard['count'] = $Database -> where($map) -> count();
 		//返回评论数
 		for ($i=0; $i < count($Listcard['card']); $i++) { 
 			$Listcard['card'][$i]['comnumber']=0;
-			$id = whichidsearch($_POST['table']);
-			$Listcard['card'][$i]['comnumber']=getcomnumbersearch($_POST['table'],$Listcard['card'][$i][$id]);
+			$id = whichidsearch($table);
+			$Listcard['card'][$i]['comnumber']=getcomnumbersearch($table,$Listcard['card'][$i][$id]);
 		}
 		//返回赞数
 		for ($i=0; $i < count($Listcard['card']); $i++) { 
 			$Listcard['card'][$i]['likenumber']=0;
-			$id = whichidsearch($_POST['table']);
-			$Listcard['card'][$i]['likenumber']=getlikenumbersearch($_POST['table'],$Listcard['card'][$i][$id]);
+			$id = whichidsearch($table);
+			$Listcard['card'][$i]['likenumber']=getlikenumbersearch($table,$Listcard['card'][$i][$id]);
 		}
 		$Listcard['check'] = false;
 		$Listcard['cons'] = [];
